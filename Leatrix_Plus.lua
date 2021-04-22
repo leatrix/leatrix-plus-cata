@@ -1,5 +1,5 @@
-﻿----------------------------------------------------------------------
--- 	Leatrix Plus 2.5.12 (21st April 2021)
+----------------------------------------------------------------------
+-- 	Leatrix Plus 2.5.11 (20th April 2021)
 ----------------------------------------------------------------------
 
 --	01:Functions	20:Live			50:RunOnce		70:Logout			
@@ -20,7 +20,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "2.5.12"
+	LeaPlusLC["AddonVer"] = "2.5.11"
 	LeaPlusLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -4437,15 +4437,18 @@
 			-- Lock the player and target frames
 			PlayerFrame:RegisterForDrag()
 			TargetFrame:RegisterForDrag()
-
+			PetFrame:RegisterForDrag()
+			
 			-- Remove integrated movement functions to avoid conflicts
 			_G.PlayerFrame_ResetUserPlacedPosition = function() end
 			_G.TargetFrame_ResetUserPlacedPosition = function() end
+			_G.PetFrame_ResetUserPlacedPosition = function() end
 			_G.PlayerFrame_SetLocked = function() end
 			_G.TargetFrame_SetLocked = function() end
+			_G.PetFrame_SetLocked = function() end
 
 			-- Create frame table (used for local traversal)
-			local FrameTable = {DragPlayerFrame = PlayerFrame, DragTargetFrame = TargetFrame, DragMirrorTimer1 = MirrorTimer1}
+			local FrameTable = {DragPlayerFrame = PlayerFrame,DragPetFrame = PetFrame, DragTargetFrame = TargetFrame, DragMirrorTimer1 = MirrorTimer1}
 
 			-- Create main table structure in saved variables if it doesn't exist
 			if (LeaPlusDB["Frames"]) == nil then
@@ -4481,6 +4484,7 @@
 			-- Set frames to default values
 			local function LeaPlusFramesDefaults()
 				LeaFramesSetPos(PlayerFrame						, "TOPLEFT"	, UIParent, "TOPLEFT"	, -19, -4)
+				LeaFramesSetPos(PetFrame						, "TOPLEFT"	, UIParent, "TOPLEFT"	, -15, -4)				
 				LeaFramesSetPos(TargetFrame						, "TOPLEFT"	, UIParent, "TOPLEFT"	, 250, -4)
 				LeaFramesSetPos(MirrorTimer1					, "TOP"		, UIParent, "TOP"		, -5, -96)
 			end
@@ -4681,6 +4685,7 @@
 
 				-- Add titles
 				if realframe:GetName() == "PlayerFrame" 					then dragframe.f:SetText(L["Player"]) end
+				if realframe:GetName() == "PetFrame" 					    then dragframe.f:SetText(L["Pet"]) end				
 				if realframe:GetName() == "TargetFrame" 					then dragframe.f:SetText(L["Target"]) end
 				if realframe:GetName() == "MirrorTimer1" 					then dragframe.f:SetText(L["Timer"]) end
 				return LeaPlusLC[dragframe]
@@ -4722,6 +4727,7 @@
 					if IsShiftKeyDown() and IsControlKeyDown() then
 						-- Preset profile
 						LeaFramesSetPos(PlayerFrame						, "TOPLEFT"	, UIParent, "TOPLEFT"	,	"-35"	, "-14")
+						LeaFramesSetPos(PetFrame						, "TOPLEFT"	, UIParent, "TOPLEFT"	,	"-30"	, "-14")						
 						LeaFramesSetPos(TargetFrame						, "TOPLEFT"	, UIParent, "TOPLEFT"	,	"190"	, "-14")
 						LeaFramesSetPos(MirrorTimer1					, "TOP"		, UIParent, "TOP"		,	"0"		, "-120")
 						-- Player
@@ -4732,6 +4738,12 @@
 						LeaPlusDB["Frames"]["TargetFrame"]["Scale"] = 1.20
 						TargetFrame:SetScale(LeaPlusDB["Frames"]["TargetFrame"]["Scale"])
 						LeaPlusLC["DragTargetFrame"]:SetScale(LeaPlusDB["Frames"]["TargetFrame"]["Scale"])
+						-- Pet
+						LeaPlusDB["Frames"]["PetFrame"]["Scale"] = 1.20
+						TargetFrame:SetScale(LeaPlusDB["Frames"]["PetFrame"]["Scale"])
+						LeaPlusLC["DragPetFrame"]:SetScale(LeaPlusDB["Frames"]["PetFrame"]["Scale"])						
+						
+						
 						-- Set the slider to the selected frame (if there is one)
 						if currentframe then LeaPlusCB["FrameScale"]:SetValue(LeaPlusDB["Frames"][currentframe]["Scale"]); end
 						-- Save locations
@@ -5377,7 +5389,6 @@
 				titleFrame.m:SetText(L["Messages"] .. ": " .. totalMsgCount)
 				editFrame:SetVerticalScroll(0)
 				C_Timer.After(0.1, function() editFrame.ScrollBar.ScrollDownButton:Click() end)
-				editBox:SetFont(editBox:GetFont(), 16)
 				editFrame:Show()
 				editBox:ClearFocus()
 			end
@@ -5486,6 +5497,16 @@
 					end
 				end
 			end)
+			
+			-- Change cooldown icon scale when Pet frame scale changes
+			PetFrame:HookScript("OnSizeChanged", function()
+				if LeaPlusLC["CooldownsOnPlayer"] == "Off" then
+					for i = 1, iCount do
+						icon[i]:SetScale(PetFrame:GetScale())
+					end
+				end
+			end)
+			
 
 			-- Function to show cooldown textures in the cooldown frames (run when icons are loaded or changed)
 			local function ShowIcon(i, id, owner)
@@ -9724,12 +9745,20 @@
 				LeaPlusDB["FrmEnabled"] = "On"
 
 				LeaPlusDB["Frames"] = {}
+
 				LeaPlusDB["Frames"]["PlayerFrame"] = {}
 				LeaPlusDB["Frames"]["PlayerFrame"]["Point"] = "TOPLEFT"
 				LeaPlusDB["Frames"]["PlayerFrame"]["Relative"] = "TOPLEFT"
 				LeaPlusDB["Frames"]["PlayerFrame"]["XOffset"] = -35
 				LeaPlusDB["Frames"]["PlayerFrame"]["YOffset"] = -14
 				LeaPlusDB["Frames"]["PlayerFrame"]["Scale"] = 1.20
+				
+				LeaPlusDB["Frames"]["PetFrame"] = {}
+				LeaPlusDB["Frames"]["PetFrame"]["Point"] = "TOPLEFT"
+				LeaPlusDB["Frames"]["PetFrame"]["Relative"] = "TOPLEFT"
+				LeaPlusDB["Frames"]["PetFrame"]["XOffset"] = -30
+				LeaPlusDB["Frames"]["PetFrame"]["YOffset"] = -14
+				LeaPlusDB["Frames"]["PetFrame"]["Scale"] = 1.20
 
 				LeaPlusDB["Frames"]["TargetFrame"] = {}
 				LeaPlusDB["Frames"]["TargetFrame"]["Point"] = "TOPLEFT"
