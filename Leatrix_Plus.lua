@@ -817,17 +817,17 @@
 
 			-- Get localised Wowhead URL
 			local wowheadLoc
-			if GameLocale == "deDE" then wowheadLoc = "de.classic.wowhead.com"
-			elseif GameLocale == "esMX" then wowheadLoc = "es.classic.wowhead.com"
-			elseif GameLocale == "esES" then wowheadLoc = "es.classic.wowhead.com"
-			elseif GameLocale == "frFR" then wowheadLoc = "fr.classic.wowhead.com"
-			elseif GameLocale == "itIT" then wowheadLoc = "it.classic.wowhead.com"
-			elseif GameLocale == "ptBR" then wowheadLoc = "pt.classic.wowhead.com"
-			elseif GameLocale == "ruRU" then wowheadLoc = "ru.classic.wowhead.com"
-			elseif GameLocale == "koKR" then wowheadLoc = "ko.classic.wowhead.com"
-			elseif GameLocale == "zhCN" then wowheadLoc = "cn.classic.wowhead.com"
-			elseif GameLocale == "zhTW" then wowheadLoc = "cn.classic.wowhead.com"
-			else							 wowheadLoc = "classic.wowhead.com"
+			if GameLocale == "deDE" then wowheadLoc = "de.tbc.wowhead.com"
+			elseif GameLocale == "esMX" then wowheadLoc = "es.tbc.wowhead.com"
+			elseif GameLocale == "esES" then wowheadLoc = "es.tbc.wowhead.com"
+			elseif GameLocale == "frFR" then wowheadLoc = "fr.tbc.wowhead.com"
+			elseif GameLocale == "itIT" then wowheadLoc = "it.tbc.wowhead.com"
+			elseif GameLocale == "ptBR" then wowheadLoc = "pt.tbc.wowhead.com"
+			elseif GameLocale == "ruRU" then wowheadLoc = "ru.tbc.wowhead.com"
+			elseif GameLocale == "koKR" then wowheadLoc = "ko.tbc.wowhead.com"
+			elseif GameLocale == "zhCN" then wowheadLoc = "cn.tbc.wowhead.com"
+			elseif GameLocale == "zhTW" then wowheadLoc = "cn.tbc.wowhead.com"
+			else							 wowheadLoc = "tbc.wowhead.com"
 			end
 
 			-- Create editbox
