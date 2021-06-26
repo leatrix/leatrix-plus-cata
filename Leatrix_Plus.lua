@@ -3483,13 +3483,16 @@
 				-- Classic Profession Filter addon fixes
 				if IsAddOnLoaded("ClassicProfessionFilter") and TradeSkillFrame.SearchBox and TradeSkillFrame.HaveMats and TradeSkillFrame.HaveMats.text then
 					TradeSkillFrame.SearchBox:ClearAllPoints()
-					TradeSkillFrame.SearchBox:SetPoint("LEFT", TradeSkillRankFrame, "RIGHT", 20, -12)
+					TradeSkillFrame.SearchBox:SetPoint("BOTTOMLEFT", TradeSkillDetailScrollFrame, "TOPLEFT", 4, 2)
 					TradeSkillFrame.HaveMats:ClearAllPoints()
 					TradeSkillFrame.HaveMats:SetPoint("LEFT", TradeSkillFrame.SearchBox, "RIGHT", 10, 0)
 					TradeSkillFrame.HaveMats.text:SetText("Have Mats?")
-					TradeSkillFrame.HaveMats:SetHitRectInsets(0, -TradeSkillFrame.HaveMats.text:GetStringWidth() + 4, 0, 0)
+					TradeSkillFrame.HaveMats:SetHitRectInsets(0, -TradeSkillFrame.HaveMats.text:GetStringWidth() + 2, 0, 0)
+					TradeSkillFrame.SearchMats:ClearAllPoints()
+					TradeSkillFrame.SearchMats:SetPoint("BOTTOMLEFT", TradeSkillFrame.HaveMats, "TOPLEFT", 0, -4)
+					TradeSkillFrame.SearchMats.text:SetText("Search Mats?")
+					TradeSkillFrame.SearchMats:SetHitRectInsets(0, -TradeSkillFrame.SearchMats.text:GetStringWidth() + 2, 0, 0)
 				end
-
 			end
 
 			-- Run function when TradeSkill UI has loaded
@@ -3663,13 +3666,16 @@
 				-- Classic Profession Filter addon fixes
 				if IsAddOnLoaded("ClassicProfessionFilter") and CraftFrame.SearchBox and CraftFrame.HaveMats and CraftFrame.HaveMats.text then
 					CraftFrame.SearchBox:ClearAllPoints()
-					CraftFrame.SearchBox:SetPoint("LEFT", CraftRankFrame, "RIGHT", 20, -12)
+					CraftFrame.SearchBox:SetPoint("BOTTOMLEFT", CraftDetailScrollFrame, "TOPLEFT", 4, 2)
 					CraftFrame.HaveMats:ClearAllPoints()
 					CraftFrame.HaveMats:SetPoint("LEFT", CraftFrame.SearchBox, "RIGHT", 10, 0)
 					CraftFrame.HaveMats.text:SetText("Have Mats?")
-					CraftFrame.HaveMats:SetHitRectInsets(0, -CraftFrame.HaveMats.text:GetStringWidth() + 4, 0, 0)
+					CraftFrame.HaveMats:SetHitRectInsets(0, -CraftFrame.HaveMats.text:GetStringWidth() + 2, 0, 0)
+					CraftFrame.SearchMats:ClearAllPoints()
+					CraftFrame.SearchMats:SetPoint("BOTTOMLEFT", CraftFrame.HaveMats, "TOPLEFT", 0, -4)
+					CraftFrame.SearchMats.text:SetText("Search Mats?")
+					CraftFrame.SearchMats:SetHitRectInsets(0, -CraftFrame.SearchMats.text:GetStringWidth() + 2, 0, 0)
 				end
-
 			end
 
 			-- Run function when Craft UI has loaded
