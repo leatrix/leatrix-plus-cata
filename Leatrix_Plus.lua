@@ -3486,11 +3486,11 @@
 					TradeSkillFrame.SearchBox:SetPoint("BOTTOMLEFT", TradeSkillDetailScrollFrame, "TOPLEFT", 4, 2)
 					TradeSkillFrame.HaveMats:ClearAllPoints()
 					TradeSkillFrame.HaveMats:SetPoint("LEFT", TradeSkillFrame.SearchBox, "RIGHT", 10, 0)
-					TradeSkillFrame.HaveMats.text:SetText("Have Mats?")
+					TradeSkillFrame.HaveMats.text:SetText(L["Have Mats?"])
 					TradeSkillFrame.HaveMats:SetHitRectInsets(0, -TradeSkillFrame.HaveMats.text:GetStringWidth() + 2, 0, 0)
 					TradeSkillFrame.SearchMats:ClearAllPoints()
 					TradeSkillFrame.SearchMats:SetPoint("BOTTOMLEFT", TradeSkillFrame.HaveMats, "TOPLEFT", 0, -4)
-					TradeSkillFrame.SearchMats.text:SetText("Search Mats?")
+					TradeSkillFrame.SearchMats.text:SetText(L["Search Mats?"])
 					TradeSkillFrame.SearchMats:SetHitRectInsets(0, -TradeSkillFrame.SearchMats.text:GetStringWidth() + 2, 0, 0)
 				end
 			end
@@ -3669,11 +3669,11 @@
 					CraftFrame.SearchBox:SetPoint("BOTTOMLEFT", CraftDetailScrollFrame, "TOPLEFT", 4, 2)
 					CraftFrame.HaveMats:ClearAllPoints()
 					CraftFrame.HaveMats:SetPoint("LEFT", CraftFrame.SearchBox, "RIGHT", 10, 0)
-					CraftFrame.HaveMats.text:SetText("Have Mats?")
+					CraftFrame.HaveMats.text:SetText(L["Have Mats?"])
 					CraftFrame.HaveMats:SetHitRectInsets(0, -CraftFrame.HaveMats.text:GetStringWidth() + 2, 0, 0)
 					CraftFrame.SearchMats:ClearAllPoints()
 					CraftFrame.SearchMats:SetPoint("BOTTOMLEFT", CraftFrame.HaveMats, "TOPLEFT", 0, -4)
-					CraftFrame.SearchMats.text:SetText("Search Mats?")
+					CraftFrame.SearchMats.text:SetText(L["Search Mats?"])
 					CraftFrame.SearchMats:SetHitRectInsets(0, -CraftFrame.SearchMats.text:GetStringWidth() + 2, 0, 0)
 				end
 			end
