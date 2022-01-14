@@ -1125,6 +1125,11 @@
 
 		if LeaPlusLC["FasterLooting"] == "On" then
 
+			-- Don't run faster looting when the TSM Destroy button is hovered
+			if GetMouseFocus():GetName() == "TSMDestroyBtn" then
+				return
+			end
+
 			-- Time delay
 			local tDelay = 0
 
