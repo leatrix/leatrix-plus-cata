@@ -44,6 +44,17 @@
 --	L00: Leatrix Plus
 ----------------------------------------------------------------------
 
+	-- Local variables
+	local QUEST_TAG_ELITE_TYPES = {
+		[Enum.QuestTag.Raid] = true,
+		[Enum.QuestTag.Dungeon] = true,
+		[Enum.QuestTag.Raid10] = true,
+		[Enum.QuestTag.Raid25] = true,
+		[Enum.QuestTag.Group] = true,
+		[Enum.QuestTag.Heroic] = true,
+		[Enum.QuestTag.Legendary] = true,
+	}
+
 	-- Initialise variables
 	LeaPlusLC["ShowErrorsFlag"] = 1
 	LeaPlusLC["NumberOfPages"] = 9
@@ -7087,11 +7098,20 @@
 
 			end
 
+			-- Get quest level string function
+			local function getQuestLevelString(level, questId)
+				local tagID = questId and GetQuestTagInfo(questId)
+				if (tagID and QUEST_TAG_ELITE_TYPES[tagID]) then
+					return "[" .. level .. "+] "
+				end
+				return "[" .. level .. "] "
+			end
+
 			-- Show quest levels in quest log
 			hooksecurefunc("QuestLogTitleButton_Resize", function(questLogTitle)
 				if LeaPlusLC["EnhanceQuestLevels"] == "On" and not questLogTitle.isHeader then
 					local questIndex = questLogTitle:GetID()
-					local title, level = GetQuestLogTitle(questIndex)
+					local title, level, _, _, _, _, _, questId = GetQuestLogTitle(questIndex)
 					local questTitleTag = questLogTitle.tag
 					local questNormalText = questLogTitle.normalText
 					local questCheck = questLogTitle.check
@@ -7099,7 +7119,7 @@
 					if level and level > 0 and level < 10 then level = "0" .. level end
 
 					questNormalText:SetWidth(0)
-					questNormalText:SetText("  [" .. level .. "] " .. title)
+					questNormalText:SetText("  " .. getQuestLevelString(level, questId) .. title)
 
 					-- Debug
 					-- questLogTitle.normalText:SetText("  [80] Learning to Leave and Return The")
