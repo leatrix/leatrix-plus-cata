@@ -900,6 +900,16 @@
 
 				},
 
+				-- NetherDrake wing flapping
+				["MuteNetherDrakes"] = {
+
+					-- sound/creature/netherdrake/
+					"hugewingflap1.ogg#556477",
+					"hugewingflap2.ogg#556479",
+					"hugewingflap3.ogg#556476",
+
+				},
+
 			}
 
 			-- Give table file level scope (its used during logout and for wipe and admin commands)
@@ -931,6 +941,7 @@
 			LeaPlusLC:MakeCB(SoundPanel, "MuteGyrocopters", "Gyrocopters", 140, -92, false, "If checked, gyrocopters will be muted.|n|nThis applies to the engineering flying machine mounts.")
 			LeaPlusLC:MakeCB(SoundPanel, "MuteStriders", "Mechstriders", 140, -112, false, "If checked, mechanostriders will be quieter.")
 			LeaPlusLC:MakeCB(SoundPanel, "MuteMechSteps", "Mechsteps", 140, -132, false, "If checked, footsteps for mechanical mounts will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteNetherDrakes", "Netherdrakes", 140, -152, false, "If checked, wing flapping for netherdrake mounts will be muted.")
 
 			LeaPlusLC:MakeTx(SoundPanel, "Pets", 264, -72)
 			LeaPlusLC:MakeCB(SoundPanel, "MuteYawns", "Yawns", 264, -92, false, "If checked, yawns from hunter pet cats will be muted.")
