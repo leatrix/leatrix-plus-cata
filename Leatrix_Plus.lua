@@ -5238,7 +5238,7 @@
 			editBox:SetScript("OnKeyDown", function() end)
 
 			-- Load library
-			if not LibStub("LibCandyBar", true) then
+			if not LibStub("LibCandyBar-3.0", true) then
 				Leatrix_Plus:LeaPlusCandyBar()
 			end
 
