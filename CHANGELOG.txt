@@ -1,4 +1,4 @@
-3.0.42.alpha.1 - 24th October 2022
+3.0.42 - 25th October 2022
 - Added flight times.
 
 3.0.41 - 24th October 2022
@@ -12,7 +12,7 @@
 - Added flight times.
 
 3.0.38 - 21st October 2022
-- Having ElvUI installed will no longer uncheck conficting option checkboxes.  Conflicting option checkboxes will still be locked but they won't be unchecked.  So if a conflicting option checkbox was checked before installing ElvUI or before enabling a conflicting ElvUI module, it will still be checked after disabling ElvUI or disabling the conflicting ElvUI module.
+- Having ElvUI installed will no longer uncheck conflicting option checkboxes.  Conflicting option checkboxes will still be locked but they won't be unchecked.  So if a conflicting option checkbox was checked before installing ElvUI or before enabling a conflicting ElvUI module, it will still be checked after disabling ElvUI or disabling the conflicting ElvUI module.
 - Added flight times.
 
 3.0.37 - 20th October 2022
