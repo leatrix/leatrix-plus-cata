@@ -3170,6 +3170,7 @@
 				["0.72:0.29:0.62:0.36:0.52:0.38:0.52:0.34:0.28:0.28"] = 354, -- Dun Nifflelem, K3, Dalaran, Crusaders' Pinnacle, Death's Rise
 				["0.72:0.29:0.64:0.19:0.60:0.25:0.56:0.36:0.52:0.34"] = 234, -- Dun Nifflelem, Ulduar, Grom'arsh Crash-Site, The Argent Vanguard, Crusaders' Pinnacle
 				["0.72:0.29:0.78:0.38:0.72:0.40:0.69:0.42:0.70:0.55:0.74:0.62"] = 295, -- Dun Nifflelem, Zim'Torga, The Argent Stand, Light's Breach, Conquest Hold, Apothecary Camp
+				["0.72:0.29:0.62:0.36:0.60:0.40"] = 125, -- Dun Nifflelem, K3, Sunreaver's Command
 
 				-- Horde: The Storm Peaks: Grom'arsh Crash-Site
 				["0.60:0.25:0.56:0.36:0.52:0.38"] = 111, -- Grom'arsh Crash-Site, The Argent Vanguard, Dalaran
@@ -3323,6 +3324,7 @@
 				["0.31:0.43:0.28:0.28"] = 113, -- Warsong Camp, Death's Rise
 				["0.31:0.43:0.52:0.38:0.60:0.40"] = 188, -- Warsong Camp, Dalaran, Sunreaver's Command
 				["0.31:0.43:0.52:0.38:0.64:0.42:0.69:0.42:0.84:0.51:0.84:0.59"] = 405, -- Warsong Camp, Dalaran, Ebon Watch, Light's Breach, Camp Oneqwah, Camp Winterhoof
+				["0.31:0.43:0.45:0.51:0.49:0.58:0.74:0.71"] = 344, -- Warsong Camp, Agmar's Hammer, Moa'ki, Kamagua
 
 				----------------------------------------------------------------------
 				-- Horde: Zul'Drak
