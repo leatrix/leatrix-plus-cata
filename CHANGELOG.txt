@@ -1,3 +1,6 @@
+3.0.45.alpha.1 - 27th October 2022
+- Guess in the missing word.  Added ______ times (no prizes).
+
 3.0.44 - 27th October 2022
 - Added flight times.
 

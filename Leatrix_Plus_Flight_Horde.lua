@@ -2304,6 +2304,7 @@
 				["0.49:0.58:0.59:0.55:0.74:0.62:0.84:0.59"] = 219, -- Moa'ki, Venomspite, Apothecary Camp, Camp Winterhoof
 				["0.49:0.58:0.45:0.51:0.29:0.54:0.17:0.53"] = 250, -- Moa'ki, Agmar's Hammer, Taunka'le Village, Amber Ledge
 				["0.49:0.58:0.52:0.38:0.52:0.34"] = 151, -- Moa'ki, Dalaran, Crusaders' Pinnacle
+				["0.49:0.58:0.52:0.38:0.62:0.36:0.60:0.25:0.57:0.21"] = 278, -- Moa'ki, Dalaran, K3, Grom'arsh Crash-Site, Bouldercrag's Refuge
 
 				-- Horde: Dragonblight: Venomspite
 				["0.59:0.55:0.54:0.52:0.52:0.38"] = 149, -- Venomspite, Wyrmrest Temple, Dalaran
@@ -3325,6 +3326,7 @@
 				["0.31:0.43:0.52:0.38:0.60:0.40"] = 188, -- Warsong Camp, Dalaran, Sunreaver's Command
 				["0.31:0.43:0.52:0.38:0.64:0.42:0.69:0.42:0.84:0.51:0.84:0.59"] = 405, -- Warsong Camp, Dalaran, Ebon Watch, Light's Breach, Camp Oneqwah, Camp Winterhoof
 				["0.31:0.43:0.45:0.51:0.49:0.58:0.74:0.71"] = 344, -- Warsong Camp, Agmar's Hammer, Moa'ki, Kamagua
+				["0.31:0.43:0.45:0.51:0.48:0.44"] = 162, -- Warsong Camp, Agmar's Hammer, Kor'koron Vanguard
 
 				----------------------------------------------------------------------
 				-- Horde: Zul'Drak
