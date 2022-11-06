@@ -1875,6 +1875,8 @@
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.62:0.36:0.72:0.29"] = 292, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, K3, Dun Nifflelem
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.52:0.34"] = 213, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, Crusaders' Pinnacle
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.59:0.43"] = 222, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, Windrunner's Overlook
+				["0.17:0.53:0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21:0.64:0.19"] = 294, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge, Ulduar
+				["0.17:0.53:0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21"] = 265, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge
 
 				-- Alliance: Borean Tundra: Fizzcrank Airstrip
 				["0.21:0.49:0.17:0.53"] = 45, -- Fizzcrank Airstrip, Amber Ledge
@@ -2187,7 +2189,7 @@
 				-- Alliance: Dalaran
 				["0.52:0.38:0.54:0.52"] = 122, -- Dalaran, Wyrmrest Temple
 				["0.52:0.38:0.59:0.43:0.60:0.52"] = 128, -- Dalaran, Windrunner's Overlook, Wintergarde Keep
-				["0.52:0.38:0.59:0.43:0.60:0.52:0.76:0.67:0.88:0.72"] = 317, -- Dalaran, Windrunner's Overlook, Wintergarde Keep, Westguard Keep, Valgarde Port
+				["0.52:0.38:0.59:0.43:0.60:0.52:0.76:0.67:0.88:0.72"] = 317, -- Dalaran, Windrunner's Overlook, Wintergarde Keep, Westguard Keep, Valgarde Port (Michael Khan reported 348)
 				["0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54"] = 199, -- Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
 				["0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46:0.88:0.60"] = 301, -- Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade, Fort Wildervar
 				["0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38"] = 185, -- Dalaran, Ebon Watch, The Argent Stand, Zim'Torga
@@ -2899,6 +2901,7 @@
 				["0.88:0.72:0.88:0.60:0.83:0.46:0.72:0.40:0.64:0.42:0.52:0.38"] = 368, -- Valgarde Port, Fort Wildervar, Westfall Brigade, The Argent Stand, Ebon Watch, Dalaran
 				["0.88:0.72:0.76:0.67:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.52:0.34:0.28:0.28"] = 508, -- Valgarde Port, Westguard Keep, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, Crusaders' Pinnacle, Death's Rise
 				["0.88:0.72:0.76:0.67:0.73:0.54:0.69:0.42:0.72:0.40:0.78:0.38:0.72:0.29"] = 378, -- Valgarde Port, Westguard Keep, Amberpine Lodge, Light's Breach, The Argent Stand, Zim'Torga, Dun Nifflelem
+				["0.88:0.72:0.76:0.67:0.73:0.54:0.69:0.42:0.72:0.40:0.78:0.38:0.64:0.19"] = 446, -- Valgarde Port, Westguard Keep, Amberpine Lodge, Light's Breach, The Argent Stand, Zim'Torga, Ulduar
 
 				-- Alliance: Howling Fjord: Westguard Keep
 				["0.76:0.67:0.74:0.71"] = 52, -- Westguard Keep, Kamagua
@@ -3009,6 +3012,7 @@
 				["0.52:0.34:0.41:0.43:0.24:0.40:0.21:0.49"] = 304, -- Crusaders' Pinnacle, Valiance Landing Camp, River's Heart, Fizzcrank Airstrip
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.22:0.61"] = 354, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest, Valiance Keep
 				["0.52:0.34:0.41:0.43:0.24:0.40:0.18:0.40"] = 277, -- Kreuzfahrerturm, Valianzlager, Flussnabel, Nesingwarys Basislager
+				["0.52:0.34:0.56:0.36:0.52:0.38:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 405, -- Kreuzfahrerturm, Die Argentumvorhut, Dalaran, Flussnabel, Landebahn Kurbelzisch, Bernsteinflöz, Transitusschild
 
 				-- Alliance: Icecrown: Death's Rise
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38"] = 238, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran
@@ -3553,6 +3557,7 @@
 				["0.64:0.19:0.57:0.33:0.62:0.36:0.64:0.42:0.60:0.52:0.76:0.67:0.74:0.71"] = 425, -- Ulduar, Frosthold, K3, Ebon Watch, Wintergarde Keep, Westguard Keep, Kamagua
 				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.29:0.57"] = 425, -- Ulduar, Frosthold, The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest, Unu'pe
 				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38:0.24:0.40:0.21:0.49:0.17:0.53"] = 471, -- Ulduar, Eisfestung, Die Argentumvorhut, Dalaran, Flussnabel, Landebahn Kurbelzisch, Bernsteinflöz
+				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38:0.49:0.58"] = 315, -- Ulduar, Frosthold, The Argent Vanguard, Dalaran, Moa'ki
 
 				----------------------------------------------------------------------
 				-- Alliance: Wintergrasp
