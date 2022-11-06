@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.50 (6th November 2022)
+-- 	Leatrix Plus 3.0.51.alpha.1 (6th November 2022)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.50"
+	LeaPlusLC["AddonVer"] = "3.0.51.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -39,6 +39,7 @@
 
 	-- Check for ElvUI
 	if IsAddOnLoaded("ElvUI") then LeaPlusLC.ElvUI = unpack(ElvUI) end
+	if IsAddOnLoaded("Glass") then LeaPlusLC.Glass = true end
 
 ----------------------------------------------------------------------
 --	L00: Leatrix Plus
@@ -8235,7 +8236,7 @@
 		--	Use class colors in chat
 		----------------------------------------------------------------------
 
-		if LeaPlusLC["ClassColorsInChat"] == "On" then
+		if LeaPlusLC["ClassColorsInChat"] == "On" and not LeaLockList["ClassColorsInChat"] then
 
 			SetCVar("chatClassColorOverride", "0")
 
@@ -9832,7 +9833,7 @@
 		-- Recent chat window
 		----------------------------------------------------------------------
 
-		if LeaPlusLC["RecentChatWindow"] == "On" then
+		if LeaPlusLC["RecentChatWindow"] == "On" and not LeaLockList["RecentChatWindow"] then
 
 			-- Create recent chat frame
 			local editFrame = CreateFrame("ScrollFrame", nil, UIParent, "InputScrollFrameTemplate")
@@ -11146,7 +11147,7 @@
 		--	Move chat editbox to top
 		----------------------------------------------------------------------
 
-		if LeaPlusLC["MoveChatEditBoxToTop"] == "On" then
+		if LeaPlusLC["MoveChatEditBoxToTop"] == "On" and not LeaLockList["MoveChatEditBoxToTop"] then
 
 			-- Set options for normal chat frames
 			for i = 1, 50 do
@@ -12786,6 +12787,27 @@
 				-- Start page
 				LeaPlusLC:LoadVarNum("LeaStartPage", 0, 0, LeaPlusLC["NumberOfPages"])
 
+				-- Disable items that conflict with Glass
+				if LeaPlusLC.Glass then
+
+					-- Function to disable and lock an option and add a note to the tooltip
+					local function LockOption(option)
+						LeaLockList[option] = LeaPlusLC[option]
+						LeaPlusLC:LockItem(LeaPlusCB[option], true)
+						LeaPlusCB[option].tiptext = LeaPlusCB[option].tiptext .. "|n|n|cff00AAFF" .. L["Cannot be used with Glass."]
+					end
+
+					LockOption("UseEasyChatResizing") -- Use easy resizing
+					LockOption("NoCombatLogTab") -- Hide the combat log
+					LockOption("NoChatButtons") -- Hide chat buttons
+					LockOption("UnclampChat") -- Unclamp chat frame
+					LockOption("MoveChatEditBoxToTop") -- Move editbox to top
+					LockOption("MoreFontSizes") --  More font sizes
+					LockOption("ClassColorsInChat") -- Use class colors in chat
+					LockOption("RecentChatWindow") -- Recent chat window
+
+				end
+
 				-- Disable items that conflict with ElvUI
 				if LeaPlusLC.ElvUI then
 					local E = LeaPlusLC.ElvUI
@@ -13226,7 +13248,7 @@
 
 		-- Use class colors
 		if LeaPlusDB["ClassColorsInChat"] == "On" then
-			if wipe or (not wipe and LeaPlusLC["ClassColorsInChat"] == "Off") then
+			if wipe or (not wipe and LeaPlusLC["ClassColorsInChat"] == "Off") and not LeaLockList["ClassColorsInChat"] then
 				-- Restore local channel color
 				for i = 1, 18 do
 					if _G["ChatConfigChatSettingsLeftCheckBox" .. i .. "Check"] then

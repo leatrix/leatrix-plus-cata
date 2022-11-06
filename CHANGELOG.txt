@@ -1,3 +1,6 @@
+3.0.51.alpha.1 - 6th November 2022
+- If you use the Glass addon, some chat settings will now be locked out of Leatrix Plus in order to ensure that the addon loads correctly.
+
 3.0.50 - 6th November 2022
 - For addon authors, the enhanced minimap combined button frame now has a global reference of LeaPlusGlobalMinimapCombinedButtonFrame.
 - Added flight times.
