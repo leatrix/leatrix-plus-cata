@@ -3132,7 +3132,7 @@
 				["0.38:0.21:0.28:0.28"] = 78, -- The Shadow Vault, Death's Rise
 				["0.38:0.21:0.64:0.19:0.78:0.38"] = 319, -- Das Schattengewölbe, Ulduar, Zim'Torga
 				["0.38:0.21:0.41:0.43"] = 141, -- The Shadow Vault, Valiance Landing Camp
-				["0.38:0.21:0.52:0.38:0.62:0.36:0.72:0.29"] = 336, -- The Shadow Vault, Dalaran, K3, Dun Nifflelem
+				["0.38:0.21:0.52:0.38:0.62:0.36:0.72:0.29"] = 336, -- The Shadow Vault, Dalaran, K3, Dun Nifflelem (Robin Nyzell reported 310)
 				["0.38:0.21:0.46:0.46:0.60:0.52:0.76:0.67:0.88:0.72"] = 465, -- The Shadow Vault, Fordragon Hold, Wintergarde Keep, Westguard Keep, Valgarde Port
 				["0.38:0.21:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 335, -- The Shadow Vault, River's Heart, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
 				["0.38:0.21:0.52:0.38:0.46:0.46:0.42:0.53:0.22:0.61"] = 456, -- The Shadow Vault, Dalaran, Fordragon Hold, Stars' Rest, Valiance Keep
@@ -3504,6 +3504,7 @@
 				["0.62:0.36:0.57:0.33:0.64:0.19:0.78:0.38:0.82:0.31"] = 346, -- K3, Frosthold, Ulduar, Zim'Torga, Gundrak
 				["0.62:0.36:0.52:0.38:0.46:0.46"] = 161, -- K3, Dalaran, Fordragon Hold
 				["0.62:0.36:0.59:0.43:0.60:0.52:0.73:0.54"] = 200, -- K3, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
+				["0.62:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.22:0.61"] = 362, -- K3, Dalaran, Fordragon Hold, Stars' Rest, Valiance Keep
 
 				-- Alliance: The Storm Peaks: Ulduar
 				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38"] = 167, -- Ulduar, Frosthold, The Argent Vanguard, Dalaran
@@ -3768,6 +3769,7 @@
 				["0.69:0.42:0.64:0.42:0.52:0.38:0.56:0.36:0.38:0.21"] = 274, -- Light's Breach, Ebon Watch, Dalaran, The Argent Vanguard, The Shadow Vault
 				["0.69:0.42:0.64:0.42:0.62:0.36:0.57:0.33:0.57:0.21"] = 188, -- Light's Breach, Ebon Watch, K3, Frosthold, Bouldercrag's Refuge
 				["0.69:0.42:0.64:0.42:0.52:0.38:0.24:0.40:0.18:0.40"] = 340, -- Light's Breach, Ebon Watch, Dalaran, River's Heart, Nesingwary Base Camp
+				["0.69:0.42:0.60:0.52:0.59:0.43:0.62:0.36"] = 194, -- Light's Breach, Wintergarde Keep, Windrunner's Overlook, K3
 
 				-- Alliance: Zul'Drak: The Argent Stand
 				["0.72:0.40:0.78:0.38"] = 42, -- The Argent Stand, Zim'Torga

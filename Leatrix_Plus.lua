@@ -12803,6 +12803,7 @@
 					LockOption("UnclampChat") -- Unclamp chat frame
 					LockOption("MoveChatEditBoxToTop") -- Move editbox to top
 					LockOption("MoreFontSizes") --  More font sizes
+					LockOption("NoChatFade") --  Disable chat fade
 					LockOption("ClassColorsInChat") -- Use class colors in chat
 					LockOption("RecentChatWindow") -- Recent chat window
 
