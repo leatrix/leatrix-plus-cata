@@ -1,3 +1,6 @@
+3.0.52.alpha.1 - 8th November 2022
+- Added flight times.
+
 3.0.51 - 7th November 2022
 - If you use the Glass addon, some chat settings will now be locked out of Leatrix Plus in order to ensure that the addon loads correctly.
 - Added flight times.
