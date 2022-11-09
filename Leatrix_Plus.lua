@@ -12795,6 +12795,12 @@
 						LeaLockList[option] = LeaPlusLC[option]
 						LeaPlusLC:LockItem(LeaPlusCB[option], true)
 						LeaPlusCB[option].tiptext = LeaPlusCB[option].tiptext .. "|n|n|cff00AAFF" .. L["Cannot be used with Glass."]
+						-- Remove hover from configuration button if there is one
+						local temp = {LeaPlusCB[option]:GetChildren()}
+						if temp and temp[1] and temp[1].t and temp[1].t:GetTexture() == "Interface\\WorldMap\\Gear_64.png" then
+							temp[1]:SetHighlightTexture("")
+							temp[1]:SetScript("OnEnter", nil)
+						end
 					end
 
 					LockOption("UseEasyChatResizing") -- Use easy resizing
