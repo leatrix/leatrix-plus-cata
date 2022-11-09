@@ -12823,6 +12823,12 @@
 							else
 								LeaPlusCB[option].tiptext = LeaPlusCB[option].tiptext .. "|n|n|cff00AAFF" .. L["Cannot be used with ElvUI"] .. " " .. L[emodule] .. " " .. L["module"] .. "."
 							end
+							-- Remove hover from configuration button if there is one
+							local temp = {LeaPlusCB[option]:GetChildren()}
+							if temp and temp[1] and temp[1].t and temp[1].t:GetTexture() == "Interface\\WorldMap\\Gear_64.png" then
+								temp[1]:SetHighlightTexture("")
+								temp[1]:SetScript("OnEnter", nil)
+							end
 						end
 
 						-- Chat
