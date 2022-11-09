@@ -1200,6 +1200,7 @@
 				["0.42:0.16:0.43:0.25:0.31:0.69:0.48:0.70"] = 712, -- Rut'theran Village, Auberdine, Feathermoon, Thalanaar
 				["0.42:0.16:0.43:0.25:0.46:0.40:0.61:0.55:0.60:0.81:0.50:0.76"] = 790, -- Rut'theran Village, Auberdine, Astranaar, Ratchet, Gadgetzan, Marshal's Refuge
 				["0.42:0.16:0.43:0.25:0.31:0.69:0.48:0.70:0.60:0.81:0.50:0.76"] = 986, -- Rut'theran Village, Auberdine, Feathermoon, Thalanaar, Gadgetzan, Marshal's Refuge
+				["0.42:0.16:0.43:0.25:0.61:0.40:0.61:0.55"] = 521, -- Rut'theran Village, Auberdine, Talrendis Point, Ratchet
 
 				-- Alliance: Stonetalon Peak (Stonetalon Mountains)
 				["0.39:0.40:0.40:0.51:0.31:0.69"] = 359, -- Stonetalon Peak, Nijel's Point, Feathermoon
@@ -1879,6 +1880,7 @@
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.59:0.43"] = 222, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, Windrunner's Overlook
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21:0.64:0.19"] = 294, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge, Ulduar
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21"] = 265, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge
+				["0.17:0.53:0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.73:0.54"] = 268, -- Amber Ledge, Valiance Keep, Unu'pe, Moa'ki, Wintergarde Keep, Amberpine Lodge
 
 				-- Alliance: Borean Tundra: Fizzcrank Airstrip
 				["0.21:0.49:0.17:0.53"] = 45, -- Fizzcrank Airstrip, Amber Ledge
@@ -2550,6 +2552,7 @@
 				["0.60:0.52:0.59:0.43:0.52:0.38:0.56:0.36"] = 140, -- Feste Wintergarde, Windläufers Warte, Dalaran, Die Argentumvorhut
 				["0.60:0.52:0.46:0.46:0.41:0.43:0.28:0.28"] = 321, -- Wintergarde Keep, Fordragon Hold, Valiance Landing Camp, Death's Rise
 				["0.60:0.52:0.64:0.42:0.72:0.40:0.78:0.38:0.82:0.31"] = 221, -- Wintergarde Keep, Ebon Watch, The Argent Stand, Zim'Torga, Gundrak
+				["0.60:0.52:0.54:0.52:0.52:0.38:0.52:0.34:0.38:0.21"] = 298, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, Crusaders' Pinnacle, The Shadow Vault
 
 				-- Alliance: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.60:0.52"] = 36, -- Wyrmrest Temple, Wintergarde Keep
@@ -3020,6 +3023,7 @@
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 405, -- Kreuzfahrerturm, Die Argentumvorhut, Dalaran, Flussnabel, Landebahn Kurbelzisch, Bernsteinflöz, Transitusschild
 				["0.52:0.34:0.41:0.43:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 384, -- Crusaders' Pinnacle, Valiance Landing Camp, River's Heart, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46"] = 264, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade
+				["0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42"] = 130, -- Вершина Рыцарей, Оплот Серебряного Авангарда, Даларан, Черная застава
 
 				-- Alliance: Icecrown: Death's Rise
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38"] = 238, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran
