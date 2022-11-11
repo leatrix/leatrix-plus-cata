@@ -1932,6 +1932,7 @@
 				["0.21:0.49:0.42:0.53:0.49:0.58:0.74:0.71:0.88:0.72"] = 464, -- Fizzcrank Airstrip, Stars' Rest, Moa'ki, Kamagua, Valgarde Port
 				["0.21:0.49:0.42:0.53:0.60:0.52:0.69:0.42:0.72:0.40"] = 378, -- Fizzcrank Airstrip, Stars' Rest, Wintergarde Keep, Light's Breach, The Argent Stand
 				["0.21:0.49:0.24:0.40:0.52:0.38:0.56:0.36:0.57:0.33:0.64:0.19"] = 415, -- Fizzcrank Airstrip, River's Heart, Dalaran, The Argent Vanguard, Frosthold, Ulduar
+				["0.21:0.49:0.24:0.40:0.52:0.38:0.52:0.34"] = 285, -- Fizzcrank Airstrip, River's Heart, Dalaran, Crusaders' Pinnacle
 
 				-- Alliance: Borean Tundra: Transitus Shield (Coldarra)
 				["0.12:0.53:0.17:0.53:0.21:0.49:0.24:0.40"] = 95, -- Transitus Shield, Amber Ledge, Fizzcrank Airstrip, River's Heart
@@ -2783,6 +2784,7 @@
 				["0.88:0.60:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.52:0.34"] = 293, -- Fort Wildervar, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, Crusaders' Pinnacle
 				["0.88:0.60:0.83:0.46:0.72:0.40:0.64:0.42:0.52:0.38:0.49:0.58"] = 444, -- Fort Wildervar, Westfall Brigade, The Argent Stand, Ebon Watch, Dalaran, Moa'ki
 				["0.88:0.60:0.83:0.46:0.72:0.40:0.64:0.42:0.46:0.46"] = 342, -- Fort Wildervar, Westfall Brigade, The Argent Stand, Ebon Watch, Fordragon Hold
+				["0.88:0.60:0.76:0.67:0.60:0.52:0.59:0.43:0.52:0.38"] = 342, -- Fort Wildervar, Westguard Keep, Wintergarde Keep, Windrunner's Overlook, Dalaran
 
 				-- Alliance: Howling Fjord: Kamagua
 				["0.74:0.71:0.76:0.67"] = 37, -- Kamagua, Westguard Keep
@@ -3190,6 +3192,7 @@
 				["0.38:0.21:0.46:0.46:0.60:0.52:0.76:0.67:0.74:0.71"] = 446, -- Das Schattengewölbe, Feste Fordragon, Feste Wintergarde, Westwacht, Kamagua
 				["0.38:0.21:0.64:0.19:0.78:0.38:0.83:0.46"] = 375, -- The Shadow Vault, Ulduar, Zim'Torga, Westfall Brigade
 				["0.38:0.21:0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38"] = 336, -- The Shadow Vault, Dalaran, Ebon Watch, The Argent Stand, Zim'Torga
+				["0.38:0.21:0.24:0.40:0.21:0.49:0.29:0.57"] = 320, -- The Shadow Vault, River's Heart, Fizzcrank Airstrip, Unu'pe
 
 				----------------------------------------------------------------------
 				-- Alliance: Sholazar Basin
@@ -3523,6 +3526,7 @@
 				["0.62:0.36:0.52:0.38:0.46:0.46"] = 161, -- K3, Dalaran, Fordragon Hold
 				["0.62:0.36:0.59:0.43:0.60:0.52:0.73:0.54"] = 200, -- K3, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
 				["0.62:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.22:0.61"] = 362, -- K3, Dalaran, Fordragon Hold, Stars' Rest, Valiance Keep
+				["0.62:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.22:0.61:0.17:0.53:0.12:0.53"] = 460, -- K3, Dalaran, Fordragon Hold, Stars' Rest, Valiance Keep, Amber Ledge, Transitus Shield
 
 				-- Alliance: The Storm Peaks: Ulduar
 				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38"] = 167, -- Ulduar, Frosthold, The Argent Vanguard, Dalaran

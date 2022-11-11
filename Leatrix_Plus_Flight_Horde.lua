@@ -1850,6 +1850,7 @@
 				["0.12:0.53:0.17:0.53:0.29:0.54:0.45:0.51:0.49:0.58:0.52:0.38"] = 259, -- Transitus Shield, Amber Ledge, Taunka'le Village, Agmar's Hammer, Moa'ki, Dalaran
 				["0.12:0.53:0.17:0.53:0.18:0.47:0.24:0.40:0.28:0.28:0.38:0.21:0.57:0.21:0.64:0.19"] = 319, -- Transitus Shield, Amber Ledge, Bor'gorok Outpost, River's Heart, Death's Rise, The Shadow Vault, Bouldercrag's Refuge, Ulduar
 				["0.12:0.53:0.17:0.53:0.29:0.54:0.29:0.57:0.49:0.58:0.52:0.38"] = 257, -- Transitus Shield, Amber Ledge, Taunka'le Village, Unu'pe, Moa'ki, Dalaran
+				["0.12:0.53:0.17:0.53:0.29:0.54:0.31:0.43:0.24:0.40"] = 175, -- Transitus Shield, Amber Ledge, Taunka'le Village, Warsong Camp, River's Heart
 
 				-- Horde: Borean Tundra: Unu'pe
 				["0.29:0.57:0.29:0.54"] = 22, -- Unu'pe, Taunka'le Village
@@ -2587,6 +2588,7 @@
 				["0.74:0.62:0.74:0.71:0.49:0.58:0.52:0.38"] = 371, -- Apothecary Camp, Kamagua, Moa'ki, Dalaran
 				["0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.62:0.36:0.60:0.25"] = 281, -- Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, K3, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.62:0.36"] = 206, -- Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, K3
+				["0.74:0.62:0.70:0.55:0.84:0.51"] = 148, -- Apothecary Camp, Conquest Hold, Camp Oneqwah
 
 				-- Horde: Howling Fjord: Camp Oneqwah
 				["0.84:0.51:0.84:0.59"] = 49, -- Camp Oneqwah, Camp Winterhoof
@@ -2928,6 +2930,7 @@
 				["0.28:0.28:0.31:0.43:0.45:0.51:0.54:0.52"] = 262, -- Death's Rise, Warsong Camp, Agmar's Hammer, Wyrmrest Temple
 				["0.28:0.28:0.38:0.21:0.57:0.21:0.64:0.19:0.73:0.25"] = 347, -- Death's Rise, The Shadow Vault, Bouldercrag's Refuge, Ulduar, Camp Tunka'lo
 				["0.28:0.28:0.31:0.43:0.29:0.54:0.17:0.53:0.12:0.53"] = 305, -- Death's Rise, Warsong Camp, Taunka'le Village, Amber Ledge, Transitus Shield
+				["0.28:0.28:0.31:0.43:0.45:0.51"] = 215, -- Death's Rise, Warsong Camp, Agmar's Hammer
 
 				-- Horde: Icecrown: The Argent Vanguard
 				["0.56:0.36:0.52:0.38"] = 32, -- The Argent Vanguard, Dalaran
