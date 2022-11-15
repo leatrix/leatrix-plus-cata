@@ -2,11 +2,16 @@
 -- L00: Leatrix Plus Library
 ----------------------------------------------------------------------
 
+-- LibDBIcon 10.0.1:
 -- 11: LibStub: (?s)-- LibStubStart\R?\K.*?(?=-- LibStubEnd)
 -- 12: LibCallbackHandler: (?s)-- CallbackStart\R?\K.*?(?=-- CallbackEnd)
 -- 13: LibDataBroker: (?s)-- DataBrokerStart\R?\K.*?(?=-- DataBrokerEnd)
 -- 14: LibDBIcon: (?s)-- LibDBIconStart\R?\K.*?(?=-- LibDBIconEnd)
--- 15: LibChatAnims: r41: (?s)-- LibChatAnimsStart\R?\K.*?(?=-- LibChatAnimsEnd)
+
+-- LibChatAnims 10.0.1:
+-- 15: LibChatAnims: (?s)-- LibChatAnimsStart\R?\K.*?(?=-- LibChatAnimsEnd)
+
+-- LibCandyBar 10.0.1:
 -- 16: LibCandyBar: (?s)-- LibCandyBarStart\R?\K.*?(?=-- LibCandyBarEnd)
 
 local void, Leatrix_Plus = ...
@@ -30,23 +35,23 @@ if not LibStub or LibStub.minor < LIBSTUB_MINOR then
 	LibStub = LibStub or {libs = {}, minors = {} }
 	_G[LIBSTUB_MAJOR] = LibStub
 	LibStub.minor = LIBSTUB_MINOR
-
+	
 	-- LibStub:NewLibrary(major, minor)
 	-- major (string) - the major version of the library
 	-- minor (string or number ) - the minor version of the library
-	--
+	-- 
 	-- returns nil if a newer or same version of the lib is already present
 	-- returns empty library object or old library object if upgrade is needed
 	function LibStub:NewLibrary(major, minor)
 		assert(type(major) == "string", "Bad argument #2 to `NewLibrary' (string expected)")
 		minor = assert(tonumber(strmatch(minor, "%d+")), "Minor version must either be a number or contain a number.")
-
+		
 		local oldminor = self.minors[major]
 		if oldminor and oldminor >= minor then return nil end
 		self.minors[major], self.libs[major] = minor, self.libs[major] or {}
 		return self.libs[major], oldminor
 	end
-
+	
 	-- LibStub:GetLibrary(major, [silent])
 	-- major (string) - the major version of the library
 	-- silent (boolean) - if true, library is optional, silently return nil if its not found
@@ -59,14 +64,14 @@ if not LibStub or LibStub.minor < LIBSTUB_MINOR then
 		end
 		return self.libs[major], self.minors[major]
 	end
-
+	
 	-- LibStub:IterateLibraries()
-	--
+	-- 
 	-- Returns an iterator for the currently registered libraries
-	function LibStub:IterateLibraries()
-		return pairs(self.libs)
+	function LibStub:IterateLibraries() 
+		return pairs(self.libs) 
 	end
-
+	
 	setmetatable(LibStub, { __call = LibStub.GetLibrary })
 end
 -- LibStubEnd
@@ -407,7 +412,7 @@ LeaDataBroker()
 local function LeaLibDBIcon()
 
 -- LibDBIconStart
-
+--@curseforge-project-slug: libdbicon-1-0@
 -----------------------------------------------------------------------
 -- LibDBIcon-1.0
 --
@@ -415,7 +420,7 @@ local function LeaLibDBIcon()
 --
 
 local DBICON10 = "LibDBIcon-1.0"
-local DBICON10_MINOR = 44 -- Bump on changes
+local DBICON10_MINOR = 45 -- Bump on changes
 if not LibStub then error(DBICON10 .. " requires LibStub.") end
 local ldb = LibStub("LibDataBroker-1.1", true)
 if not ldb then error(DBICON10 .. " requires LibDataBroker-1.1.") end
@@ -627,37 +632,49 @@ local function createButton(name, object, db)
 	button.dataObject = object
 	button.db = db
 	button:SetFrameStrata("MEDIUM")
-	if button.SetFixedFrameStrata then -- Classic support
-		button:SetFixedFrameStrata(true)
-	end
+	button:SetFixedFrameStrata(true)
 	button:SetFrameLevel(8)
-	if button.SetFixedFrameLevel then -- Classic support
-		button:SetFixedFrameLevel(true)
-	end
+	button:SetFixedFrameLevel(true)
 	button:SetSize(31, 31)
 	button:RegisterForClicks("anyUp")
 	button:RegisterForDrag("LeftButton")
 	button:SetHighlightTexture(136477) --"Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight"
-	local overlay = button:CreateTexture(nil, "OVERLAY")
-	overlay:SetSize(53, 53)
-	overlay:SetTexture(136430) --"Interface\\Minimap\\MiniMap-TrackingBorder"
-	overlay:SetPoint("TOPLEFT")
-	local background = button:CreateTexture(nil, "BACKGROUND")
-	background:SetSize(20, 20)
-	background:SetTexture(136467) --"Interface\\Minimap\\UI-Minimap-Background"
-	background:SetPoint("TOPLEFT", 7, -5)
-	local icon = button:CreateTexture(nil, "ARTWORK")
-	icon:SetSize(17, 17)
-	icon:SetTexture(object.icon)
-	icon:SetPoint("TOPLEFT", 7, -6)
-	button.icon = icon
+	if WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+		local overlay = button:CreateTexture(nil, "OVERLAY")
+		overlay:SetSize(50, 50)
+		overlay:SetTexture(136430) --"Interface\\Minimap\\MiniMap-TrackingBorder"
+		overlay:SetPoint("TOPLEFT", button, "TOPLEFT", 0, 0)
+		local background = button:CreateTexture(nil, "BACKGROUND")
+		background:SetSize(24, 24)
+		background:SetTexture(136467) --"Interface\\Minimap\\UI-Minimap-Background"
+		background:SetPoint("CENTER", button, "CENTER", 0, 1)
+		local icon = button:CreateTexture(nil, "ARTWORK")
+		icon:SetSize(18, 18)
+		icon:SetTexture(object.icon)
+		icon:SetPoint("CENTER", button, "CENTER", 0, 1)
+		button.icon = icon
+	else
+		local overlay = button:CreateTexture(nil, "OVERLAY")
+		overlay:SetSize(53, 53)
+		overlay:SetTexture(136430) --"Interface\\Minimap\\MiniMap-TrackingBorder"
+		overlay:SetPoint("TOPLEFT")
+		local background = button:CreateTexture(nil, "BACKGROUND")
+		background:SetSize(20, 20)
+		background:SetTexture(136467) --"Interface\\Minimap\\UI-Minimap-Background"
+		background:SetPoint("TOPLEFT", 7, -5)
+		local icon = button:CreateTexture(nil, "ARTWORK")
+		icon:SetSize(17, 17)
+		icon:SetTexture(object.icon)
+		icon:SetPoint("TOPLEFT", 7, -6)
+		button.icon = icon
+	end
+
 	button.isMouseDown = false
+	local r, g, b = button.icon:GetVertexColor()
+	button.icon:SetVertexColor(object.iconR or r, object.iconG or g, object.iconB or b)
 
-	local r, g, b = icon:GetVertexColor()
-	icon:SetVertexColor(object.iconR or r, object.iconG or g, object.iconB or b)
-
-	icon.UpdateCoord = updateCoord
-	icon:UpdateCoord()
+	button.icon.UpdateCoord = updateCoord
+	button.icon:UpdateCoord()
 
 	button:SetScript("OnEnter", onEnter)
 	button:SetScript("OnLeave", onLeave)
@@ -896,7 +913,7 @@ LeaLibDBIcon()
 function Leatrix_Plus:LeaPlusLCA()
 
 -- LibChatAnimsStart
-
+--@curseforge-project-slug: libchatanims@
 local MAJOR, MINOR = "LibChatAnims", 4 -- Bump minor on changes
 local LCA = LibStub:NewLibrary(MAJOR, MINOR)
 if not LCA then return end -- No upgrade needed
@@ -1149,7 +1166,7 @@ end
 function Leatrix_Plus:LeaPlusCandyBar()
 
 -- LibCandyBarStart
-
+--@curseforge-project-slug: libcandybar-3-0@
 --- **LibCandyBar-3.0** provides elegant timerbars with icons for use in addons.
 -- It is based of the original ideas of the CandyBar and CandyBar-2.0 library.
 -- In contrary to the earlier libraries LibCandyBar-3.0 provides you with a timerbar object with a simple API.
@@ -1172,7 +1189,7 @@ local CreateFrame, error, setmetatable, UIParent = CreateFrame, error, setmetata
 if not LibStub then error("LibCandyBar-3.0 requires LibStub.") end
 local cbh = LibStub:GetLibrary("CallbackHandler-1.0")
 if not cbh then error("LibCandyBar-3.0 requires CallbackHandler-1.0") end
-local lib = LibStub:NewLibrary("LibCandyBar-3.0", 99) -- Bump minor on changes
+local lib = LibStub:NewLibrary("LibCandyBar-3.0", 100) -- Bump minor on changes
 if not lib then return end
 lib.callbacks = lib.callbacks or cbh:New(lib)
 local cb = lib.callbacks
@@ -1586,20 +1603,20 @@ function lib:New(texture, width, height)
 		bg:SetAllPoints()
 		bar.candyBarBackground = bg
 
-		local backdrop = CreateFrame("Frame", nil, bar, BackdropTemplateMixin and "BackdropTemplate") -- Used by bar stylers for backdrops
+		local backdrop = CreateFrame("Frame", nil, bar, "BackdropTemplate") -- Used by bar stylers for backdrops
 		backdrop:SetFrameLevel(0)
 		bar.candyBarBackdrop = backdrop
 
-		local iconBackdrop = CreateFrame("Frame", nil, bar, BackdropTemplateMixin and "BackdropTemplate") -- Used by bar stylers for backdrops
+		local iconBackdrop = CreateFrame("Frame", nil, bar, "BackdropTemplate") -- Used by bar stylers for backdrops
 		iconBackdrop:SetFrameLevel(0)
 		bar.candyBarIconFrameBackdrop = iconBackdrop
 
-		local duration = statusbar:CreateFontString(nil, "OVERLAY", GameFontHighlightSmallOutline)
+		local duration = statusbar:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmallOutline")
 		duration:SetPoint("TOPLEFT", statusbar, "TOPLEFT", 2, 0)
 		duration:SetPoint("BOTTOMRIGHT", statusbar, "BOTTOMRIGHT", -2, 0)
 		bar.candyBarDuration = duration
 
-		local label = statusbar:CreateFontString(nil, "OVERLAY", GameFontHighlightSmallOutline)
+		local label = statusbar:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmallOutline")
 		label:SetPoint("TOPLEFT", statusbar, "TOPLEFT", 2, 0)
 		label:SetPoint("BOTTOMRIGHT", statusbar, "BOTTOMRIGHT", -2, 0)
 		bar.candyBarLabel = label
