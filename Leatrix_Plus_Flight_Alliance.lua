@@ -377,7 +377,7 @@
 				["0.55:0.81:0.52:0.72:0.47:0.65:0.47:0.59:0.61:0.35"] = 664, -- Nethergarde Keep, Morgan's Vigil, Thorium Point, Ironforge, Light's Hope Chapel
 				["0.55:0.81:0.52:0.72:0.47:0.65:0.47:0.59:0.61:0.35:0.61:0.28"] = 763, -- Nethergarde Keep, Morgan's Vigil, Thorium Point, Ironforge, Light's Hope Chapel, Zul'Aman
 				["0.55:0.81:0.47:0.79:0.41:0.93"] = 262, -- Nethergarde Keep, Darkshire, Booty Bay
-				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.59:0.45:0.56"] = 451, -- Nethergarde Keep, Darkshire, Stormwind, Ironforge, Menethil Harbor (Nick de Vaan and Justin Chinn reported 150)
+				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.59:0.45:0.56"] = 451, -- Nethergarde Keep, Darkshire, Stormwind, Ironforge, Menethil Harbor (IJ, Nick de Vaan and Justin Chinn reported 150)
 				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.65:0.53:0.61:0.51:0.47:0.50:0.42"] = 611, -- Nethergarde Keep, Darkshire, Stormwind, Thorium Point, Thelsamar, Refuge Pointe, Aerie Peak
 				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.59:0.48:0.39"] = 594, -- Nethergarde Keep, Darkshire, Stormwind, Ironforge, Chillwind Camp
 				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.65"] = 298, -- Nethergarde Keep, Darkshire, Stormwind, Thorium Point
@@ -670,6 +670,7 @@
 				["0.47:0.65:0.47:0.59:0.48:0.39:0.51:0.36"] = 355, -- Thorium Point, Ironforge, Chillwind Camp, Thondroril River
 				["0.47:0.65:0.47:0.59:0.61:0.35:0.62:0.34"] = 463, -- Thorium Point, Ironforge, Light's Hope Chapel, Acherus: The Ebon Hold
 				["0.47:0.65:0.47:0.59:0.44:0.45:0.50:0.42"] = 330, -- Thorium Point, Ironforge, Southshore, Aerie Peak
+				["0.47:0.65:0.47:0.59:0.51:0.47:0.50:0.42"] = 322, -- Thoriumspitze, Eisenschmiede, Die Zuflucht, Nistgipfel
 
 				-- Alliance: Zul'Aman (Ghostlands)
 				["0.61:0.28:0.61:0.35:0.47:0.59:0.47:0.65:0.41:0.73"] = 631, -- Zul'Aman, Light's Hope Chapel, Ironforge, Thorium Point, Stormwind
@@ -921,6 +922,7 @@
 				["0.31:0.69:0.43:0.25:0.64:0.67:0.60:0.81:0.50:0.76"] = 1167, -- Feathermoon, Auberdine, Theramore, Gadgetzan, Marshal's Refuge
 				["0.31:0.69:0.40:0.51:0.39:0.40:0.46:0.40:0.58:0.39"] = 634, -- Feathermoon, Nijel's Point, Stonetalon Peak, Astranaar, Forest Song
 				["0.31:0.69:0.48:0.70:0.64:0.67:0.61:0.40:0.58:0.39:0.50:0.35"] = 678, -- Feathermoon, Thalanaar, Theramore, Talrendis Point, Forest Song, Emerald Sanctuary
+				["0.31:0.69:0.43:0.25:0.46:0.40"] = 635, -- Feathermoon, Auberdine, Astranaar
 
 				-- Alliance: Forest Song (Ashenvale)
 				["0.58:0.39:0.61:0.40:0.61:0.55:0.64:0.67:0.48:0.70:0.31:0.69"] = 602, -- Forest Song, Talrendis Point, Ratchet, Theramore, Thalanaar, Feathermoon
@@ -2351,6 +2353,7 @@
 				["0.52:0.38:0.49:0.58:0.42:0.53:0.22:0.61:0.17:0.53:0.12:0.53"] = 438, -- Dalaran, Moa'ki, Stars' Rest, Valiance Keep, Amber Ledge, Transitus Shield
 				["0.52:0.38:0.46:0.46:0.60:0.52:0.73:0.54:0.88:0.60"] = 372, -- Dalaran, Fordragon Hold, Wintergarde Keep, Amberpine Lodge, Fort Wildervar
 				["0.52:0.38:0.62:0.36:0.72:0.29:0.78:0.38:0.72:0.40:0.69:0.42:0.73:0.54"] = 403, -- Dalaran, K3, Dun Nifflelem, Zim'Torga, The Argent Stand, Light's Breach, Amberpine Lodge
+				["0.52:0.38:0.54:0.52:0.60:0.52:0.69:0.42:0.72:0.40:0.83:0.46"] = 365, -- Dalaran, Wyrmruhtempel, Feste Wintergarde, Lichtbresche, Argentumwache, Westfallbrigade
 
 				----------------------------------------------------------------------
 				-- Alliance: Dragonblight
@@ -2560,6 +2563,7 @@
 				["0.60:0.52:0.46:0.46:0.41:0.43:0.28:0.28"] = 321, -- Wintergarde Keep, Fordragon Hold, Valiance Landing Camp, Death's Rise
 				["0.60:0.52:0.64:0.42:0.72:0.40:0.78:0.38:0.82:0.31"] = 221, -- Wintergarde Keep, Ebon Watch, The Argent Stand, Zim'Torga, Gundrak
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.52:0.34:0.38:0.21"] = 298, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, Crusaders' Pinnacle, The Shadow Vault
+				["0.60:0.52:0.69:0.42:0.72:0.40:0.83:0.46"] = 202, -- Feste Wintergarde, Lichtbresche, Argentumwache, Westfallbrigade
 
 				-- Alliance: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.60:0.52"] = 36, -- Wyrmrest Temple, Wintergarde Keep
@@ -2733,6 +2737,8 @@
 				["0.83:0.46:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.24:0.40"] = 447, -- Westfall Brigade, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, River's Heart
 				["0.83:0.46:0.72:0.40:0.64:0.42:0.46:0.46:0.41:0.43"] = 304, -- Westfall Brigade, The Argent Stand, Ebon Watch, Fordragon Hold, Valiance Landing Camp
 				["0.83:0.46:0.72:0.40:0.64:0.42:0.52:0.38:0.52:0.34:0.28:0.28"] = 394, -- Westfall Brigade, The Argent Stand, Ebon Watch, Dalaran, Crusaders' Pinnacle, Death's Rise
+				["0.83:0.46:0.72:0.40:0.69:0.42:0.60:0.52:0.54:0.52:0.52:0.38"] = 328, -- Westfallbrigade, Argentumwache, Lichtbresche, Feste Wintergarde, Wyrmruhtempel, Dalaran
+				["0.83:0.46:0.72:0.40:0.69:0.42:0.60:0.52"] = 188, -- Westfallbrigade, Argentumwache, Lichtbresche, Feste Wintergarde
 
 				----------------------------------------------------------------------
 				-- Alliance: Howling Fjord
@@ -3422,6 +3428,7 @@
 				["0.72:0.29:0.62:0.36:0.57:0.33:0.56:0.36:0.38:0.21"] = 311, -- Dun Nifflelem, K3, Frosthold, The Argent Vanguard, The Shadow Vault
 				["0.72:0.29:0.62:0.36:0.52:0.38:0.46:0.46"] = 248, -- Dun Nifflelem, K3, Dalaran, Fordragon Hold
 				["0.72:0.29:0.78:0.38:0.83:0.46:0.73:0.54:0.76:0.67:0.88:0.72"] = 374, -- Dun Nifflelem, Zim'Torga, Westfall Brigade, Amberpine Lodge, Westguard Keep, Valgarde Port
+				["0.72:0.29:0.64:0.19:0.57:0.33"] = 187, -- Dun Nifflelem, Ulduar, Frosthold
 
 				-- Alliance: The Storm Peaks: Frosthold
 				["0.57:0.33:0.56:0.36:0.52:0.34"] = 61, -- Frosthold, The Argent Vanguard, Crusaders' Pinnacle
@@ -3479,6 +3486,7 @@
 				["0.57:0.33:0.64:0.19:0.78:0.38:0.82:0.31"] = 304, -- Frosthold, Ulduar, Zim'Torga, Gundrak
 				["0.57:0.33:0.62:0.36:0.64:0.42:0.72:0.40:0.83:0.46"] = 226, -- Frosthold, K3, Ebon Watch, The Argent Stand, Westfall Brigade
 				["0.57:0.33:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Frosthold, The Argent Vanguard, Dalaran, Wyrmrest Temple
+				["0.57:0.33:0.56:0.36:0.52:0.38:0.64:0.42:0.60:0.52:0.76:0.67"] = 311, -- Eisfestung, Die Argentumvorhut, Dalaran, Schwarze Wacht, Feste Wintergarde, Westwacht
 
 				-- Alliance: The Storm Peaks: K3
 				["0.62:0.36:0.57:0.33"] = 43, -- K3, Frosthold
