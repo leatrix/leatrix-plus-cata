@@ -2068,6 +2068,7 @@
 				["0.29:0.57:0.21:0.49:0.24:0.40:0.28:0.28"] = 227, -- Unu'pe, Fizzcrank Airstrip, River's Heart, Death's Rise
 				["0.29:0.57:0.42:0.53:0.60:0.52:0.76:0.67:0.74:0.71"] = 388, -- Unu'pe, Stars' Rest, Wintergarde Keep, Westguard Keep, Kamagua
 				["0.29:0.57:0.42:0.53:0.41:0.43:0.38:0.21"] = 321, -- Unu'pe, Stars' Rest, Valiance Landing Camp, The Shadow Vault
+				["0.29:0.57:0.42:0.53:0.41:0.43:0.52:0.38"] = 251, -- Unu'pe, Stars' Rest, Valiance Landing Camp, Dalaran
 
 				-- Alliance: Borean Tundra: Valiance Keep
 				["0.22:0.61:0.29:0.57:0.49:0.58:0.74:0.71"] = 365, -- Valiance Keep, Unu'pe, Moa'ki, Kamagua

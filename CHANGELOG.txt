@@ -1,3 +1,6 @@
+3.0.56 - 16th November 2022
+- Fixed the profession frames.
+
 3.0.55 - 16th November 2022
 - Due to problems with Blizzard's code in Wrath of the Lich King Classic, the taller quest log setting (part of 'Enhance quest log') has been removed.
 - Updated LibDBIcon, LibChatAnims and LibCandyBar.

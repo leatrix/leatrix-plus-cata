@@ -3393,6 +3393,7 @@
 				["0.62:0.36:0.64:0.42:0.54:0.52:0.49:0.58:0.29:0.57"] = 318, -- K3, Ebon Watch, Wyrmrest Temple, Moa'ki, Unu'pe
 				["0.62:0.36:0.52:0.38:0.24:0.40:0.18:0.47"] = 326, -- K3, Dalaran, River's Heart, Bor'gorok Outpost
 				["0.62:0.36:0.52:0.38:0.54:0.52"] = 183, -- K3, Dalaran, Wyrmruhtempel
+				["0.62:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54:0.29:0.57"] = 325, -- K3, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Unu'pe
 
 				-- Horde: The Storm Peaks: Ulduar
 				["0.64:0.19:0.73:0.25"] = 88, -- Ulduar, Camp Tunka'lo
