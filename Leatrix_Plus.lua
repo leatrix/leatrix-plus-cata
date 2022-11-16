@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.55.alpha.1 (15th November 2022)
+-- 	Leatrix Plus 3.0.55 (16th November 2022)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.55.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.55"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -596,7 +596,6 @@
 		or	(LeaPlusLC["TipNoHealthBar"]		~= LeaPlusDB["TipNoHealthBar"])			-- Tooltip hide health bar
 		or	(LeaPlusLC["EnhanceDressup"]		~= LeaPlusDB["EnhanceDressup"])			-- Enhance dressup
 		or	(LeaPlusLC["EnhanceQuestLog"]		~= LeaPlusDB["EnhanceQuestLog"])		-- Enhance quest log
-		or	(LeaPlusLC["EnhanceQuestTaller"]	~= LeaPlusDB["EnhanceQuestTaller"])		-- Enhance quest taller
 		or	(LeaPlusLC["EnhanceProfessions"]	~= LeaPlusDB["EnhanceProfessions"])		-- Enhance professions
 		or	(LeaPlusLC["EnhanceTrainers"]		~= LeaPlusDB["EnhanceTrainers"])		-- Enhance trainers
 		or	(LeaPlusLC["ShowVolume"]			~= LeaPlusDB["ShowVolume"])				-- Show volume slider
@@ -7783,74 +7782,6 @@
 				end
 			end)
 
-			-- Taller quest log
-			if LeaPlusLC["EnhanceQuestTaller"] == "On" then
-
-				-- Set increased height of quest log frame and maximum number of quests listed
-				local tall, numTallQuests = 70, 4
-
-				-- Make the quest log frame double-wide
-				UIPanelWindows["QuestLogFrame"] = {area = "override", pushable = 0, xoffset = -16, yoffset = 12, bottomClampOverride = 140 + 12, width = 682, height = 487, whileDead = 1}
-
-				-- Size the quest log frame
-				QuestLogFrame:SetWidth(682)
-				QuestLogFrame:SetHeight(444 + tall)
-
-				hooksecurefunc("QuestLogDetailFrame_AttachToQuestLog", function()
-					QuestLogDetailScrollFrame:ClearAllPoints()
-					QuestLogDetailScrollFrame:SetPoint("TOPLEFT", QuestLogListScrollFrame, "TOPRIGHT", 28, -1)
-					QuestLogDetailScrollFrame:SetHeight(331 + tall)
-				end)
-
-				-- Expand the quest list to full height
-				QuestLogListScrollFrame:SetHeight(336 + tall - 4) -- Minus 4 for a slight bufffer
-
-				-- Create additional quest rows
-				local oldQuestsDisplayed = QUESTS_DISPLAYED
-				_G.QUESTS_DISPLAYED = _G.QUESTS_DISPLAYED + numTallQuests
-				for i = oldQuestsDisplayed + 1, QUESTS_DISPLAYED do
-					local button = CreateFrame("Button", "QuestLogTitle" .. i, QuestLogListScrollFrame.scrollChild, "QuestLogTitleButtonTemplate")
-					button:SetID(i)
-					button:Hide()
-					button:ClearAllPoints()
-					button:SetPoint("TOPLEFT", _G["QuestLogTitle" .. (i-1)], "BOTTOMLEFT", 0, 1)
-					button:SetPoint("TOPLEFT", QuestLogListScrollFrame.buttons[i - 1], "BOTTOMLEFT", 0, 0)
-					QuestLogListScrollFrame.buttons[i] = button
-				end
-
-				-- Get quest frame textures
-				local regions = {QuestLogFrame:GetRegions()}
-
-				-- Set top left texture
-				regions[2]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus")
-				regions[2]:SetTexCoord(0.25, 0.75, 0, 1)
-				regions[2]:SetSize(512, 506)
-
-				-- Set top right texture
-				regions[3]:ClearAllPoints()
-				regions[3]:SetPoint("TOPLEFT", regions[2], "TOPRIGHT", 0, 0)
-				regions[3]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus")
-				regions[3]:SetTexCoord(0.75, 1, 0, 1)
-				regions[3]:SetSize(256, 506)
-
-				-- Position and size close button
-				if LeaPlusLC.ElvUI then
-					QuestLogFrameCancelButton:ClearAllPoints()
-					QuestLogFrameCancelButton:SetPoint("BOTTOMRIGHT", QuestLogFrame, "BOTTOMRIGHT", -10, 11)
-					QuestLogFrameCancelButton:SetHeight(20)
-				end
-
-				-- Empty quest frame
-				QuestLogNoQuestsText:ClearAllPoints()
-				QuestLogNoQuestsText:SetPoint("CENTER", QuestLogListScrollFrame, 0, 0)
-				hooksecurefunc(EmptyQuestLogFrame, "Show", function()
-					EmptyQuestLogFrame:ClearAllPoints()
-					EmptyQuestLogFrame:SetPoint("BOTTOMLEFT", QuestLogFrame, "BOTTOMLEFT", 20, -4)
-					EmptyQuestLogFrame:SetHeight(447)
-				end)
-
-			end
-
 			-- Show quest level in quest log detail frame (but not when turning in quest)
 			hooksecurefunc("QuestLog_UpdateQuestDetails", function()
 				if LeaPlusLC["EnhanceQuestLevels"] == "On" then
@@ -7923,12 +7854,11 @@
 			local EnhanceQuestPanel = LeaPlusLC:CreatePanel("Enhance quest log", "EnhanceQuestPanel")
 
 			LeaPlusLC:MakeTx(EnhanceQuestPanel, "Settings", 16, -72)
-			LeaPlusLC:MakeCB(EnhanceQuestPanel, "EnhanceQuestTaller", "Taller quest log frame", 16, -92, true, "If checked, the quest log frame will be taller.")
-			LeaPlusLC:MakeCB(EnhanceQuestPanel, "EnhanceQuestHeaders", "Show toggle headers button", 16, -112, false, "If checked, the toggle headers button will be shown.")
+			LeaPlusLC:MakeCB(EnhanceQuestPanel, "EnhanceQuestHeaders", "Show toggle headers button", 16, -92, false, "If checked, the toggle headers button will be shown.")
 
-			LeaPlusLC:MakeTx(EnhanceQuestPanel, "Levels", 16, -152)
-			LeaPlusLC:MakeCB(EnhanceQuestPanel, "EnhanceQuestLevels", "Show quest levels", 16, -172, false, "If checked, quest levels will be shown.")
-			LeaPlusLC:MakeCB(EnhanceQuestPanel, "EnhanceQuestDifficulty", "Show quest difficulty in quest log list", 16, -192, false, "If checked, the quest difficulty will be shown next to the quest level in the quest log list.|n|nThis will indicate whether the quest requires a group (+), dungeon (D), raid (R) or PvP (P).|n|nThe quest difficulty will always be shown in the quest log detail pane regardless of this setting.")
+			LeaPlusLC:MakeTx(EnhanceQuestPanel, "Levels", 16, -132)
+			LeaPlusLC:MakeCB(EnhanceQuestPanel, "EnhanceQuestLevels", "Show quest levels", 16, -152, false, "If checked, quest levels will be shown.")
+			LeaPlusLC:MakeCB(EnhanceQuestPanel, "EnhanceQuestDifficulty", "Show quest difficulty in quest log list", 16, -172, false, "If checked, the quest difficulty will be shown next to the quest level in the quest log list.|n|nThis will indicate whether the quest requires a group (+), dungeon (D), raid (R) or PvP (P).|n|nThe quest difficulty will always be shown in the quest log detail pane regardless of this setting.")
 
 			-- Disable Show quest difficulty option if Show quest levels is disabled
 			LeaPlusCB["EnhanceQuestLevels"]:HookScript("OnClick", function()
@@ -12646,7 +12576,6 @@
 				LeaPlusLC:LoadVarChk("DressupAnimControl", "On")			-- Dressup animation control
 				LeaPlusLC:LoadVarChk("HideDressupStats", "Off")				-- Hide dressup stats
 				LeaPlusLC:LoadVarChk("EnhanceQuestLog", "Off")				-- Enhance quest log
-				LeaPlusLC:LoadVarChk("EnhanceQuestTaller", "On")			-- Enhance quest log taller
 				LeaPlusLC:LoadVarChk("EnhanceQuestHeaders", "On")			-- Enhance quest log toggle headers
 				LeaPlusLC:LoadVarChk("EnhanceQuestLevels", "On")			-- Enhance quest log quest levels
 				LeaPlusLC:LoadVarChk("EnhanceQuestDifficulty", "On")		-- Enhance quest log quest difficulty
@@ -13057,7 +12986,6 @@
 			LeaPlusDB["DressupAnimControl"]		= LeaPlusLC["DressupAnimControl"]
 			LeaPlusDB["HideDressupStats"]		= LeaPlusLC["HideDressupStats"]
 			LeaPlusDB["EnhanceQuestLog"]		= LeaPlusLC["EnhanceQuestLog"]
-			LeaPlusDB["EnhanceQuestTaller"]		= LeaPlusLC["EnhanceQuestTaller"]
 			LeaPlusDB["EnhanceQuestHeaders"]	= LeaPlusLC["EnhanceQuestHeaders"]
 			LeaPlusDB["EnhanceQuestLevels"]		= LeaPlusLC["EnhanceQuestLevels"]
 			LeaPlusDB["EnhanceQuestDifficulty"]	= LeaPlusLC["EnhanceQuestDifficulty"]
@@ -15185,7 +15113,6 @@
 				LeaPlusDB["EnhanceDressup"] = "On"				-- Enhance dressup
 				LeaPlusDB["HideDressupStats"] = "On"			-- Hide dressup stats
 				LeaPlusDB["EnhanceQuestLog"] = "On"				-- Enhance quest log
-				LeaPlusDB["EnhanceQuestTaller"] = "On"			-- Enhance quest log taller
 				LeaPlusDB["EnhanceQuestHeaders"] = "On"			-- Enhance quest log toggle headers
 				LeaPlusDB["EnhanceQuestLevels"] = "On"			-- Enhance quest log quest levels
 				LeaPlusDB["EnhanceQuestDifficulty"] = "On"		-- Enhance quest log quest difficulty
