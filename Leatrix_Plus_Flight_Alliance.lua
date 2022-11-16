@@ -999,6 +999,7 @@
 				["0.60:0.81:0.61:0.55:0.46:0.40:0.43:0.25:0.55:0.21:0.65:0.23"] = 860, -- Gadgetzan, Ratchet, Astranaar, Auberdine, Moonglade, Everlook
 				["0.60:0.81:0.64:0.67:0.40:0.51:0.39:0.40"] = 600, -- Gadgetzan, Theramore, Punta de Nijel, Cima del Espolón
 				["0.60:0.81:0.61:0.55:0.46:0.40:0.39:0.40:0.40:0.51"] = 723, -- Gadgetzan, Ratchet, Astranaar, Stonetalon Peak, Nijel's Point
+				["0.60:0.81:0.61:0.55:0.46:0.40:0.50:0.35:0.53:0.26:0.55:0.21"] = 707, -- Gadgetzan, Ratchet, Astranaar, Emerald Sanctuary, Talonbranch Glade, Moonglade
 
 				-- Alliance: Marshal's Refuge (Un'Goro Crater)
 				["0.50:0.76:0.42:0.79:0.31:0.69"] = 258, -- Marshal's Refuge, Cenarion Hold, Feathermoon
@@ -2198,7 +2199,7 @@
 
 				-- Alliance: Dalaran
 				["0.52:0.38:0.54:0.52"] = 122, -- Dalaran, Wyrmrest Temple
-				["0.52:0.38:0.59:0.43:0.60:0.52"] = 128, -- Dalaran, Windrunner's Overlook, Wintergarde Keep
+				["0.52:0.38:0.59:0.43:0.60:0.52"] = 128, -- Dalaran, Windrunner's Overlook, Wintergarde Keep (tm4psycko@yahoo.com reported 97)
 				["0.52:0.38:0.59:0.43:0.60:0.52:0.76:0.67:0.88:0.72"] = 317, -- Dalaran, Windrunner's Overlook, Wintergarde Keep, Westguard Keep, Valgarde Port (Michael Khan reported 348)
 				["0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54"] = 199, -- Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
 				["0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46:0.88:0.60"] = 301, -- Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade, Fort Wildervar
