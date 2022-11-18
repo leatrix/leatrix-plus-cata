@@ -763,6 +763,7 @@
 				["0.43:0.25:0.46:0.40:0.61:0.55:0.60:0.81"] = 602, -- Auberdine, Astranaar, Trinquete, Gadgetzan
 				["0.43:0.25:0.53:0.26:0.50:0.35"] = 293, -- Auberdine, Talonbranch Glade, Emerald Sanctuary
 				["0.43:0.25:0.64:0.67:0.60:0.81:0.42:0.79"] = 793, -- Auberdine, Theramore, Gadgetzan, Cenarion Hold
+				["0.43:0.25:0.46:0.40:0.61:0.55:0.60:0.81:0.50:0.76"] = 706, -- Auberdine, Astranaar, Ratchet, Gadgetzan, Marshal's Refuge
 
 				-- Alliance: Cenarion Hold (Silithus)
 				["0.42:0.79:0.31:0.69"] = 175, -- Cenarion Hold, Feathermoon
@@ -3156,9 +3157,10 @@
 				["0.56:0.36:0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54"] = 219, -- The Argent Vanguard, Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
 				["0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.22:0.61:0.17:0.53:0.12:0.53"] = 420, -- The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest, Valiance Keep, Amber Ledge, Transitus Shield
 				["0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.29:0.57"] = 291, -- The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest, Unu'pe
+				["0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46:0.88:0.60"] = 317, -- The Argent Vanguard, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade, Fort Wildervar
 
 				-- Alliance: Icecrown: The Shadow Vault
-				["0.38:0.21:0.52:0.38"] = 166, -- The Shadow Vault, Dalaran (Jamie Erving, Alexander Götz and Jeff S Higgins repored 191 while Steven Bannister, Darrin Pearson, Toby Harris, James Rhee and Leatrix reported 166)
+				["0.38:0.21:0.52:0.38"] = 166, -- The Shadow Vault, Dalaran (Thomas Burns, Jamie Erving, Alexander Götz and Jeff S Higgins repored 191 while Steven Bannister, Darrin Pearson, Toby Harris, James Rhee and Leatrix reported 166)
 				["0.38:0.21:0.46:0.46:0.60:0.52"] = 277, -- The Shadow Vault, Fordragon Hold, Wintergarde Keep
 				["0.38:0.21:0.52:0.38:0.64:0.42:0.72:0.40"] = 295, -- Das Schattengewölbe, Dalaran, Schwarze Wacht, Argentumwache
 				["0.38:0.21:0.28:0.28"] = 78, -- The Shadow Vault, Death's Rise
