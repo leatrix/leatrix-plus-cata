@@ -9721,13 +9721,31 @@
 			-- Function to highlight chat tabs and click to scroll to bottom
 			local function HighlightTabs(chtfrm)
 				-- Set position of bottom button
-				_G[chtfrm .. "ButtonFrameBottomButtonFlash"]:SetTexture("Interface/BUTTONS/GRADBLUE.png")
-				_G[chtfrm .. "ButtonFrameBottomButton"]:ClearAllPoints()
-				_G[chtfrm .. "ButtonFrameBottomButton"]:SetPoint("BOTTOM",_G[chtfrm .. "Tab"],0,-6)
-				_G[chtfrm .. "ButtonFrameBottomButton"]:Show()
-				_G[chtfrm .. "ButtonFrameBottomButtonFlash"]:SetAlpha(0.5)
-				_G[chtfrm .. "ButtonFrameBottomButton"]:SetWidth(_G[chtfrm .. "Tab"]:GetWidth()-10)
-				_G[chtfrm .. "ButtonFrameBottomButton"]:SetHeight(24)
+				if LeaPlusLC.NewPatch then
+
+					-- Hide bottom button
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetSize(0.1, 0.1) -- Positions it away
+
+					-- Remove click from the bottom button
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetScript("OnClick", nil)
+
+					-- Remove textures
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetNormalTexture("")
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetHighlightTexture("")
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetPushedTexture("")
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetDisabledTexture("")
+
+				else
+
+					_G[chtfrm .. "ButtonFrameBottomButtonFlash"]:SetTexture("Interface/BUTTONS/GRADBLUE.png")
+					_G[chtfrm .. "ButtonFrameBottomButton"]:ClearAllPoints()
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetPoint("BOTTOM",_G[chtfrm .. "Tab"],0,-6)
+					_G[chtfrm .. "ButtonFrameBottomButton"]:Show()
+					_G[chtfrm .. "ButtonFrameBottomButtonFlash"]:SetAlpha(0.5)
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetWidth(_G[chtfrm .. "Tab"]:GetWidth()-10)
+					_G[chtfrm .. "ButtonFrameBottomButton"]:SetHeight(24)
+
+				end
 
 				-- Resize bottom button according to tab size
 				_G[chtfrm .. "Tab"]:SetScript("OnSizeChanged", function()
@@ -9760,6 +9778,33 @@
 						_G[chtfrm]:ScrollToBottom();
 					end
 				end)
+
+				if LeaPlusLC.NewPatch then
+
+					-- Create new bottom button under tab
+					_G[chtfrm .. "Tab"].newglow = _G[chtfrm .. "Tab"]:CreateTexture(nil, "BACKGROUND")
+					_G[chtfrm .. "Tab"].newglow:ClearAllPoints()
+					_G[chtfrm .. "Tab"].newglow:SetPoint("BOTTOMLEFT", _G[chtfrm .. "Tab"], "BOTTOMLEFT", 0, 0)
+					_G[chtfrm .. "Tab"].newglow:SetTexture("Interface\\ChatFrame\\ChatFrameTab-NewMessage")
+					_G[chtfrm .. "Tab"].newglow:SetWidth(_G[chtfrm .. "Tab"]:GetWidth())
+					_G[chtfrm .. "Tab"].newglow:SetVertexColor(0.6, 0.6, 1, 1)
+					_G[chtfrm .. "Tab"].newglow:Hide()
+
+					-- Show new bottom button when old one glows
+					_G[chtfrm .. "ButtonFrameBottomButtonFlash"]:HookScript("OnShow", function(self,arg1)
+						_G[chtfrm .. "Tab"].newglow:Show()
+					end)
+
+					_G[chtfrm .. "ButtonFrameBottomButtonFlash"]:HookScript("OnHide", function(self,arg1)
+						_G[chtfrm .. "Tab"].newglow:Hide()
+					end)
+
+					-- Match new bottom button size to tab
+					_G[chtfrm .. "Tab"]:HookScript("OnSizeChanged", function()
+						_G[chtfrm .. "Tab"].newglow:SetWidth(_G[chtfrm .. "Tab"]:GetWidth())
+					end)
+
+				end
 
 			end
 
