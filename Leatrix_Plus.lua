@@ -9771,7 +9771,12 @@
 		if LeaPlusLC["RecentChatWindow"] == "On" and not LeaLockList["RecentChatWindow"] then
 
 			-- Create recent chat frame
-			local editFrame = CreateFrame("ScrollFrame", nil, UIParent, "InputScrollFrameTemplate")
+			local editFrame
+			if LeaPlusLC.NewPatch then
+				editFrame = CreateFrame("ScrollFrame", nil, UIParent, "LeaPlusInputScrollFrameTemplate")
+			else
+				editFrame = CreateFrame("ScrollFrame", nil, UIParent, "InputScrollFrameTemplate")
+			end
 
 			-- Set frame parameters
 			editFrame:ClearAllPoints()
@@ -9795,7 +9800,12 @@
 			editFrame.TopLeftTex:SetTexture(editFrame.TopRightTex:GetTexture()); editFrame.TopLeftTex:SetTexCoord(1, 0, 0, 1)
 
 			-- Create title bar
-			local titleFrame = CreateFrame("ScrollFrame", nil, editFrame, "InputScrollFrameTemplate")
+			local titleFrame
+			if LeaPlusLC.NewPatch then
+				titleFrame = CreateFrame("ScrollFrame", nil, editFrame, "LeaPlusInputScrollFrameTemplate")
+			else
+				titleFrame = CreateFrame("ScrollFrame", nil, editFrame, "InputScrollFrameTemplate")
+			end
 			titleFrame:ClearAllPoints()
 			titleFrame:SetPoint("TOP", 0, 32)
 			titleFrame:SetSize(600, 24)
@@ -9833,8 +9843,10 @@
 
 			-- Drag to resize
 			editFrame:SetResizable(true)
-			editFrame:SetMinResize(600, 170)
-			editFrame:SetMaxResize(600, 560)
+			if not LeaPlusLC.NewPatch then
+				editFrame:SetMinResize(600, 170)
+				editFrame:SetMaxResize(600, 560)
+			end
 
 			titleFrame:HookScript("OnMouseDown", function(self, btn)
 				if btn == "LeftButton" then
@@ -9860,6 +9872,9 @@
 			editBox:SetTextInsets(4, 4, 4, 4)
 			editBox:SetWidth(editFrame:GetWidth() - 30)
 			editBox:SetSecurityDisablePaste()
+			if LeaPlusLC.NewPatch then
+				editBox:SetMaxLetters(0)
+			end
 
 			-- Manage focus
 			editBox:HookScript("OnEditFocusLost", function()
@@ -9914,7 +9929,7 @@
 					local chatMessage, r, g, b, chatTypeID = chtfrm:GetMessageInfo(iMsg)
 					if chatMessage then
 
-						-- Handle Battle.net
+						-- Handle Battle.net messages
 						if string.match(chatMessage, "k:(%d+):(%d+):BN_WHISPER:")
 						or string.match(chatMessage, "k:(%d+):(%d+):BN_INLINE_TOAST_ALERT:")
 						or string.match(chatMessage, "k:(%d+):(%d+):BN_INLINE_TOAST_BROADCAST:")

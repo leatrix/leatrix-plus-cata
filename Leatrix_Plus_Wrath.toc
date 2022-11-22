@@ -21,4 +21,5 @@ Leatrix_Plus_Locale.lua
 Leatrix_Plus_Media.lua
 Leatrix_Plus_Flight_Alliance.lua
 Leatrix_Plus_Flight_Horde.lua
+Leatrix_Plus_Edit.xml
 Leatrix_Plus.lua
