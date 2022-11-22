@@ -1,6 +1,6 @@
 3.0.60.alpha.1 - 22nd November 2022
 - Updated for game version 3.4.1 (currently on the PTR).  There are a lot of code changes in this game version.
-- These options have been updated for 3.4.1: Automate quests, Automate gossip, Resize quest text, Resize mail text, Resize book text, Hide chat buttons, Restore chat messages, Show flight times.
+- These options have been updated for 3.4.1: Automate quests, Automate gossip, Sell junk automatically, Resize quest text, Resize mail text, Resize book text, Hide chat buttons, Restore chat messages and Show flight times.
 - In 3.4.1, it's no longer possible to automatically skip gossip based on NPC type (such as banker or battlemaster).
 
 3.0.59 - 22nd November 2022

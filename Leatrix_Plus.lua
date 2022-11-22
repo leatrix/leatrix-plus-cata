@@ -2320,6 +2320,30 @@
 			local IterationCount, totalPrice = 500, 0
 			local SellJunkTicker
 
+			-- Create custom NewTicker function (from Wrath)
+			local function LeaPlusNewTicker(duration, callback, iterations)
+				local ticker = setmetatable({}, TickerMetatable)
+				ticker._remainingIterations = iterations
+				ticker._callback = function()
+					if (not ticker._cancelled) then
+						callback(ticker)
+						--Make sure we weren't cancelled during the callback
+						if (not ticker._cancelled) then
+							if (ticker._remainingIterations) then
+								ticker._remainingIterations = ticker._remainingIterations - 1
+							end
+							if (not ticker._remainingIterations or ticker._remainingIterations > 0) then
+								C_Timer.After(duration, ticker._callback)
+							end
+						end
+					end
+				end
+				C_Timer.After(duration, ticker._callback)
+				return ticker
+			end
+
+
+
 			-- Create configuration panel
 			local SellJunkFrame = LeaPlusLC:CreatePanel("Sell junk automatically", "SellJunkFrame")
 			LeaPlusLC:MakeTx(SellJunkFrame, "Settings", 16, -72)
@@ -2359,7 +2383,11 @@
 
 			-- Function to stop selling
 			local function StopSelling()
-				if SellJunkTicker then SellJunkTicker:Cancel() end
+				if LeaPlusLC.NewPatch then
+					if SellJunkTicker then SellJunkTicker._cancelled = true; end
+				else
+					if SellJunkTicker then SellJunkTicker:Cancel() end
+				end
 				StartMsg:Hide()
 				SellJunkFrame:UnregisterEvent("ITEM_LOCKED")
 				SellJunkFrame:UnregisterEvent("UI_ERROR_MESSAGE")
@@ -2568,44 +2596,92 @@
 				local SoldCount, Rarity, ItemPrice = 0, 0, 0
 				local CurrentItemLink, void
 
-				-- Traverse bags and sell grey items
-				for BagID = 0, 4 do
-					for BagSlot = 1, GetContainerNumSlots(BagID) do
-						CurrentItemLink = GetContainerItemLink(BagID, BagSlot)
-						if CurrentItemLink then
-							void, void, Rarity, void, void, void, void, void, void, void, ItemPrice = GetItemInfo(CurrentItemLink)
-							-- Don't sell whitelisted items
-							local itemID = GetItemInfoFromHyperlink(CurrentItemLink)
-							if itemID and whiteList[itemID] then
-								if Rarity == 0 then
-									-- Junk item to keep
-									Rarity = 3
-									ItemPrice = 0
-								elseif Rarity == 1 then
-									-- White item to sell
-									Rarity = 0
+				if LeaPlusLC.NewPatch then
+
+					-- Traverse bags and sell grey items
+					for BagID = 0, 4 do
+						for BagSlot = 1, C_Container.GetContainerNumSlots(BagID) do
+							CurrentItemLink = C_Container.GetContainerItemLink(BagID, BagSlot)
+							if CurrentItemLink then
+								void, void, Rarity, void, void, void, void, void, void, void, ItemPrice = GetItemInfo(CurrentItemLink)
+								-- Don't sell whitelisted items
+								local itemID = GetItemInfoFromHyperlink(CurrentItemLink)
+								if itemID and whiteList[itemID] then
+									if Rarity == 0 then
+										-- Junk item to keep
+										Rarity = 3
+										ItemPrice = 0
+									elseif Rarity == 1 then
+										-- White item to sell
+										Rarity = 0
+									end
+								end
+								-- Continue
+								local cInfo = C_Container.GetContainerItemInfo(BagID, BagSlot)
+								local itemCount = cInfo.stackCount
+								if Rarity == 0 and ItemPrice ~= 0 then
+									SoldCount = SoldCount + 1
+									if MerchantFrame:IsShown() then
+										-- If merchant frame is open, vendor the item
+										C_Container.UseContainerItem(BagID, BagSlot)
+										-- Perform actions on first iteration
+										if SellJunkTicker._remainingIterations == IterationCount then
+											-- Calculate total price
+											totalPrice = totalPrice + (ItemPrice * itemCount)
+										end
+									else
+										-- If merchant frame is not open, stop selling
+										StopSelling()
+										return
+									end
 								end
 							end
-							-- Continue
-							local void, itemCount = GetContainerItemInfo(BagID, BagSlot)
-							if Rarity == 0 and ItemPrice ~= 0 then
-								SoldCount = SoldCount + 1
-								if MerchantFrame:IsShown() then
-									-- If merchant frame is open, vendor the item
-									UseContainerItem(BagID, BagSlot)
-									-- Perform actions on first iteration
-									if SellJunkTicker._remainingIterations == IterationCount then
-										-- Calculate total price
-										totalPrice = totalPrice + (ItemPrice * itemCount)
+						end
+
+					end
+
+				else
+
+					-- Traverse bags and sell grey items
+					for BagID = 0, 4 do
+						for BagSlot = 1, GetContainerNumSlots(BagID) do
+							CurrentItemLink = GetContainerItemLink(BagID, BagSlot)
+							if CurrentItemLink then
+								void, void, Rarity, void, void, void, void, void, void, void, ItemPrice = GetItemInfo(CurrentItemLink)
+								-- Don't sell whitelisted items
+								local itemID = GetItemInfoFromHyperlink(CurrentItemLink)
+								if itemID and whiteList[itemID] then
+									if Rarity == 0 then
+										-- Junk item to keep
+										Rarity = 3
+										ItemPrice = 0
+									elseif Rarity == 1 then
+										-- White item to sell
+										Rarity = 0
 									end
-								else
-									-- If merchant frame is not open, stop selling
-									StopSelling()
-									return
+								end
+								-- Continue
+								local void, itemCount = GetContainerItemInfo(BagID, BagSlot)
+								if Rarity == 0 and ItemPrice ~= 0 then
+									SoldCount = SoldCount + 1
+									if MerchantFrame:IsShown() then
+										-- If merchant frame is open, vendor the item
+										UseContainerItem(BagID, BagSlot)
+										-- Perform actions on first iteration
+										if SellJunkTicker._remainingIterations == IterationCount then
+											-- Calculate total price
+											totalPrice = totalPrice + (ItemPrice * itemCount)
+										end
+									else
+										-- If merchant frame is not open, stop selling
+										StopSelling()
+										return
+									end
 								end
 							end
 						end
 					end
+
 				end
 
 				-- Stop selling if no items were sold for this iteration or iteration limit was reached
@@ -2643,9 +2719,17 @@
 					-- Do nothing if shift key is held down
 					if IsShiftKeyDown() then return end
 					-- Cancel existing ticker if present
-					if SellJunkTicker then SellJunkTicker:Cancel() end
+					if LeaPlusLC.NewPatch then
+						if SellJunkTicker then SellJunkTicker._cancelled = true; end
+					else
+						if SellJunkTicker then SellJunkTicker:Cancel() end
+					end
 					-- Sell grey items using ticker (ends when all grey items are sold or iteration count reached)
-					SellJunkTicker = C_Timer.NewTicker(0.2, SellJunkFunc, IterationCount)
+					if LeaPlusLC.NewPatch then
+						SellJunkTicker = LeaPlusNewTicker(0.2, SellJunkFunc, IterationCount)
+					else
+						SellJunkTicker = C_Timer.NewTicker(0.2, SellJunkFunc, IterationCount)
+					end
 					SellJunkFrame:RegisterEvent("ITEM_LOCKED")
 				elseif event == "ITEM_LOCKED" then
 					StartMsg:Show()
