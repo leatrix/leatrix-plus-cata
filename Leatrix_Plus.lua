@@ -2319,9 +2319,6 @@
 				end
 			end)
 
-			-- Editbox tooltip
-			local tipPrefix = ""
-
 			-- Function to make tooltip string
 			local function MakeTooltipString()
 
