@@ -1427,83 +1427,157 @@
 
 		do
 
-			-- Function to skip gossip
-			local function SkipGossip()
-				if IsShiftKeyDown() then return end
-				local void, gossipType = GetGossipOptions()
-				if gossipType then
-					-- Completely automate gossip
-					if gossipType == "banker"
-					or gossipType == "taxi"
-					or gossipType == "trainer"
-					or gossipType == "vendor"
-					or gossipType == "battlemaster"
-					or gossipType == "arenamaster"
-					then
-						SelectGossipOption(1)
+			if LeaPlusLC.NewPatch then
+
+				-- Function to skip gossip
+				local function SkipGossip(skipAltKeyRequirement)
+					if not skipAltKeyRequirement and not IsAltKeyDown() then return end
+					local gossipInfoTable = C_GossipInfo.GetOptions()
+					if gossipInfoTable[1] and gossipInfoTable[1].gossipOptionID then
+						C_GossipInfo.SelectOption(gossipInfoTable[1].gossipOptionID)
 					end
-					-- Automate gossip with ALT key
-					if IsAltKeyDown() then
-						if gossipType == "gossip"
+				end
+
+				-- Create gossip event frame
+				local gossipFrame = CreateFrame("FRAME")
+
+				-- Function to setup events
+				local function SetupEvents()
+					if LeaPlusLC["AutomateGossip"] == "On" then
+						gossipFrame:RegisterEvent("GOSSIP_SHOW")
+					else
+						gossipFrame:UnregisterEvent("GOSSIP_SHOW")
+					end
+				end
+
+				-- Setup events when option is clicked and on startup (if option is enabled)
+				LeaPlusCB["AutomateGossip"]:HookScript("OnClick", SetupEvents)
+				if LeaPlusLC["AutomateGossip"] == "On" then SetupEvents() end
+
+				-- Create tables for specific NPC IDs (these are automatically selected with no alt key requirement)
+				local npcTable = {
+
+					-- Stable masters (https://www.wowhead.com/wotlk/npcs?filter=27;1;0)
+					9988, 21518, 15131, 10055, 21517, 11069, 9985, 22469, 19476, 21336, 10060, 16586, 16094, 18250, 16824, 23392, 15722, 9977, 19018, 9987, 19368, 6749, 10058, 22468, 11104, 9986, 13617, 10046, 10048, 10051, 10053, 10054, 17485, 18244, 10045, 24974, 16665, 25037, 16656, 10057, 18984, 9984, 11105, 10056, 16185, 10059, 16764, 11119, 14741, 10085, 10061, 19019, 10052, 10047, 10063, 9979, 17666, 11117, 10049, 17896, 9983, 24905, 9989, 9982, 10050, 9980, 9981, 10062, 9976, 9978, 13616,
+
+					-- Dalaran: Brassbolt Mechawrench (Alliance) and Reginald Arcfire (Horde) (engineer auctioneers)
+					35594, 35607,
+
+				}
+
+				-- Event handler
+				gossipFrame:SetScript("OnEvent", function()
+					-- Special treatment for specific NPCs
+					local npcGuid = UnitGUID("target") or nil
+					if npcGuid and not IsShiftKeyDown() then
+						local void, void, void, void, void, npcID = strsplit("-", npcGuid)
+						if npcID then
+							-- Open rogue doors in Dalaran (Broken Isles) automatically
+							if npcID == "96782"		-- Lucian Trias
+							or npcID == "93188"		-- Mongar
+							or npcID == "97004"		-- "Red" Jack Findle
+							then
+								SkipGossip()
+								return
+							end
+							-- Skip gossip with no alt key requirement
+							if npcID == "132969"	-- Katy Stampwhistle (toy)
+							or npcID == "104201"	-- Katy Stampwhistle (npc)
+							or tContains(npcTable, tonumber(npcID))
+							then
+								SkipGossip(true) 	-- true means skip alt key requirement
+								return
+							end
+						end
+					end
+					-- Process gossip
+					local gossipOptions = C_GossipInfo.GetOptions()
+					if gossipOptions and #gossipOptions == 1 and C_GossipInfo.GetNumAvailableQuests() == 0 and C_GossipInfo.GetNumActiveQuests() == 0 then
+						SkipGossip()
+					end
+				end)
+
+			else
+
+				-- Function to skip gossip
+				local function SkipGossip()
+					if IsShiftKeyDown() then return end
+					local void, gossipType = GetGossipOptions()
+					if gossipType then
+						-- Completely automate gossip
+						if gossipType == "banker"
+						or gossipType == "taxi"
+						or gossipType == "trainer"
+						or gossipType == "vendor"
+						or gossipType == "battlemaster"
+						or gossipType == "arenamaster"
 						then
 							SelectGossipOption(1)
 						end
-					end
-				end
-			end
-
-			-- Create tables for specific NPC IDs
-			local npcTable = {
-
-				-- Stable masters (https://www.wowhead.com/wotlk/npcs?filter=27;1;0)
-				9988, 21518, 15131, 10055, 21517, 11069, 9985, 22469, 19476, 21336, 10060, 16586, 16094, 18250, 16824, 23392, 15722, 9977, 19018, 9987, 19368, 6749, 10058, 22468, 11104, 9986, 13617, 10046, 10048, 10051, 10053, 10054, 17485, 18244, 10045, 24974, 16665, 25037, 16656, 10057, 18984, 9984, 11105, 10056, 16185, 10059, 16764, 11119, 14741, 10085, 10061, 19019, 10052, 10047, 10063, 9979, 17666, 11117, 10049, 17896, 9983, 24905, 9989, 9982, 10050, 9980, 9981, 10062, 9976, 9978, 13616,
-
-				-- Dalaran: Brassbolt Mechawrench (Alliance) and Reginald Arcfire (Horde) (engineer auctioneers)
-				35594, 35607,
-
-			}
-
-			-- Create gossip event frame
-			local gossipFrame = CreateFrame("FRAME")
-
-			-- Function to setup events
-			local function SetupEvents()
-				if LeaPlusLC["AutomateGossip"] == "On" then
-					gossipFrame:RegisterEvent("GOSSIP_SHOW")
-				else
-					gossipFrame:UnregisterEvent("GOSSIP_SHOW")
-				end
-			end
-
-			-- Setup events when option is clicked and on startup (if option is enabled)
-			LeaPlusCB["AutomateGossip"]:HookScript("OnClick", SetupEvents)
-			if LeaPlusLC["AutomateGossip"] == "On" then SetupEvents() end
-
-			-- Event handler
-			gossipFrame:SetScript("OnEvent", function()
-				-- Special treatment for specific NPCs
-				local npcGuid = UnitGUID("target") or nil
-				if npcGuid then
-					local void, void, void, void, void, npcID = strsplit("-", npcGuid)
-					if npcID then
-						if npcID == "9999999999" -- Reserved for future use
-						then
-							SkipGossip()
-							return
-						else
-							-- Skip gossip for specific NPCs
-							if GetNumGossipOptions() == 1 and GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 and tContains(npcTable, tonumber(npcID)) and not IsShiftKeyDown() then
+						-- Automate gossip with ALT key
+						if IsAltKeyDown() then
+							if gossipType == "gossip"
+							then
 								SelectGossipOption(1)
 							end
 						end
 					end
 				end
 
-				-- Process gossip
-				if GetNumGossipOptions() == 1 and GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
-					SkipGossip()
+				-- Create tables for specific NPC IDs
+				local npcTable = {
+
+					-- Stable masters (https://www.wowhead.com/wotlk/npcs?filter=27;1;0)
+					9988, 21518, 15131, 10055, 21517, 11069, 9985, 22469, 19476, 21336, 10060, 16586, 16094, 18250, 16824, 23392, 15722, 9977, 19018, 9987, 19368, 6749, 10058, 22468, 11104, 9986, 13617, 10046, 10048, 10051, 10053, 10054, 17485, 18244, 10045, 24974, 16665, 25037, 16656, 10057, 18984, 9984, 11105, 10056, 16185, 10059, 16764, 11119, 14741, 10085, 10061, 19019, 10052, 10047, 10063, 9979, 17666, 11117, 10049, 17896, 9983, 24905, 9989, 9982, 10050, 9980, 9981, 10062, 9976, 9978, 13616,
+
+					-- Dalaran: Brassbolt Mechawrench (Alliance) and Reginald Arcfire (Horde) (engineer auctioneers)
+					35594, 35607,
+
+				}
+
+				-- Create gossip event frame
+				local gossipFrame = CreateFrame("FRAME")
+
+				-- Function to setup events
+				local function SetupEvents()
+					if LeaPlusLC["AutomateGossip"] == "On" then
+						gossipFrame:RegisterEvent("GOSSIP_SHOW")
+					else
+						gossipFrame:UnregisterEvent("GOSSIP_SHOW")
+					end
 				end
-			end)
+
+				-- Setup events when option is clicked and on startup (if option is enabled)
+				LeaPlusCB["AutomateGossip"]:HookScript("OnClick", SetupEvents)
+				if LeaPlusLC["AutomateGossip"] == "On" then SetupEvents() end
+
+				-- Event handler
+				gossipFrame:SetScript("OnEvent", function()
+					-- Special treatment for specific NPCs
+					local npcGuid = UnitGUID("target") or nil
+					if npcGuid then
+						local void, void, void, void, void, npcID = strsplit("-", npcGuid)
+						if npcID then
+							if npcID == "9999999999" -- Reserved for future use
+							then
+								SkipGossip()
+								return
+							else
+								-- Skip gossip for specific NPCs
+								if GetNumGossipOptions() == 1 and GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 and tContains(npcTable, tonumber(npcID)) and not IsShiftKeyDown() then
+									SelectGossipOption(1)
+								end
+							end
+						end
+					end
+
+					-- Process gossip
+					if GetNumGossipOptions() == 1 and GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
+						SkipGossip()
+					end
+				end)
+
+			end
 
 		end
 
