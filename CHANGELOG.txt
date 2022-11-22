@@ -1,3 +1,6 @@
+3.0.60.alpha.1 - 22nd November 2022
+- Updated for game version 3.4.1 (currently on the PTR).
+
 3.0.59 - 22nd November 2022
 - Updated 'Sell junk automatically' ('Automation') internal code.
 - Fixed a rare and situational Lua error with 'Restore chat messages' ('Chat').
