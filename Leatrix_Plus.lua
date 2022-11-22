@@ -2187,45 +2187,93 @@
 						-- Don't select quests for blocked NPCs
 						if isNpcBlocked("Select") then return end
 
-						-- Select quests
-						if event == "QUEST_GREETING" then
-							-- Select quest greeting completed quests
-							if LeaPlusLC["AutoQuestCompleted"] == "On" then
-								for i = 1, GetNumActiveQuests() do
-									local title, isComplete = GetActiveTitle(i)
-									if title and isComplete then
-										return SelectActiveQuest(i)
+						if LeaPlusLC.NewPatch then
+
+							if event == "QUEST_GREETING" then
+								-- Select quest greeting completed quests
+								if LeaPlusLC["AutoQuestCompleted"] == "On" then
+									for i = 1, GetNumActiveQuests() do
+										local title, isComplete = GetActiveTitle(i)
+										if title and isComplete then
+											return SelectActiveQuest(i)
+										end
+									end
+								end
+								-- Select quest greeting available quests
+								if LeaPlusLC["AutoQuestAvailable"] == "On" then
+									for i = 1, GetNumAvailableQuests() do
+										local title, isComplete = GetAvailableTitle(i)
+										if title and not isComplete then
+											return SelectAvailableQuest(i)
+										end
+									end
+								end
+							else
+								-- Select gossip completed quests
+								if LeaPlusLC["AutoQuestCompleted"] == "On" then
+									local gossipQuests = C_GossipInfo.GetActiveQuests()
+									for titleIndex, questInfo in ipairs(gossipQuests) do
+										if questInfo.title and questInfo.isComplete then
+											if questInfo.questID then
+												return C_GossipInfo.SelectActiveQuest(questInfo.questID)
+											end
+										end
+									end
+								end
+								-- Select gossip available quests
+								if LeaPlusLC["AutoQuestAvailable"] == "On" then
+									local GossipQuests = C_GossipInfo.GetAvailableQuests()
+									for titleIndex, questInfo in ipairs(GossipQuests) do
+										if questInfo.questID and DoesQuestHaveRequirementsMet(questInfo.questID) then
+											return C_GossipInfo.SelectAvailableQuest(questInfo.questID)
+										end
 									end
 								end
 							end
-							-- Select quest greeting available quests
-							if LeaPlusLC["AutoQuestAvailable"] == "On" then
-								for i = 1, GetNumAvailableQuests() do
-									local title, isComplete = GetAvailableTitle(i)
-									if title and not isComplete then
-										return SelectAvailableQuest(i)
-									end
-								end
-							end
+
 						else
-							-- Select gossip completed quests
-							if LeaPlusLC["AutoQuestCompleted"] == "On" then
-								for i = 1, GetNumGossipActiveQuests() do
-									local title, level, isTrivial, isComplete, isLegendary, isIgnored = select(i * 6 - 5, GetGossipActiveQuests())
-									if title and isComplete then
-										return SelectGossipActiveQuest(i)
+
+							-- Select quests
+							if event == "QUEST_GREETING" then
+								-- Select quest greeting completed quests
+								if LeaPlusLC["AutoQuestCompleted"] == "On" then
+									for i = 1, GetNumActiveQuests() do
+										local title, isComplete = GetActiveTitle(i)
+										if title and isComplete then
+											return SelectActiveQuest(i)
+										end
+									end
+								end
+								-- Select quest greeting available quests
+								if LeaPlusLC["AutoQuestAvailable"] == "On" then
+									for i = 1, GetNumAvailableQuests() do
+										local title, isComplete = GetAvailableTitle(i)
+										if title and not isComplete then
+											return SelectAvailableQuest(i)
+										end
+									end
+								end
+							else
+								-- Select gossip completed quests
+								if LeaPlusLC["AutoQuestCompleted"] == "On" then
+									for i = 1, GetNumGossipActiveQuests() do
+										local title, level, isTrivial, isComplete, isLegendary, isIgnored = select(i * 6 - 5, GetGossipActiveQuests())
+										if title and isComplete then
+											return SelectGossipActiveQuest(i)
+										end
+									end
+								end
+								-- Select gossip available quests
+								if LeaPlusLC["AutoQuestAvailable"] == "On" then
+									for i = 1, GetNumGossipAvailableQuests() do
+										local title, level, isTrivial, isDaily, isRepeatable, isLegendary, isIgnored = select(i * 7 - 6, GetGossipAvailableQuests())
+										if title and DoesQuestHaveRequirementsMet(title) then
+											return SelectGossipAvailableQuest(i)
+										end
 									end
 								end
 							end
-							-- Select gossip available quests
-							if LeaPlusLC["AutoQuestAvailable"] == "On" then
-								for i = 1, GetNumGossipAvailableQuests() do
-									local title, level, isTrivial, isDaily, isRepeatable, isLegendary, isIgnored = select(i * 7 - 6, GetGossipAvailableQuests())
-									if title and DoesQuestHaveRequirementsMet(title) then
-										return SelectGossipAvailableQuest(i)
-									end
-								end
-							end
+
 						end
 					end
 				end
