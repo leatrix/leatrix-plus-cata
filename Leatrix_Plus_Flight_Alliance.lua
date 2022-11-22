@@ -618,6 +618,7 @@
 				["0.53:0.61:0.47:0.59:0.41:0.73:0.52:0.72"] = 416, -- Thelsamar, Ironforge, Stormwind, Morgan's Vigil
 				["0.53:0.61:0.45:0.56:0.44:0.45:0.50:0.42"] = 323, -- Thelsamar, Menethil Harbor, Southshore, Aerie Peak
 				["0.53:0.61:0.47:0.65:0.41:0.73:0.50:0.75"] = 304, -- Thelsamar, Thorium Point, Stormwind, Lakeshire
+				["0.53:0.61:0.47:0.59:0.48:0.39"] = 319, -- Thelsamar, Ironforge, Chillwind Camp
 
 				-- Alliance: Thondroril River (Western Plaguelands)
 				["0.51:0.36:0.48:0.39:0.50:0.42"] = 123, -- Thondroril River, Chillwind Camp, Aerie Peak
@@ -1886,6 +1887,7 @@
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21:0.64:0.19"] = 294, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge, Ulduar
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21"] = 265, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge
 				["0.17:0.53:0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.73:0.54"] = 268, -- Amber Ledge, Valiance Keep, Unu'pe, Moa'ki, Wintergarde Keep, Amberpine Lodge
+				["0.17:0.53:0.22:0.61:0.29:0.57:0.49:0.58:0.52:0.38"] = 245, -- Amber Ledge, Valiance Keep, Unu'pe, Moa'ki, Dalaran
 
 				-- Alliance: Borean Tundra: Fizzcrank Airstrip
 				["0.21:0.49:0.17:0.53"] = 45, -- Fizzcrank Airstrip, Amber Ledge
