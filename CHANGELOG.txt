@@ -1,3 +1,6 @@
+3.0.59.alpha.1 - 22nd November 2022
+- Updated 'Sell junk automatically' ('Automation') internal code.
+
 3.0.58 - 22nd November 2022
 - Added flight times.
 
