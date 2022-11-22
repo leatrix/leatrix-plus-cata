@@ -1,7 +1,7 @@
 3.0.60.alpha.1 - 22nd November 2022
 - Updated for game version 3.4.1 (currently on the PTR).
 - These options have been updated for 3.4.1:
-  Resize quset text, Restore chat messages
+  Resize quest text, Resize mail text, Resize book text, Restore chat messages, Show flight times
 
 3.0.59 - 22nd November 2022
 - Updated 'Sell junk automatically' ('Automation') internal code.
