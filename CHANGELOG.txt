@@ -1,7 +1,8 @@
-3.0.60.alpha.1 - 22nd November 2022
+3.0.60.alpha.1 - 23rd November 2022
 - Updated for game version 3.4.1 (currently on the PTR).  This is a major update as there are a lot of code changes in 3.4.1.
 - These options have been updated for 3.4.1: Automate quests, Automate gossip, Sell junk automatically, Resize quest text, Resize mail text, Resize book text, Hide chat buttons, Restore chat messages and Show flight times.
 - In 3.4.1, it's no longer possible to automatically skip gossip based on NPC type (such as banker or battlemaster).
+- In 3.4.1, Blizzard's slash command system causes errors so /ltp has been replaced with /run leaplus() just like retail.  When Blizzard fixes their slash command system, the /ltp slsh command will return.
 - Added flight times.
 
 3.0.59 - 22nd November 2022

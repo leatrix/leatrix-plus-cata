@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.60.alpha.1 (22nd November 2022)
+-- 	Leatrix Plus 3.0.60.alpha.1 (23rd November 2022)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -15597,8 +15597,10 @@
 	end
 
 	-- Slash command for global function
-	_G.SLASH_Leatrix_Plus1 = "/ltp"
-	_G.SLASH_Leatrix_Plus2 = "/leaplus"
+	if not LeaPlusLC.NewPatch then
+		_G.SLASH_Leatrix_Plus1 = "/ltp"
+		_G.SLASH_Leatrix_Plus2 = "/leaplus"
+	end
 	SlashCmdList["Leatrix_Plus"] = function(self)
 		-- Run slash command function
 		LeaPlusLC:SlashFunc(self)
@@ -15612,6 +15614,16 @@
 	SlashCmdList["LEATRIX_PLUS_RL"] = function()
 		ReloadUI()
 	end
+
+	-- Replacement for broken slash command system
+	if LeaPlusLC.NewPatch then
+		function leaplus(self)
+			LeaPlusLC:SlashFunc(self)
+		end
+	end
+
+	-- To reproduce slash command bug, enter combat, enter an addn related slash command, toggle tracking on a
+	-- quest 4 times then click that quest in the objective tracker.
 
 ----------------------------------------------------------------------
 -- 	L90: Create options panel pages (no content yet)
