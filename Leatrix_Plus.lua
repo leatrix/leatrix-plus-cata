@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.60 (23rd November 2022)
+-- 	Leatrix Plus 3.0.61.alpha.1 (24th November 2022)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.60"
+	LeaPlusLC["AddonVer"] = "3.0.61.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -5647,6 +5647,9 @@
 			local titleBox = titleFrame.EditBox
 			titleBox:Hide()
 			titleBox:SetEnabled(false)
+			if LeaPlusLC.NewPatch then
+				titleBox:SetMaxLetters(0)
+			end
 
 			-- Create editbox
 			local editBox = editFrame.EditBox
@@ -5656,6 +5659,7 @@
 			editBox:SetSecurityDisablePaste()
 			if LeaPlusLC.NewPatch then
 				editBox:SetFont(_G["ChatFrame1"]:GetFont())
+				editBox:SetMaxLetters(0)
 			else
 				editBox:SetFont(_G["ChatFrame1"]:GetFont(), 16)
 			end
