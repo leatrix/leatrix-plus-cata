@@ -1,5 +1,6 @@
-3.0.61.alpha.1 - 24th November 2022
-- More updates for 3.4.1 (currently on the PTR).
+3.0.61.alpha.2 - 24th November 2022
+- 3.4.1: For 'Automate gossip' ('Automation'), replaced the (now removed) NPC types with NPC IDs.
+- Added flight times.
 
 3.0.60 - 23rd November 2022
 - Updated for game version 3.4.1 (currently on the PTR).  This is a major update as there are a lot of code changes in 3.4.1.

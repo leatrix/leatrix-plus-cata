@@ -3517,6 +3517,7 @@
 				["0.31:0.43:0.45:0.51:0.59:0.55"] = 186, -- Warsong Camp, Agmar's Hammer, Venomspite
 				["0.31:0.43:0.45:0.51:0.59:0.55:0.70:0.55:0.84:0.59"] = 328, -- Warsong Camp, Agmar's Hammer, Venomspite, Conquest Hold, Camp Winterhoof
 				["0.31:0.43:0.52:0.38:0.64:0.42:0.72:0.40"] = 271, -- Warsong Camp, Dalaran, Ebon Watch, The Argent Stand
+				["0.31:0.43:0.45:0.51:0.59:0.55:0.74:0.62"] = 283, -- Camp chanteguerre, Marteau d'Agmar, Vexevenin, Camp des Apothicaires
 
 				----------------------------------------------------------------------
 				-- Horde: Zul'Drak
