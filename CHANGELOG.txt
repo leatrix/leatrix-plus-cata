@@ -1,5 +1,6 @@
-3.0.62.alpha.1 - 28th November 2022
+3.0.62.alpha.2 - 29th November 2022
 - For 'Enhance minimap' ('Interface'), the 'Combine addon buttons' setting now supports the Armory addon.
+- Added flight times.
 
 3.0.61 - 27th November 2022
 - 3.4.1: For 'Automate gossip' ('Automation'), replaced the (now removed) NPC types with NPC IDs.
