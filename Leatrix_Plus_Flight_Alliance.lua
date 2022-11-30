@@ -2155,6 +2155,7 @@
 				["0.22:0.61:0.42:0.53:0.60:0.52:0.64:0.42:0.62:0.36"] = 363, -- Valiance Keep, Stars' Rest, Wintergarde Keep, Ebon Watch, K3
 				["0.22:0.61:0.42:0.53:0.41:0.43:0.52:0.38:0.62:0.36"] = 345, -- Valiance Keep, Stars' Rest, Valiance Landing Camp, Dalaran, K3
 				["0.22:0.61:0.42:0.53:0.46:0.46:0.52:0.38:0.24:0.40"] = 487, -- Valiance Keep, Stars' Rest, Fordragon Hold, Dalaran, River's Heart
+				["0.22:0.61:0.42:0.53:0.41:0.43:0.52:0.38:0.56:0.36:0.57:0.33"] = 360, -- Valiance Keep, Stars' Rest, Valiance Landing Camp, Dalaran, The Argent Vanguard, Frosthold
 
 				----------------------------------------------------------------------
 				-- Alliance: Crystalsong Forest
@@ -3695,6 +3696,7 @@
 				["0.41:0.43:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 278, -- Valiance Landing Camp, River's Heart, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
 				["0.41:0.43:0.42:0.53:0.21:0.49:0.17:0.53"] = 251, -- Valiance Landing Camp, Stars' Rest, Fizzcrank Airstrip, Amber Ledge
 				["0.41:0.43:0.52:0.38:0.59:0.43"] = 133, -- Valiance Landing Camp, Dalaran, Windrunner's Overlook
+				["0.41:0.43:0.46:0.46:0.60:0.52:0.69:0.42"] = 219, -- Valiance Landing Camp, Fordragon Hold, Wintergarde Keep, Light's Breach
 
 				----------------------------------------------------------------------
 				-- Alliance: Zul'Drak

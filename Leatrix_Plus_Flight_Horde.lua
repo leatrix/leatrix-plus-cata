@@ -2028,6 +2028,7 @@
 				["0.60:0.40:0.52:0.38:0.48:0.44:0.59:0.55"] = 206, -- Sunreaver's Command, Dalaran, Kor'koron Vanguard, Venomspite
 				["0.60:0.40:0.64:0.42:0.72:0.40:0.78:0.38"] = 143, -- Quartier général de Saccage-soleil, Guet d'Ébène, Le séjour d'Argent, Zim'Torga
 				["0.60:0.40:0.64:0.42:0.72:0.40"] = 102, -- Sunreaver's Command, Ebon Watch, The Argent Stand
+				["0.60:0.40:0.52:0.38:0.54:0.52:0.45:0.51"] = 233, -- Sunreaver's Command, Dalaran, Wyrmrest Temple, Agmar's Hammer
 
 				----------------------------------------------------------------------
 				-- Horde: Dalaran
