@@ -12,7 +12,7 @@
 ## Author: Leatrix
 ## SavedVariables: LeaPlusDB
 
-## OptionalDeps: Leatrix_English, ElvUI, Glass
+## OptionalDeps: Leatrix_enUS, ElvUI, Glass
 
 ## X-Curse-Project-ID: 463863
 
