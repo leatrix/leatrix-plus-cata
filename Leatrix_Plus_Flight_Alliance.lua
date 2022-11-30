@@ -3861,6 +3861,7 @@
 				["0.69:0.42:0.60:0.52:0.59:0.43:0.62:0.36"] = 194, -- Light's Breach, Wintergarde Keep, Windrunner's Overlook, K3
 				["0.69:0.42:0.64:0.42:0.62:0.36:0.57:0.33"] = 123, -- Light's Breach, Ebon Watch, K3, Frosthold
 				["0.69:0.42:0.64:0.42:0.46:0.46:0.41:0.43"] = 211, -- Lichtbresche, Schwarze Wacht, Feste Fordragon, Valianzlager
+				["0.69:0.42:0.64:0.42:0.54:0.52:0.42:0.53:0.21:0.49:0.17:0.53"] = 365, -- Light's Breach, Ebon Watch, Wyrmrest Temple, Stars' Rest, Fizzcrank Airstrip, Amber Ledge
 
 				-- Alliance: Zul'Drak: The Argent Stand
 				["0.72:0.40:0.78:0.38"] = 42, -- The Argent Stand, Zim'Torga
