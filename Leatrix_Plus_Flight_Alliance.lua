@@ -1211,6 +1211,7 @@
 				["0.42:0.16:0.43:0.25:0.46:0.40:0.61:0.55:0.60:0.81:0.50:0.76"] = 790, -- Rut'theran Village, Auberdine, Astranaar, Ratchet, Gadgetzan, Marshal's Refuge
 				["0.42:0.16:0.43:0.25:0.31:0.69:0.48:0.70:0.60:0.81:0.50:0.76"] = 986, -- Rut'theran Village, Auberdine, Feathermoon, Thalanaar, Gadgetzan, Marshal's Refuge
 				["0.42:0.16:0.43:0.25:0.61:0.40:0.61:0.55"] = 521, -- Rut'theran Village, Auberdine, Talrendis Point, Ratchet
+				["0.42:0.16:0.43:0.25:0.46:0.40:0.61:0.55:0.60:0.81:0.48:0.70"] = 863, -- Rut'theran Village, Auberdine, Astranaar, Ratchet, Gadgetzan, Thalanaar
 
 				-- Alliance: Stonetalon Peak (Stonetalon Mountains)
 				["0.39:0.40:0.40:0.51:0.31:0.69"] = 359, -- Stonetalon Peak, Nijel's Point, Feathermoon
@@ -1270,6 +1271,7 @@
 				["0.53:0.26:0.65:0.23:0.61:0.40:0.61:0.55:0.60:0.81"] = 640, -- Talonbranch Glade, Everlook, Talrendis Point, Ratchet, Gadgetzan
 				["0.53:0.26:0.65:0.23:0.61:0.40:0.61:0.55:0.64:0.67:0.48:0.70"] = 665, -- Clairière de Griffebranche, Long-guet, Halte de Talrendis, Cabestan, Theramore, Thalanaar
 				["0.53:0.26:0.65:0.23:0.61:0.40:0.58:0.39"] = 293, -- Talonbranch Glade, Everlook, Talrendis Point, Forest Song
+				["0.53:0.26:0.50:0.35:0.46:0.40:0.64:0.67:0.60:0.81"] = 753, -- Talonbranch Glade, Emerald Sanctuary, Astranaar, Theramore, Gadgetzan
 
 				-- Alliance: Talrendis Point (Azshara)
 				["0.61:0.40:0.61:0.55:0.64:0.67:0.48:0.70:0.31:0.69"] = 574, -- Talrendis Point, Ratchet, Theramore, Thalanaar, Feathermoon
@@ -2380,6 +2382,7 @@
 				["0.52:0.38:0.59:0.43:0.60:0.52:0.42:0.53:0.21:0.49"] = 362, -- Dalaran, Windrunner's Overlook, Wintergarde Keep, Stars' Rest, Fizzcrank Airstrip
 				["0.52:0.38:0.41:0.43:0.42:0.53:0.21:0.49:0.17:0.53:0.12:0.53"] = 402, -- Dalaran, Valiance Landing Camp, Stars' Rest, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
 				["0.52:0.38:0.56:0.36:0.57:0.21"] = 300, -- Dalaran, The Argent Vanguard, Bouldercrag's Refuge
+				["0.52:0.38:0.59:0.43:0.60:0.52:0.42:0.53:0.22:0.61:0.17:0.53:0.12:0.53"] = 461, -- Dalaran, Windläufers Warte, Feste Wintergarde, Sternenruh, Valianzfeste, Bernsteinflöz, Transitusschild
 
 				----------------------------------------------------------------------
 				-- Alliance: Dragonblight
@@ -2988,6 +2991,7 @@
 				["0.88:0.72:0.76:0.67:0.60:0.52:0.64:0.42:0.62:0.36"] = 318, -- Valgarde Port, Westguard Keep, Wintergarde Keep, Ebon Watch, K3
 				["0.88:0.72:0.76:0.67:0.60:0.52:0.54:0.52:0.52:0.38:0.56:0.36"] = 382, -- Valgarde Port, Westguard Keep, Wintergarde Keep, Wyrmrest Temple, Dalaran, The Argent Vanguard
 				["0.88:0.72:0.74:0.71:0.49:0.58:0.54:0.52"] = 338, -- Valgarde Port, Kamagua, Moa'ki, Wyrmrest Temple
+				["0.88:0.72:0.76:0.67:0.60:0.52:0.54:0.52:0.52:0.38:0.62:0.36"] = 405, -- Valgarde Port, Westguard Keep, Wintergarde Keep, Wyrmrest Temple, Dalaran, K3
 
 				-- Alliance: Howling Fjord: Westguard Keep
 				["0.76:0.67:0.74:0.71"] = 52, -- Westguard Keep, Kamagua
@@ -3288,6 +3292,7 @@
 				["0.38:0.21:0.52:0.38:0.64:0.42:0.69:0.42"] = 276, -- The Shadow Vault, Dalaran, Ebon Watch, Light's Breach
 				["0.38:0.21:0.57:0.33:0.62:0.36:0.52:0.38"] = 319, -- Das Schattengewölbe, Eisfestung, K3, Dalaran
 				["0.38:0.21:0.46:0.46:0.60:0.52:0.73:0.54:0.83:0.46"] = 428, -- The Shadow Vault, Fordragon Hold, Wintergarde Keep, Amberpine Lodge, Westfall Brigade
+				["0.38:0.21:0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38:0.72:0.29"] = 421, -- The Shadow Vault, Dalaran, Ebon Watch, The Argent Stand, Zim'Torga, Dun Nifflelem
 
 				----------------------------------------------------------------------
 				-- Alliance: Sholazar Basin
@@ -3758,6 +3763,7 @@
 				["0.41:0.43:0.52:0.38:0.59:0.43"] = 133, -- Valiance Landing Camp, Dalaran, Windrunner's Overlook
 				["0.41:0.43:0.46:0.46:0.60:0.52:0.69:0.42"] = 219, -- Valiance Landing Camp, Fordragon Hold, Wintergarde Keep, Light's Breach
 				["0.41:0.43:0.42:0.53:0.60:0.52:0.73:0.54"] = 274, -- Valiance Landing Camp, Stars' Rest, Wintergarde Keep, Amberpine Lodge
+				["0.41:0.43:0.24:0.40:0.21:0.49:0.22:0.61"] = 267, -- Valiance Landing Camp, River's Heart, Fizzcrank Airstrip, Valiance Keep
 
 				----------------------------------------------------------------------
 				-- Alliance: Zul'Drak

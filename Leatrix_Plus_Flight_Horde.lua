@@ -1881,6 +1881,7 @@
 				["0.12:0.53:0.17:0.53:0.18:0.47:0.24:0.40:0.28:0.28:0.38:0.21"] = 209, -- Transitus Shield, Amber Ledge, Bor'gorok Outpost, River's Heart, Death's Rise, The Shadow Vault
 				["0.12:0.53:0.17:0.53:0.29:0.54:0.31:0.43:0.52:0.34"] = 230, -- Transitusschild, Bernsteinflöz, Taunka'le, Kriegshymnenlager, Kreuzfahrerturm
 				["0.12:0.53:0.17:0.53:0.29:0.54:0.29:0.57:0.49:0.58:0.74:0.71"] = 298, -- Transitus Shield, Amber Ledge, Taunka'le Village, Unu'pe, Moa'ki, Kamagua
+				["0.12:0.53:0.17:0.53:0.29:0.54:0.29:0.57:0.49:0.58:0.59:0.55:0.74:0.62:0.84:0.59:0.95:0.63"] = 370, -- Transitus Shield, Amber Ledge, Taunka'le Village, Unu'pe, Moa'ki, Venomspite, Apothecary Camp, Camp Winterhoof, Vengeance Landing
 
 				-- Horde: Borean Tundra: Unu'pe
 				["0.29:0.57:0.29:0.54"] = 22, -- Unu'pe, Taunka'le Village
@@ -2612,6 +2613,7 @@
 				["0.70:0.55:0.59:0.55:0.45:0.51:0.29:0.54:0.17:0.53"] = 405, -- Conquest Hold, Venomspite, Agmar's Hammer, Taunka'le Village, Amber Ledge
 				["0.70:0.55:0.59:0.55:0.45:0.51:0.29:0.54:0.15:0.57"] = 414, -- Conquest Hold, Venomspite, Agmar's Hammer, Taunka'le Village, Warsong Hold
 				["0.70:0.55:0.74:0.62:0.74:0.71:0.49:0.58:0.45:0.51"] = 369, -- Conquest Hold, Apothecary Camp, Kamagua, Moa'ki, Agmar's Hammer
+				["0.70:0.55:0.59:0.55:0.54:0.52:0.52:0.38:0.56:0.36"] = 257, -- Conquest Hold, Venomspite, Wyrmrest Temple, Dalaran, The Argent Vanguard
 
 				----------------------------------------------------------------------
 				-- Horde: Howling Fjord
@@ -3557,6 +3559,8 @@
 				["0.64:0.19:0.57:0.21:0.38:0.21:0.28:0.28:0.18:0.40:0.18:0.47"] = 417, -- 울두아르 (폭풍우 봉우리), 바울더크랙의 은거처 (폭풍우 봉우리), 어둠의 무기고 (얼음왕관), 죽음의 마루 (얼음왕관), 네싱워리 주둔지 (숄라자르 분지), 보르고로크 전초기지 (북풍의 땅), 보르고로크 전초기지 (북풍의 땅)
 				["0.64:0.19:0.60:0.25:0.56:0.36:0.52:0.38:0.31:0.43"] = 304, -- Ulduar, Grom'arsh Crash-Site, The Argent Vanguard, Dalaran, Warsong Camp
 				["0.64:0.19:0.60:0.25:0.62:0.36:0.64:0.42:0.69:0.42:0.70:0.55"] = 292, -- Ulduar, Grom'arsh Crash-Site, K3, Ebon Watch, Light's Breach, Conquest Hold
+				["0.64:0.19:0.60:0.25:0.56:0.36:0.38:0.21"] = 270, -- Ulduar, Grom'arsh Crash-Site, The Argent Vanguard, The Shadow Vault
+				["0.64:0.19:0.78:0.38:0.72:0.40:0.69:0.42"] = 230, -- Ulduar, Zim'Torga, The Argent Stand, Light's Breach
 
 				----------------------------------------------------------------------
 				-- Horde: Wintergrasp
