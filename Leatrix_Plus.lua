@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.72 (24th December 2022)
+-- 	Leatrix Plus 3.0.73 (24th December 2022)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.72"
+	LeaPlusLC["AddonVer"] = "3.0.73"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -13054,7 +13054,7 @@
 						LeaPlusCB[option].tiptext = LeaPlusCB[option].tiptext .. "."
 						-- Remove hover from configuration button if there is one
 						local temp = {LeaPlusCB[option]:GetChildren()}
-						if temp and temp[1] and temp[1].t and temp[1].t:GetTexture() == 311225 then
+						if temp and temp[1] and temp[1].t and temp[1].t:GetTexture() == "Interface\\WorldMap\\Gear_64.png" then
 							temp[1]:SetHighlightTexture(0)
 							temp[1]:SetScript("OnEnter", nil)
 						end
