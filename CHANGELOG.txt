@@ -1,3 +1,6 @@
+3.0.72 - 24th December 2022
+- Added flight times.
+
 3.0.71 - 23rd December 2022
 - Added flight times.  There are now 7393 flight times in Leatrix Plus for Wrath of the Lich King Classic.
 
