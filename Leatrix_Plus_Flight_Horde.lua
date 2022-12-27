@@ -123,6 +123,7 @@
 				["0.42:0.86:0.50:0.66:0.42:0.37:0.61:0.35:0.61:0.28:0.58:0.06"] = 1271, -- Grom'gol, Kargath, Undercity, Light's Hope Chapel, Zul'Aman, Shattered Sun Staging Area
 				["0.42:0.86:0.50:0.66:0.42:0.37:0.37:0.41"] = 778, -- Grom'gol, Kargath, Undercity, The Sepulcher
 				["0.42:0.86:0.50:0.66:0.42:0.37:0.61:0.35:0.61:0.28:0.58:0.06:0.59:0.19"] = 1435, -- Grom'gol, Kargath, Undercity, Light's Hope Chapel, Zul'Aman, Shattered Sun Staging Area, Silvermoon City
+				["0.42:0.86:0.50:0.66:0.55:0.46:0.59:0.45:0.61:0.35:0.61:0.28:0.58:0.06:0.59:0.19"] = 1246, -- Grom'gol, Kargath, Hammerfall, Revantusk Village, Light's Hope Chapel, Zul'Aman, Shattered Sun Staging Area, Silvermoon City
 
 				-- Horde: Hammerfall (Arathi Highlands)
 				["0.55:0.46:0.50:0.66:0.41:0.93"] = 556, -- Hammerfall, Kargath, Booty Bay
@@ -1713,6 +1714,7 @@
 				["0.17:0.53:0.29:0.54:0.45:0.51:0.59:0.55:0.70:0.55:0.84:0.51"] = 272, -- Amber Ledge, Taunka'le Village, Agmar's Hammer, Venomspite, Conquest Hold, Camp Oneqwah
 				["0.17:0.53:0.29:0.54:0.45:0.51:0.54:0.52:0.52:0.38:0.62:0.36:0.60:0.25"] = 283, -- Amber Ledge, Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Dalaran, K3, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.17:0.53:0.29:0.54:0.45:0.51:0.54:0.52:0.64:0.42:0.72:0.40:0.78:0.38:0.82:0.31"] = 315, -- Amber Ledge, Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Ebon Watch, The Argent Stand, Zim'Torga, Gundrak
+				["0.17:0.53:0.29:0.54:0.45:0.51:0.59:0.55:0.69:0.42"] = 237, -- Amber Ledge, Taunka'le Village, Agmar's Hammer, Venomspite, Light's Breach
 
 				-- Horde: Borean Tundra: Bor'gorok Outpost
 				["0.18:0.47:0.29:0.54"] = 78, -- Bor'gorok Outpost, Taunka'le Village
@@ -2012,6 +2014,7 @@
 				["0.15:0.57:0.29:0.54:0.45:0.51:0.59:0.55:0.64:0.42"] = 344, -- Warsong Hold, Taunka'le Village, Agmar's Hammer, Venomspite, Ebon Watch
 				["0.15:0.57:0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.52:0.34"] = 324, -- Warsong Hold, Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Dalaran, Crusaders' Pinnacle
 				["0.15:0.57:0.29:0.54:0.45:0.51:0.48:0.44:0.64:0.42:0.69:0.42:0.70:0.55:0.74:0.62:0.85:0.73"] = 612, -- Warsong Hold, Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Ebon Watch, Light's Breach, Conquest Hold, Apothecary Camp, New Agamand
+				["0.15:0.57:0.29:0.54:0.45:0.51:0.59:0.55:0.64:0.42:0.52:0.38"] = 411, -- Warsong Hold, Taunka'le Village, Agmar's Hammer, Venomspite, Ebon Watch, Dalaran
 
 				----------------------------------------------------------------------
 				-- Horde: Crystalsong Forest
@@ -2231,6 +2234,7 @@
 				["0.52:0.38:0.64:0.42:0.72:0.40:0.84:0.51:0.84:0.59:0.85:0.73"] = 371, -- Dalaran, Ebon Watch, The Argent Stand, Camp Oneqwah, Camp Winterhoof, New Agamand
 				["0.52:0.38:0.49:0.58:0.59:0.55:0.74:0.62:0.84:0.59:0.95:0.63"] = 449, -- Dalaran, Moa'ki, Gallgrimm, Apothekerlager, Lager der Winterhufe, Hafen der Vergeltung
 				["0.52:0.38:0.49:0.58:0.59:0.55:0.69:0.42:0.72:0.40"] = 367, -- Dalaran, Moa'ki, Venomspite, Light's Breach, The Argent Stand
+				["0.52:0.38:0.49:0.58:0.59:0.55:0.69:0.42:0.72:0.40:0.78:0.38:0.82:0.31"] = 461, -- Dalaran, Moa'ki, Venomspite, Light's Breach, The Argent Stand, Zim'Torga, Gundrak
 
 				----------------------------------------------------------------------
 				-- Horde: Dragonblight
@@ -2618,6 +2622,7 @@
 				["0.70:0.55:0.74:0.62:0.74:0.71:0.49:0.58:0.45:0.51"] = 369, -- Conquest Hold, Apothecary Camp, Kamagua, Moa'ki, Agmar's Hammer
 				["0.70:0.55:0.59:0.55:0.54:0.52:0.52:0.38:0.56:0.36"] = 257, -- Conquest Hold, Venomspite, Wyrmrest Temple, Dalaran, The Argent Vanguard
 				["0.70:0.55:0.59:0.55:0.54:0.52:0.52:0.38:0.52:0.34:0.38:0.21"] = 385, -- Conquest Hold, Venomspite, Wyrmrest Temple, Dalaran, Crusaders' Pinnacle, The Shadow Vault
+				["0.70:0.55:0.74:0.62:0.74:0.71:0.49:0.58:0.52:0.38"] = 427, -- Conquest Hold, Apothecary Camp, Kamagua, Moa'ki, Dalaran
 
 				----------------------------------------------------------------------
 				-- Horde: Howling Fjord
@@ -2832,6 +2837,7 @@
 				["0.74:0.71:0.74:0.62:0.59:0.55:0.54:0.52:0.52:0.38:0.62:0.36:0.72:0.29"] = 465, -- Kamagua, Apothecary Camp, Venomspite, Wyrmrest Temple, Dalaran, K3, Dun Nifflelem
 				["0.74:0.71:0.49:0.58:0.45:0.51:0.29:0.54:0.18:0.47"] = 441, -- Kamagua, Moa'ki, Agmar's Hammer, Taunka'le Village, Bor'gorok Outpost
 				["0.74:0.71:0.85:0.73:0.84:0.59:0.84:0.51:0.78:0.38:0.72:0.29"] = 375, -- Kamagua, New Agamand, Camp Winterhoof, Camp Oneqwah, Zim'Torga, Dun Nifflelem
+				["0.74:0.71:0.74:0.62:0.59:0.55:0.54:0.52:0.52:0.38:0.62:0.36"] = 365, -- Kamagua, Apothecary Camp, Venomspite, Wyrmrest Temple, Dalaran, K3
 
 				-- Horde: Howling Fjord: New Agamand
 				["0.85:0.73:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38"] = 335, -- New Agamand, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, Dalaran
@@ -3200,6 +3206,7 @@
 				["0.18:0.40:0.24:0.40:0.52:0.38:0.48:0.44"] = 455, -- Nesingwary Base Camp, River's Heart, Dalaran, Kor'koron Vanguard
 				["0.18:0.40:0.18:0.47:0.29:0.54:0.29:0.57:0.49:0.58"] = 428, -- Nesingwary Base Camp, Bor'gorok Outpost, Taunka'le Village, Unu'pe, Moa'ki
 				["0.18:0.40:0.18:0.47:0.29:0.54:0.45:0.51:0.59:0.55:0.74:0.62:0.84:0.59"] = 706, -- Nesingwary Base Camp, Bor'gorok Outpost, Taunka'le Village, Agmar's Hammer, Venomspite, Apothecary Camp, Camp Winterhoof
+				["0.18:0.40:0.28:0.28:0.52:0.34"] = 398, -- Nesingwary Base Camp, Death's Rise, Crusaders' Pinnacle
 
 				-- Horde: Sholazar Basin: River's Heart
 				["0.24:0.40:0.31:0.43"] = 129, -- River's Heart, Warsong Camp
@@ -3680,6 +3687,7 @@
 				["0.72:0.40:0.64:0.42:0.48:0.44:0.45:0.51:0.29:0.54:0.15:0.57"] = 408, -- The Argent Stand, Ebon Watch, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Warsong Hold
 				["0.72:0.40:0.64:0.42:0.54:0.52:0.45:0.51:0.29:0.54:0.17:0.53:0.12:0.53"] = 432, -- Argentumwache, Schwarze Wacht, Wyrmruhtempel, Agmars Hammer, Taunka'le, Bernsteinflöz, Transitusschild
 				["0.72:0.40:0.64:0.42:0.52:0.38:0.52:0.34:0.28:0.28"] = 313, -- Серебряная застава, Черная застава, Даларан, Вершина Рыцарей, Уступ Смерти
+				["0.72:0.40:0.69:0.42:0.59:0.55:0.49:0.58:0.29:0.57:0.29:0.54:0.18:0.47"] = 451, -- The Argent Stand, Light's Breach, Venomspite, Moa'ki, Unu'pe, Taunka'le Village, Bor'gorok Outpost
 
 				-- Horde: Zul'Drak: Ebon Watch
 				["0.64:0.42:0.69:0.42"] = 45, -- Ebon Watch, Light's Breach
