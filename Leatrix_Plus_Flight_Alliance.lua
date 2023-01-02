@@ -252,6 +252,7 @@
 				["0.50:0.75:0.41:0.73:0.47:0.59:0.51:0.47:0.50:0.42"] = 547, -- Lakeshire, Stormwind, Ironforge, Refuge Pointe, Aerie Peak
 				["0.50:0.75:0.41:0.73:0.47:0.59:0.48:0.39:0.51:0.36"] = 581, -- Lakeshire, Stormwind, Ironforge, Chillwind Camp, Thondoril River
 				["0.50:0.75:0.41:0.73:0.41:0.93"] = 297, -- Lakeshire, Stormwind, Booty Bay
+				["0.50:0.75:0.41:0.73:0.47:0.65:0.53:0.61:0.51:0.47:0.50:0.42"] = 546, -- Seenhain, Sturmwind, Thoriumspitze, Thelsamar, Die Zuflucht, Nistgipfel
 
 				-- Alliance: Light's Hope Chapel (Eastern Plaguelands)
 				["0.61:0.35:0.47:0.59:0.47:0.65:0.41:0.73:0.41:0.93"] = 712, -- Light's Hope Chapel, Ironforge, Thorium Point, Stormwind, Booty Bay
@@ -1900,6 +1901,7 @@
 				["0.17:0.53:0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.73:0.54"] = 268, -- Amber Ledge, Valiance Keep, Unu'pe, Moa'ki, Wintergarde Keep, Amberpine Lodge
 				["0.17:0.53:0.22:0.61:0.29:0.57:0.49:0.58:0.52:0.38"] = 245, -- Amber Ledge, Valiance Keep, Unu'pe, Moa'ki, Dalaran
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.28:0.28:0.38:0.21"] = 184, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Death's Rise, The Shadow Vault
+				["0.17:0.53:0.22:0.61:0.42:0.53:0.60:0.52:0.76:0.67"] = 300, -- Amber Ledge, Valiance Keep, Stars' Rest, Wintergarde Keep, Westguard Keep
 
 				-- Alliance: Borean Tundra: Fizzcrank Airstrip
 				["0.21:0.49:0.17:0.53"] = 45, -- Fizzcrank Airstrip, Amber Ledge
@@ -2563,6 +2565,7 @@
 				["0.42:0.53:0.46:0.46:0.52:0.38:0.62:0.36:0.57:0.33:0.64:0.19"] = 333, -- Stars' Rest, Fordragon Hold, Dalaran, K3, Frosthold, Ulduar
 				["0.42:0.53:0.60:0.52:0.64:0.42:0.62:0.36"] = 222, -- Stars' Rest, Wintergarde Keep, Ebon Watch, K3
 				["0.42:0.53:0.54:0.52:0.52:0.38:0.56:0.36"] = 208, -- Stars' Rest, Wyrmrest Temple, Dalaran, The Argent Vanguard
+				["0.42:0.53:0.54:0.52:0.52:0.38:0.56:0.36:0.57:0.33"] = 246, -- Stars' Rest, Wyrmrest Temple, Dalaran, The Argent Vanguard, Frosthold
 
 				-- Alliance: Dragonblight: Wintergarde Keep
 				["0.60:0.52:0.54:0.52"] = 55, -- Wintergarde Keep, Wyrmrest Temple
@@ -3369,6 +3372,7 @@
 				["0.18:0.40:0.21:0.49:0.42:0.53:0.49:0.58:0.74:0.71"] = 690, -- Nesingwary Base Camp, Fizzcrank Airstrip, Stars' Rest, Moa'ki, Kamagua
 				["0.18:0.40:0.24:0.40:0.52:0.38:0.59:0.43"] = 426, -- Nesingwary Base Camp, River's Heart, Dalaran, Windrunner's Overlook
 				["0.18:0.40:0.21:0.49:0.42:0.53:0.49:0.58"] = 416, -- Nesingwary Base Camp, Fizzcrank Airstrip, Stars' Rest, Moa'ki
+				["0.18:0.40:0.21:0.49:0.42:0.53:0.60:0.52:0.73:0.54:0.83:0.46"] = 722, -- Nesingwary Base Camp, Fizzcrank Airstrip, Stars' Rest, Wintergarde Keep, Amberpine Lodge, Westfall Brigade
 
 				-- Alliance: Sholazar Basin: River's Heart
 				["0.24:0.40:0.21:0.49"] = 104, -- River's Heart, Fizzcrank Airstrip
