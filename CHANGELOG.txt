@@ -1,3 +1,6 @@
+3.0.77 - 4th January 2023
+- Added flight times.
+
 3.0.76 - 2nd January 2023
 - For 'Filter chat messages' ('Chat'), the 'Block spell links during combat' setting now also applies to the yell channel.
 - Added flight times.
