@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.77 (4th January 2023)
+-- 	Leatrix Plus 3.0.78.alpha.1 (5th January 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.77"
+	LeaPlusLC["AddonVer"] = "3.0.78.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -7596,6 +7596,9 @@
 				-- Create train all button
 				LeaPlusLC:CreateButton("TrainAllButton", ClassTrainerFrame, "Train All", "BOTTOMLEFT", 344, 54, 0, 22, false, "")
 
+				-- Give button global scope (useful for compatibility with other addons and essential for ElvUI)
+				_G.LeaPlusGlobalTrainAllButton = LeaPlusCB["TrainAllButton"]
+
 				-- Button tooltip
 				LeaPlusCB["TrainAllButton"]:SetScript("OnEnter", function(self)
 					-- Get number of available skills and total cost
@@ -7685,7 +7688,6 @@
 						_G["ClassTrainerTrainButton"]:SetPoint("BOTTOMRIGHT", _G["ClassTrainerFrame"], "BOTTOMRIGHT", -42, 78)
 						LeaPlusCB["TrainAllButton"]:ClearAllPoints()
 						LeaPlusCB["TrainAllButton"]:SetPoint("BOTTOMLEFT", _G["ClassTrainerFrame"], "BOTTOMLEFT", 344, 78)
-						_G.LeaPlusGlobalTrainAllButton = LeaPlusCB["TrainAllButton"]
 						E:GetModule("Skins"):HandleButton(_G.LeaPlusGlobalTrainAllButton)
 					end
 				end

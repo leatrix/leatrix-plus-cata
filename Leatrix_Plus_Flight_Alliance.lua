@@ -181,6 +181,7 @@
 				["0.47:0.79:0.50:0.75:0.52:0.72:0.47:0.65:0.47:0.59:0.44:0.45:0.50:0.42"] = 509, -- Villa Oscura, Villa del Lago, Vigilia de Morgan, Puesto del Torio, Forjaz, Costasur, Pico Nidal
 				["0.47:0.79:0.41:0.73:0.47:0.59:0.48:0.39:0.51:0.36"] = 556, -- Darkshire, Stormwind, Ironforge, Chillwind Camp, Thondoril River
 				["0.47:0.79:0.41:0.73:0.47:0.65:0.53:0.61"] = 287, -- Darkshire, Stormwind, Thorium Point, Thelsamar
+				["0.47:0.79:0.41:0.73:0.47:0.65:0.53:0.61:0.51:0.47"] = 449, -- Darkshire, Stormwind, Thorium Point, Thelsamar, Refuge Pointe
 
 				-- Alliance: Ironforge (Dun Morogh)
 				["0.47:0.59:0.47:0.65:0.41:0.73:0.41:0.93"] = 381, -- Ironforge, Thorium Point, Stormwind, Booty Bay
@@ -3760,6 +3761,7 @@
 				["0.64:0.19:0.57:0.21:0.56:0.36"] = 296, -- Ulduar, Bouldercrag's Refuge, The Argent Vanguard
 				["0.64:0.19:0.57:0.21:0.28:0.28:0.24:0.40"] = 356, -- Ulduar, Bouldercrag's Refuge, Death's Rise, River's Heart
 				["0.64:0.19:0.78:0.38:0.83:0.46:0.73:0.54:0.76:0.67:0.88:0.72"] = 438, -- Ulduar, Zim'Torga, Westfall Brigade, Amberpine Lodge, Westguard Keep, Valgarde Port
+				["0.64:0.19:0.72:0.29:0.62:0.36:0.52:0.38:0.56:0.36"] = 285, -- Ulduar, Dun Nifflelem, K3, Dalaran, The Argent Vanguard
 
 				----------------------------------------------------------------------
 				-- Alliance: Wintergrasp

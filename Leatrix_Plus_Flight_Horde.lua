@@ -3489,6 +3489,7 @@
 				["0.60:0.25:0.57:0.21:0.38:0.21:0.28:0.28:0.18:0.40"] = 345, -- Grom'arsh Crash-Site, Bouldercrag's Refuge, The Shadow Vault, Death's Rise, Nesingwary Base Camp
 				["0.60:0.25:0.56:0.36:0.52:0.38:0.64:0.42"] = 176, -- Grom'arsh Crash-Site, The Argent Vanguard, Dalaran, Ebon Watch
 				["0.60:0.25:0.62:0.36:0.64:0.42:0.59:0.55"] = 229, -- Grom'arsh Crash-Site, K3, Ebon Watch, Venomspite
+				["0.60:0.25:0.62:0.36:0.60:0.40"] = 125, -- Grom'arsh Crash-Site, K3, Sunreaver's Command
 
 				-- Horde: The Storm Peaks: K3
 				["0.62:0.36:0.52:0.38"] = 72, -- K3, Dalaran
@@ -3542,6 +3543,8 @@
 				["0.62:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54:0.17:0.53"] = 371, -- K3, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Amber Ledge
 				["0.62:0.36:0.73:0.25:0.64:0.19:0.57:0.21"] = 212, -- K3, Camp Tunka'lo, Ulduar, Bouldercrag's Refuge
 				["0.62:0.36:0.64:0.42:0.59:0.55:0.74:0.62"] = 240, -- K3, Ebon Watch, Venomspite, Apothecary Camp
+				["0.62:0.36:0.52:0.38:0.54:0.52:0.45:0.51"] = 249, -- K3, Dalaran, Wyrmrest Temple, Agmar's Hammer
+				["0.62:0.36:0.52:0.38:0.54:0.52:0.59:0.55:0.70:0.55"] = 289, -- K3, Dalaran, Wyrmrest Temple, Venomspite, Conquest Hold
 
 				-- Horde: The Storm Peaks: Ulduar
 				["0.64:0.19:0.73:0.25"] = 88, -- Ulduar, Camp Tunka'lo
