@@ -1,4 +1,4 @@
-3.0.78.alpha.2 - 6th January 2023
+3.0.78.alpha.3 - 6th January 2023
 - For 'Show train all button' ('Interface'), the train all button now has a global name of LeaPlusGlobalTrainAllButton.
 - Added flight times.
 - PTR (3.4.1): Fixed the Lua error when logging into the PTR.
