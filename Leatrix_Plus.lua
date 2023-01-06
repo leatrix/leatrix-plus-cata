@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.78.alpha.1 (5th January 2023)
+-- 	Leatrix Plus 3.0.78.alpha.2 (6th January 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.78.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.78.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -63,6 +63,10 @@
 	_G.BINDING_NAME_LEATRIX_PLUS_GLOBAL_TOGGLE = L["Toggle panel"]
 	_G.BINDING_NAME_LEATRIX_PLUS_GLOBAL_WEBLINK = L["Show web link"]
 	_G.BINDING_NAME_LEATRIX_PLUS_GLOBAL_RARE = L["Announce rare"]
+
+	-- Slash command taint
+	-- Enter combat, enter any addon slash command, open quest log with L, toggle tracking on a quest 4 times,
+	-- click the tracked quest in the objective tracker, taint and objective tracker no longer functions
 
 ----------------------------------------------------------------------
 --	L01: Functions
@@ -3026,11 +3030,19 @@
 			ColTar:SetScript("OnEvent", TargetFrameCol) -- Events are registered if target option is enabled
 
 			-- Refresh color if focus frame size changes
-			hooksecurefunc("FocusFrame_SetSmallSize", function()
-				if LeaPlusLC["ClassColTarget"] == "On" then
-					TargetFrameCol()
-				end
-			end)
+			if LeaPlusLC.NewPatch then
+				hooksecurefunc(FocusFrame, "SetSmallSize", function()
+					if LeaPlusLC["ClassColTarget"] == "On" then
+						TargetFrameCol()
+					end
+				end)
+			else
+				hooksecurefunc("FocusFrame_SetSmallSize", function()
+					if LeaPlusLC["ClassColTarget"] == "On" then
+						TargetFrameCol()
+					end
+				end)
+			end
 
 			-- Create configuration panel
 			local ClassFrame = LeaPlusLC:CreatePanel("Class colored frames", "ClassFrame")
@@ -9717,7 +9729,11 @@
 
 			-- Remove integrated movement function to avoid conflicts
 			_G.FocusFrame_SetLock = function() end
-			_G.FocusFrame_SetSmallSize = function() end
+			if LeaPlusLC.NewPatch then
+				_G.FocusFrame.SetSmallSize = function() end
+			else
+				_G.FocusFrame_SetSmallSize = function() end
+			end
 
 			-- Allow focus frame to be moved
 			FocusFrame:SetMovable(true)
@@ -15622,6 +15638,9 @@
 		_G.SLASH_Leatrix_Plus1 = "/ltp"
 		_G.SLASH_Leatrix_Plus2 = "/leaplus"
 	end
+
+	_G.SLASH_Leatrix_Plus1 = "/ztp" -- temp
+
 	SlashCmdList["Leatrix_Plus"] = function(self)
 		-- Run slash command function
 		LeaPlusLC:SlashFunc(self)
