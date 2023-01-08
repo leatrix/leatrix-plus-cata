@@ -1,3 +1,6 @@
+3.0.79.alpha.1 - 8th January 2023
+- Added flight times.
+
 3.0.78 - 8th January 2023
 - Added a new option called 'Mute custom sounds' ('System').  You can enter sound file IDs (separated by comma) along with a brief note describing each ID in the configuration panel editbox.  After that, click the Mute button and you will never hear the sounds again.  For example, entering 'DevAura 569679, RetAura 568744' will mute both aura sounds.  Read the help button tooltip for more details.
 - For 'Show train all button' ('Interface'), the train all button now has a global name of LeaPlusGlobalTrainAllButton.
