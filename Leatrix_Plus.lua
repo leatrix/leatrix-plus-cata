@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.79 (11th January 2023)
+-- 	Leatrix Plus 3.0.80 (12th January 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.79"
+	LeaPlusLC["AddonVer"] = "3.0.80"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -5975,7 +5975,7 @@
 
 						-- Build route string and debug string
 						local numHops = GetNumRoutes(node)
-						local debugString = '\t\t\t\t\t["' .. currentNode
+						local debugString = '["' .. currentNode
 						local routeString = currentNode
 						for i = 2, numHops + 1 do
 							local hopPosX, hopPosY = TaxiNodePosition(TaxiGetNodeSlot(node, i, true))
