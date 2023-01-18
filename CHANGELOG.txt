@@ -1,6 +1,6 @@
 3.0.83 - 18th January 2023
 - Updated for game version 3.4.1.
-- There are a lot of code changes in 3.4.1 so please report any issues.
+- There are a lot of code changes in 3.4.1.
 - Due to problems with Blizzard's slash command system in 3.4.1, the /ltp command has been replaced with /run leaplus().  If you wish to pass a parameter, enter it in quotes between the brackets.
 - Added flight times.
 
