@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.85.alpha.1 (19th January 2023)
+-- 	Leatrix Plus 3.0.85.alpha.2 (19th January 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.85.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.85.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -3362,6 +3362,29 @@
 ----------------------------------------------------------------------
 
 	function LeaPlusLC:Player()
+
+		----------------------------------------------------------------------
+		-- Mute login screen (no reload required)
+		----------------------------------------------------------------------
+
+		do
+
+			local logEvent = CreateFrame("FRAME")
+			logEvent:RegisterEvent("PLAYER_LOGOUT")
+			logEvent:SetScript("OnEvent", function()
+				-- Save enable sound setting when logging out
+				LeaPlusDB["Sound_EnableAllSound"] = GetCVar("Sound_EnableAllSound")
+				-- Disable enable sound setting if option is enabled
+				if LeaPlusLC["MuteLoginScreen"] == "On" then
+					SetCVar("Sound_EnableAllSound", 0)
+				end
+			end)
+			if LeaPlusLC["MuteLoginScreen"] == "On" and LeaPlusDB["Sound_EnableAllSound"] then
+				-- Set enable sound setting to previous value at startup
+				SetCVar("Sound_EnableAllSound", LeaPlusDB["Sound_EnableAllSound"])
+			end
+
+		end
 
 		----------------------------------------------------------------------
 		-- Mute custom sounds (no reload required)
@@ -12951,6 +12974,7 @@
 				LeaPlusLC:LoadVarChk("MuteGameSounds", "Off")				-- Mute game sounds
 				LeaPlusLC:LoadVarChk("MuteCustomSounds", "Off")				-- Mute custom sounds
 				LeaPlusLC:LoadVarStr("MuteCustomList", "")					-- Mute custom sounds list
+				LeaPlusLC:LoadVarChk("MuteLoginScreen", "Off")				-- Mute login screen
 
 				LeaPlusLC:LoadVarChk("NoBagAutomation", "Off")				-- Disable bag automation
 				LeaPlusLC:LoadVarChk("CharAddonList", "Off")				-- Show character addons
@@ -13357,6 +13381,7 @@
 			LeaPlusDB["MuteGameSounds"]			= LeaPlusLC["MuteGameSounds"]
 			LeaPlusDB["MuteCustomSounds"]		= LeaPlusLC["MuteCustomSounds"]
 			LeaPlusDB["MuteCustomList"]			= LeaPlusLC["MuteCustomList"]
+			LeaPlusDB["MuteLoginScreen"]		= LeaPlusLC["MuteLoginScreen"]
 
 			LeaPlusDB["NoBagAutomation"]		= LeaPlusLC["NoBagAutomation"]
 			LeaPlusDB["CharAddonList"]			= LeaPlusLC["CharAddonList"]
@@ -15476,6 +15501,7 @@
 				LeaPlusDB["MuteGameSounds"] = "On"				-- Mute game sounds
 				LeaPlusDB["MuteCustomSounds"] = "On"			-- Mute custom sounds
 				LeaPlusDB["MuteCustomList"] = ""				-- Mute custom sounds list
+				LeaPlusDB["MuteLoginScreen"] = "On"				-- Mute login screen
 
 				LeaPlusDB["NoBagAutomation"] = "On"				-- Disable bag automation
 				LeaPlusDB["CharAddonList"] = "On"				-- Show character addons
@@ -15869,6 +15895,7 @@
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "NoRestedEmotes"			, 	"Silence rested emotes"			,	146, -192, 	true,	"If checked, emote sounds will be silenced while your character is resting or at the Grim Guzzler.|n|nEmote sounds will be enabled at all other times.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteGameSounds"			, 	"Mute game sounds"				,	146, -212, 	false,	"If checked, you will be able to mute a selection of game sounds.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteCustomSounds"			, 	"Mute custom sounds"			,	146, -232, 	false,	"If checked, you will be able to mute your own choice of sounds.")
+	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteLoginScreen"			, 	"Mute login screen"				,	146, -252, 	false,	"If checked, the login screen and character select screen will be muted.|n|nThis works by disabling all game sounds when you logout and enabling them again when you login to the game world if they were enabled when you logged out previously.|n|nYou can toggle all game sounds manually using the enable sound checkbox in the game system settings sound panel.")
 
 	LeaPlusLC:MakeTx(LeaPlusLC[pg], "Game Options"				, 	340, -72);
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "NoBagAutomation"			, 	"Disable bag automation"		, 	340, -92, 	true,	"If checked, your bags will not be opened or closed automatically when you interact with a merchant, bank or mailbox.")
