@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.85.alpha.2 (19th January 2023)
+-- 	Leatrix Plus 3.0.85 (19th January 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.85.alpha.2"
+	LeaPlusLC["AddonVer"] = "3.0.85"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -818,6 +818,17 @@
 					"levelup2.ogg#567478",
 				},
 
+				-- Login (sound/interface/)
+				["MuteLogin"] = {
+
+					-- Login screen music (sound/ambience/gluescreen/)
+					"gluescreenlogin.ogg#538968",
+
+					-- Dragon roaring sounds (sound/ambience/gluescreen/)
+					"wrath_login_1.ogg#538970", "wrath_login_2.ogg#538969", "wrath_login_3.ogg#538971", "wrath_login_4.ogg#538972",
+
+				},
+
 				-- Bikes
 				["MuteBikes"] = {
 
@@ -1002,6 +1013,7 @@
 			LeaPlusLC:MakeCB(SoundPanel, "MuteChimes", "Chimes", 16, -172, false, "If checked, clock hourly chimes will be muted.")
 			LeaPlusLC:MakeCB(SoundPanel, "MuteVaults", "Vaults", 16, -192, false, "If checked, the mechanical guild vault idle sound will be muted.")
 			LeaPlusLC:MakeCB(SoundPanel, "MuteReady", "Ready", 16, -212, false, "If checked, the ready check sound will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteLogin", "Login", 16, -232, false, "If checked, login screen sounds will be muted when you logout of the game.|n|nNote that login screen sounds will not be muted when you initially launch the game.|n|nThey will only be muted when you logout of the game.  This includes manually logging out as well as being forcefully logged out by the game server for reasons such as being away for an extended period of time.|n|nNo more dragons roaring when you fall asleep while the game is running!")
 
 			LeaPlusLC:MakeTx(SoundPanel, "Mounts", 150, -72)
 			LeaPlusLC:MakeCB(SoundPanel, "MuteBikes", "Bikes", 150, -92, false, "If checked, bike mount sounds will be muted.|n|nThis applies to Mekgineer's Chopper and Mechano-hog.")
@@ -3362,29 +3374,6 @@
 ----------------------------------------------------------------------
 
 	function LeaPlusLC:Player()
-
-		----------------------------------------------------------------------
-		-- Mute login screen (no reload required)
-		----------------------------------------------------------------------
-
-		do
-
-			local logEvent = CreateFrame("FRAME")
-			logEvent:RegisterEvent("PLAYER_LOGOUT")
-			logEvent:SetScript("OnEvent", function()
-				-- Save enable sound setting when logging out
-				LeaPlusDB["Sound_EnableAllSound"] = GetCVar("Sound_EnableAllSound")
-				-- Disable enable sound setting if option is enabled
-				if LeaPlusLC["MuteLoginScreen"] == "On" then
-					SetCVar("Sound_EnableAllSound", 0)
-				end
-			end)
-			if LeaPlusLC["MuteLoginScreen"] == "On" and LeaPlusDB["Sound_EnableAllSound"] then
-				-- Set enable sound setting to previous value at startup
-				SetCVar("Sound_EnableAllSound", LeaPlusDB["Sound_EnableAllSound"])
-			end
-
-		end
 
 		----------------------------------------------------------------------
 		-- Mute custom sounds (no reload required)
@@ -12974,7 +12963,6 @@
 				LeaPlusLC:LoadVarChk("MuteGameSounds", "Off")				-- Mute game sounds
 				LeaPlusLC:LoadVarChk("MuteCustomSounds", "Off")				-- Mute custom sounds
 				LeaPlusLC:LoadVarStr("MuteCustomList", "")					-- Mute custom sounds list
-				LeaPlusLC:LoadVarChk("MuteLoginScreen", "Off")				-- Mute login screen
 
 				LeaPlusLC:LoadVarChk("NoBagAutomation", "Off")				-- Disable bag automation
 				LeaPlusLC:LoadVarChk("CharAddonList", "Off")				-- Show character addons
@@ -13381,7 +13369,6 @@
 			LeaPlusDB["MuteGameSounds"]			= LeaPlusLC["MuteGameSounds"]
 			LeaPlusDB["MuteCustomSounds"]		= LeaPlusLC["MuteCustomSounds"]
 			LeaPlusDB["MuteCustomList"]			= LeaPlusLC["MuteCustomList"]
-			LeaPlusDB["MuteLoginScreen"]		= LeaPlusLC["MuteLoginScreen"]
 
 			LeaPlusDB["NoBagAutomation"]		= LeaPlusLC["NoBagAutomation"]
 			LeaPlusDB["CharAddonList"]			= LeaPlusLC["CharAddonList"]
@@ -15501,7 +15488,6 @@
 				LeaPlusDB["MuteGameSounds"] = "On"				-- Mute game sounds
 				LeaPlusDB["MuteCustomSounds"] = "On"			-- Mute custom sounds
 				LeaPlusDB["MuteCustomList"] = ""				-- Mute custom sounds list
-				LeaPlusDB["MuteLoginScreen"] = "On"				-- Mute login screen
 
 				LeaPlusDB["NoBagAutomation"] = "On"				-- Disable bag automation
 				LeaPlusDB["CharAddonList"] = "On"				-- Show character addons
@@ -15895,7 +15881,6 @@
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "NoRestedEmotes"			, 	"Silence rested emotes"			,	146, -192, 	true,	"If checked, emote sounds will be silenced while your character is resting or at the Grim Guzzler.|n|nEmote sounds will be enabled at all other times.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteGameSounds"			, 	"Mute game sounds"				,	146, -212, 	false,	"If checked, you will be able to mute a selection of game sounds.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteCustomSounds"			, 	"Mute custom sounds"			,	146, -232, 	false,	"If checked, you will be able to mute your own choice of sounds.")
-	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteLoginScreen"			, 	"Mute login screen"				,	146, -252, 	false,	"If checked, the login screen and character select screen will be muted.|n|nThis works by disabling all game sounds when you logout and enabling them again when you login to the game world if they were enabled when you logged out previously.|n|nYou can toggle all game sounds manually using the enable sound checkbox in the game system settings sound panel.")
 
 	LeaPlusLC:MakeTx(LeaPlusLC[pg], "Game Options"				, 	340, -72);
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "NoBagAutomation"			, 	"Disable bag automation"		, 	340, -92, 	true,	"If checked, your bags will not be opened or closed automatically when you interact with a merchant, bank or mailbox.")
