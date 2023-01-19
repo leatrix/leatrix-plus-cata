@@ -1,3 +1,7 @@
+3.0.87 - 19th January 2023
+- Fixed an issue with 'Resize quest text' ('Text') which caused gossip greeting panel scroll lists (such as city guard directions) to be shown outside of the gossip frame.  If you use ElvUI, the 'Resize quest text' option will now be disabled if you have ElvUI Skins > Blizzard > Gossip Frame checked.
+- Added flight times.
+
 3.0.86 - 19th January 2023
 - Fixed an issue with 'Enhance trainers' ('Interface') which may have caused the trainers frame to open alongside the gossip frame.
 - Added flight times.

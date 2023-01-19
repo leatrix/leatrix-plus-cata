@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.86 (19th January 2023)
+-- 	Leatrix Plus 3.0.87 (19th January 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.86"
+	LeaPlusLC["AddonVer"] = "3.0.87"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -2932,7 +2932,13 @@
 		--	Quest text size
 		----------------------------------------------------------------------
 
-		if LeaPlusLC["QuestFontChange"] == "On" then
+		if LeaPlusLC["QuestFontChange"] == "On" and not LeaLockList["QuestFontChange"] then
+
+			-- Set gossip frame scroll box layout (fix for game patch 3.4.1)
+			GossipFrame.GreetingPanel.ScrollBox:SetHeight(320)
+			GossipFrame.GreetingPanel.ScrollBar:ClearAllPoints()
+			GossipFrame.GreetingPanel.ScrollBar:SetPoint("TOPLEFT", GossipFrame.GreetingPanel.ScrollBox, "TOPRIGHT", 4, 9)
+			GossipFrame.GreetingPanel.ScrollBar:SetPoint("BOTTOMLEFT", GossipFrame.GreetingPanel.ScrollBox, "BOTTOMRIGHT", 4, -14)
 
 			-- Create configuration panel
 			local QuestTextPanel = LeaPlusLC:CreatePanel("Resize quest text", "QuestTextPanel")
@@ -13100,6 +13106,11 @@
 							-- UnitFrames: Disabled Blizzard: Player, Target and Focus
 							if E.private.unitframe.disabledBlizzardFrames.player or E.private.unitframe.disabledBlizzardFrames.target or E.private.unitframe.disabledBlizzardFrames.focus then
 								Lock("ClassColFrames", reason, "UnitFrames (Disabled Blizzard Frames Player, Target and Focus)") -- Class-colored frames
+							end
+
+							-- Skins: Blizzard Gossip Frame
+							if E.private.skins.blizzard.enable and E.private.skins.blizzard.gossip then
+								Lock("QuestFontChange", reason, "Skins (Blizzard Gossip Frame)") -- Resize quest font
 							end
 
 							-- Base
