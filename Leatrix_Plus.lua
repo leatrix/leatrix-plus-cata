@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.85 (19th January 2023)
+-- 	Leatrix Plus 3.0.86 (19th January 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.85"
+	LeaPlusLC["AddonVer"] = "3.0.86"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -7451,7 +7451,7 @@
 			local function TrainerFunc(frame)
 
 				-- Make the frame double-wide
-				UIPanelWindows["ClassTrainerFrame"] = {area = "override", pushable = 1, xoffset = -16, yoffset = 12, bottomClampOverride = 140 + 12, width = 714, height = 487, whileDead = 1}
+				UIPanelWindows["ClassTrainerFrame"] = {area = "override", pushable = 0, xoffset = -16, yoffset = 12, bottomClampOverride = 140 + 12, width = 714, height = 487, whileDead = 1}
 
 				-- Size the frame
 				_G["ClassTrainerFrame"]:SetSize(714, 487 + tall)
@@ -7796,7 +7796,7 @@
 			local function TradeSkillFunc(frame)
 
 				-- Make the tradeskill frame double-wide
-				UIPanelWindows["TradeSkillFrame"] = {area = "override", pushable = 1, xoffset = -16, yoffset = 12, bottomClampOverride = 140 + 12, width = 714, height = 487, whileDead = 1}
+				UIPanelWindows["TradeSkillFrame"] = {area = "override", pushable = 3, xoffset = -16, yoffset = 12, bottomClampOverride = 140 + 12, width = 714, height = 487, whileDead = 1}
 
 				-- Size the tradeskill frame
 				_G["TradeSkillFrame"]:SetWidth(714)
