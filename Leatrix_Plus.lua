@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.87 (19th January 2023)
+-- 	Leatrix Plus 3.0.88 (20th January 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.87"
+	LeaPlusLC["AddonVer"] = "3.0.88"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -821,11 +821,14 @@
 				-- Login (sound/interface/)
 				["MuteLogin"] = {
 
-					-- Login screen music (sound/ambience/gluescreen/)
+					-- Ambiance (sound/ambience/gluescreen/)
 					"gluescreenlogin.ogg#538968",
 
 					-- Dragon roaring sounds (sound/ambience/gluescreen/)
 					"wrath_login_1.ogg#538970", "wrath_login_2.ogg#538969", "wrath_login_3.ogg#538971", "wrath_login_4.ogg#538972",
+
+					-- Game music (sound/music/gluescreenmusic/)
+					"wotlk_main_title.mp3#53222",
 
 				},
 

@@ -1,3 +1,7 @@
+3.0.88 - 20th January 2023
+- For 'Mute game sounds' ('System'), the 'Login' setting now mutes the login screen music too.
+- Added flight times.
+
 3.0.87 - 19th January 2023
 - Fixed an issue with 'Resize quest text' ('Text') which caused gossip greeting panel scroll lists (such as city guard directions) to be shown outside of the gossip frame.  If you use ElvUI, the 'Resize quest text' option will now be disabled if you have ElvUI Skins > Blizzard > Gossip Frame checked.
 - Added flight times.
