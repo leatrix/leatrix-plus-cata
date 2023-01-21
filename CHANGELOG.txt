@@ -1,3 +1,7 @@
+3.0.90.alpha.1 - 21st January 2023
+- Updated the 'Login' setting code ('Mute game sounds') so that it works the same way as Dragonflight and Classic Era.
+- Added flight times.
+
 3.0.89 - 21st January 2023
 - Added flight times.
 
