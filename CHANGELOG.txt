@@ -1,3 +1,6 @@
+3.0.89 - 21st January 2023
+- Added flight times.
+
 3.0.88 - 20th January 2023
 - For 'Mute game sounds' ('System'), the 'Login' setting now mutes the login screen music too.
 - Added flight times.
