@@ -3194,6 +3194,7 @@
 				["0.49:0.21:0.57:0.21:0.64:0.19:0.78:0.38:0.83:0.46:0.88:0.60:0.88:0.72"] = 463, -- Argent Tournament Grounds, Bouldercrag's Refuge, Ulduar, Zim'Torga, Westfall Brigade, Fort Wildervar, Valgarde Port
 				["0.49:0.21:0.57:0.21:0.64:0.19:0.78:0.38:0.82:0.31"] = 302, -- Argent Tournament Grounds, Bouldercrag's Refuge, Ulduar, Zim'Torga, Gundrak
 				["0.49:0.21:0.52:0.38:0.46:0.46"] = 228, -- Argent Tournament Grounds, Dalaran, Fordragon Hold
+				["0.49:0.21:0.57:0.21:0.57:0.33:0.62:0.36"] = 178, -- Argent Tournament Grounds, Bouldercrag's Refuge, Frosthold, K3
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
