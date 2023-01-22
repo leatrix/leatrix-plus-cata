@@ -888,6 +888,7 @@
 				["0.65:0.23:0.53:0.26:0.43:0.25:0.64:0.67"] = 720, -- Everlook, Talonbranch Glade, Auberdine, Theramore
 				["0.65:0.23:0.53:0.26:0.43:0.25:0.31:0.69:0.42:0.79"] = 900, -- Vista Eterna, Claro Ramaespolón, Auberdine, Plumaluna, Fuerte Cenarion
 				["0.65:0.23:0.53:0.26:0.43:0.25:0.46:0.40:0.58:0.39"] = 578, -- Everlook, Talonbranch Glade, Auberdine, Astranaar, Forest Song
+				["0.65:0.23:0.55:0.21:0.43:0.25:0.46:0.40:0.58:0.39"] = 553, -- Круговзор, Лунная поляна, Аубердин, Астранаар, Лесная Песнь
 
 				-- Alliance: Feathermoon (Feralas)
 				["0.31:0.69:0.42:0.79"] = 153, -- Feathermoon, Cenarion Hold
@@ -3184,6 +3185,8 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 246, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
 				["0.49:0.21:0.52:0.34:0.41:0.43:0.42:0.53"] = 259, -- Argent Tournament Grounds, Crusaders' Pinnacle, Valiance Landing Camp, Stars' Rest
 				["0.49:0.21:0.57:0.21:0.57:0.33:0.62:0.36:0.72:0.29"] = 278, -- Argent Tournament Grounds, Bouldercrag's Refuge, Frosthold, K3, Dun Nifflelem
+				["0.49:0.21:0.52:0.38:0.24:0.40"] = 340, -- Argentumturnierplatz, Dalaran, Flussnabel
+				["0.49:0.21:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46"] = 340, -- Argentumturnierplatz, Dalaran, Schwarze Wacht, Argentumwache, Westfallbrigade
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
