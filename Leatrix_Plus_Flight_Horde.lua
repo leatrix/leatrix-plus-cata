@@ -1945,6 +1945,7 @@
 				["0.29:0.57:0.29:0.54:0.18:0.47:0.18:0.40"] = 141, -- Unu'pe, Taunka'le Village, Bor'gorok Outpost, Nesingwary Base Camp
 				["0.29:0.57:0.29:0.54:0.31:0.43:0.38:0.21"] = 256, -- Unu'pe, Taunka'le Village, Warsong Camp, The Shadow Vault
 				["0.29:0.57:0.29:0.54:0.31:0.43:0.28:0.28"] = 205, -- Unu'pe, Taunka'le Village, Warsong Camp, Death's Rise
+				["0.29:0.57:0.29:0.54:0.31:0.43:0.38:0.21:0.49:0.21"] = 332, -- Unu'pe, Taunka'le, Kriegshymnenlager, Das Schattengewölbe, Argentumturnierplatz
 
 				-- Horde: Borean Tundra: Warsong Hold
 				["0.15:0.57:0.29:0.57:0.49:0.58:0.74:0.71"] = 394, -- Warsong Hold, Unu'pe, Moa'ki, Kamagua
@@ -2568,6 +2569,7 @@
 				["0.54:0.52:0.49:0.58:0.74:0.71:0.85:0.73:0.95:0.63"] = 253, -- Wyrmruhtempel, Moa'ki, Kamagua, Neu-Agamand, Hafen der Vergeltung
 				["0.54:0.52:0.52:0.38:0.56:0.36:0.60:0.25:0.57:0.21"] = 172, -- Wyrmrest Temple, Dalaran, The Argent Vanguard, Grom'arsh Crash-Site, Bouldercrag's Refuge
 				["0.54:0.52:0.52:0.38:0.49:0.21"] = 141, -- Wyrmrest Temple, Dalaran, Argent Tournament Grounds
+				["0.54:0.52:0.52:0.38:0.24:0.40:0.28:0.28:0.38:0.21"] = 317, -- Wyrmrest Temple, Dalaran, River's Heart, Death's Rise, The Shadow Vault
 
 				----------------------------------------------------------------------
 				-- Horde: Grizzly Hills
@@ -3604,6 +3606,7 @@
 				["0.60:0.25:0.56:0.36:0.52:0.34:0.31:0.43:0.29:0.54:0.15:0.57"] = 427, -- Grom'arsh Crash-Site, The Argent Vanguard, Crusaders' Pinnacle, Warsong Camp, Taunka'le Village, Warsong Hold
 				["0.60:0.25:0.57:0.21:0.49:0.21"] = 97, -- Grom'arsh Crash-Site, Bouldercrag's Refuge, Argent Tournament Grounds
 				["0.60:0.25:0.73:0.25:0.78:0.38:0.84:0.51"] = 276, -- Absturzstelle Grom'ash, Camp Tunka'lo, Zim'Torga, Camp Oneqwah
+				["0.60:0.25:0.56:0.36:0.52:0.38:0.49:0.21"] = 224, -- Grom'arsh Crash-Site, The Argent Vanguard, Dalaran, Argent Tournament Grounds
 
 				-- Horde: The Storm Peaks: K3
 				["0.62:0.36:0.52:0.38"] = 72, -- K3, Dalaran
