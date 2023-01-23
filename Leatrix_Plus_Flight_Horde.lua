@@ -2034,6 +2034,7 @@
 				["0.15:0.57:0.29:0.54:0.31:0.43:0.38:0.21:0.49:0.21"] = 396, -- Warsong Hold, Taunka'le Village, Warsong Camp, The Shadow Vault, Argent Tournament Grounds
 				["0.15:0.57:0.29:0.54:0.31:0.43:0.38:0.21:0.57:0.21"] = 441, -- Warsong Hold, Taunka'le Village, Warsong Camp, The Shadow Vault, Bouldercrag's Refuge
 				["0.15:0.57:0.29:0.54:0.45:0.51:0.54:0.52:0.52:0.38:0.49:0.21"] = 433, -- Warsong Hold, Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
+				["0.15:0.57:0.29:0.57:0.49:0.58:0.59:0.55:0.74:0.62:0.84:0.59:0.95:0.63"] = 501, -- Warsong Hold, Unu'pe, Moa'ki, Venomspite, Apothecary Camp, Camp Winterhoof, Vengeance Landing
 
 				----------------------------------------------------------------------
 				-- Horde: Crystalsong Forest
@@ -2828,6 +2829,7 @@
 				["0.84:0.59:0.84:0.51:0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21"] = 369, -- Camp Winterhoof, Camp Oneqwah, Light's Breach, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.84:0.59:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21"] = 392, -- Camp Winterhoof, Conquest Hold, Light's Breach, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.84:0.59:0.74:0.62:0.74:0.71:0.49:0.58:0.45:0.51:0.29:0.54"] = 479, -- Camp Winterhoof, Apothecary Camp, Kamagua, Moa'ki, Agmar's Hammer, Taunka'le Village
+				["0.84:0.59:0.84:0.51:0.72:0.40"] = 158, -- Lager der Winterhufe, Camp Oneqwah, Argentumwache
 
 				-- Horde: Howling Fjord: Kamagua
 				["0.74:0.71:0.85:0.73"] = 64, -- Kamagua, New Agamand
@@ -3030,6 +3032,7 @@
 				["0.95:0.63:0.84:0.51:0.69:0.42:0.64:0.42:0.52:0.38:0.52:0.34"] = 329, -- Vengeance Landing, Camp Oneqwah, Light's Breach, Ebon Watch, Dalaran, Crusaders' Pinnacle
 				["0.95:0.63:0.84:0.59:0.74:0.62:0.59:0.55:0.48:0.44:0.52:0.38"] = 423, -- Vengeance Landing, Camp Winterhoof, Apothecary Camp, Venomspite, Kor'koron Vanguard, Dalaran
 				["0.95:0.63:0.84:0.59:0.74:0.62:0.59:0.55:0.64:0.42"] = 330, -- Vengeance Landing, Camp Winterhoof, Apothecary Camp, Venomspite, Ebon Watch
+				["0.95:0.63:0.84:0.59:0.70:0.55:0.69:0.42:0.64:0.42:0.62:0.36:0.72:0.29"] = 423, -- Vengeance Landing, Camp Winterhoof, Conquest Hold, Light's Breach, Ebon Watch, K3, Dun Nifflelem
 
 				----------------------------------------------------------------------
 				-- Horde: Icecrown
@@ -3656,6 +3659,7 @@
 				["0.62:0.36:0.64:0.42:0.59:0.55:0.74:0.62"] = 240, -- K3, Ebon Watch, Venomspite, Apothecary Camp
 				["0.62:0.36:0.52:0.38:0.54:0.52:0.45:0.51"] = 249, -- K3, Dalaran, Wyrmrest Temple, Agmar's Hammer
 				["0.62:0.36:0.52:0.38:0.54:0.52:0.59:0.55:0.70:0.55"] = 289, -- K3, Dalaran, Wyrmrest Temple, Venomspite, Conquest Hold
+				["0.62:0.36:0.60:0.25:0.57:0.21:0.49:0.21"] = 173, -- K3, Grom'arsh Crash-Site, Bouldercrag's Refuge, Argent Tournament Grounds
 
 				-- Horde: The Storm Peaks: Ulduar
 				["0.64:0.19:0.73:0.25"] = 88, -- Ulduar, Camp Tunka'lo
