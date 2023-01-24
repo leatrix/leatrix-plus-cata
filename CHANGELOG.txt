@@ -1,5 +1,5 @@
-3.0.93.alpha.1 - 23rd January 2023
-- Maintenance update.
+3.0.93 - 24th January 2023
+- Added flight times.
 
 3.0.92 - 23rd January 2023
 - Added flight times.
