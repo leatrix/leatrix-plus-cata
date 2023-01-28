@@ -1,3 +1,6 @@
+3.0.97 - 28th January 2023
+- Added flight times.
+
 3.0.96 - 27th January 2023
 - Added flight times.
 
