@@ -2854,6 +2854,7 @@
 				["0.84:0.59:0.70:0.55:0.59:0.55:0.54:0.52:0.52:0.38:0.49:0.21"] = 441, -- Camp Winterhoof, Conquest Hold, Venomspite, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
 				["0.84:0.59:0.84:0.51:0.69:0.42:0.64:0.42:0.52:0.38:0.24:0.40"] = 454, -- Camp Winterhoof, Camp Oneqwah, Light's Breach, Ebon Watch, Dalaran, River's Heart
 				["0.84:0.59:0.84:0.51:0.69:0.42:0.64:0.42:0.60:0.40"] = 216, -- Camp Winterhoof, Camp Oneqwah, Light's Breach, Ebon Watch, Sunreaver's Command
+				["0.84:0.59:0.84:0.51:0.69:0.42:0.64:0.42:0.48:0.44:0.45:0.51"] = 349, -- Camp Winterhoof, Camp Oneqwah, Light's Breach, Ebon Watch, Kor'koron Vanguard, Agmar's Hammer
 
 				-- Horde: Howling Fjord: Kamagua
 				["0.74:0.71:0.85:0.73"] = 64, -- Kamagua, New Agamand
@@ -3814,6 +3815,7 @@
 				["0.31:0.43:0.45:0.51:0.59:0.55:0.74:0.62"] = 283, -- Camp chanteguerre, Marteau d'Agmar, Vexevenin, Camp des Apothicaires
 				["0.31:0.43:0.52:0.38:0.62:0.36:0.60:0.25"] = 262, -- Kriegshymnenlager, Dalaran, K3, Absturzstelle Grom'ash
 				["0.31:0.43:0.38:0.21:0.49:0.21"] = 240, -- Warsong Camp, The Shadow Vault, Argent Tournament Grounds
+				["0.31:0.43:0.45:0.51:0.59:0.55:0.70:0.55:0.84:0.51"] = 345, -- Warsong Camp, Agmar's Hammer, Venomspite, Conquest Hold, Camp Oneqwah
 
 				----------------------------------------------------------------------
 				-- Horde: Zul'Drak
