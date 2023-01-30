@@ -1,4 +1,4 @@
-3.0.100.alpha.1 - 30th January 2023
+3.0.100 - 30th January 2023
 - Updated 'Recent chat window' ('Chat') code and 'Show flight times' ('Interface') code.
 - Added flight times.
 

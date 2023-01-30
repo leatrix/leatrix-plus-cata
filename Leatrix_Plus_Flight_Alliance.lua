@@ -2747,6 +2747,7 @@
 				["0.54:0.52:0.52:0.38:0.52:0.34:0.57:0.21"] = 246, -- Wyrmrest Temple, Dalaran, Crusaders' Pinnacle, Bouldercrag's Refuge
 				["0.54:0.52:0.64:0.42:0.69:0.42:0.73:0.54"] = 157, -- Wyrmrest Temple, Ebon Watch, Light's Breach, Amberpine Lodge
 				["0.54:0.52:0.52:0.38:0.49:0.21"] = 141, -- Wyrmrest Temple, Dalaran, Argent Tournament Grounds
+				["0.54:0.52:0.52:0.38:0.49:0.21:0.38:0.21"] = 197, -- Wyrmrest Temple, Dalaran, Argent Tournament Grounds, The Shadow Vault
 
 				----------------------------------------------------------------------
 				-- Alliance: Grizzly Hills
@@ -3241,6 +3242,7 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.59:0.43:0.60:0.52"] = 252, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Windrunner's Overlook, Wintergarde Keep
 				["0.49:0.21:0.52:0.38:0.59:0.43"] = 180, -- Argent Tournament Grounds, Dalaran, Windrunner's Overlook
 				["0.49:0.21:0.57:0.21:0.57:0.33:0.62:0.36:0.64:0.42:0.72:0.40:0.83:0.46"] = 355, -- Argent Tournament Grounds, Bouldercrag's Refuge, Frosthold, K3, Ebon Watch, The Argent Stand, Westfall Brigade
+				["0.49:0.21:0.52:0.34:0.41:0.43:0.24:0.40"] = 316, -- Argent Tournament Grounds, Crusaders' Pinnacle, Valiance Landing Camp, River's Heart
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
