@@ -1,3 +1,6 @@
+3.0.102.alpha.1 - 3rd February 2023
+- Added flight times.
+
 3.0.101 - 2nd February 2023
 - Fixed a minor issue with 'Show auction controls' ('Interface') which caused the 'Find Item' button to only show one page of results.
 - Added flight times.  There are now 7954 flight times in Leatrix Plus for Wrath of the Lich King Classic.

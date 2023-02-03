@@ -2093,6 +2093,7 @@
 				["0.60:0.40:0.52:0.38:0.49:0.21"] = 170, -- Sunreaver's Command, Dalaran, Argent Tournament Grounds
 				["0.60:0.40:0.62:0.36:0.60:0.25"] = 109, -- Sunreaver's Command, K3, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.60:0.40:0.64:0.42:0.59:0.55:0.70:0.55"] = 196, -- Sunreaver's Command, Ebon Watch, Venomspite, Conquest Hold
+				["0.60:0.40:0.64:0.42:0.59:0.55:0.85:0.73:0.84:0.59"] = 401, -- Sunreaver's Command, Ebon Watch, Venomspite, New Agamand, Camp Winterhoof
 
 				----------------------------------------------------------------------
 				-- Horde: Dalaran
@@ -2864,6 +2865,7 @@
 				["0.84:0.59:0.84:0.51:0.69:0.42:0.64:0.42:0.48:0.44:0.45:0.51"] = 349, -- Camp Winterhoof, Camp Oneqwah, Light's Breach, Ebon Watch, Kor'koron Vanguard, Agmar's Hammer
 				["0.84:0.59:0.70:0.55:0.59:0.55:0.54:0.52:0.52:0.38:0.52:0.34"] = 354, -- Camp Winterhoof, Conquest Hold, Venomspite, Wyrmrest Temple, Dalaran, Crusaders' Pinnacle
 				["0.84:0.59:0.84:0.51:0.78:0.38:0.64:0.19:0.57:0.21:0.49:0.21"] = 413, -- Camp Winterhoof, Camp Oneqwah, Zim'Torga, Ulduar, Bouldercrag's Refuge, Argent Tournament Grounds
+				["0.84:0.59:0.85:0.73:0.59:0.55:0.64:0.42"] = 356, -- Camp Winterhoof, New Agamand, Venomspite, Ebon Watch
 
 				-- Horde: Howling Fjord: Kamagua
 				["0.74:0.71:0.85:0.73"] = 64, -- Kamagua, New Agamand
@@ -3122,6 +3124,9 @@
 				["0.49:0.21:0.38:0.21:0.28:0.28:0.18:0.40:0.18:0.47:0.17:0.53:0.12:0.53"] = 434, -- Ристалище Серебряного турнира, Мрачный Свод, Уступ Смерти, Лагерь Эрнестуэя, Застава Бор'горока, Янтарная гряда, Маскировочный щит
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.62:0.36"] = 182, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, K3
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.24:0.40"] = 336, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, River's Heart
+				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54"] = 360, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village
+				["0.49:0.21:0.52:0.38:0.60:0.40"] = 185, -- Argent Tournament Grounds, Dalaran, Sunreaver's Command
+				["0.49:0.21:0.38:0.21:0.28:0.28:0.18:0.40:0.18:0.47"] = 343, -- Argent Tournament Grounds, The Shadow Vault, Death's Rise, Nesingwary Base Camp, Bor'gorok Outpost
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
@@ -3325,6 +3330,7 @@
 				["0.38:0.21:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38:0.82:0.31"] = 389, -- The Shadow Vault, The Argent Vanguard, Dalaran, Ebon Watch, The Argent Stand, Zim'Torga, Gundrak
 				["0.38:0.21:0.28:0.28:0.18:0.40:0.18:0.47:0.29:0.54"] = 333, -- The Shadow Vault, Death's Rise, Nesingwary Base Camp, Bor'gorok Outpost, Taunka'le Village
 				["0.38:0.21:0.49:0.21"] = 78, -- The Shadow Vault, Argent Tournament Grounds
+				["0.38:0.21:0.56:0.36:0.52:0.38:0.64:0.42:0.69:0.42:0.84:0.51:0.84:0.59"] = 429, -- The Shadow Vault, The Argent Vanguard, Dalaran, Ebon Watch, Light's Breach, Camp Oneqwah, Camp Winterhoof
 
 				----------------------------------------------------------------------
 				-- Horde: Sholazar Basin
@@ -3447,6 +3453,7 @@
 				["0.24:0.40:0.28:0.28:0.38:0.21:0.49:0.21"] = 394, -- River's Heart, Death's Rise, The Shadow Vault, Argent Tournament Grounds
 				["0.24:0.40:0.52:0.38:0.64:0.42:0.69:0.42:0.70:0.55:0.74:0.62"] = 665, -- River's Heart, Dalaran, Ebon Watch, Light's Breach, Conquest Hold, Apothecary Camp
 				["0.24:0.40:0.28:0.28:0.38:0.21:0.57:0.21"] = 461, -- River's Heart, Death's Rise, The Shadow Vault, Bouldercrag's Refuge
+				["0.24:0.40:0.52:0.38:0.49:0.21"] = 473, -- Corazón del Río, Dalaran, Campos del Torneo Argenta
 
 				----------------------------------------------------------------------
 				-- Horde: The Storm Peaks
@@ -3786,6 +3793,7 @@
 				["0.64:0.19:0.60:0.25:0.56:0.36:0.52:0.34:0.28:0.28"] = 317, -- Ulduar, Grom'arsh Crash-Site, The Argent Vanguard, Crusaders' Pinnacle, Death's Rise
 				["0.64:0.19:0.57:0.21:0.49:0.21"] = 109, -- Ulduar, Bouldercrag's Refuge, Argent Tournament Grounds
 				["0.64:0.19:0.57:0.21:0.38:0.21:0.28:0.28"] = 239, -- Ulduar, Bouldercrag's Refuge, The Shadow Vault, Death's Rise
+				["0.64:0.19:0.57:0.21:0.49:0.21:0.52:0.38"] = 245, -- Ulduar, Refuge de Rochecombe, Enceinte du tournoi d'Argent, Dalaran
 
 				----------------------------------------------------------------------
 				-- Horde: Wintergrasp
