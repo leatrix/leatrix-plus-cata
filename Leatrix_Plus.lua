@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.102.alpha.1 (3rd February 2023)
+-- 	Leatrix Plus 3.0.102 (4th February 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.102.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.102"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -916,6 +916,14 @@
 
 				},
 
+				-- Rhonin
+				["MuteRhonin"] = {
+
+					-- sound/creature/rhonin/ur_rhonin_event
+					"01.ogg#559130", "02.ogg#559131", "03.ogg#559126", "04.ogg#559128", "05.ogg#559133", "06.ogg#559129", "07.ogg#559132", "08.ogg#559127",
+
+				},
+
 				-- Travelers (gnimo sounds are handled in SetupMute() as they are shared with striders)
 				["MuteTravelers"] = {
 
@@ -1027,6 +1035,7 @@
 			LeaPlusLC:MakeTx(SoundPanel, "Misc", 418, -72)
 			LeaPlusLC:MakeCB(SoundPanel, "MuteAdal", "A'dal", 418, -92, false, "If checked, A'dal in Shattrath City will be muted.")
 			LeaPlusLC:MakeCB(SoundPanel, "MuteRipper", "Ripper", 418, -112, false, "If checked, the Arcanite Ripper guitar sound will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteRhonin", "Rhonin", 418, -132, false, "If checked, Rhonin will be muted.")
 
 			-- Set click width for sounds checkboxes
 			for k, v in pairs(muteTable) do
@@ -10077,6 +10086,9 @@
 					end)
 				end
 			end)
+
+			-- Hide text to speech button
+			TextToSpeechButton:SetParent(tframe)
 
 		end
 

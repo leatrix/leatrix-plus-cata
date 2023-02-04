@@ -1,4 +1,6 @@
-3.0.102.alpha.1 - 3rd February 2023
+3.0.102 - 4th February 2023
+- For 'Mute game sounds' ('System'), you can now mute Rhonin.
+- For 'Hide chat buttons' ('Chat'), the text to speech configuration button will now be hidden.
 - Added flight times.
 
 3.0.101 - 2nd February 2023

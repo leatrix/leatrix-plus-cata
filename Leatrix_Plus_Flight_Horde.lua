@@ -1839,6 +1839,7 @@
 				["0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.62:0.36:0.60:0.25"] = 330, -- Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Dalaran, K3, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.29:0.54:0.45:0.51:0.54:0.52:0.64:0.42:0.72:0.40"] = 306, -- Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Ebon Watch, The Argent Stand
 				["0.29:0.54:0.45:0.51:0.48:0.44:0.64:0.42:0.69:0.42"] = 303, -- Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Ebon Watch, Light's Breach
+				["0.29:0.54:0.45:0.51:0.49:0.58:0.74:0.71:0.74:0.62"] = 390, -- Taunka'le Village, Agmar's Hammer, Moa'ki, Kamagua, Apothecary Camp
 
 				-- Horde: Borean Tundra: Transitus Shield (Coldarra)
 				["0.12:0.53:0.17:0.53:0.15:0.57"] = 58, -- Transitus Shield, Amber Ledge, Warsong Hold
@@ -3127,6 +3128,9 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54"] = 360, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village
 				["0.49:0.21:0.52:0.38:0.60:0.40"] = 185, -- Argent Tournament Grounds, Dalaran, Sunreaver's Command
 				["0.49:0.21:0.38:0.21:0.28:0.28:0.18:0.40:0.18:0.47"] = 343, -- Argent Tournament Grounds, The Shadow Vault, Death's Rise, Nesingwary Base Camp, Bor'gorok Outpost
+				["0.49:0.21:0.38:0.21:0.31:0.43:0.29:0.54:0.15:0.57"] = 388, -- Ристалище Серебряного турнира, Мрачный Свод, Лагерь Песни Войны, Деревня Таунка'ле, Крепость Песни Войны
+				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.62:0.36:0.72:0.29:0.64:0.19"] = 366, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, K3, Dun Nifflelem, Ulduar
+				["0.49:0.21:0.52:0.34:0.56:0.36:0.60:0.25:0.64:0.19"] = 259, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Grom'arsh Crash-Site, Ulduar
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple

@@ -2972,6 +2972,7 @@
 				["0.88:0.60:0.73:0.54:0.69:0.42:0.72:0.40:0.78:0.38:0.72:0.29"] = 330, -- Fort Wildervar, Amberpine Lodge, Light's Breach, The Argent Stand, Zim'Torga, Dun Nifflelem
 				["0.88:0.60:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21"] = 380, -- Fort Wildervar, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.88:0.60:0.83:0.46:0.78:0.38:0.64:0.19"] = 324, -- Fort Wildervar, Westfall Brigade, Zim'Torga, Ulduar
+				["0.88:0.60:0.83:0.46:0.72:0.40:0.64:0.42:0.52:0.38:0.49:0.21"] = 411, -- Fort Wildervar, Westfallbrigade, Argentumwache, Schwarze Wacht, Dalaran, Argentumturnierplatz
 
 				-- Alliance: Howling Fjord: Kamagua
 				["0.74:0.71:0.76:0.67"] = 37, -- Kamagua, Westguard Keep
