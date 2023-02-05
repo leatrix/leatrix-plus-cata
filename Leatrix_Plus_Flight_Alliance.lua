@@ -3192,6 +3192,7 @@
 				["0.76:0.67:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.56:0.36:0.57:0.33"] = 308, -- Westguard Keep, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, The Argent Vanguard, Frosthold
 				["0.76:0.67:0.73:0.54:0.69:0.42:0.64:0.42:0.62:0.36:0.57:0.33:0.57:0.21"] = 329, -- Westguard Keep, Amberpine Lodge, Light's Breach, Ebon Watch, K3, Frosthold, Bouldercrag's Refuge
 				["0.76:0.67:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21"] = 361, -- Westguard Keep, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, Argent Tournament Grounds
+				["0.76:0.67:0.60:0.52:0.59:0.43:0.52:0.38:0.52:0.34:0.38:0.21"] = 413, -- Westguard Keep, Wintergarde Keep, Windrunner's Overlook, Dalaran, Crusaders' Pinnacle, The Shadow Vault
 
 				----------------------------------------------------------------------
 				-- Alliance: Icecrown
