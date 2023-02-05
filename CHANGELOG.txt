@@ -1,6 +1,6 @@
 3.0.104.alpha.2 - 5th February 2023
 - Updated friend checking code for the options in the social menu to more closely match Dragonflight code.
-- For 'Recent chat window' ('Chat'), fixed an issue which caused texture atlases to break draging and selecting messages.
+- For 'Recent chat window' ('Chat'), fixed an issue which caused texture atlases to break dragging and selecting messages.
 
 3.0.103 - 5th February 2023
 - Added flight times.
