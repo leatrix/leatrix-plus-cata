@@ -1,3 +1,6 @@
+3.0.104.alpha.1 - 5th February 2023
+- Updated friend checking code for the options in the social menu to more closely match Dragonflight code.
+
 3.0.103 - 5th February 2023
 - Added flight times.
 
