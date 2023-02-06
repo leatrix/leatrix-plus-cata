@@ -37,7 +37,7 @@
 		end
 	end
 
-	-- Check for ElvUI
+	-- Check for addons
 	if IsAddOnLoaded("ElvUI") then LeaPlusLC.ElvUI = unpack(ElvUI) end
 	if IsAddOnLoaded("Glass") then LeaPlusLC.Glass = true end
 
