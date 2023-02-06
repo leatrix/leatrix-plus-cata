@@ -3259,6 +3259,7 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.57:0.33:0.64:0.19"] = 242, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Frosthold, Ulduar
 				["0.49:0.21:0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54"] = 326, -- Argent Tournament Grounds, Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
 				["0.49:0.21:0.52:0.38:0.56:0.36:0.57:0.33"] = 200, -- Argentumturnierplatz, Dalaran, Die Argentumvorhut, Eisfestung
+				["0.49:0.21:0.41:0.43:0.42:0.53:0.29:0.57"] = 406, -- Argent Tournament Grounds, Valiance Landing Camp, Stars' Rest, Unu'pe
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple

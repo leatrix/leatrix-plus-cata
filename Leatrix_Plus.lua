@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.104.alpha.3 (6th February 2023)
+-- 	Leatrix Plus 3.0.104 (6th February 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.104.alpha.3"
+	LeaPlusLC["AddonVer"] = "3.0.104"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -6931,7 +6931,7 @@
 			LeaPlusLC["DressupAnim"] = 0 -- Defined here since the setting is not saved
 			LeaPlusLC:MakeSL(DressUpFrame, "DressupAnim", "", 1, #animTable - 1, 1, 356, -92, "%.0f")
 			LeaPlusCB["DressupAnim"]:ClearAllPoints()
-			LeaPlusCB["DressupAnim"]:SetPoint("BOTTOM", 0, 112)
+			LeaPlusCB["DressupAnim"]:SetPoint("BOTTOM", -12, 112)
 			LeaPlusCB["DressupAnim"]:SetWidth(226)
 			LeaPlusCB["DressupAnim"]:SetFrameLevel(5)
 			LeaPlusCB["DressupAnim"]:HookScript("OnValueChanged", function(self, setting)
