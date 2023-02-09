@@ -1,3 +1,6 @@
+3.0.106.alpha.1 - 9th February 2023
+- For 'Show flight times' ('Interface'), the draggable overlay now shows destination and time labels.
+
 3.0.105 - 8th February 2023
 - Added flight times.
 

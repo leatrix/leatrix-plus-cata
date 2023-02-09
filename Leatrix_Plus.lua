@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.105 (8th February 2023)
+-- 	Leatrix Plus 3.0.106.alpha.1 (9th February 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.105"
+	LeaPlusLC["AddonVer"] = "3.0.106.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -6108,6 +6108,33 @@
 			tempFrame.t:SetAllPoints()
 			tempFrame.t:SetTexture("Interface\\TargetingFrame\\UI-StatusBar")
 			tempFrame.t:SetVertexColor(0.0, 1.0, 0.0, 0.5)
+
+			-- Create labels for destination and duration
+			local tempFrameFontName, tempFrameFontSize = GameFontHighlightSmallOutline:GetFont()
+			local tempFrameShadowX, tempFrameShadowY = GameFontHighlightSmallOutline:GetShadowOffset()
+			local tempFrameShadowR, tempFrameShadowG, tempFrameShadowB, tempFrameShadowA = GameFontHighlightSmallOutline:GetShadowColor()
+
+			tempFrame.label = tempFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmallOutline")
+			tempFrame.label:SetPoint("TOPLEFT", tempFrame, "TOPLEFT", 2, 0)
+			tempFrame.label:SetPoint("BOTTOMRIGHT", tempFrame, "BOTTOMRIGHT", -2, 0)
+			tempFrame.label:SetText("Paradise City")
+			tempFrame.label:SetTextColor(1,1,1,1)
+			tempFrame.label:SetJustifyH("LEFT")
+			tempFrame.label:SetJustifyV("MIDDLE")
+			tempFrame.label:SetFont(tempFrameFontName, tempFrameFontSize)
+			tempFrame.label:SetShadowOffset(tempFrameShadowX, tempFrameShadowY)
+			tempFrame.label:SetShadowColor(tempFrameShadowR, tempFrameShadowG, tempFrameShadowB, tempFrameShadowA)
+
+			tempFrame.duration = tempFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmallOutline")
+			tempFrame.duration:SetPoint("TOPLEFT", tempFrame, "TOPLEFT", 2, 0)
+			tempFrame.duration:SetPoint("BOTTOMRIGHT", tempFrame, "BOTTOMRIGHT", -2, 0)
+			tempFrame.duration:SetText("1:56")
+			tempFrame.duration:SetTextColor(1,1,1,1)
+			tempFrame.duration:SetJustifyH("RIGHT")
+			tempFrame.duration:SetJustifyV("MIDDLE")
+			tempFrame.duration:SetFont(tempFrameFontName, tempFrameFontSize)
+			tempFrame.duration:SetShadowOffset(tempFrameShadowX, tempFrameShadowY)
+			tempFrame.duration:SetShadowColor(tempFrameShadowR, tempFrameShadowG, tempFrameShadowB, tempFrameShadowA)
 
 			-- Enable movement
 			tempFrame:EnableMouse(true)
