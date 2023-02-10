@@ -2077,6 +2077,7 @@
 				["0.12:0.53:0.17:0.53:0.21:0.49:0.42:0.53:0.54:0.52:0.64:0.42:0.69:0.42:0.73:0.54:0.76:0.67"] = 408, -- Transitus Shield, Amber Ledge, Fizzcrank Airstrip, Stars' Rest, Wyrmrest Temple, Ebon Watch, Light's Breach, Amberpine Lodge, Westguard Keep
 				["0.12:0.53:0.17:0.53:0.22:0.61:0.42:0.53:0.60:0.52:0.64:0.42:0.72:0.40"] = 329, -- Transitusschild, Bernsteinflöz, Valianzfeste, Sternenruh, Feste Wintergarde, Schwarze Wacht, Argentumwache
 				["0.12:0.53:0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.59:0.43"] = 251, -- Transitus Shield, Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, Windrunner's Overlook
+				["0.12:0.53:0.17:0.53:0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.64:0.42:0.72:0.40:0.78:0.38"] = 358, -- Transitus Shield, Amber Ledge, Valiance Keep, Unu'pe, Moa'ki, Wintergarde Keep, Ebon Watch, The Argent Stand, Zim'Torga
 
 				-- Alliance: Borean Tundra: Unu'pe
 				["0.29:0.57:0.22:0.61"] = 60, -- Unu'pe, Valiance Keep
@@ -2693,6 +2694,7 @@
 				["0.60:0.52:0.59:0.43:0.52:0.38:0.49:0.21"] = 232, -- Wintergarde Keep, Windrunner's Overlook, Dalaran, Argent Tournament Grounds
 				["0.60:0.52:0.64:0.42:0.52:0.38:0.49:0.21"] = 244, -- Wintergarde Keep, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.49:0.21:0.38:0.21"] = 345, -- 溫特加德要塞，龍骨荒野, 龍眠神殿，龍骨荒野, 達拉然, 銀白聯賽場地，寒冰皇冠, 暗影穹殿，寒冰皇冠
+				["0.60:0.52:0.54:0.52:0.52:0.38:0.52:0.34"] = 175, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, Crusaders' Pinnacle
 
 				-- Alliance: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.60:0.52"] = 36, -- Wyrmrest Temple, Wintergarde Keep
@@ -3035,6 +3037,7 @@
 				["0.74:0.71:0.76:0.67:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.56:0.36:0.57:0.33"] = 342, -- Kamagua, Westguard Keep, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, The Argent Vanguard, Frosthold
 				["0.74:0.71:0.49:0.58:0.52:0.38:0.59:0.43"] = 357, -- Kamagua, Moa'ki, Dalaran, Windrunner's Overlook
 				["0.74:0.71:0.76:0.67:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21"] = 396, -- Kamagua, Westguard Keep, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, Argent Tournament Grounds
+				["0.74:0.71:0.49:0.58:0.42:0.53:0.22:0.61:0.17:0.53"] = 439, -- Kamagua, Moa'ki, Stars' Rest, Valiance Keep, Amber Ledge
 
 				-- Alliance: Howling Fjord: Valgarde Port, Howling Fjord
 				["0.88:0.72:0.88:0.60"] = 71, -- Valgarde Port, Fort Wildervar
