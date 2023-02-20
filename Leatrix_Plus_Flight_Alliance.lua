@@ -2078,6 +2078,7 @@
 				["0.12:0.53:0.17:0.53:0.22:0.61:0.42:0.53:0.60:0.52:0.64:0.42:0.72:0.40"] = 329, -- Transitusschild, Bernsteinflöz, Valianzfeste, Sternenruh, Feste Wintergarde, Schwarze Wacht, Argentumwache
 				["0.12:0.53:0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.59:0.43"] = 251, -- Transitus Shield, Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, Windrunner's Overlook
 				["0.12:0.53:0.17:0.53:0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.64:0.42:0.72:0.40:0.78:0.38"] = 358, -- Transitus Shield, Amber Ledge, Valiance Keep, Unu'pe, Moa'ki, Wintergarde Keep, Ebon Watch, The Argent Stand, Zim'Torga
+				["0.12:0.53:0.17:0.53:0.21:0.49:0.29:0.57:0.49:0.58:0.52:0.38:0.56:0.36:0.57:0.33:0.64:0.19"] = 360, -- Transitus Shield, Amber Ledge, Fizzcrank Airstrip, Unu'pe, Moa'ki, Dalaran, The Argent Vanguard, Frosthold, Ulduar
 
 				-- Alliance: Borean Tundra: Unu'pe
 				["0.29:0.57:0.22:0.61"] = 60, -- Unu'pe, Valiance Keep
@@ -2697,6 +2698,7 @@
 				["0.60:0.52:0.64:0.42:0.52:0.38:0.49:0.21"] = 244, -- Wintergarde Keep, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.49:0.21:0.38:0.21"] = 345, -- 溫特加德要塞，龍骨荒野, 龍眠神殿，龍骨荒野, 達拉然, 銀白聯賽場地，寒冰皇冠, 暗影穹殿，寒冰皇冠
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.52:0.34"] = 175, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, Crusaders' Pinnacle
+				["0.60:0.52:0.49:0.58:0.29:0.57"] = 230, -- Wintergarde Keep, Moa'ki, Unu'pe
 
 				-- Alliance: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.60:0.52"] = 36, -- Wyrmrest Temple, Wintergarde Keep
@@ -3276,6 +3278,7 @@
 				["0.49:0.21:0.52:0.38:0.41:0.43"] = 241, -- Argent Tournament Grounds, Dalaran, Valiance Landing Camp
 				["0.49:0.21:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46:0.88:0.60"] = 425, -- Argent Tournament Grounds, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade, Fort Wildervar
 				["0.49:0.21:0.52:0.38:0.49:0.58"] = 288, -- Argentumturnierplatz, Dalaran, Moa'ki
+				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53"] = 298, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
@@ -4152,6 +4155,7 @@
 				["0.64:0.42:0.52:0.38:0.56:0.36:0.57:0.33"] = 127, -- Ebon Watch, Dalaran, The Argent Vanguard, Frosthold
 				["0.64:0.42:0.52:0.38:0.49:0.21"] = 181, -- Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.64:0.42:0.72:0.40:0.78:0.38:0.72:0.29"] = 190, -- Ebon Watch, The Argent Stand, Zim'Torga, Dun Nifflelem
+				["0.64:0.42:0.52:0.38:0.41:0.43"] = 168, -- Ebon Watch, Dalaran, Valiance Landing Camp
 
 				-- Alliance: Zul'Drak: Gundrak
 				["0.82:0.31:0.78:0.38"] = 56, -- Gundrak, Zim'Torga

@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.108 (19th February 2023)
+-- 	Leatrix Plus 3.0.109.alpha.1 (20th February 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.108"
+	LeaPlusLC["AddonVer"] = "3.0.109.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -855,6 +855,12 @@
 				-- Gyrocopters
 				["MuteGyrocopters"] = {
 
+					-- Mimiron's Head (sound/creature/mimironheadmount/)
+					"mimironheadmount_jumpend.ogg#595097",
+					"mimironheadmount_jumpstart.ogg#595103",
+					"mimironheadmount_run.ogg#555364",
+					"mimironheadmount_walk.ogg#595100",
+
 					-- sound/creature/gyrocopter/
 					"gyrocopterfly.ogg#551390",
 					"gyrocopterflyidle.ogg#551398",
@@ -869,11 +875,21 @@
 					"gyrocoptershuffleleftorright2.ogg#551382",
 					"gyrocoptershuffleleftorright3.ogg#551392",
 					"gyrocopterstallinair.ogg#551395",
+					"gyrocopterstallinairlong.ogg#551394",
+					"gyrocopterstallongroundlong.ogg#551393",
 					"gyrocopterstand.ogg#551383",
 					"gyrocopterstandvar1_a.ogg#551388",
 					"gyrocopterstandvar1_b.ogg#551397",
 					"gyrocopterstandvar1_bnew.ogg#551400",
 					"gyrocopterwalk.ogg#551401",
+
+					-- Gear shift sounds (sound/vehicles/)
+					"vehicle_airplane_gearshift_1.ogg#569846",
+					"vehicle_airplane_gearshift_2.ogg#598739",
+					"vehicle_airplane_gearshift_3.ogg#569851",
+					"vehicle_airplane_gearshift_4.ogg#598742",
+					"vehicle_airplane_gearshift_5.ogg#598733",
+					"vehicle_airplane_gearshift_6.ogg#569850",
 
 					-- sound/spells/
 					"summongyrocopter.ogg#568252",

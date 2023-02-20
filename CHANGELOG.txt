@@ -1,3 +1,7 @@
+3.0.109.alpha.1 - 20th February 2023
+- For 'Mute game sounds' ('System'), added new sounds to the 'Gyrocopters' setting (including Mimiron's Head).
+- Added flight times.
+
 3.0.108 - 19th February 2023
 - Added flight times.
 
