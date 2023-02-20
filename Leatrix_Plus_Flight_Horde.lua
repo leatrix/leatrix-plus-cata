@@ -2803,6 +2803,7 @@
 				["0.84:0.51:0.78:0.38:0.73:0.25:0.60:0.25"] = 278, -- Camp Oneqwah, Zim'Torga, Camp Tunka'lo, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.84:0.51:0.69:0.42:0.64:0.42:0.52:0.38:0.56:0.36:0.38:0.21"] = 366, -- Camp Oneqwah, Light's Breach, Ebon Watch, Dalaran, The Argent Vanguard, The Shadow Vault
 				["0.84:0.51:0.78:0.38:0.73:0.25"] = 179, -- Лагерь Уанква, Зим'Торга, Лагерь Тунка'ло
+				["0.84:0.51:0.84:0.59:0.74:0.62:0.59:0.55:0.54:0.52:0.52:0.38:0.49:0.21"] = 484, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Venomspite, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
 
 				-- Horde: Howling Fjord: Camp Winterhoof
 				["0.84:0.59:0.85:0.73"] = 80, -- Camp Winterhoof, New Agamand
