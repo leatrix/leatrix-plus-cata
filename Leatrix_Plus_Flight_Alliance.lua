@@ -3279,6 +3279,7 @@
 				["0.49:0.21:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46:0.88:0.60"] = 425, -- Argent Tournament Grounds, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade, Fort Wildervar
 				["0.49:0.21:0.52:0.38:0.49:0.58"] = 288, -- Argentumturnierplatz, Dalaran, Moa'ki
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53"] = 298, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest
+				["0.49:0.21:0.52:0.34:0.41:0.43:0.24:0.40:0.18:0.40"] = 350, -- Argent Tournament Grounds, Crusaders' Pinnacle, Valiance Landing Camp, River's Heart, Nesingwary Base Camp
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
@@ -3409,6 +3410,7 @@
 				["0.28:0.28:0.49:0.21"] = 170, -- Death's Rise, Argent Tournament Grounds
 				["0.28:0.28:0.56:0.36:0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54"] = 445, -- Death's Rise, The Argent Vanguard, Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
 				["0.28:0.28:0.52:0.34:0.52:0.38:0.54:0.52:0.60:0.52:0.73:0.54"] = 474, -- Death's Rise, Crusaders' Pinnacle, Dalaran, Wyrmrest Temple, Wintergarde Keep, Amberpine Lodge
+				["0.28:0.28:0.24:0.40:0.52:0.38:0.62:0.36"] = 355, -- Death's Rise, River's Heart, Dalaran, K3
 
 				-- Alliance: Icecrown: The Argent Vanguard
 				["0.56:0.36:0.57:0.33"] = 40, -- The Argent Vanguard, Frosthold
@@ -3965,6 +3967,7 @@
 				["0.62:0.36:0.64:0.42:0.72:0.40:0.78:0.38:0.64:0.19:0.57:0.21"] = 349, -- K3, Ebon Watch, The Argent Stand, Zim'Torga, Ulduar, Bouldercrag's Refuge
 				["0.62:0.36:0.57:0.33:0.57:0.21:0.49:0.21"] = 168, -- K3, Frosthold, Bouldercrag's Refuge, Argent Tournament Grounds
 				["0.62:0.36:0.52:0.38:0.49:0.21"] = 186, -- K3, Dalaran, Argentumturnierplatz
+				["0.62:0.36:0.52:0.38:0.56:0.36:0.28:0.28"] = 317, -- K3, Dalaran, The Argent Vanguard, Death's Rise
 
 				-- Alliance: The Storm Peaks: Ulduar
 				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38"] = 167, -- Ulduar, Frosthold, The Argent Vanguard, Dalaran
