@@ -200,7 +200,7 @@
 				["0.47:0.59:0.44:0.45"] = 216, -- Ironforge, Southshore
 				["0.47:0.59:0.50:0.42"] = 299, -- Ironforge, Aerie Peak
 				["0.47:0.59:0.48:0.39"] = 258, -- Ironforge, Chillwind Camp (Sexy Steven reported 106)
-				["0.47:0.59:0.61:0.35"] = 349, -- Ironforge, Light's Hope Chapel (Viter reported 40)
+				["0.47:0.59:0.61:0.35"] = 349, -- Ironforge, Light's Hope Chapel (Viter reported 40, Matthew Smith reported 271)
 				["0.47:0.59:0.61:0.35:0.61:0.28"] = 445, -- Ironforge, Light's Hope Chapel, Zul'Aman
 				["0.47:0.59:0.41:0.73:0.43:0.82"] = 290, -- Ironforge, Stormwind, Rebel Camp (Hayley Levesque reported 308)
 				["0.47:0.59:0.41:0.73:0.39:0.80"] = 275, -- Ironforge, Stormwind, Sentinel Hill
@@ -366,7 +366,7 @@
 
 				-- Alliance: Nethergarde Keep (Blasted Lands)
 				["0.55:0.81:0.47:0.79:0.43:0.82:0.41:0.93"] = 251, -- Nethergarde Keep, Darkshire, Rebel Camp, Booty Bay
-				["0.55:0.81:0.47:0.79:0.43:0.82"] = 138, -- Nethergarde Keep, Darkshire, Rebel Camp
+				["0.55:0.81:0.47:0.79:0.43:0.82"] = 138, -- Nethergarde Keep, Darkshire, Rebel Camp (Güray Ggggs reported 58)
 				["0.55:0.81:0.47:0.79:0.39:0.80"] = 183, -- Nethergarde Keep, Darkshire, Sentinel Hill
 				["0.55:0.81:0.41:0.73"] = 189, -- Nethergarde Keep, Stormwind
 				["0.55:0.81:0.47:0.79"] = 91, -- Nethergarde Keep, Darkshire
@@ -2699,6 +2699,8 @@
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.49:0.21:0.38:0.21"] = 345, -- 溫特加德要塞，龍骨荒野, 龍眠神殿，龍骨荒野, 達拉然, 銀白聯賽場地，寒冰皇冠, 暗影穹殿，寒冰皇冠
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.52:0.34"] = 175, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, Crusaders' Pinnacle
 				["0.60:0.52:0.49:0.58:0.29:0.57"] = 230, -- Wintergarde Keep, Moa'ki, Unu'pe
+				["0.60:0.52:0.54:0.52:0.52:0.38:0.49:0.21"] = 261, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
+				["0.60:0.52:0.54:0.52:0.52:0.38:0.62:0.36:0.57:0.33"] = 234, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, K3, Frosthold
 
 				-- Alliance: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.60:0.52"] = 36, -- Wyrmrest Temple, Wintergarde Keep
@@ -3280,6 +3282,7 @@
 				["0.49:0.21:0.52:0.38:0.49:0.58"] = 288, -- Argentumturnierplatz, Dalaran, Moa'ki
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53"] = 298, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest
 				["0.49:0.21:0.52:0.34:0.41:0.43:0.24:0.40:0.18:0.40"] = 350, -- Argent Tournament Grounds, Crusaders' Pinnacle, Valiance Landing Camp, River's Heart, Nesingwary Base Camp
+				["0.49:0.21:0.52:0.38:0.24:0.40:0.21:0.49"] = 401, -- Argent Tournament Grounds, Dalaran, River's Heart, Fizzcrank Airstrip
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
@@ -3821,6 +3824,7 @@
 				["0.72:0.29:0.64:0.19:0.57:0.21:0.49:0.21"] = 193, -- Dun Nifflelem, Ulduar, Bouldercrag's Refuge, Argent Tournament Grounds
 				["0.72:0.29:0.62:0.36:0.57:0.33:0.57:0.21:0.49:0.21"] = 256, -- Dun Nifflelem, K3, Frosthold, Bouldercrag's Refuge, Argent Tournament Grounds
 				["0.72:0.29:0.62:0.36:0.52:0.38:0.49:0.21"] = 273, -- Dun Nifflelem, K3, Dalaran, Argent Tournament Grounds
+				["0.72:0.29:0.62:0.36:0.52:0.38:0.49:0.58"] = 308, -- Dun Nifflelem, K3, Dalaran, Moa'ki
 
 				-- Alliance: The Storm Peaks: Frosthold
 				["0.57:0.33:0.56:0.36:0.52:0.34"] = 61, -- Frosthold, The Argent Vanguard, Crusaders' Pinnacle
@@ -3968,6 +3972,7 @@
 				["0.62:0.36:0.57:0.33:0.57:0.21:0.49:0.21"] = 168, -- K3, Frosthold, Bouldercrag's Refuge, Argent Tournament Grounds
 				["0.62:0.36:0.52:0.38:0.49:0.21"] = 186, -- K3, Dalaran, Argentumturnierplatz
 				["0.62:0.36:0.52:0.38:0.56:0.36:0.28:0.28"] = 317, -- K3, Dalaran, The Argent Vanguard, Death's Rise
+				["0.62:0.36:0.52:0.38:0.49:0.21:0.57:0.21:0.64:0.19"] = 277, -- K3, Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge, Ulduar
 
 				-- Alliance: The Storm Peaks: Ulduar
 				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38"] = 167, -- Ulduar, Frosthold, The Argent Vanguard, Dalaran
@@ -4287,6 +4292,7 @@
 				["0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21"] = 220, -- Light's Breach, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.69:0.42:0.60:0.52:0.59:0.43:0.62:0.36:0.57:0.33:0.57:0.21"] = 301, -- Light's Breach, Wintergarde Keep, Windrunner's Overlook, K3, Frosthold, Bouldercrag's Refuge
 				["0.69:0.42:0.60:0.52:0.59:0.43:0.62:0.36:0.72:0.29"] = 294, -- Lichtbresche, Feste Wintergarde, Windläufers Warte, K3, Dun Niffelem
+				["0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21:0.38:0.21"] = 304, -- Light's Breach, Ebon Watch, Dalaran, Argent Tournament Grounds, The Shadow Vault
 
 				-- Alliance: Zul'Drak: The Argent Stand
 				["0.72:0.40:0.78:0.38"] = 42, -- The Argent Stand, Zim'Torga
