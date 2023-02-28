@@ -383,7 +383,7 @@
 				["0.55:0.81:0.52:0.72:0.47:0.65:0.47:0.59:0.61:0.35"] = 664, -- Nethergarde Keep, Morgan's Vigil, Thorium Point, Ironforge, Light's Hope Chapel
 				["0.55:0.81:0.52:0.72:0.47:0.65:0.47:0.59:0.61:0.35:0.61:0.28"] = 763, -- Nethergarde Keep, Morgan's Vigil, Thorium Point, Ironforge, Light's Hope Chapel, Zul'Aman
 				["0.55:0.81:0.47:0.79:0.41:0.93"] = 262, -- Nethergarde Keep, Darkshire, Booty Bay
-				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.59:0.45:0.56"] = 451, -- Nethergarde Keep, Darkshire, Stormwind, Ironforge, Menethil Harbor (Scott C, IJ, Nick de Vaan and Justin Chinn reported 150)
+				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.59:0.45:0.56"] = 451, -- Nethergarde Keep, Darkshire, Stormwind, Ironforge, Menethil Harbor (Scott C, IJ, Nick de Vaan, Duncan Kennedy and Justin Chinn reported 150)
 				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.65:0.53:0.61:0.51:0.47:0.50:0.42"] = 611, -- Nethergarde Keep, Darkshire, Stormwind, Thorium Point, Thelsamar, Refuge Pointe, Aerie Peak
 				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.59:0.48:0.39"] = 594, -- Nethergarde Keep, Darkshire, Stormwind, Ironforge, Chillwind Camp
 				["0.55:0.81:0.47:0.79:0.41:0.73:0.47:0.65"] = 298, -- Nethergarde Keep, Darkshire, Stormwind, Thorium Point
@@ -560,6 +560,7 @@
 				["0.44:0.45:0.45:0.56:0.47:0.59:0.47:0.65:0.41:0.73:0.47:0.79"] = 457, -- Southshore, Menethil Harbor, Ironforge, Thorium Point, Stormwind, Darkshire
 				["0.44:0.45:0.51:0.47:0.53:0.61:0.47:0.65:0.41:0.73"] = 447, -- Southshore, Refuge Pointe, Thelsamar, Thorium Point, Stormwind
 				["0.44:0.45:0.47:0.59:0.53:0.61"] = 262, -- Southshore, Ironforge, Thelsamar
+				["0.44:0.45:0.47:0.59:0.41:0.73:0.39:0.80"] = 436, -- Southshore, Ironforge, Stormwind, Sentinel Hill
 
 				-- Alliance: Stormwind (Elwynn Forest)
 				["0.41:0.73:0.41:0.93"] = 200, -- Stormwind, Booty Bay
@@ -3283,6 +3284,8 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53"] = 298, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest
 				["0.49:0.21:0.52:0.34:0.41:0.43:0.24:0.40:0.18:0.40"] = 350, -- Argent Tournament Grounds, Crusaders' Pinnacle, Valiance Landing Camp, River's Heart, Nesingwary Base Camp
 				["0.49:0.21:0.52:0.38:0.24:0.40:0.21:0.49"] = 401, -- Argent Tournament Grounds, Dalaran, River's Heart, Fizzcrank Airstrip
+				["0.49:0.21:0.52:0.38:0.24:0.40:0.21:0.49:0.17:0.53"] = 445, -- Argent Tournament Grounds, Dalaran, River's Heart, Fizzcrank Airstrip, Amber Ledge
+				["0.49:0.21:0.41:0.43"] = 228, -- Argent Tournament Grounds, Valiance Landing Camp
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
