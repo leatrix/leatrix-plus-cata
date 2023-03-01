@@ -3286,6 +3286,7 @@
 				["0.49:0.21:0.52:0.38:0.24:0.40:0.21:0.49"] = 401, -- Argent Tournament Grounds, Dalaran, River's Heart, Fizzcrank Airstrip
 				["0.49:0.21:0.52:0.38:0.24:0.40:0.21:0.49:0.17:0.53"] = 445, -- Argent Tournament Grounds, Dalaran, River's Heart, Fizzcrank Airstrip, Amber Ledge
 				["0.49:0.21:0.41:0.43"] = 228, -- Argent Tournament Grounds, Valiance Landing Camp
+				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.46:0.46"] = 225, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Fordragon Hold
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple

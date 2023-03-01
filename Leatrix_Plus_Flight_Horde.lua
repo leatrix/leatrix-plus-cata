@@ -2819,6 +2819,7 @@
 				["0.84:0.51:0.78:0.38:0.73:0.25"] = 179, -- Лагерь Уанква, Зим'Торга, Лагерь Тунка'ло
 				["0.84:0.51:0.84:0.59:0.74:0.62:0.59:0.55:0.54:0.52:0.52:0.38:0.49:0.21"] = 484, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Venomspite, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
 				["0.84:0.51:0.84:0.59:0.74:0.62:0.74:0.71:0.49:0.58:0.45:0.51"] = 417, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Kamagua, Moa'ki, Agmar's Hammer
+				["0.84:0.51:0.69:0.42:0.64:0.42:0.62:0.36:0.72:0.29"] = 272, -- Camp Oneqwah, Light's Breach, Ebon Watch, K3, Dun Nifflelem
 
 				-- Horde: Howling Fjord: Camp Winterhoof
 				["0.84:0.59:0.85:0.73"] = 80, -- Camp Winterhoof, New Agamand
@@ -2906,6 +2907,7 @@
 				["0.84:0.59:0.84:0.51:0.78:0.38:0.73:0.25:0.60:0.25"] = 336, -- Camp Winterhoof, Camp Oneqwah, Zim'Torga, Camp Tunka'lo, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.84:0.59:0.70:0.55:0.69:0.42:0.64:0.42:0.60:0.40"] = 239, -- Camp Winterhoof, Conquest Hold, Light's Breach, Ebon Watch, Sunreaver's Command
 				["0.84:0.59:0.74:0.62:0.59:0.55:0.54:0.52:0.52:0.38:0.56:0.36"] = 344, -- Camp Winterhoof, Apothecary Camp, Venomspite, Wyrmrest Temple, Dalaran, The Argent Vanguard
+				["0.84:0.59:0.74:0.62:0.59:0.55:0.49:0.58:0.52:0.38:0.49:0.21"] = 491, -- Camp Winterhoof, Apothecary Camp, Venomspite, Moa'ki, Dalaran, Argent Tournament Grounds
 
 				-- Horde: Howling Fjord: Kamagua
 				["0.74:0.71:0.85:0.73"] = 64, -- Kamagua, New Agamand
@@ -3187,6 +3189,7 @@
 				["0.49:0.21:0.52:0.38:0.48:0.44"] = 200, -- Argent Tournament Grounds, Dalaran, Kor'koron Vanguard
 				["0.49:0.21:0.57:0.21:0.64:0.19:0.78:0.38:0.84:0.51:0.95:0.63"] = 436, -- Argent Tournament Grounds, Bouldercrag's Refuge, Ulduar, Zim'Torga, Camp Oneqwah, Vengeance Landing
 				["0.49:0.21:0.52:0.38:0.56:0.36"] = 162, -- Argent Tournament Grounds, Dalaran, The Argent Vanguard
+				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.59:0.55:0.69:0.42"] = 394, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Venomspite, Light's Breach
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
