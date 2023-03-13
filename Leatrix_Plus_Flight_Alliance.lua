@@ -2280,6 +2280,7 @@
 				["0.59:0.43:0.52:0.38:0.49:0.21"] = 162, -- Windrunner's Overlook, Dalaran, Argent Tournament Grounds
 				["0.59:0.43:0.52:0.38:0.24:0.40:0.21:0.49:0.22:0.61"] = 379, -- Windrunner's Overlook, Dalaran, River's Heart, Fizzcrank Airstrip, Valiance Keep
 				["0.59:0.43:0.52:0.38:0.46:0.46:0.42:0.53:0.21:0.49"] = 335, -- Windläufers Warte, Dalaran, Feste Fordragon, Sternenruh, Landebahn Kurbelzisch
+				["0.59:0.43:0.60:0.52:0.42:0.53:0.22:0.61:0.17:0.53:0.12:0.53"] = 410, -- Windrunner's Overlook, Wintergarde Keep, Stars' Rest, Valiance Keep, Amber Ledge, Transitus Shield
 
 				----------------------------------------------------------------------
 				-- Alliance: Dalaran

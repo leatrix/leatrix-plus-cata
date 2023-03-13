@@ -1740,6 +1740,7 @@
 				["0.17:0.53:0.18:0.47:0.18:0.40:0.28:0.28:0.38:0.21:0.57:0.21:0.64:0.19"] = 287, -- Amber Ledge, Bor'gorok Outpost, Nesingwary Base Camp, Death's Rise, The Shadow Vault, Bouldercrag's Refuge, Ulduar
 				["0.17:0.53:0.18:0.47:0.18:0.40:0.28:0.28:0.38:0.21:0.57:0.21"] = 258, -- Amber Ledge, Bor'gorok Outpost, Nesingwary Base Camp, Death's Rise, The Shadow Vault, Bouldercrag's Refuge
 				["0.17:0.53:0.18:0.47:0.24:0.40:0.28:0.28"] = 118, -- Amber Ledge, Bor'gorok Outpost, River's Heart, Death's Rise
+				["0.17:0.53:0.29:0.54:0.45:0.51:0.54:0.52:0.64:0.42:0.72:0.40"] = 252, -- Amber Ledge, Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Ebon Watch, The Argent Stand
 
 				-- Horde: Borean Tundra: Bor'gorok Outpost
 				["0.18:0.47:0.29:0.54"] = 78, -- Bor'gorok Outpost, Taunka'le Village
@@ -2983,6 +2984,7 @@
 				["0.74:0.71:0.74:0.62:0.59:0.55:0.54:0.52:0.52:0.38:0.62:0.36"] = 365, -- Kamagua, Apothecary Camp, Venomspite, Wyrmrest Temple, Dalaran, K3
 				["0.74:0.71:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21"] = 400, -- 卡瑪廓，凜風峽灣, 藥劑師營地，凜風峽灣, 征服堡，灰白之丘, 聖光止境，祖爾德拉克, 黯黑守望，祖爾德拉克, 達拉然, 銀白聯賽場地，寒冰皇冠
 				["0.74:0.71:0.74:0.62:0.59:0.55:0.64:0.42:0.52:0.38"] = 323, -- Kamagua, Apothekerlager, Gallgrimm, Schwarze Wacht, Dalaran
+				["0.74:0.71:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.62:0.36:0.60:0.25:0.64:0.19"] = 388, -- Kamagua, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, K3, Grom'arsh Crash-Site, Ulduar
 
 				-- Horde: Howling Fjord: New Agamand
 				["0.85:0.73:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38"] = 335, -- New Agamand, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, Dalaran
@@ -3597,6 +3599,8 @@
 				["0.57:0.21:0.38:0.21:0.31:0.43:0.29:0.54:0.15:0.57"] = 414, -- Bouldercrag's Refuge, The Shadow Vault, Warsong Camp, Taunka'le Village, Warsong Hold
 				["0.57:0.21:0.64:0.19:0.72:0.29:0.62:0.36:0.52:0.38"] = 306, -- Bouldercrag's Refuge, Ulduar, Dun Nifflelem, K3, Dalaran
 				["0.57:0.21:0.64:0.19:0.78:0.38:0.84:0.51:0.84:0.59"] = 328, -- Bouldercrag's Refuge, Ulduar, Zim'Torga, Camp Oneqwah, Camp Winterhoof
+				["0.57:0.21:0.60:0.25:0.62:0.36:0.64:0.42:0.69:0.42:0.70:0.55:0.74:0.62:0.74:0.71"] = 400, -- Bouldercrag's Refuge, Grom'arsh Crash-Site, K3, Ebon Watch, Light's Breach, Conquest Hold, Apothecary Camp, Kamagua
+				["0.57:0.21:0.64:0.19:0.78:0.38:0.84:0.51:0.84:0.59:0.85:0.73"] = 407, -- Bouldercrag's Refuge, Ulduar, Zim'Torga, Camp Oneqwah, Camp Winterhoof, New Agamand
 
 				-- Horde: The Storm Peaks: Camp Tunka'lo
 				["0.73:0.25:0.78:0.38:0.82:0.31"] = 152, -- Camp Tunka'lo, Zim'Torga, Gundrak
@@ -3900,6 +3904,7 @@
 				["0.64:0.19:0.60:0.25:0.56:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54"] = 377, -- Ulduar, Grom'arsh Crash-Site, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village
 				["0.64:0.19:0.60:0.25:0.62:0.36:0.52:0.38:0.24:0.40"] = 402, -- Ulduar, Grom'arsh Crash-Site, K3, Dalaran, River's Heart
 				["0.64:0.19:0.60:0.25:0.62:0.36:0.64:0.42:0.69:0.42:0.70:0.55:0.84:0.59"] = 377, -- Ulduar, Grom'arsh Crash-Site, K3, Ebon Watch, Light's Breach, Conquest Hold, Camp Winterhoof
+				["0.64:0.19:0.60:0.25:0.56:0.36:0.52:0.38:0.49:0.58"] = 302, -- Ulduar, Grom'arsh Crash-Site, The Argent Vanguard, Dalaran, Moa'ki
 
 				----------------------------------------------------------------------
 				-- Horde: Wintergrasp
@@ -4023,6 +4028,8 @@
 				["0.72:0.40:0.64:0.42:0.52:0.38:0.49:0.21"] = 233, -- The Argent Stand, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.72:0.40:0.69:0.42:0.59:0.55:0.74:0.62:0.84:0.59:0.95:0.63"] = 376, -- The Argent Stand, Light's Breach, Venomspite, Apothecary Camp, Camp Winterhoof, Vengeance Landing
 				["0.72:0.40:0.64:0.42:0.62:0.36:0.60:0.25:0.64:0.19"] = 219, -- The Argent Stand, Ebon Watch, K3, Grom'arsh Crash-Site, Ulduar
+				["0.72:0.40:0.64:0.42:0.62:0.36:0.60:0.25:0.57:0.21"] = 205, -- The Argent Stand, Ebon Watch, K3, Grom'arsh Crash-Site, Bouldercrag's Refuge
+				["0.72:0.40:0.64:0.42:0.52:0.38:0.56:0.36:0.38:0.21:0.28:0.28"] = 364, -- Argentumwache, Schwarze Wacht, Dalaran, Die Argentumvorhut, Das Schattengewölbe, Todesanhöhe
 
 				-- Horde: Zul'Drak: Ebon Watch
 				["0.64:0.42:0.69:0.42"] = 45, -- Ebon Watch, Light's Breach

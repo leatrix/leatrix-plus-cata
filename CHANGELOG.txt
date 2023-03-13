@@ -1,4 +1,4 @@
-3.0.118.alpha.1 - 12th March 2023
+3.0.118 - 13th March 2023
 - Added flight times.
 
 3.0.117 - 7th March 2023
