@@ -402,6 +402,7 @@
 				["0.45:0.37:0.42:0.37:0.50:0.66"] = 507, -- The Bulwark, Undercity, Kargath
 				["0.45:0.37:0.42:0.37:0.50:0.66:0.54:0.79"] = 731, -- The Bulwark, Undercity, Kargath, Stonard
 				["0.45:0.37:0.42:0.37:0.61:0.35:0.61:0.28:0.58:0.06:0.59:0.19"] = 791, -- The Bulwark, Undercity, Light's Hope Chapel, Zul'Aman, Shattered Sun Staging Area, Silvermoon City
+				["0.45:0.37:0.42:0.37:0.59:0.45"] = 302, -- The Bulwark, Undercity, Revantusk Village
 
 				-- Horde: The Sepulcher (Silverpine Forest)
 				["0.37:0.41:0.46:0.43:0.55:0.46:0.50:0.66:0.41:0.93"] = 767, -- The Sepulcher, Tarren Mill, Hammerfall, Kargath, Booty Bay
@@ -1289,6 +1290,7 @@
 				["0.72:0.28:0.63:0.18:0.38:0.32:0.44:0.51"] = 322, -- Cosmowrench, The Stormspire, Thunderlord Stronghold, Swamprat Post
 				["0.72:0.28:0.58:0.27:0.38:0.32:0.44:0.51:0.54:0.57:0.65:0.50"] = 423, -- Kosmozang, Area 52, Donnerfeste, Sumpfrattenposten, Falkenwacht, Thrallmar
 				["0.72:0.28:0.58:0.27:0.38:0.32:0.44:0.51:0.54:0.57"] = 351, -- Cosmowrench, Area 52, Thunderlord Stronghold, Swamprat Post, Falcon Watch
+				["0.72:0.28:0.58:0.27:0.38:0.32:0.23:0.50:0.54:0.57"] = 464, -- Космоворот, Зона 52, Оплот Громоборцев, Забра'джин, Соколиный дозор
 
 				-- Horde: Evergrove (Blade's Edge Mountains)
 				["0.42:0.28:0.38:0.32:0.44:0.51:0.44:0.67:0.51:0.73:0.66:0.77"] = 371, -- Evergrove, Thunderlord Stronghold, Swamprat Post, Shattrath, Stonebreaker Hold, Shadowmoon Village
@@ -2719,6 +2721,7 @@
 				["0.70:0.55:0.84:0.59:0.85:0.73:0.74:0.71"] = 237, -- 정복의 요새 (회색 구릉지), 겨울발굽 야영지 (울부짖는 협만), 신 아가만드 (울부짖는 협만), 카마구아 (울부짖는 협만), 카마구아 (울부짖는 협만)
 				["0.70:0.55:0.59:0.55:0.54:0.52:0.52:0.38:0.49:0.21"] = 349, -- Conquest Hold, Venomspite, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
 				["0.70:0.55:0.59:0.55:0.85:0.73:0.95:0.63"] = 351, -- Conquest Hold, Venomspite, New Agamand, Vengeance Landing
+				["0.70:0.55:0.59:0.55:0.64:0.42:0.62:0.36:0.60:0.25:0.64:0.19"] = 336, -- Conquest Hold, Venomspite, Ebon Watch, K3, Grom'arsh Crash-Site, Ulduar
 
 				----------------------------------------------------------------------
 				-- Horde: Howling Fjord
@@ -3298,6 +3301,7 @@
 				["0.28:0.28:0.18:0.40:0.18:0.47:0.29:0.54:0.29:0.57"] = 285, -- Todesanhöhe, Nesingwarys Basislager, Bor'goroks Außenposten, Taunka'le, Unu'pe
 				["0.28:0.28:0.31:0.43:0.45:0.51:0.59:0.55:0.85:0.73"] = 485, -- Death's Rise, Warsong Camp, Agmar's Hammer, Venomspite, New Agamand
 				["0.28:0.28:0.18:0.40:0.18:0.47:0.17:0.53"] = 235, -- Death's Rise, Nesingwary Base Camp, Bor'gorok Outpost, Amber Ledge
+				["0.28:0.28:0.31:0.43:0.29:0.54"] = 194, -- Death's Rise, Warsong Camp, Taunka'le Village
 
 				-- Horde: Icecrown: The Argent Vanguard
 				["0.56:0.36:0.52:0.38"] = 32, -- The Argent Vanguard, Dalaran
@@ -4079,6 +4083,7 @@
 				["0.64:0.42:0.52:0.38:0.52:0.34:0.38:0.21"] = 216, -- Ebon Watch, Dalaran, Crusaders' Pinnacle, The Shadow Vault
 				["0.64:0.42:0.52:0.38:0.49:0.21"] = 181, -- Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.64:0.42:0.52:0.38:0.52:0.34:0.28:0.28"] = 261, -- Ebon Watch, Dalaran, Crusaders' Pinnacle, Death's Rise
+				["0.64:0.42:0.52:0.38:0.56:0.36:0.60:0.25"] = 190, -- Ebon Watch, Dalaran, The Argent Vanguard, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 
 				-- Horde: Zul'Drak: Gundrak
 				["0.82:0.31:0.78:0.38"] = 56, -- Gundrak, Zim'Torga
