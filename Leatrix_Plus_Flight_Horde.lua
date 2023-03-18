@@ -1743,6 +1743,7 @@
 				["0.17:0.53:0.18:0.47:0.18:0.40:0.28:0.28:0.38:0.21:0.57:0.21"] = 258, -- Amber Ledge, Bor'gorok Outpost, Nesingwary Base Camp, Death's Rise, The Shadow Vault, Bouldercrag's Refuge
 				["0.17:0.53:0.18:0.47:0.24:0.40:0.28:0.28"] = 118, -- Amber Ledge, Bor'gorok Outpost, River's Heart, Death's Rise
 				["0.17:0.53:0.29:0.54:0.45:0.51:0.54:0.52:0.64:0.42:0.72:0.40"] = 252, -- Amber Ledge, Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Ebon Watch, The Argent Stand
+				["0.17:0.53:0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.49:0.21"] = 264, -- Amber Ledge, Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Dalaran, Argent Tournament Grounds
 
 				-- Horde: Borean Tundra: Bor'gorok Outpost
 				["0.18:0.47:0.29:0.54"] = 78, -- Bor'gorok Outpost, Taunka'le Village
@@ -1857,6 +1858,7 @@
 				["0.29:0.54:0.45:0.51:0.49:0.58:0.74:0.71:0.74:0.62"] = 390, -- Taunka'le Village, Agmar's Hammer, Moa'ki, Kamagua, Apothecary Camp
 				["0.29:0.54:0.18:0.47:0.24:0.40:0.52:0.38:0.64:0.42:0.69:0.42:0.84:0.51"] = 539, -- Taunka'le Village, Bor'gorok Outpost, River's Heart, Dalaran, Ebon Watch, Light's Breach, Camp Oneqwah
 				["0.29:0.54:0.31:0.43:0.38:0.21:0.49:0.21"] = 311, -- Taunka'le Village, Warsong Camp, The Shadow Vault, Argent Tournament Grounds
+				["0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.62:0.36:0.73:0.25"] = 344, -- Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Dalaran, K3, Camp Tunka'lo
 
 				-- Horde: Borean Tundra: Transitus Shield (Coldarra)
 				["0.12:0.53:0.17:0.53:0.15:0.57"] = 58, -- Transitus Shield, Amber Ledge, Warsong Hold
@@ -2071,6 +2073,7 @@
 				["0.15:0.57:0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.49:0.21"] = 409, -- Warsong Hold, Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Dalaran, Argent Tournament Grounds
 				["0.15:0.57:0.29:0.54:0.31:0.43:0.52:0.38:0.62:0.36:0.60:0.25:0.64:0.19"] = 469, -- Warsong Hold, Taunka'le Village, Warsong Camp, Dalaran, K3, Grom'arsh Crash-Site, Ulduar
 				["0.15:0.57:0.17:0.53:0.18:0.47:0.24:0.40:0.52:0.38:0.62:0.36:0.60:0.25:0.64:0.19"] = 489, -- Warsong Hold, Amber Ledge, Bor'gorok Outpost, River's Heart, Dalaran, K3, Grom'arsh Crash-Site, Ulduar
+				["0.15:0.57:0.29:0.54:0.45:0.51:0.54:0.52:0.52:0.38:0.56:0.36"] = 341, -- Warsong Hold, Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Dalaran, The Argent Vanguard
 
 				----------------------------------------------------------------------
 				-- Horde: Crystalsong Forest
@@ -3207,6 +3210,8 @@
 				["0.49:0.21:0.52:0.38:0.31:0.43"] = 289, -- Argent Tournament Grounds, Dalaran, Warsong Camp
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.60:0.25"] = 208, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.49:0.21:0.52:0.34:0.31:0.43"] = 231, -- Argent Tournament Grounds, Crusaders' Pinnacle, Warsong Camp
+				["0.49:0.21:0.52:0.34:0.31:0.43:0.29:0.54:0.15:0.57"] = 395, -- Argent Tournament Grounds, Crusaders' Pinnacle, Warsong Camp, Taunka'le Village, Warsong Hold
+				["0.49:0.21:0.57:0.21:0.64:0.19:0.73:0.25"] = 183, -- Argent Tournament Grounds, Bouldercrag's Refuge, Ulduar, Camp Tunka'lo
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
@@ -3605,6 +3610,7 @@
 				["0.57:0.21:0.64:0.19:0.78:0.38:0.84:0.51:0.84:0.59"] = 328, -- Bouldercrag's Refuge, Ulduar, Zim'Torga, Camp Oneqwah, Camp Winterhoof
 				["0.57:0.21:0.60:0.25:0.62:0.36:0.64:0.42:0.69:0.42:0.70:0.55:0.74:0.62:0.74:0.71"] = 400, -- Bouldercrag's Refuge, Grom'arsh Crash-Site, K3, Ebon Watch, Light's Breach, Conquest Hold, Apothecary Camp, Kamagua
 				["0.57:0.21:0.64:0.19:0.78:0.38:0.84:0.51:0.84:0.59:0.85:0.73"] = 407, -- Bouldercrag's Refuge, Ulduar, Zim'Torga, Camp Oneqwah, Camp Winterhoof, New Agamand
+				["0.57:0.21:0.49:0.21:0.52:0.34:0.31:0.43"] = 288, -- Bouldercrag's Refuge, Argent Tournament Grounds, Crusaders' Pinnacle, Warsong Camp
 
 				-- Horde: The Storm Peaks: Camp Tunka'lo
 				["0.73:0.25:0.78:0.38:0.82:0.31"] = 152, -- Camp Tunka'lo, Zim'Torga, Gundrak
