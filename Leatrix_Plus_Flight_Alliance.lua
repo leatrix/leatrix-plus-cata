@@ -1931,6 +1931,8 @@
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.28:0.28:0.49:0.21"] = 235, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Death's Rise, Argent Tournament Grounds
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.56:0.36:0.57:0.33"] = 236, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, The Argent Vanguard, Frosthold
 				["0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.49:0.21"] = 270, -- Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, Argent Tournament Grounds
+				["0.17:0.53:0.21:0.49:0.42:0.53:0.49:0.58"] = 157, -- Amber Ledge, Fizzcrank Airstrip, Stars' Rest, Moa'ki
+				["0.17:0.53:0.21:0.49:0.42:0.53:0.49:0.58:0.74:0.71"] = 279, -- Amber Ledge, Fizzcrank Airstrip, Stars' Rest, Moa'ki, Kamagua
 
 				-- Alliance: Borean Tundra: Fizzcrank Airstrip
 				["0.21:0.49:0.17:0.53"] = 45, -- Fizzcrank Airstrip, Amber Ledge
@@ -3320,6 +3322,7 @@
 				["0.49:0.21:0.52:0.38:0.54:0.52:0.42:0.53"] = 316, -- Argent Tournament Grounds, Dalaran, Wyrmrest Temple, Stars' Rest
 				["0.49:0.21:0.52:0.38:0.46:0.46:0.42:0.53:0.22:0.61"] = 429, -- Argent Tournament Grounds, Dalaran, Fordragon Hold, Stars' Rest, Valiance Keep
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38"] = 307, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Ebon Watch, The Argent Stand, Zim'Torga
+				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54:0.83:0.46"] = 403, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge, Westfall Brigade
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
