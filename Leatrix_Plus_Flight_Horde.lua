@@ -2315,6 +2315,7 @@
 				["0.52:0.38:0.49:0.21:0.57:0.21"] = 171, -- Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge
 				["0.52:0.38:0.62:0.36:0.73:0.25:0.78:0.38:0.84:0.51"] = 325, -- Dalaran, K3, Camp Tunka'lo, Zim'Torga, Camp Oneqwah
 				["0.52:0.38:0.64:0.42:0.72:0.40:0.84:0.51:0.95:0.63"] = 348, -- Dalaran, Ebon Watch, The Argent Stand, Camp Oneqwah, Vengeance Landing
+				["0.52:0.38:0.49:0.21:0.57:0.21:0.60:0.25"] = 211, -- Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 
 				----------------------------------------------------------------------
 				-- Horde: Dragonblight
