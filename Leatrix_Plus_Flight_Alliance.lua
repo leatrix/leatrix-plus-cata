@@ -2235,6 +2235,7 @@
 				["0.22:0.61:0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21:0.64:0.19"] = 481, -- Valiance Keep, Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge, Ulduar
 				["0.22:0.61:0.29:0.57:0.49:0.58:0.54:0.52:0.64:0.42:0.69:0.42"] = 379, -- Valiance Keep, Unu'pe, Moa'ki, Wyrmrest Temple, Ebon Watch, Light's Breach
 				["0.22:0.61:0.42:0.53:0.54:0.52:0.52:0.38:0.49:0.21"] = 442, -- Valiance Keep, Stars' Rest, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
+				["0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.64:0.42:0.72:0.40:0.83:0.46"] = 457, -- Valiance Keep, Unu'pe, Moa'ki, Wintergarde Keep, Ebon Watch, The Argent Stand, Westfall Brigade
 
 				----------------------------------------------------------------------
 				-- Alliance: Crystalsong Forest

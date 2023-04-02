@@ -784,6 +784,7 @@
 				["0.64:0.23:0.63:0.36:0.56:0.53:0.55:0.73:0.58:0.70"] = 552, -- Everlook, Valormok, Crossroads, Freewind Post, Mudsprocket
 				["0.64:0.23:0.63:0.44:0.56:0.53:0.44:0.69:0.42:0.79"] = 732, -- Everlook, Orgrimmar, Crossroads, Camp Mojache, Cenarion Hold
 				["0.64:0.23:0.63:0.44:0.56:0.53:0.41:0.47"] = 500, -- Everlook, Orgrimmar, Crossroads, Sun Rock Retreat
+				["0.64:0.23:0.63:0.36:0.45:0.56:0.44:0.69"] = 637, -- Everlook, Valormok, Thunder Bluff, Camp Mojache
 
 				-- Horde: Freewind Post (Thousand Needles)
 				["0.55:0.73:0.44:0.69:0.42:0.79"] = 252, -- Freewind Post, Camp Mojache, Cenarion Hold
@@ -2840,6 +2841,7 @@
 				["0.84:0.51:0.84:0.59:0.74:0.62:0.59:0.55:0.54:0.52:0.52:0.38:0.49:0.21"] = 484, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Venomspite, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
 				["0.84:0.51:0.84:0.59:0.74:0.62:0.74:0.71:0.49:0.58:0.45:0.51"] = 417, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Kamagua, Moa'ki, Agmar's Hammer
 				["0.84:0.51:0.69:0.42:0.64:0.42:0.62:0.36:0.72:0.29"] = 272, -- Camp Oneqwah, Light's Breach, Ebon Watch, K3, Dun Nifflelem
+				["0.84:0.51:0.70:0.55:0.74:0.62"] = 153, -- Camp Oneqwah, Conquest Hold, Apothecary Camp
 
 				-- Horde: Howling Fjord: Camp Winterhoof
 				["0.84:0.59:0.85:0.73"] = 80, -- Camp Winterhoof, New Agamand
@@ -3439,6 +3441,7 @@
 				["0.38:0.21:0.31:0.43:0.24:0.40:0.18:0.47"] = 268, -- The Shadow Vault, Warsong Camp, River's Heart, Bor'gorok Outpost
 				["0.38:0.21:0.57:0.21:0.64:0.19:0.73:0.25"] = 254, -- The Shadow Vault, Bouldercrag's Refuge, Ulduar, Camp Tunka'lo
 				["0.38:0.21:0.31:0.43:0.45:0.51:0.54:0.52"] = 286, -- The Shadow Vault, Warsong Camp, Agmar's Hammer, Wyrmrest Temple
+				["0.38:0.21:0.28:0.28:0.18:0.40:0.18:0.47"] = 256, -- The Shadow Vault, Death's Rise, Nesingwary Base Camp, Bor'gorok Outpost
 
 				----------------------------------------------------------------------
 				-- Horde: Sholazar Basin
