@@ -1,3 +1,6 @@
+3.0.127.alpha.1 - 15th April 2023
+- Fixed /run leaplus("quest <id>") functionality.
+
 3.0.126 - 15th April 2023
 - Added flight times.
 
