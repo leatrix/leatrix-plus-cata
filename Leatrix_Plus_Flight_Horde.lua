@@ -913,6 +913,7 @@
 				["0.54:0.21:0.64:0.23:0.63:0.44:0.56:0.53:0.44:0.69"] = 743, -- Moonglade, Everlook, Orgrimmar, Crossroads, Camp Mojache
 				["0.54:0.21:0.64:0.23:0.63:0.44:0.61:0.55:0.61:0.80:0.50:0.76"] = 836, -- Moonglade, Everlook, Orgrimmar, Ratchet, Gadgetzan, Marshal's Refuge
 				["0.54:0.21:0.46:0.30:0.56:0.53:0.61:0.55:0.61:0.80"] = 640, -- Moonglade, Bloodvenom Post, Crossroads, Ratchet, Gadgetzan
+				["0.54:0.21:0.64:0.23:0.63:0.36:0.56:0.53:0.53:0.61"] = 513, -- Moonglade, Everlook, Valormok, Crossroads, Camp Taurajo
 
 				-- Horde: Mudsprocket (Dustwallow Marsh)
 				["0.58:0.70:0.55:0.73:0.44:0.69:0.42:0.79"] = 324, -- Mudsprocket, Freewind Post, Camp Mojache, Cenarion Hold
@@ -1995,6 +1996,7 @@
 				["0.29:0.57:0.29:0.54:0.31:0.43:0.38:0.21:0.57:0.21"] = 377, -- Unu'pe, Taunka'le Village, Warsong Camp, The Shadow Vault, Bouldercrag's Refuge
 				["0.29:0.57:0.29:0.54:0.31:0.43:0.52:0.34"] = 252, -- Unu'pe, Taunka'le Village, Warsong Camp, Crusaders' Pinnacle
 				["0.29:0.57:0.49:0.58:0.59:0.55:0.64:0.42:0.60:0.40"] = 288, -- Unu'pe, Moa'ki, Venomspite, Ebon Watch, Sunreaver's Command
+				["0.29:0.57:0.29:0.54:0.31:0.43:0.52:0.38:0.62:0.36"] = 279, -- Unu'pe, Taunka'le Village, Warsong Camp, Dalaran, K3
 
 				-- Horde: Borean Tundra: Warsong Hold
 				["0.15:0.57:0.29:0.57:0.49:0.58:0.74:0.71"] = 394, -- Warsong Hold, Unu'pe, Moa'ki, Kamagua
@@ -2336,6 +2338,7 @@
 				["0.52:0.38:0.64:0.42:0.72:0.40:0.84:0.51:0.95:0.63"] = 348, -- Dalaran, Ebon Watch, The Argent Stand, Camp Oneqwah, Vengeance Landing
 				["0.52:0.38:0.49:0.21:0.57:0.21:0.60:0.25"] = 211, -- Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.52:0.38:0.62:0.36:0.72:0.29:0.78:0.38:0.72:0.40"] = 297, -- Dalaran, K3, Dun Nifflelem, Zim'Torga, The Argent Stand
+				["0.52:0.38:0.64:0.42:0.59:0.55:0.85:0.73:0.84:0.59"] = 444, -- Dalaran, Ebon Watch, Venomspite, New Agamand, Camp Winterhoof
 
 				----------------------------------------------------------------------
 				-- Horde: Dragonblight
@@ -2656,6 +2659,7 @@
 				["0.54:0.52:0.52:0.38:0.49:0.21"] = 141, -- Wyrmrest Temple, Dalaran, Argent Tournament Grounds
 				["0.54:0.52:0.52:0.38:0.24:0.40:0.28:0.28:0.38:0.21"] = 317, -- Wyrmrest Temple, Dalaran, River's Heart, Death's Rise, The Shadow Vault
 				["0.54:0.52:0.52:0.38:0.62:0.36:0.60:0.25:0.64:0.19"] = 179, -- Wyrmrest Temple, Dalaran, K3, Grom'arsh Crash-Site, Ulduar
+				["0.54:0.52:0.45:0.51:0.31:0.43:0.24:0.40:0.18:0.47:0.15:0.57"] = 257, -- Wyrmrest Temple, Agmar's Hammer, Warsong Camp, River's Heart, Bor'gorok Outpost, Warsong Hold
 
 				----------------------------------------------------------------------
 				-- Horde: Grizzly Hills
@@ -3660,6 +3664,7 @@
 				["0.57:0.21:0.64:0.19:0.78:0.38:0.84:0.51:0.84:0.59:0.85:0.73"] = 407, -- Bouldercrag's Refuge, Ulduar, Zim'Torga, Camp Oneqwah, Camp Winterhoof, New Agamand
 				["0.57:0.21:0.49:0.21:0.52:0.34:0.31:0.43"] = 288, -- Bouldercrag's Refuge, Argent Tournament Grounds, Crusaders' Pinnacle, Warsong Camp
 				["0.57:0.21:0.49:0.21:0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38"] = 366, -- Bouldercrag's Refuge, Argent Tournament Grounds, Dalaran, Ebon Watch, The Argent Stand, Zim'Torga
+				["0.57:0.21:0.60:0.25:0.62:0.36:0.52:0.38:0.48:0.44"] = 260, -- Bouldercrag's Refuge, Grom'arsh Crash-Site, K3, Dalaran, Kor'koron Vanguard
 
 				-- Horde: The Storm Peaks: Camp Tunka'lo
 				["0.73:0.25:0.78:0.38:0.82:0.31"] = 152, -- Camp Tunka'lo, Zim'Torga, Gundrak
@@ -3898,6 +3903,7 @@
 				["0.62:0.36:0.64:0.42:0.59:0.55:0.70:0.55"] = 201, -- K3, Ebon Watch, Venomspite, Conquest Hold
 				["0.62:0.36:0.73:0.25:0.78:0.38:0.84:0.51:0.84:0.59"] = 319, -- K3, Camp Tunka'lo, Zim'Torga, Camp Oneqwah, Camp Winterhoof
 				["0.62:0.36:0.52:0.38:0.56:0.36:0.38:0.21"] = 240, -- K3, Dalaran, The Argent Vanguard, The Shadow Vault
+				["0.62:0.36:0.52:0.38:0.49:0.21:0.57:0.21"] = 233, -- K3, Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge
 
 				-- Horde: The Storm Peaks: Ulduar
 				["0.64:0.19:0.73:0.25"] = 88, -- Ulduar, Camp Tunka'lo
