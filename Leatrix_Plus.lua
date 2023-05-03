@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.129 (25th April 2023)
+-- 	Leatrix Plus 3.0.130 (3rd May 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.129"
+	LeaPlusLC["AddonVer"] = "3.0.130"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -10934,7 +10934,9 @@
 
 			-- Hide health bar
 			if LeaPlusLC["TipNoHealthBar"] == "On" then
-				GameTooltipStatusBar:SetStatusBarTexture("")
+				local tipHide = GameTooltip.Hide
+				GameTooltipStatusBar:HookScript("OnShow", tipHide)
+				GameTooltipStatusBar:Hide()
 			end
 
 			---------------------------------------------------------------------------------------------------------
