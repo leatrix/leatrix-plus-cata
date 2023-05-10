@@ -1,3 +1,6 @@
+3.0.131 - 10th May 2023
+- Added flight times.
+
 3.0.130 - 3rd May 2023
 - For 'Enhance tooltip' ('Interface'), fixed an issue with 'Hide health bar' which caused the health bar to not be hidden.
 - For 'Easy item destroy' ('System'), fixed an issue which caused a Lua error when clicking outside of the destroy confirmation.
