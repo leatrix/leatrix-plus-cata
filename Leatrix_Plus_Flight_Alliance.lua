@@ -2885,6 +2885,7 @@
 				["0.73:0.54:0.60:0.52:0.54:0.52:0.52:0.38:0.62:0.36"] = 267, -- Amberpine Lodge, Wintergarde Keep, Wyrmrest Temple, Dalaran, K3
 				["0.73:0.54:0.69:0.42:0.64:0.42:0.54:0.52"] = 196, -- Amberpine Lodge, Light's Breach, Ebon Watch, Wyrmrest Temple
 				["0.73:0.54:0.60:0.52:0.59:0.43:0.62:0.36:0.57:0.33"] = 236, -- Amberpine Lodge, Wintergarde Keep, Windrunner's Overlook, K3, Frosthold
+				["0.73:0.54:0.60:0.52:0.49:0.58:0.29:0.57"] = 307, -- Amberpine Lodge, Wintergarde Keep, Moa'ki, Unu'pe
 
 				-- Alliance: Grizzly Hills: Westfall Brigade
 				["0.83:0.46:0.73:0.54"] = 79, -- Westfall Brigade, Amberpine Lodge
@@ -4174,6 +4175,7 @@
 				["0.64:0.19:0.57:0.21:0.28:0.28:0.24:0.40:0.21:0.49:0.17:0.53"] = 460, -- Ulduar, Bouldercrag's Refuge, Death's Rise, River's Heart, Fizzcrank Airstrip, Amber Ledge
 				["0.64:0.19:0.72:0.29:0.62:0.36:0.64:0.42:0.60:0.52"] = 296, -- Ulduar, Dun Nifflelem, K3, Ebon Watch, Wintergarde Keep
 				["0.64:0.19:0.57:0.21:0.49:0.21:0.52:0.34:0.41:0.43:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 561, -- Ulduar, Bouldercrag's Refuge, Argent Tournament Grounds, Crusaders' Pinnacle, Valiance Landing Camp, River's Heart, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
+				["0.64:0.19:0.57:0.33:0.62:0.36:0.52:0.38:0.24:0.40:0.18:0.40"] = 457, -- Ulduar, Frosthold, K3, Dalaran, River's Heart, Nesingwary Base Camp
 
 				----------------------------------------------------------------------
 				-- Alliance: Wintergrasp

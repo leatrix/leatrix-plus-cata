@@ -1198,6 +1198,7 @@
 				["0.41:0.37:0.56:0.53:0.63:0.44"] = 352, -- Zoram'gar Outpost, Crossroads, Orgrimmar
 				["0.41:0.37:0.45:0.56:0.32:0.58"] = 407, -- Zoram'gar Outpost, Thunder Bluff, Shadowprey Village
 				["0.41:0.37:0.45:0.56:0.63:0.44"] = 455, -- Zoram'gar Outpost, Thunder Bluff, Orgrimmar
+				["0.41:0.37:0.56:0.53:0.44:0.69"] = 487, -- Zoram'gar Outpost, Crossroads, Camp Mojache
 
 			},
 
@@ -2672,6 +2673,7 @@
 				["0.54:0.52:0.52:0.38:0.24:0.40:0.28:0.28:0.38:0.21"] = 317, -- Wyrmrest Temple, Dalaran, River's Heart, Death's Rise, The Shadow Vault
 				["0.54:0.52:0.52:0.38:0.62:0.36:0.60:0.25:0.64:0.19"] = 179, -- Wyrmrest Temple, Dalaran, K3, Grom'arsh Crash-Site, Ulduar
 				["0.54:0.52:0.45:0.51:0.31:0.43:0.24:0.40:0.18:0.47:0.15:0.57"] = 257, -- Wyrmrest Temple, Agmar's Hammer, Warsong Camp, River's Heart, Bor'gorok Outpost, Warsong Hold
+				["0.54:0.52:0.52:0.38:0.56:0.36:0.60:0.25:0.64:0.19"] = 182, -- Wyrmruhtempel, Dalaran, Die Argentumvorhut, Absturzstelle Grom'ash, Ulduar
 
 				----------------------------------------------------------------------
 				-- Horde: Grizzly Hills
