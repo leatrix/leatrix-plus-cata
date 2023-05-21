@@ -1617,6 +1617,7 @@
 				["0.63:0.18:0.38:0.32:0.23:0.50:0.44:0.67"] = 443, -- The Stormspire, Thunderlord Stronghold, Zabra'jin, Shattrath
 				["0.63:0.18:0.38:0.32:0.44:0.51:0.54:0.57"] = 325, -- The Stormspire, Thunderlord Stronghold, Swamprat Post, Falcon Watch
 				["0.63:0.18:0.38:0.32:0.44:0.51:0.44:0.67:0.51:0.73:0.66:0.77:0.81:0.77"] = 562, -- The Stormspire, Thunderlord Stronghold, Swamprat Post, Shattrath, Stonebreaker Hold, Shadowmoon Village, Altar of Sha'tar
+				["0.63:0.18:0.38:0.32:0.42:0.28"] = 172, -- The Stormspire, Thunderlord Stronghold, Evergrove
 
 				-- Horde: Thrallmar (Hellfire Peninsula)
 				["0.65:0.50:0.51:0.73:0.66:0.77"] = 192, -- Thrallmar, Stonebreaker Hold, Shadowmoon Village
@@ -3876,6 +3877,7 @@
 				["0.60:0.25:0.56:0.36:0.52:0.38:0.48:0.44:0.59:0.55:0.70:0.55:0.84:0.51"] = 421, -- Grom'arsh Crash-Site, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Venomspite, Conquest Hold, Camp Oneqwah
 				["0.60:0.25:0.56:0.36:0.52:0.34:0.31:0.43:0.29:0.54:0.17:0.53"] = 418, -- Grom'arsh Crash-Site, The Argent Vanguard, Crusaders' Pinnacle, Warsong Camp, Taunka'le Village, Amber Ledge
 				["0.60:0.25:0.57:0.21:0.38:0.21:0.31:0.43"] = 286, -- Grom'arsh Crash-Site, Bouldercrag's Refuge, The Shadow Vault, Warsong Camp
+				["0.60:0.25:0.64:0.19:0.78:0.38:0.84:0.51:0.84:0.59"] = 335, -- Grom'arsh Crash-Site, Ulduar, Zim'Torga, Camp Oneqwah, Camp Winterhoof
 
 				-- Horde: The Storm Peaks: K3
 				["0.62:0.36:0.52:0.38"] = 72, -- K3, Dalaran
@@ -4009,6 +4011,7 @@
 				["0.64:0.19:0.60:0.25:0.62:0.36:0.52:0.38:0.48:0.44"] = 263, -- Ulduar, Grom'arsh Crash-Site, K3, Dalaran, Kor'koron Vanguard
 				["0.64:0.19:0.60:0.25:0.56:0.36:0.52:0.38:0.48:0.44:0.59:0.55"] = 304, -- Ulduar, Grom'arsh Crash-Site, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Venomspite
 				["0.64:0.19:0.57:0.21:0.38:0.21:0.31:0.43:0.29:0.54:0.15:0.57"] = 461, -- Ulduar, Bouldercrag's Refuge, The Shadow Vault, Warsong Camp, Taunka'le Village, Warsong Hold
+				["0.64:0.19:0.57:0.21:0.38:0.21:0.31:0.43:0.29:0.54"] = 377, -- Ulduar, Bouldercrag's Refuge, The Shadow Vault, Warsong Camp, Taunka'le Village
 
 				----------------------------------------------------------------------
 				-- Horde: Wintergrasp
