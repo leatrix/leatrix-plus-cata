@@ -2975,6 +2975,7 @@
 				["0.83:0.46:0.88:0.60:0.88:0.72:0.74:0.71"] = 253, -- Westfall Brigade, Fort Wildervar, Valgarde Port, Kamagua
 				["0.83:0.46:0.73:0.54:0.60:0.52:0.64:0.42:0.52:0.38:0.49:0.21"] = 396, -- Westfall Brigade, Amberpine Lodge, Wintergarde Keep, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.83:0.46:0.72:0.40:0.64:0.42:0.62:0.36:0.72:0.29"] = 274, -- Westfall Brigade, The Argent Stand, Ebon Watch, K3, Dun Nifflelem
+				["0.83:0.46:0.73:0.54:0.60:0.52:0.59:0.43:0.62:0.36:0.57:0.33"] = 312, -- Westfall Brigade, Amberpine Lodge, Wintergarde Keep, Windrunner's Overlook, K3, Frosthold
 
 				----------------------------------------------------------------------
 				-- Alliance: Howling Fjord
