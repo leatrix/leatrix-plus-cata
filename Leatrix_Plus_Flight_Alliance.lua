@@ -2267,6 +2267,7 @@
 				["0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.64:0.42:0.72:0.40:0.83:0.46"] = 457, -- Valiance Keep, Unu'pe, Moa'ki, Wintergarde Keep, Ebon Watch, The Argent Stand, Westfall Brigade
 				["0.22:0.61:0.42:0.53:0.41:0.43:0.52:0.34:0.49:0.21"] = 414, -- Valiance Keep, Stars' Rest, Valiance Landing Camp, Crusaders' Pinnacle, Argent Tournament Grounds
 				["0.22:0.61:0.21:0.49:0.24:0.40:0.41:0.43:0.46:0.46"] = 328, -- Valiance Keep, Fizzcrank Airstrip, River's Heart, Valiance Landing Camp, Fordragon Hold
+				["0.22:0.61:0.42:0.53:0.41:0.43:0.52:0.38:0.56:0.36:0.57:0.33:0.64:0.19"] = 457, -- Valiance Keep, Stars' Rest, Valiance Landing Camp, Dalaran, The Argent Vanguard, Frosthold, Ulduar
 
 				----------------------------------------------------------------------
 				-- Alliance: Crystalsong Forest
