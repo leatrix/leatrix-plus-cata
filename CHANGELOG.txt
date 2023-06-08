@@ -1,3 +1,6 @@
+3.0.135.alpha.1 - 8th June 2023
+- PTR (3.4.2) - Fixed an issue with 'Recent chat window' which caused a Lua error when the window is shown.
+
 3.0.134 - 3rd June 2023
 - Added flight times.
 

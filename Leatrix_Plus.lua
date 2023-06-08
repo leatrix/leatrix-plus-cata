@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.134 (3rd June 2023)
+-- 	Leatrix Plus 3.0.135.alpha.1 (8th June 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.134"
+	LeaPlusLC["AddonVer"] = "3.0.135.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -34,6 +34,9 @@
 				print(L["LEATRIX PLUS: WRONG VERSION INSTALLED!"])
 			end)
 			return
+		end
+		if gametocversion and gametocversion == 30402 then -- 3.4.2
+			LeaPlusLC.NewPatch = true
 		end
 	end
 
@@ -10297,7 +10300,11 @@
 				end
 				titleFrame.m:SetText(L["Messages"] .. ": " .. totalMsgCount)
 				editFrame:SetVerticalScroll(0)
-				C_Timer.After(0.1, function() editFrame.ScrollBar.ScrollDownButton:Click() end)
+				if LeaPlusLC.NewPatch then
+					editFrame.ScrollBar:ScrollToEnd()
+				else
+					C_Timer.After(0.1, function() editFrame.ScrollBar.ScrollDownButton:Click() end)
+				end
 				editFrame:Show()
 				editBox:ClearFocus()
 			end
