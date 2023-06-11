@@ -3315,6 +3315,7 @@
 				["0.49:0.21:0.52:0.38:0.54:0.52:0.45:0.51:0.29:0.54"] = 427, -- Argent Tournament Grounds, Dalaran, Wyrmrest Temple, Agmar's Hammer, Taunka'le Village
 				["0.49:0.21:0.52:0.38:0.54:0.52:0.59:0.55"] = 299, -- Argent Tournament Grounds, Dalaran, Wyrmrest Temple, Venomspite
 				["0.49:0.21:0.57:0.21:0.60:0.25:0.73:0.25"] = 188, -- Argent Tournament Grounds, Bouldercrag's Refuge, Grom'arsh Crash-Site, Camp Tunka'lo
+				["0.49:0.21:0.52:0.38:0.24:0.40:0.18:0.47:0.17:0.53"] = 449, -- Argent Tournament Grounds, Dalaran, River's Heart, Bor'gorok Outpost, Amber Ledge
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
@@ -3772,6 +3773,7 @@
 				["0.73:0.25:0.78:0.38:0.84:0.51"] = 181, -- Camp Tunka'lo, Zim'Torga, Camp Oneqwah
 				["0.73:0.25:0.62:0.36:0.52:0.38:0.52:0.34:0.38:0.21"] = 337, -- Camp Tunka'lo, K3, Dalaran, Crusaders' Pinnacle, The Shadow Vault
 				["0.73:0.25:0.62:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54:0.18:0.47"] = 482, -- Camp Tunka'lo, K3, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Bor'gorok Outpost
+				["0.73:0.25:0.62:0.36:0.52:0.38:0.56:0.36"] = 209, -- Camp Tunka'lo, K3, Dalaran, The Argent Vanguard
 
 				-- Horde: The Storm Peaks: Dun Nifflelem
 				["0.72:0.29:0.62:0.36:0.52:0.38"] = 159, -- Dun Nifflelem, K3, Dalaran
