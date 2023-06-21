@@ -1220,6 +1220,7 @@
 				["0.61:0.55:0.60:0.81:0.48:0.70:0.31:0.69:0.40:0.51"] = 825, -- Ratchet, Gadgetzan, Thalanaar, Feathermoon, Nijel's Point
 				["0.61:0.55:0.64:0.67:0.40:0.51:0.39:0.40"] = 558, -- Ratchet, Theramore, Nijel's Point, Stonetalon Peak
 				["0.61:0.55:0.46:0.40:0.50:0.35:0.53:0.26:0.55:0.21"] = 462, -- Ratchet, Astranaar, Emerald Sanctuary, Talonbranch Glade, Moonglade
+				["0.61:0.55:0.60:0.81:0.48:0.70:0.31:0.69"] = 598, -- Ratchet, Gadgetzan, Thalanaar, Feathermoon
 
 				-- Alliance: Rut'theran Village (Teldrassil)
 				["0.42:0.16:0.43:0.25:0.31:0.69"] = 557, -- Rut'theran Village, Auberdine, Feathermoon
@@ -1593,6 +1594,7 @@
 				["0.79:0.55:0.65:0.58:0.44:0.67:0.38:0.50:0.42:0.37:0.58:0.27"] = 425, -- Hellfire Peninsula, Honor Hold, Shattrath, Telredor, Toshley's Station, Area 52
 				["0.79:0.55:0.52:0.51:0.38:0.50:0.32:0.34:0.58:0.27:0.72:0.28"] = 471, -- Hellfire Peninsula, Temple of Telhamat, Telredor, Sylvanaar, Area 52, Cosmowrench
 				["0.79:0.55:0.65:0.58:0.44:0.67:0.38:0.50"] = 274, -- Hellfire Peninsula, Honor Hold, Shattrath, Telredor
+				["0.79:0.55:0.65:0.58:0.44:0.67:0.38:0.50:0.42:0.37:0.58:0.27:0.63:0.18"] = 473, -- Hellfire Peninsula, Honor Hold, Shattrath, Telredor, Toshley's Station, Area 52, The Stormspire
 
 				-- Alliance: Honor Hold (Hellfire Peninsula)
 				["0.65:0.58:0.44:0.67:0.27:0.74"] = 207, -- Honor Hold, Shattrath, Telaar
@@ -3908,6 +3910,7 @@
 				["0.57:0.21:0.49:0.21:0.52:0.38"] = 197, -- Bouldercrag's Refuge, Argent Tournament Grounds, Dalaran
 				["0.57:0.21:0.49:0.21:0.52:0.38:0.62:0.36:0.72:0.29"] = 341, -- Bouldercrag's Refuge, Argent Tournament Grounds, Dalaran, K3, Dun Nifflelem
 				["0.57:0.21:0.57:0.33:0.56:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.21:0.49"] = 430, -- Bouldercrag's Refuge, Frosthold, The Argent Vanguard, Dalaran, Fordragon Hold, Stars' Rest, Fizzcrank Airstrip
+				["0.57:0.21:0.57:0.33:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46"] = 343, -- Bergfels' Zuflucht, Eisfestung, Die Argentumvorhut, Dalaran, Schwarze Wacht, Argentumwache, Westfallbrigade
 
 				-- Alliance: The Storm Peaks: Dun Nifflelem
 				["0.72:0.29:0.64:0.19:0.57:0.21"] = 133, -- Dun Nifflelem, Ulduar, Bouldercrag's Refuge
