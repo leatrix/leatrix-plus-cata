@@ -1,3 +1,6 @@
+3.0.138.alpha.1 - 24th June 2023
+- Added flight times.
+
 3.0.137 - 24th June 2023
 - Updated for game version 3.4.2.
 - The 'Disable bag automation' option ('System') no longer applies to mailboxes.
