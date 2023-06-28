@@ -2354,7 +2354,7 @@
 				["0.52:0.38:0.59:0.43:0.60:0.52:0.76:0.67:0.74:0.71"] = 298, -- Dalaran, Windrunner's Overlook, Wintergarde Keep, Westguard Keep, Kamagua
 				["0.52:0.38:0.46:0.46:0.42:0.53"] = 174, -- Dalaran, Fordragon Hold, Stars' Rest (RJ Graves reported 135)
 				["0.52:0.38:0.49:0.58"] = 160, -- Dalaran, Moa'ki
-				["0.52:0.38:0.41:0.43"] = 115, -- Dalaran, Valiance Landing Camp
+				["0.52:0.38:0.41:0.43"] = 115, -- Dalaran, Valiance Landing Camp (Kirk M reported 141)
 				["0.52:0.38:0.59:0.43"] = 53, -- Dalaran, Windrunner's Overlook
 				["0.52:0.38:0.46:0.46:0.42:0.53:0.29:0.57"] = 270, -- Dalaran, Fordragon Hold, Stars' Rest, Unu'pe
 				["0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38:0.82:0.31"] = 239, -- Dalaran, Ebon Watch, The Argent Stand, Zim'Torga, Gundrak
@@ -3830,6 +3830,7 @@
 				["0.24:0.40:0.41:0.43:0.42:0.53:0.29:0.57"] = 491, -- River's Heart, Valiance Landing Camp, Stars' Rest, Unu'pe
 				["0.24:0.40:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46:0.88:0.60"] = 732, -- River's Heart, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade, Fort Wildervar
 				["0.24:0.40:0.52:0.38:0.62:0.36:0.57:0.33:0.64:0.19"] = 579, -- River's Heart, Dalaran, K3, Frosthold, Ulduar
+				["0.24:0.40:0.52:0.38:0.59:0.43:0.60:0.52:0.76:0.67:0.88:0.72"] = 759, -- River's Heart, Dalaran, Windrunner's Overlook, Wintergarde Keep, Westguard Keep, Valgarde Port
 
 				----------------------------------------------------------------------
 				-- Alliance: The Storm Peaks

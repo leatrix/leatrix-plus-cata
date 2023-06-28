@@ -2175,6 +2175,7 @@
 				["0.60:0.40:0.52:0.38:0.48:0.44:0.59:0.55:0.70:0.55:0.84:0.59"] = 349, -- Sunreaver's Command, Dalaran, Kor'koron Vanguard, Venomspite, Conquest Hold, Camp Winterhoof
 				["0.60:0.40:0.52:0.38:0.24:0.40:0.18:0.47"] = 309, -- Sunreaver's Command, Dalaran, River's Heart, Bor'gorok Outpost
 				["0.60:0.40:0.52:0.38:0.54:0.52"] = 166, -- Sunreaver's Command, Dalaran, Wyrmrest Temple
+				["0.60:0.40:0.52:0.38:0.52:0.34:0.38:0.21"] = 205, -- Sunreaver's Command, Dalaran, Crusaders' Pinnacle, The Shadow Vault
 
 				----------------------------------------------------------------------
 				-- Horde: Dalaran
@@ -3076,6 +3077,7 @@
 				["0.74:0.71:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.62:0.36:0.60:0.25:0.64:0.19"] = 388, -- Kamagua, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, K3, Grom'arsh Crash-Site, Ulduar
 				["0.74:0.71:0.85:0.73:0.59:0.55:0.64:0.42:0.62:0.36"] = 379, -- Kamagua, New Agamand, Venomspite, Ebon Watch, K3
 				["0.74:0.71:0.74:0.62:0.59:0.55:0.54:0.52:0.52:0.38:0.49:0.21"] = 434, -- Kamagua, Apothecary Camp, Venomspite, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
+				["0.74:0.71:0.49:0.58:0.52:0.38:0.49:0.21"] = 430, -- Kamagua, Moa'ki, Dalaran, Argent Tournament Grounds
 
 				-- Horde: Howling Fjord: New Agamand
 				["0.85:0.73:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38"] = 335, -- New Agamand, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, Dalaran
@@ -3330,6 +3332,7 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.59:0.55:0.74:0.62"] = 385, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Venomspite, Apothecary Camp
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.59:0.55:0.70:0.55"] = 346, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Venomspite, Conquest Hold
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40"] = 266, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Ebon Watch, The Argent Stand
+				["0.49:0.21:0.52:0.38:0.54:0.52:0.45:0.51"] = 317, -- Argentumturnierplatz, Dalaran, Wyrmruhtempel, Agmars Hammer
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
@@ -4121,6 +4124,7 @@
 				["0.31:0.43:0.45:0.51:0.59:0.55:0.74:0.62:0.74:0.71"] = 337, -- Warsong Camp, Agmar's Hammer, Venomspite, Apothecary Camp, Kamagua
 				["0.31:0.43:0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38:0.72:0.29"] = 396, -- Warsong Camp, Dalaran, Ebon Watch, The Argent Stand, Zim'Torga, Dun Nifflelem
 				["0.31:0.43:0.38:0.21:0.57:0.21"] = 285, -- Warsong Camp, The Shadow Vault, Bouldercrag's Refuge
+				["0.31:0.43:0.45:0.51:0.59:0.55:0.74:0.62:0.84:0.59:0.84:0.51"] = 400, -- Warsong Camp, Agmar's Hammer, Venomspite, Apothecary Camp, Camp Winterhoof, Camp Oneqwah
 
 				----------------------------------------------------------------------
 				-- Horde: Zul'Drak
