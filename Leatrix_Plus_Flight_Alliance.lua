@@ -1315,6 +1315,7 @@
 				["0.53:0.26:0.65:0.23:0.61:0.40:0.58:0.39"] = 293, -- Talonbranch Glade, Everlook, Talrendis Point, Forest Song
 				["0.53:0.26:0.50:0.35:0.46:0.40:0.64:0.67:0.60:0.81"] = 753, -- Talonbranch Glade, Emerald Sanctuary, Astranaar, Theramore, Gadgetzan
 				["0.53:0.26:0.50:0.35:0.58:0.39:0.61:0.40:0.64:0.67:0.60:0.81"] = 652, -- Talonbranch Glade, Emerald Sanctuary, Forest Song, Talrendis Point, Theramore, Gadgetzan
+				["0.53:0.26:0.65:0.23:0.61:0.40:0.61:0.55"] = 404, -- Talonbranch Glade, Everlook, Talrendis Point, Ratchet
 
 				-- Alliance: Talrendis Point (Azshara)
 				["0.61:0.40:0.61:0.55:0.64:0.67:0.48:0.70:0.31:0.69"] = 574, -- Talrendis Point, Ratchet, Theramore, Thalanaar, Feathermoon
@@ -2026,6 +2027,7 @@
 				["0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21:0.64:0.19"] = 407, -- Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge, Ulduar
 				["0.21:0.49:0.24:0.40:0.28:0.28:0.57:0.21"] = 363, -- Fizzcrank Airstrip, River's Heart, Death's Rise, Bouldercrag's Refuge
 				["0.21:0.49:0.42:0.53:0.49:0.58:0.52:0.38"] = 322, -- Fizzcrank Airstrip, Stars' Rest, Moa'ki, Dalaran
+				["0.21:0.49:0.29:0.57:0.49:0.58:0.60:0.52:0.76:0.67:0.88:0.60"] = 471, -- Fizzcrank Airstrip, Unu'pe, Moa'ki, Wintergarde Keep, Westguard Keep, Fort Wildervar
 
 				-- Alliance: Borean Tundra: Transitus Shield (Coldarra)
 				["0.12:0.53:0.17:0.53:0.21:0.49:0.24:0.40"] = 95, -- Transitus Shield, Amber Ledge, Fizzcrank Airstrip, River's Heart
@@ -2181,6 +2183,7 @@
 				["0.29:0.57:0.49:0.58:0.60:0.52:0.64:0.42"] = 260, -- Unu'pe, Moa'ki, Wintergarde Keep, Ebon Watch
 				["0.29:0.57:0.21:0.49:0.24:0.40:0.28:0.28:0.38:0.21"] = 320, -- Unu'pe, Landebahn Kurbelzisch, Flussnabel, Todesanhöhe, Das Schattengewölbe
 				["0.29:0.57:0.49:0.58:0.52:0.38:0.56:0.36:0.57:0.33:0.64:0.19"] = 397, -- Unu'pe, Moa'ki, Dalaran, The Argent Vanguard, Frosthold, Ulduar
+				["0.29:0.57:0.42:0.53:0.60:0.52:0.73:0.54"] = 289, -- Unu'pe, Stars' Rest, Wintergarde Keep, Amberpine Lodge
 
 				-- Alliance: Borean Tundra: Valiance Keep
 				["0.22:0.61:0.29:0.57:0.49:0.58:0.74:0.71"] = 365, -- Valiance Keep, Unu'pe, Moa'ki, Kamagua
@@ -3488,6 +3491,7 @@
 				["0.52:0.34:0.52:0.38:0.24:0.40"] = 271, -- Crusaders' Pinnacle, Dalaran, River's Heart
 				["0.52:0.34:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46"] = 272, -- Crusaders' Pinnacle, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade
 				["0.52:0.34:0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54"] = 258, -- Crusaders' Pinnacle, Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
+				["0.52:0.34:0.52:0.38:0.62:0.36:0.57:0.33:0.57:0.21"] = 223, -- Crusaders' Pinnacle, Dalaran, K3, Frosthold, Bouldercrag's Refuge
 
 				-- Alliance: Icecrown: Death's Rise
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38"] = 238, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran
@@ -3697,6 +3701,7 @@
 				["0.38:0.21:0.52:0.38:0.49:0.58:0.74:0.71:0.76:0.67:0.88:0.60"] = 615, -- The Shadow Vault, Dalaran, Moa'ki, Kamagua, Westguard Keep, Fort Wildervar
 				["0.38:0.21:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46"] = 366, -- The Shadow Vault, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade
 				["0.38:0.21:0.52:0.38:0.54:0.52:0.60:0.52:0.76:0.67:0.88:0.60"] = 528, -- The Shadow Vault, Dalaran, Wyrmrest Temple, Wintergarde Keep, Westguard Keep, Fort Wildervar
+				["0.38:0.21:0.57:0.33:0.64:0.19:0.72:0.29"] = 375, -- The Shadow Vault, Frosthold, Ulduar, Dun Nifflelem
 
 				----------------------------------------------------------------------
 				-- Alliance: Sholazar Basin
