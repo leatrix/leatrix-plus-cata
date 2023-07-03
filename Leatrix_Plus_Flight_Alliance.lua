@@ -2776,6 +2776,8 @@
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.62:0.36:0.57:0.33"] = 234, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, K3, Frosthold
 				["0.60:0.52:0.64:0.42:0.72:0.40:0.83:0.46:0.88:0.60"] = 283, -- Wintergarde Keep, Ebon Watch, The Argent Stand, Westfall Brigade, Fort Wildervar
 				["0.60:0.52:0.73:0.54:0.83:0.46:0.78:0.38:0.82:0.31"] = 283, -- Wintergarde Keep, Amberpine Lodge, Westfall Brigade, Zim'Torga, Gundrak
+				["0.60:0.52:0.49:0.58:0.29:0.57:0.21:0.49"] = 309, -- Wintergarde Keep, Moa'ki, Unu'pe, Fizzcrank Airstrip
+				["0.60:0.52:0.42:0.53:0.41:0.43"] = 178, -- Wintergarde Keep, Stars' Rest, Valiance Landing Camp
 
 				-- Alliance: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.60:0.52"] = 36, -- Wyrmrest Temple, Wintergarde Keep
@@ -3433,6 +3435,7 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.62:0.36"] = 181, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, K3
 				["0.49:0.21:0.52:0.34:0.28:0.28"] = 240, -- Argent Tournament Grounds, Crusaders' Pinnacle, Death's Rise
 				["0.49:0.21:0.52:0.38:0.62:0.36"] = 185, -- Argent Tournament Grounds, Dalaran, K3
+				["0.49:0.21:0.52:0.38:0.54:0.52:0.60:0.52:0.69:0.42"] = 380, -- Argent Tournament Grounds, Dalaran, Wyrmrest Temple, Wintergarde Keep, Light's Breach
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
