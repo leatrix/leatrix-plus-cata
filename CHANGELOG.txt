@@ -1,4 +1,5 @@
-3.0.140.alpha.2 - 5th July 2023
+3.0.140.alpha.3 - 5th July 2023
+- The 'Resize mail text', 'Resize quest text' and 'Resize book text' options ('Text') now have a maximum font size of 30 (reduced from 36).
 - Fixed an issue with 'Block shared quests' ('Social') which caused a few quests to be incorrectly declined.
 - Added flight times.
 
