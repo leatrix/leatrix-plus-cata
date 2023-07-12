@@ -3350,6 +3350,7 @@
 				["0.49:0.21:0.52:0.38:0.64:0.42:0.72:0.40"] = 269, -- Argent Tournament Grounds, Dalaran, Ebon Watch, The Argent Stand
 				["0.49:0.21:0.57:0.21:0.64:0.19:0.78:0.38:0.72:0.40:0.69:0.42"] = 325, -- Argent Tournament Grounds, Bouldercrag's Refuge, Ulduar, Zim'Torga, The Argent Stand, Light's Breach
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54:0.29:0.57"] = 389, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Unu'pe
+				["0.49:0.21:0.52:0.38:0.48:0.44:0.59:0.55:0.70:0.55:0.84:0.51"] = 450, -- Argent Tournament Grounds, Dalaran, Kor'koron Vanguard, Venomspite, Conquest Hold, Camp Oneqwah
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
