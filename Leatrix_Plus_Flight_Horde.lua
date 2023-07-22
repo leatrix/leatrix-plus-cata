@@ -2380,6 +2380,7 @@
 				["0.52:0.38:0.49:0.21:0.38:0.21"] = 207, -- Dalaran, Argent Tournament Grounds, The Shadow Vault
 				["0.52:0.38:0.49:0.58:0.45:0.51:0.29:0.54:0.15:0.57"] = 416, -- Dalaran, Moa'ki, Agmars Hammer, Taunka'le, Kriegshymnenfeste
 				["0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38:0.73:0.25"] = 272, -- Dalaran, Ebon Watch, The Argent Stand, Zim'Torga, Camp Tunka'lo
+				["0.52:0.38:0.64:0.42:0.59:0.55:0.45:0.51:0.29:0.54:0.15:0.57"] = 507, -- Dalaran, Guet d'Ébène, Vexevenin, Marteau d'Agmar, Taunka'le, Bastion Chanteguerre
 
 				----------------------------------------------------------------------
 				-- Horde: Dragonblight
