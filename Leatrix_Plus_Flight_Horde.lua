@@ -3587,6 +3587,8 @@
 				["0.38:0.21:0.56:0.36:0.52:0.38:0.64:0.42:0.69:0.42:0.70:0.55:0.74:0.62:0.85:0.73"] = 499, -- The Shadow Vault, The Argent Vanguard, Dalaran, Ebon Watch, Light's Breach, Conquest Hold, Apothecary Camp, New Agamand
 				["0.38:0.21:0.57:0.21:0.60:0.25:0.62:0.36"] = 249, -- The Shadow Vault, Bouldercrag's Refuge, Grom'arsh Crash-Site, K3
 				["0.38:0.21:0.31:0.43:0.29:0.54:0.17:0.53"] = 292, -- The Shadow Vault, Warsong Camp, Taunka'le Village, Amber Ledge
+				["0.38:0.21:0.56:0.36:0.52:0.38:0.54:0.52:0.59:0.55:0.70:0.55"] = 383, -- The Shadow Vault, The Argent Vanguard, Dalaran, Wyrmrest Temple, Venomspite, Conquest Hold
+				["0.38:0.21:0.56:0.36:0.52:0.38:0.64:0.42:0.69:0.42:0.70:0.55:0.74:0.62:0.74:0.71"] = 461, -- The Shadow Vault, The Argent Vanguard, Dalaran, Ebon Watch, Light's Breach, Conquest Hold, Apothecary Camp, Kamagua
 
 				----------------------------------------------------------------------
 				-- Horde: Sholazar Basin
@@ -4032,6 +4034,7 @@
 				["0.62:0.36:0.64:0.42:0.59:0.55:0.70:0.55:0.84:0.59"] = 285, -- K3, Ebon Watch, Venomspite, Conquest Hold, Camp Winterhoof
 				["0.62:0.36:0.64:0.42:0.69:0.42:0.70:0.55:0.84:0.59:0.95:0.63"] = 320, -- K3, Ebon Watch, Light's Breach, Conquest Hold, Camp Winterhoof, Vengeance Landing
 				["0.62:0.36:0.52:0.38:0.49:0.21"] = 186, -- K3, Dalaran, Argent Tournament Grounds
+				["0.62:0.36:0.73:0.25:0.78:0.38:0.84:0.51"] = 271, -- K3, Camp Tunka'lo, Zim'Torga, Camp Oneqwah
 
 				-- Horde: The Storm Peaks: Ulduar
 				["0.64:0.19:0.73:0.25"] = 88, -- Ulduar, Camp Tunka'lo
