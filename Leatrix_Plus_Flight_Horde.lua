@@ -997,6 +997,7 @@
 				["0.63:0.44:0.56:0.53:0.41:0.37:0.50:0.35"] = 459, -- Orgrimmar, Crossroads, Zoram'gar Outpost, Emerald Sanctuary
 				["0.63:0.44:0.56:0.53:0.55:0.73:0.61:0.80:0.50:0.76"] = 485, -- Orgrimmar, La Croisée, Poste de Librevent, Gadgetzan, Refuge des Marshal
 				["0.63:0.44:0.56:0.53:0.44:0.69:0.32:0.58"] = 559, -- Orgrimmar, Crossroads, Camp Mojache, Shadowprey Village
+				["0.63:0.44:0.57:0.64:0.53:0.61"] = 276, -- Orgrimmar, Brackenwall, Camp Taurajo
 
 				-- Horde: Ratchet (The Barrens)
 				["0.61:0.55:0.61:0.80:0.50:0.76:0.42:0.79"] = 443, -- Ratchet, Gadgetzan, Marshal's Refuge, Cenarion Hold
@@ -3259,6 +3260,7 @@
 				["0.95:0.63:0.84:0.59:0.74:0.62:0.59:0.55:0.49:0.58:0.52:0.38"] = 451, -- Лагерь Возмездия, Лагерь Заиндевевшего Копыта, Аптекарский поселок, Ядозлобь, Моа'ки, Даларан
 				["0.95:0.63:0.84:0.51:0.78:0.38:0.64:0.19:0.57:0.21:0.49:0.21"] = 458, -- Vengeance Landing, Camp Oneqwah, Zim'Torga, Ulduar, Bouldercrag's Refuge, Argent Tournament Grounds
 				["0.95:0.63:0.85:0.73:0.59:0.55:0.45:0.51"] = 413, -- Vengeance Landing, New Agamand, Venomspite, Agmar's Hammer
+				["0.95:0.63:0.84:0.51:0.69:0.42:0.64:0.42:0.62:0.36:0.60:0.25"] = 352, -- Vengeance Landing, Camp Oneqwah, Light's Breach, Ebon Watch, K3, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 
 				----------------------------------------------------------------------
 				-- Horde: Icecrown
@@ -3971,6 +3973,7 @@
 				["0.60:0.25:0.56:0.36:0.52:0.38:0.49:0.58:0.45:0.51"] = 320, -- Grom'arsh Crash-Site, The Argent Vanguard, Dalaran, Moa'ki, Agmar's Hammer
 				["0.60:0.25:0.57:0.21:0.49:0.21:0.52:0.38"] = 234, -- Grom'arsh Crash-Site, Bouldercrag's Refuge, Argent Tournament Grounds, Dalaran
 				["0.60:0.25:0.73:0.25:0.78:0.38"] = 195, -- Grom'arsh Crash-Site, Camp Tunka'lo, Zim'Torga
+				["0.60:0.25:0.62:0.36:0.64:0.42:0.69:0.42:0.84:0.51"] = 280, -- Grom'arsh Crash-Site, K3, Ebon Watch, Light's Breach, Camp Oneqwah
 
 				-- Horde: The Storm Peaks: K3
 				["0.62:0.36:0.52:0.38"] = 72, -- K3, Dalaran

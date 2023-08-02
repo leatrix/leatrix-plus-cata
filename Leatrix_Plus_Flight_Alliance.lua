@@ -787,6 +787,7 @@
 				["0.43:0.25:0.53:0.26:0.50:0.35"] = 293, -- Auberdine, Talonbranch Glade, Emerald Sanctuary
 				["0.43:0.25:0.64:0.67:0.60:0.81:0.42:0.79"] = 793, -- Auberdine, Theramore, Gadgetzan, Cenarion Hold
 				["0.43:0.25:0.46:0.40:0.61:0.55:0.60:0.81:0.50:0.76"] = 706, -- Auberdine, Astranaar, Ratchet, Gadgetzan, Marshal's Refuge
+				["0.43:0.25:0.61:0.40:0.58:0.39:0.50:0.35"] = 432, -- Auberdine, Talrendisspitze, Waldeslied, Smaragdrefugium
 
 				-- Alliance: Cenarion Hold (Silithus)
 				["0.42:0.79:0.31:0.69"] = 175, -- Cenarion Hold, Feathermoon
@@ -858,6 +859,7 @@
 				["0.50:0.35:0.53:0.26:0.43:0.25:0.64:0.67:0.60:0.81:0.50:0.76"] = 996, -- Emerald Sanctuary, Talonbranch Glade, Auberdine, Theramore, Gadgetzan, Marshal's Refuge
 				["0.50:0.35:0.53:0.26:0.43:0.25:0.64:0.67:0.58:0.70"] = 799, -- Emerald Sanctuary, Talonbranch Glade, Auberdine, Theramore, Mudsprocket
 				["0.50:0.35:0.46:0.40:0.61:0.55:0.64:0.67:0.58:0.70"] = 437, -- Emerald Sanctuary, Astranaar, Ratchet, Theramore, Mudsprocket
+				["0.50:0.35:0.58:0.39:0.61:0.40:0.43:0.25"] = 429, -- Smaragdrefugium, Waldeslied, Talrendisspitze, Auberdine
 
 				-- Alliance: Everlook (Winterspring)
 				["0.65:0.23:0.55:0.21:0.43:0.25:0.31:0.69"] = 724, -- Everlook, Moonglade, Auberdine, Feathermoon
@@ -2292,6 +2294,7 @@
 				["0.22:0.61:0.21:0.49:0.24:0.40:0.41:0.43:0.46:0.46"] = 328, -- Valiance Keep, Fizzcrank Airstrip, River's Heart, Valiance Landing Camp, Fordragon Hold
 				["0.22:0.61:0.42:0.53:0.41:0.43:0.52:0.38:0.56:0.36:0.57:0.33:0.64:0.19"] = 457, -- Valiance Keep, Stars' Rest, Valiance Landing Camp, Dalaran, The Argent Vanguard, Frosthold, Ulduar
 				["0.22:0.61:0.42:0.53:0.54:0.52:0.52:0.38:0.62:0.36"] = 372, -- Valiance Keep, Stars' Rest, Wyrmrest Temple, Dalaran, K3
+				["0.22:0.61:0.42:0.53:0.41:0.43:0.52:0.38:0.49:0.21"] = 413, -- Valiance Keep, Stars' Rest, Valiance Landing Camp, Dalaran, Argent Tournament Grounds
 
 				----------------------------------------------------------------------
 				-- Alliance: Crystalsong Forest
@@ -4265,6 +4268,7 @@
 				["0.64:0.19:0.78:0.38:0.72:0.40:0.64:0.42:0.52:0.38:0.24:0.40:0.18:0.40"] = 557, -- Ulduar, Zim'Torga, The Argent Stand, Ebon Watch, Dalaran, River's Heart, Nesingwary Base Camp
 				["0.64:0.19:0.78:0.38:0.83:0.46:0.73:0.54"] = 288, -- Ulduar, Zim'Torga, Westfall Brigade, Amberpine Lodge
 				["0.64:0.19:0.78:0.38:0.72:0.40:0.69:0.42:0.73:0.54"] = 313, -- Ulduar, Zim'Torga, The Argent Stand, Light's Breach, Amberpine Lodge
+				["0.64:0.19:0.57:0.21:0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38"] = 242, -- Ulduar, Bouldercrag's Refuge, Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran
 
 				----------------------------------------------------------------------
 				-- Alliance: Wintergrasp
