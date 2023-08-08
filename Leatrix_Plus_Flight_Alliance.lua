@@ -3460,6 +3460,8 @@
 				["0.49:0.21:0.52:0.38:0.64:0.42"] = 206, -- Argent Tournament Grounds, Dalaran, Ebon Watch
 				["0.49:0.21:0.41:0.43:0.42:0.53:0.22:0.61"] = 439, -- Argent Tournament Grounds, Valiance Landing Camp, Stars' Rest, Valiance Keep
 				["0.49:0.21:0.52:0.38:0.64:0.42:0.69:0.42:0.73:0.54"] = 333, -- Argent Tournament Grounds, Dalaran, Ebon Watch, Light's Breach, Amberpine Lodge
+				["0.49:0.21:0.52:0.38:0.64:0.42:0.60:0.52:0.76:0.67"] = 386, -- Argentumturnierplatz, Dalaran, Schwarze Wacht, Feste Wintergarde, Westwacht
+				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52:0.42:0.53"] = 312, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple, Stars' Rest
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
@@ -3666,9 +3668,9 @@
 				["0.56:0.36:0.52:0.38:0.49:0.21:0.57:0.21"] = 194, -- The Argent Vanguard, Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge
 
 				-- Alliance: Icecrown: The Shadow Vault
-				["0.38:0.21:0.52:0.38"] = 166, -- The Shadow Vault, Dalaran (Jay Anderson and Владимир Зорг reported 231, Brenda Adams, The Alan Sanders Show, Eduard Wollbaum and yannick@reutershahn.com reported 214, Terry Fear, Frank Thrasaric, Michael Ulvær, Brenda Adams and again, Thomas Burns, Jamie Erving, Alexander Götz, Mava, trash can, 190E260@web.de, Brenda Adams again and again and Jeff S Higgins repored 191 while Brenda Adams, Steven Bannister, Darrin Pearson, Toby Harris, James Rhee and Leatrix reported 166)
+				["0.38:0.21:0.52:0.38"] = 166, -- Time varies for different flights (best to ignore)
 				["0.38:0.21:0.46:0.46:0.60:0.52"] = 277, -- The Shadow Vault, Fordragon Hold, Wintergarde Keep
-				["0.38:0.21:0.52:0.38:0.64:0.42:0.72:0.40"] = 295, -- Das Schattengewölbe, Dalaran, Schwarze Wacht, Argentumwache
+				["0.38:0.21:0.52:0.38:0.64:0.42:0.72:0.40"] = 295, -- Das Schattengewölbe, Dalaran, Schwarze Wacht, Argentumwache (Robert Heftrich reported 342)
 				["0.38:0.21:0.28:0.28"] = 78, -- The Shadow Vault, Death's Rise
 				["0.38:0.21:0.64:0.19:0.78:0.38"] = 319, -- Das Schattengewölbe, Ulduar, Zim'Torga
 				["0.38:0.21:0.41:0.43"] = 141, -- The Shadow Vault, Valiance Landing Camp
@@ -4269,6 +4271,7 @@
 				["0.64:0.19:0.78:0.38:0.83:0.46:0.73:0.54"] = 288, -- Ulduar, Zim'Torga, Westfall Brigade, Amberpine Lodge
 				["0.64:0.19:0.78:0.38:0.72:0.40:0.69:0.42:0.73:0.54"] = 313, -- Ulduar, Zim'Torga, The Argent Stand, Light's Breach, Amberpine Lodge
 				["0.64:0.19:0.57:0.21:0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38"] = 242, -- Ulduar, Bouldercrag's Refuge, Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran
+				["0.64:0.19:0.78:0.38:0.72:0.40:0.69:0.42:0.73:0.54:0.76:0.67"] = 395, -- Ulduar, Zim'Torga, The Argent Stand, Light's Breach, Amberpine Lodge, Westguard Keep
 
 				----------------------------------------------------------------------
 				-- Alliance: Wintergrasp
