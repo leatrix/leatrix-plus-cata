@@ -2191,6 +2191,8 @@
 				["0.60:0.40:0.52:0.38:0.52:0.34:0.38:0.21"] = 205, -- Sunreaver's Command, Dalaran, Crusaders' Pinnacle, The Shadow Vault
 				["0.60:0.40:0.52:0.38:0.54:0.52:0.45:0.51:0.29:0.54:0.15:0.57"] = 427, -- Sunreaver's Command, Dalaran, Wyrmrest Temple, Agmar's Hammer, Taunka'le Village, Warsong Hold
 				["0.60:0.40:0.52:0.38:0.54:0.52:0.59:0.55:0.74:0.62:0.84:0.59"] = 371, -- Sunreaver's Command, Dalaran, Wyrmrest Temple, Venomspite, Apothecary Camp, Camp Winterhoof
+				["0.60:0.40:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54:0.17:0.53"] = 354, -- Sunreaver's Command, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Amber Ledge
+				["0.60:0.40:0.52:0.38:0.52:0.34"] = 84, -- Sunreaver's Command, Dalaran, Crusaders' Pinnacle
 
 				----------------------------------------------------------------------
 				-- Horde: Dalaran
