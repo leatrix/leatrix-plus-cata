@@ -4439,6 +4439,7 @@
 				["0.69:0.42:0.59:0.55:0.54:0.52:0.45:0.51:0.29:0.54"] = 353, -- Light's Breach, Venomspite, Wyrmrest Temple, Agmar's Hammer, Taunka'le Village
 				["0.69:0.42:0.64:0.42:0.52:0.38:0.24:0.40:0.18:0.40"] = 340, -- Light's Breach, Ebon Watch, Dalaran, River's Heart, Nesingwary Base Camp
 				["0.69:0.42:0.59:0.55:0.74:0.62:0.84:0.59:0.95:0.63"] = 352, -- Lichtbresche, Gallgrimm, Apothekerlager, Lager der Winterhufe, Hafen der Vergeltung
+				["0.69:0.42:0.59:0.55:0.45:0.51:0.29:0.54:0.17:0.53:0.12:0.53"] = 475, -- Light's Breach, Venomspite, Agmar's Hammer, Taunka'le Village, Amber Ledge, Transitus Shield
 
 				-- Horde: Zul'Drak: Zim'Torga
 				["0.78:0.38:0.72:0.40"] = 54, -- Zim'Torga, The Argent Stand

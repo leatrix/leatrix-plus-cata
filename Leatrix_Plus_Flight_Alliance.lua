@@ -1755,6 +1755,7 @@
 				["0.32:0.34:0.38:0.50:0.52:0.51:0.65:0.58:0.75:0.50"] = 305, -- Sylvanaar, Telredor, Temple of Telhamat, Honor Hold, Shatter Point
 				["0.32:0.34:0.38:0.50:0.44:0.67:0.55:0.77:0.69:0.85:0.81:0.77"] = 413, -- Sylvanaar, Telredor, Shattrath, Allerian Stronghold, Wildhammer Stronghold, Altar of Sha'tar
 				["0.32:0.34:0.38:0.50:0.44:0.67:0.65:0.58"] = 289, -- Sylvanaar, Telredor, Shattrath, Honor Hold
+				["0.32:0.34:0.38:0.50:0.44:0.67:0.65:0.58:0.79:0.55"] = 350, -- Sylvanaar, Telredor, Shattrath, Ehrenfeste, Höllenfeuerhalbinsel
 
 				-- Alliance: Telaar (Nagrand)
 				["0.27:0.74:0.44:0.67"] = 88, -- Telaar, Shattrath
@@ -2799,6 +2800,7 @@
 				["0.60:0.52:0.42:0.53:0.41:0.43"] = 178, -- Wintergarde Keep, Stars' Rest, Valiance Landing Camp
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.56:0.36:0.57:0.33"] = 208, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, The Argent Vanguard, Frosthold
 				["0.60:0.52:0.49:0.58:0.29:0.57:0.22:0.61:0.17:0.53"] = 352, -- Wintergarde Keep, Moa'ki, Unu'pe, Valiance Keep, Amber Ledge
+				["0.60:0.52:0.73:0.54:0.88:0.60:0.88:0.72"] = 265, -- Wintergarde Keep, Amberpine Lodge, Fort Wildervar, Valgarde Port
 
 				-- Alliance: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.60:0.52"] = 36, -- Wyrmrest Temple, Wintergarde Keep
