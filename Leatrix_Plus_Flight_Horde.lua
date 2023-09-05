@@ -3173,6 +3173,7 @@
 				["0.85:0.73:0.84:0.59:0.84:0.51:0.72:0.40"] = 234, -- New Agamand, Camp Winterhoof, Camp Oneqwah, The Argent Stand
 				["0.85:0.73:0.59:0.55:0.48:0.44:0.52:0.38:0.31:0.43:0.29:0.54:0.15:0.57"] = 685, -- New Agamand, Venomspite, Kor'koron Vanguard, Dalaran, Warsong Camp, Taunka'le Village, Warsong Hold
 				["0.85:0.73:0.59:0.55:0.54:0.52:0.52:0.38:0.24:0.40"] = 542, -- Neu-Agamand, Gallgrimm, Wyrmruhtempel, Dalaran, Flussnabel
+				["0.85:0.73:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.62:0.36"] = 309, -- New Agamand, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, K3
 
 				-- Horde: Howling Fjord: Vengeance Landing
 				["0.95:0.63:0.85:0.73"] = 88, -- Vengeance Landing, New Agamand
