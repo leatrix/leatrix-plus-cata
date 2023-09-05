@@ -1,3 +1,6 @@
+3.0.149.alpha.1 - 5th September 2023
+- Fixed an issue with 'Enhance minimap' ('Interface') which caused the area under the minimap to be unclickable if you have moved the minimap.
+
 3.0.148 - 5th September 2023
 - Added flight times.
 

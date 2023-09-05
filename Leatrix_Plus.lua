@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.148 (5th September 2023)
+-- 	Leatrix Plus 3.0.149.alpha.1 (5th September 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.148"
+	LeaPlusLC["AddonVer"] = "3.0.149.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -4017,6 +4017,9 @@
 					LibDBIconStub:SetButtonRadius(1)
 				end
 			end
+
+			-- Disable mouse on invisible minimap cluster
+			MinimapCluster:EnableMouse(false)
 
 			----------------------------------------------------------------------
 			-- Configuration panel
