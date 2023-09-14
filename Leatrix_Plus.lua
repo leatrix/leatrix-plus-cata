@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.149.alpha.1 (5th September 2023)
+-- 	Leatrix Plus 3.0.149 (14th September 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.149.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.149"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -141,14 +141,6 @@
 			eFrame.c:SetPoint("TOPLEFT", x, y)
 			eFrame.c:SetText(L["Press CTRL/C to copy"])
 			eFrame.c:SetPoint("TOPLEFT", eFrame, "TOPLEFT", 12, -82)
-			-- Add feedback label
-			eFrame.x = eFrame:CreateFontString(nil, 'ARTWORK', 'GameFontNormalLarge')
-			eFrame.x:SetPoint("TOPRIGHT", x, y)
-			eFrame.x:SetText(L["feedback@leatrix.com"])
-			eFrame.x:SetPoint("TOPRIGHT", eFrame, "TOPRIGHT", -12, -52)
-			hooksecurefunc(eFrame.f, "SetText", function()
-				eFrame.f:SetWidth(676 - eFrame.x:GetStringWidth() - 26)
-			end)
 			-- Add cancel label
 			eFrame.x = eFrame:CreateFontString(nil, 'ARTWORK', 'GameFontNormalLarge')
 			eFrame.x:SetPoint("TOPRIGHT", x, y)
@@ -14561,28 +14553,26 @@
 				C_Console.SetFontHeight(28)
 				DeveloperConsole:Toggle(true)
 				return
-			elseif str == "movlist" then
-				-- List playable movie IDs
-				local count = 0
-				for i = 1, 1000 do
-					if IsMoviePlayable(i) then
-						print(i)
-						count = count + 1
-					end
-				end
-				LeaPlusLC:Print("Total movies: |cffffffff" .. count)
-				return
 			elseif str == "movie" then
 				-- Playback movie by ID
 				arg1 = tonumber(arg1)
 				if arg1 and arg1 ~= "" then
+					-- Play movie by ID
 					if IsMoviePlayable(arg1) then
 						MovieFrame_PlayMovie(MovieFrame, arg1)
 					else
 						LeaPlusLC:Print("Movie not playable.")
 					end
 				else
-					LeaPlusLC:Print("Missing movie ID.")
+					-- List playable movie IDs
+					local count = 0
+					for i = 1, 1000 do
+						if IsMoviePlayable(i) then
+							print(i)
+							count = count + 1
+						end
+					end
+					LeaPlusLC:Print("Total movies: |cffffffff" .. count)
 				end
 				return
 			elseif str == "cin" then
