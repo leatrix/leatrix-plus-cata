@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.154 (10th October 2023)
+-- 	Leatrix Plus 3.0.155 (11th October 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.154"
+	LeaPlusLC["AddonVer"] = "3.0.155"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -35,7 +35,7 @@
 			end)
 			return
 		end
-		if gametocversion and gametocversion == 30402 then -- 3.4.2
+		if gametocversion and gametocversion == 30403 then -- 3.4.3
 			LeaPlusLC.NewPatch = true
 		end
 	end
@@ -10293,11 +10293,7 @@
 				end
 				titleFrame.m:SetText(L["Messages"] .. ": " .. totalMsgCount)
 				editFrame:SetVerticalScroll(0)
-				if LeaPlusLC.NewPatch then
-					editFrame.ScrollBar:ScrollToEnd()
-				else
-					C_Timer.After(0.1, function() editFrame.ScrollBar.ScrollDownButton:Click() end)
-				end
+				editFrame.ScrollBar:ScrollToEnd()
 				editFrame:Show()
 				editBox:ClearFocus()
 			end

@@ -1,3 +1,6 @@
+3.0.155 - 11th October 2023
+- Fixed a Lua error issue with 'Recent chat window' ('Chat').
+
 3.0.154 - 11th October 2023
 - Updated for game version 3.4.3.
 - Added flight times.
