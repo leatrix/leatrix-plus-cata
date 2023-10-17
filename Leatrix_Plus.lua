@@ -4013,6 +4013,9 @@
 			-- Disable mouse on invisible minimap cluster
 			MinimapCluster:EnableMouse(false)
 
+			-- Ensure consolidated buffs frame is not over minimap or buttons
+			ConsolidatedBuffs:SetFrameStrata("LOW") -- Same as BuffFrame
+
 			----------------------------------------------------------------------
 			-- Configuration panel
 			----------------------------------------------------------------------

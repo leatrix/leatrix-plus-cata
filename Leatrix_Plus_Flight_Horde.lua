@@ -2669,6 +2669,7 @@
 				["0.59:0.55:0.54:0.52:0.52:0.38:0.56:0.36:0.38:0.21"] = 317, -- Venomspite, Wyrmrest Temple, Dalaran, The Argent Vanguard, The Shadow Vault
 				["0.59:0.55:0.64:0.42:0.62:0.36:0.73:0.25"] = 214, -- Venomspite, Ebon Watch, K3, Camp Tunka'lo
 				["0.59:0.55:0.64:0.42:0.72:0.40:0.78:0.38"] = 188, -- Venomspite, Ebon Watch, The Argent Stand, Zim'Torga
+				["0.59:0.55:0.49:0.58:0.29:0.57:0.29:0.54:0.18:0.47"] = 307, -- Venomspite, Moa'ki, Unu'pe, Taunka'le Village, Bor'gorok Outpost
 
 				-- Horde: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.52:0.38"] = 65, -- Wyrmrest Temple, Dalaran
@@ -2745,6 +2746,7 @@
 				["0.54:0.52:0.59:0.55:0.85:0.73:0.74:0.71"] = 208, -- Wyrmrest Temple, Venomspite, New Agamand, Kamagua
 				["0.54:0.52:0.64:0.42:0.69:0.42:0.84:0.51:0.84:0.59"] = 203, -- Wyrmrest Temple, Ebon Watch, Light's Breach, Camp Oneqwah, Camp Winterhoof
 				["0.54:0.52:0.64:0.42:0.69:0.42:0.84:0.51"] = 170, -- Wyrmrest Temple, Ebon Watch, Light's Breach, Camp Oneqwah
+				["0.54:0.52:0.59:0.55:0.74:0.62:0.84:0.59:0.84:0.51"] = 176, -- Wyrmrest Temple, Venomspite, Apothecary Camp, Camp Winterhoof, Camp Oneqwah
 
 				----------------------------------------------------------------------
 				-- Horde: Grizzly Hills
@@ -2966,6 +2968,7 @@
 				["0.84:0.51:0.70:0.55:0.59:0.55:0.54:0.52:0.45:0.51:0.29:0.54"] = 414, -- Camp Oneqwah, Conquest Hold, Venomspite, Wyrmrest Temple, Agmar's Hammer, Taunka'le Village
 				["0.84:0.51:0.84:0.59:0.74:0.62:0.59:0.55:0.45:0.51"] = 355, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Venomspite, Agmar's Hammer
 				["0.84:0.51:0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21:0.38:0.21"] = 396, -- Camp Oneqwah, Lichtbresche, Schwarze Wacht, Dalaran, Argentumturnierplatz, Das Schattengewölbe
+				["0.84:0.51:0.84:0.59:0.74:0.62:0.59:0.55:0.54:0.52:0.45:0.51:0.29:0.54:0.15:0.57"] = 538, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Venomspite, Wyrmrest Temple, Agmar's Hammer, Taunka'le Village, Warsong Hold
 
 				-- Horde: Howling Fjord: Camp Winterhoof
 				["0.84:0.59:0.85:0.73"] = 80, -- Camp Winterhoof, New Agamand
