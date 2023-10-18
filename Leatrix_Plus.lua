@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.156.alpha.1 (11th October 2023)
+-- 	Leatrix Plus 3.0.158 (18th October 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.156.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.158"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -2120,8 +2120,17 @@
 						-- Don't accept blocked quests
 						if isNpcBlocked("Accept") then return end
 						-- Accept quest
-						AcceptQuest()
-						-- HideUIPanel(QuestFrame)
+						if GetCVar("softTargetInteract") == "0" then
+							-- Soft targeting is not being used
+							AcceptQuest()
+						else
+							-- Soft targeting is being used so an error can be shown (johanni)
+							-- Reproduce: Set softTargetInteract to something other than 0,
+							-- assign interact with target key in game settings (controls)
+							-- and press that key in front of quest giver to take quest
+							RunScript('AcceptQuest()')
+							StaticPopup_Hide("MACRO_ACTION_FORBIDDEN")
+						end
 					end
 				end
 

@@ -4155,6 +4155,7 @@
 				["0.57:0.33:0.62:0.36:0.52:0.38:0.49:0.21"] = 234, -- Frosthold, K3, Dalaran, Argent Tournament Grounds
 				["0.57:0.33:0.62:0.36:0.52:0.38:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 462, -- Frosthold, K3, Dalaran, River's Heart, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
 				["0.57:0.33:0.62:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.29:0.57"] = 378, -- Frosthold, K3, Dalaran, Fordragon Hold, Stars' Rest, Unu'pe
+				["0.57:0.33:0.62:0.36:0.64:0.42:0.60:0.52:0.73:0.54"] = 224, -- Frosthold, K3, Ebon Watch, Wintergarde Keep, Amberpine Lodge
 
 				-- Alliance: The Storm Peaks: K3
 				["0.62:0.36:0.57:0.33"] = 43, -- K3, Frosthold
@@ -4238,6 +4239,7 @@
 				["0.62:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.29:0.57"] = 330, -- K3, Dalaran, Fordragon Hold, Stars' Rest, Unu'pe
 				["0.62:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.21:0.49"] = 360, -- K3, Dalaran, Fordragon Hold, Stars' Rest, Fizzcrank Airstrip
 				["0.62:0.36:0.52:0.38:0.54:0.52:0.60:0.52:0.73:0.54:0.83:0.46"] = 381, -- K3, Dalaran, Wyrmrest Temple, Wintergarde Keep, Amberpine Lodge, Westfall Brigade
+				["0.62:0.36:0.64:0.42:0.60:0.52:0.42:0.53:0.22:0.61"] = 340, -- K3, Schwarze Wacht, Feste Wintergarde, Sternenruh, Valianzfeste
 
 				-- Alliance: The Storm Peaks: Ulduar
 				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38"] = 167, -- Ulduar, Frosthold, The Argent Vanguard, Dalaran
