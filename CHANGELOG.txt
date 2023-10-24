@@ -1,3 +1,6 @@
+3.0.159.alpha.1 - 18th October 2023
+- Added flight times.
+
 3.0.158 - 18th October 2023
 - For 'Enhance minimap' ('Interface'), fixed an issue with the consolidated buffs frame layering.
 - For 'Automate quests' ('Automation'), fixed an issue which caused a Lua error to be shown when interacting with a quest giver using an interaction key (soft targeting).  The error is a game bug and not caused by Leatrix Plus.

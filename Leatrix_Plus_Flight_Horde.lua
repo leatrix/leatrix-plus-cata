@@ -1589,6 +1589,7 @@
 				["0.51:0.73:0.65:0.50:0.54:0.57:0.29:0.62"] = 324, -- Stonebreaker Hold, Thrallmar, Falcon Watch, Garadar
 				["0.51:0.73:0.44:0.67:0.23:0.50:0.38:0.32:0.58:0.27"] = 400, -- Stonebreaker Hold, Shattrath, Zabra'jin, Thunderlord Stronghold, Area 52
 				["0.51:0.73:0.44:0.67:0.44:0.51:0.49:0.36:0.58:0.27:0.42:0.28"] = 342, -- Stonebreaker Hold, Shattrath, Swamprat Post, Mok'Nathal Village, Area 52, Evergrove
+				["0.51:0.73:0.65:0.50:0.54:0.57:0.23:0.50"] = 341, -- Stonebreaker Hold, Thrallmar, Falcon Watch, Zabra'jin
 
 				-- Horde: Swamprat Post (Zangarmarsh)
 				["0.44:0.51:0.44:0.67:0.51:0.73:0.66:0.77"] = 220, -- Swamprat Post, Shattrath, Stonebreaker Hold, Shadowmoon Village
@@ -2495,6 +2496,7 @@
 				["0.45:0.51:0.49:0.58:0.74:0.71:0.74:0.62"] = 302, -- Agmar's Hammer, Moa'ki, Kamagua, Apothecary Camp
 				["0.45:0.51:0.48:0.44:0.64:0.42:0.69:0.42"] = 215, -- Agmar's Hammer, Kor'koron Vanguard, Ebon Watch, Light's Breach
 				["0.45:0.51:0.48:0.44:0.64:0.42:0.69:0.42:0.70:0.55:0.84:0.59"] = 373, -- Agmars Hammer, Vorposten der Kor'kron, Schwarze Wacht, Lichtbresche, Burg Siegeswall, Lager der Winterhufe
+				["0.45:0.51:0.49:0.58:0.74:0.71:0.74:0.62:0.70:0.55"] = 349, -- Agmar's Hammer, Moa'ki, Kamagua, Apothecary Camp, Conquest Hold
 
 				-- Horde: Dragonblight: Kor'koron Vanguard
 				["0.48:0.44:0.52:0.38"] = 56, -- Kor'koron Vanguard, Dalaran
@@ -2548,6 +2550,7 @@
 				["0.48:0.44:0.64:0.42:0.72:0.40:0.78:0.38:0.82:0.31"] = 265, -- Kor'koron Vanguard, Ebon Watch, The Argent Stand, Zim'Torga, Gundrak
 				["0.48:0.44:0.59:0.55:0.85:0.73:0.74:0.71"] = 351, -- Стоянка отряда Кор'крона, Ядозлобь, Новый Агамонд, Камагуа
 				["0.48:0.44:0.52:0.38:0.62:0.36:0.60:0.25:0.64:0.19"] = 228, -- Kor'koron Vanguard, Dalaran, K3, Grom'arsh Crash-Site, Ulduar
+				["0.48:0.44:0.64:0.42:0.72:0.40:0.78:0.38"] = 212, -- Kor'koron Vanguard, Ebon Watch, The Argent Stand, Zim'Torga
 
 				-- Horde: Dragonblight: Moa'ki
 				["0.49:0.58:0.45:0.51:0.31:0.43:0.24:0.40"] = 255, -- Moa'ki, Agmar's Hammer, Warsong Camp, River's Heart
@@ -3310,6 +3313,7 @@
 				["0.95:0.63:0.85:0.73:0.74:0.71:0.49:0.58:0.29:0.57:0.29:0.54:0.18:0.47:0.24:0.40"] = 638, -- Vengeance Landing, New Agamand, Kamagua, Moa'ki, Unu'pe, Taunka'le Village, Bor'gorok Outpost, River's Heart
 				["0.95:0.63:0.85:0.73:0.74:0.71:0.49:0.58:0.29:0.57"] = 489, -- Vengeance Landing, New Agamand, Kamagua, Moa'ki, Unu'pe
 				["0.95:0.63:0.84:0.51:0.69:0.42:0.64:0.42:0.48:0.44"] = 344, -- Vengeance Landing, Camp Oneqwah, Light's Breach, Ebon Watch, Kor'koron Vanguard
+				["0.95:0.63:0.84:0.51:0.69:0.42:0.64:0.42:0.62:0.36:0.73:0.25"] = 366, -- Vengeance Landing, Camp Oneqwah, Light's Breach, Ebon Watch, K3, Camp Tunka'lo
 
 				----------------------------------------------------------------------
 				-- Horde: Icecrown
@@ -3464,6 +3468,7 @@
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.62:0.36:0.73:0.25:0.78:0.38:0.84:0.51"] = 379, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, K3, Camp Tunka'lo, Zim'Torga, Camp Oneqwah
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54:0.15:0.57"] = 372, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Warsong Hold
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.59:0.55:0.70:0.55:0.84:0.51"] = 374, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Venomspite, Conquest Hold, Camp Oneqwah
+				["0.52:0.34:0.56:0.36:0.52:0.38:0.62:0.36:0.73:0.25"] = 198, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, K3, Camp Tunka'lo 
 
 				-- Horde: Icecrown: Death's Rise
 				["0.28:0.28:0.38:0.21"] = 94, -- Death's Rise, The Shadow Vault
@@ -3783,6 +3788,7 @@
 				["0.24:0.40:0.52:0.38:0.49:0.21:0.57:0.21:0.64:0.19"] = 610, -- River's Heart, Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge, Ulduar
 				["0.24:0.40:0.31:0.43:0.45:0.51:0.59:0.55:0.70:0.55:0.84:0.51"] = 643, -- River's Heart, Warsong Camp, Agmar's Hammer, Venomspite, Conquest Hold, Camp Oneqwah
 				["0.24:0.40:0.18:0.47:0.29:0.54:0.45:0.51:0.59:0.55:0.85:0.73"] = 750, -- River's Heart, Bor'gorok Outpost, Taunka'le Village, Agmar's Hammer, Venomspite, New Agamand
+				["0.24:0.40:0.52:0.38:0.49:0.21:0.57:0.21:0.60:0.25"] = 605, -- River's Heart, Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 
 				----------------------------------------------------------------------
 				-- Horde: The Storm Peaks
