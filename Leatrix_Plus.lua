@@ -8006,34 +8006,6 @@
 					end
 				end
 
-				-- Classic Profession Filter addon fixes
-				if IsAddOnLoaded("ClassicProfessionFilter") and TradeSkillFrame.SearchBox and TradeSkillFrame.HaveMats and TradeSkillFrame.HaveMats.text and TradeSkillFrame.SearchMats and TradeSkillFrame.SearchMats.text then
-					TradeSkillFrame.SearchBox:ClearAllPoints()
-					TradeSkillFrame.SearchBox:SetPoint("LEFT", TradeSkillRankFrame, "RIGHT", 20, -10)
-
-					TradeSkillFrame.HaveMats:ClearAllPoints()
-					TradeSkillFrame.HaveMats:SetPoint("LEFT", TradeSkillFrame.SearchBox, "RIGHT", 10, 8)
-					TradeSkillFrame.HaveMats.text:SetText(L["Have mats?"])
-					TradeSkillFrame.HaveMats:SetHitRectInsets(0, -TradeSkillFrame.HaveMats.text:GetStringWidth() + 4, 0, 0)
-					TradeSkillFrame.HaveMats.text:SetJustifyH("LEFT")
-					TradeSkillFrame.HaveMats.text:SetWordWrap(false)
-					if TradeSkillFrame.HaveMats.text:GetWidth() > 80 then
-						TradeSkillFrame.HaveMats.text:SetWidth(80)
-						TradeSkillFrame.HaveMats:SetHitRectInsets(0, -80 + 4, 0, 0)
-					end
-
-					TradeSkillFrame.SearchMats:ClearAllPoints()
-					TradeSkillFrame.SearchMats:SetPoint("BOTTOMLEFT", TradeSkillFrame.HaveMats, "BOTTOMLEFT", 0, -16)
-					TradeSkillFrame.SearchMats.text:SetText(L["Search mats?"])
-					TradeSkillFrame.SearchMats:SetHitRectInsets(0, -TradeSkillFrame.SearchMats.text:GetStringWidth() + 2, 0, 0)
-					TradeSkillFrame.SearchMats.text:SetJustifyH("LEFT")
-					TradeSkillFrame.SearchMats.text:SetWordWrap(false)
-					if TradeSkillFrame.SearchMats.text:GetWidth() > 80 then
-						TradeSkillFrame.SearchMats.text:SetWidth(80)
-						TradeSkillFrame.SearchMats:SetHitRectInsets(0, -80 + 4, 0, 0)
-					end
-				end
-
 			end
 
 			-- Run function when TradeSkill UI has loaded
