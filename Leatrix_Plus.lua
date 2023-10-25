@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.161 (25th October 2023)
+-- 	Leatrix Plus 3.0.162.alpha.1 (25th October 2023)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.161"
+	LeaPlusLC["AddonVer"] = "3.0.162.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -43,6 +43,7 @@
 	-- Check for addons
 	if IsAddOnLoaded("ElvUI") then LeaPlusLC.ElvUI = unpack(ElvUI) end
 	if IsAddOnLoaded("Glass") then LeaPlusLC.Glass = true end
+	if IsAddOnLoaded("CharacterStatsWRATH") then LeaPlusLC.CharacterStatsWRATH = true end
 
 ----------------------------------------------------------------------
 --	L00: Leatrix Plus
@@ -7208,7 +7209,7 @@
 				if LeaPlusLC["HideDressupStats"] == "On" then
 					CharacterResistanceFrame:Hide()
 					if CSC_HideStatsPanel then
-						-- CharacterStatsTBC is installed
+						-- CharacterStatsWRATH is installed
 						RunScript('CSC_HideStatsPanel()')
 						if startup then
 							C_Timer.After(0.1, function()
@@ -7218,7 +7219,7 @@
 							end)
 						end
 					else
-						-- CharacterStatsTBC is not installed
+						-- CharacterStatsWRATH is not installed
 						CharacterAttributesFrame:Hide()
 					end
 					CharacterModelFrame:ClearAllPoints()
@@ -7233,7 +7234,7 @@
 
 					CharacterResistanceFrame:Show()
 					if CSC_ShowStatsPanel then
-						-- CharacterStatsTBC is installed
+						-- CharacterStatsWRATH is installed
 						RunScript('CSC_ShowStatsPanel()')
 						if startup then
 							C_Timer.After(0.1, function()
@@ -7243,7 +7244,7 @@
 							end)
 						end
 					else
-						-- CharacterStatsTBC is not installed
+						-- CharacterStatsWRATH is not installed
 						CharacterAttributesFrame:Show()
 					end
 					CharacterModelFrame:ClearAllPoints()
@@ -7285,18 +7286,6 @@
 				ToggleStats()
 			end)
 
-			-- Delay setting stats if CharacterStatsTBC is installed but hasn't loaded yet
-			if not CSC_HideStatsPanel and select(2, GetAddOnInfo("CharacterStatsTBC")) then
-				local waitFrame = CreateFrame("FRAME")
-				waitFrame:RegisterEvent("ADDON_LOADED")
-				waitFrame:SetScript("OnEvent", function(self, event, arg1)
-					if arg1 == "CharacterStatsTBC" then
-						ToggleStats(true)
-						waitFrame:UnregisterAllEvents()
-					end
-				end)
-			end
-
 			----------------------------------------------------------------------
 			-- Enable zooming and panning
 			----------------------------------------------------------------------
@@ -7304,13 +7293,6 @@
 			-- Enable zooming for character frame and dressup frame
 			CharacterModelFrame:HookScript("OnMouseWheel", Model_OnMouseWheel)
 			DressUpModelFrame:HookScript("OnMouseWheel", Model_OnMouseWheel)
-
-			-- Slightly shorter character model frame for CharacterStatsTBC
-			if IsAddOnLoaded("CharacterStatsTBC") then
-				CharacterModelFrame:ClearAllPoints()
-				CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-				CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 220)
-			end
 
 			-- Enable panning for character frame
 			CharacterModelFrame:HookScript("OnMouseDown", function(self, btn)
