@@ -45,6 +45,7 @@
 	if IsAddOnLoaded("Glass") then LeaPlusLC.Glass = true end
 	if IsAddOnLoaded("CharacterStatsWRATH") then LeaPlusLC.CharacterStatsWRATH = true end
 	if IsAddOnLoaded("totalRP3") then LeaPlusLC.totalRP3 = true end
+	if IsAddOnLoaded("TitanClassic") then LeaPlusLC.TitanClassic = true end
 
 ----------------------------------------------------------------------
 --	L00: Leatrix Plus
@@ -9694,13 +9695,9 @@
 					UIWidgetTopCenterContainerFrame:SetScale(LeaPlusLC["WidgetScale"])
 				else
 					-- Show Titan Panel screen adjust warning if Titan Panel is installed with screen adjust enabled
-					if select(2, GetAddOnInfo("TitanClassic")) then
-						if IsAddOnLoaded("TitanClassic") then
-							if TitanPanelSetVar and TitanPanelGetVar then
-								if not TitanPanelGetVar("ScreenAdjust") then
-									titanFrame:Show()
-								end
-							end
+					if LeaPlusLC.TitanClassic and TitanPanelSetVar and TitanPanelGetVar then
+						if not TitanPanelGetVar("ScreenAdjust") then
+							titanFrame:Show()
 						end
 					end
 
