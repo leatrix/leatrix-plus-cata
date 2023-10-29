@@ -10934,6 +10934,18 @@
 				-- Nameplate tooltip
 				if NamePlateTooltip then NamePlateTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"]) end
 
+				-- QueueStatusFrame (Dungeon Finder)
+				if QueueStatusFrame then QueueStatusFrame:SetScale(LeaPlusLC["LeaPlusTipSize"]) end
+
+				-- LibDBIcon
+				if LibDBIconTooltip then LibDBIconTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"]) end
+
+				-- Total RP 3
+				if LeaPlusLC.totalRP3 and TRP3_MainTooltip and TRP3_CharacterTooltip then
+					TRP3_MainTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
+					TRP3_CharacterTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
+				end
+
 				-- Leatrix Plus
 				TipDrag:SetScale(LeaPlusLC["LeaPlusTipSize"])
 
@@ -10948,25 +10960,6 @@
 			-- Set tooltip scale when slider or checkbox changes and on startup
 			LeaPlusCB["LeaPlusTipSize"]:HookScript("OnValueChanged", SetTipScale)
 			SetTipScale()
-
-			---------------------------------------------------------------------------------------------------------
-			-- Total RP 3
-			---------------------------------------------------------------------------------------------------------
-
-			-- Total RP 3
-			if LeaPlusLC.totalRP3 and TRP3_MainTooltip and TRP3_CharacterTooltip then
-
-				-- Function to set tooltip scale
-				local function SetTotalRP3TipScale()
-					TRP3_MainTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
-					TRP3_CharacterTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
-				end
-
-				-- Set tooltip scale when slider changes and on startup
-				LeaPlusCB["LeaPlusTipSize"]:HookScript("OnValueChanged", SetTotalRP3TipScale)
-				SetTotalRP3TipScale()
-
-			end
 
 			---------------------------------------------------------------------------------------------------------
 			-- Other tooltip code
