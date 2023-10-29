@@ -1645,6 +1645,7 @@
 				["0.63:0.18:0.38:0.32:0.44:0.51:0.54:0.57"] = 325, -- The Stormspire, Thunderlord Stronghold, Swamprat Post, Falcon Watch
 				["0.63:0.18:0.38:0.32:0.44:0.51:0.44:0.67:0.51:0.73:0.66:0.77:0.81:0.77"] = 562, -- The Stormspire, Thunderlord Stronghold, Swamprat Post, Shattrath, Stonebreaker Hold, Shadowmoon Village, Altar of Sha'tar
 				["0.63:0.18:0.38:0.32:0.42:0.28"] = 172, -- The Stormspire, Thunderlord Stronghold, Evergrove
+				["0.63:0.18:0.38:0.32:0.23:0.50:0.44:0.67:0.51:0.73"] = 511, -- The Stormspire, Thunderlord Stronghold, Zabra'jin, Shattrath, Stonebreaker Hold
 
 				-- Horde: Thrallmar (Hellfire Peninsula)
 				["0.65:0.50:0.51:0.73:0.66:0.77"] = 192, -- Thrallmar, Stonebreaker Hold, Shadowmoon Village
@@ -1796,6 +1797,7 @@
 				["0.17:0.53:0.29:0.54:0.31:0.43:0.52:0.38:0.48:0.44"] = 230, -- Amber Ledge, Taunka'le Village, Warsong Camp, Dalaran, Kor'koron Vanguard
 				["0.17:0.53:0.18:0.47:0.24:0.40:0.52:0.38:0.64:0.42:0.69:0.42:0.84:0.51:0.95:0.63"] = 404, -- Amber Ledge, Bor'gorok Outpost, River's Heart, Dalaran, Ebon Watch, Light's Breach, Camp Oneqwah, Vengeance Landing
 				["0.17:0.53:0.29:0.54:0.31:0.43:0.38:0.21:0.49:0.21"] = 255, -- Amber Ledge, Taunka'le Village, Warsong Camp, The Shadow Vault, Argent Tournament Grounds
+				["0.17:0.53:0.15:0.57:0.29:0.57:0.49:0.58:0.45:0.51"] = 211, -- Amber Ledge, Warsong Hold, Unu'pe, Moa'ki, Agmar's Hammer
 
 				-- Horde: Borean Tundra: Bor'gorok Outpost
 				["0.18:0.47:0.29:0.54"] = 78, -- Bor'gorok Outpost, Taunka'le Village
@@ -1849,6 +1851,8 @@
 				["0.18:0.47:0.29:0.54:0.45:0.51:0.59:0.55:0.85:0.73:0.95:0.63"] = 517, -- Bor'gorok Outpost, Taunka'le Village, Agmar's Hammer, Venomspite, New Agamand, Vengeance Landing
 				["0.18:0.47:0.29:0.54:0.45:0.51:0.54:0.52:0.64:0.42:0.72:0.40:0.78:0.38:0.82:0.31"] = 476, -- Bor'gorok Outpost, Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Ebon Watch, The Argent Stand, Zim'Torga, Gundrak
 				["0.18:0.47:0.29:0.54:0.45:0.51:0.54:0.52:0.64:0.42:0.69:0.42:0.70:0.55:0.84:0.59:0.95:0.63"] = 595, -- Bor'gorok Outpost, Taunka'le Village, Agmar's Hammer, Wyrmrest Temple, Ebon Watch, Light's Breach, Conquest Hold, Camp Winterhoof, Vengeance Landing
+				["0.18:0.47:0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.62:0.36:0.73:0.25"] = 421, -- Bor'gorok Outpost, Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Dalaran, K3, Camp Tunka'lo
+				["0.18:0.47:0.29:0.54:0.45:0.51:0.59:0.55:0.70:0.55:0.84:0.51:0.72:0.40"] = 511, -- Bor'gorok Outpost, Taunka'le Village, Agmar's Hammer, Venomspite, Conquest Hold, Camp Oneqwah, The Argent Stand
 
 				-- Horde: Borean Tundra: Taunka'le Village
 				["0.29:0.54:0.29:0.57"] = 30, -- Taunka'le Village, Unu'pe
@@ -2497,6 +2501,7 @@
 				["0.45:0.51:0.48:0.44:0.64:0.42:0.69:0.42"] = 215, -- Agmar's Hammer, Kor'koron Vanguard, Ebon Watch, Light's Breach
 				["0.45:0.51:0.48:0.44:0.64:0.42:0.69:0.42:0.70:0.55:0.84:0.59"] = 373, -- Agmars Hammer, Vorposten der Kor'kron, Schwarze Wacht, Lichtbresche, Burg Siegeswall, Lager der Winterhufe
 				["0.45:0.51:0.49:0.58:0.74:0.71:0.74:0.62:0.70:0.55"] = 349, -- Agmar's Hammer, Moa'ki, Kamagua, Apothecary Camp, Conquest Hold
+				["0.45:0.51:0.54:0.52:0.52:0.38:0.62:0.36"] = 189, -- Agmar's Hammer, Wyrmrest Temple, Dalaran, K3
 
 				-- Horde: Dragonblight: Kor'koron Vanguard
 				["0.48:0.44:0.52:0.38"] = 56, -- Kor'koron Vanguard, Dalaran
@@ -2972,6 +2977,9 @@
 				["0.84:0.51:0.84:0.59:0.74:0.62:0.59:0.55:0.45:0.51"] = 355, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Venomspite, Agmar's Hammer
 				["0.84:0.51:0.69:0.42:0.64:0.42:0.52:0.38:0.49:0.21:0.38:0.21"] = 396, -- Camp Oneqwah, Lichtbresche, Schwarze Wacht, Dalaran, Argentumturnierplatz, Das Schattengewölbe
 				["0.84:0.51:0.84:0.59:0.74:0.62:0.59:0.55:0.54:0.52:0.45:0.51:0.29:0.54:0.15:0.57"] = 538, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Venomspite, Wyrmrest Temple, Agmar's Hammer, Taunka'le Village, Warsong Hold
+				["0.84:0.51:0.84:0.59:0.74:0.62:0.74:0.71:0.49:0.58"] = 354, -- Camp Oneqwah, Camp Winterhoof, Apothecary Camp, Kamagua, Moa'ki
+				["0.84:0.51:0.70:0.55:0.59:0.55:0.49:0.58:0.29:0.57:0.29:0.54"] = 417, -- Camp Oneqwah, Conquest Hold, Venomspite, Moa'ki, Unu'pe, Taunka'le Village
+				["0.84:0.51:0.70:0.55:0.59:0.55:0.49:0.58:0.29:0.57:0.29:0.54:0.17:0.53:0.12:0.53"] = 528, -- Camp Oneqwah, Conquest Hold, Venomspite, Moa'ki, Unu'pe, Taunka'le Village, Amber Ledge, Transitus Shield
 
 				-- Horde: Howling Fjord: Camp Winterhoof
 				["0.84:0.59:0.85:0.73"] = 80, -- Camp Winterhoof, New Agamand
@@ -3314,6 +3322,7 @@
 				["0.95:0.63:0.85:0.73:0.74:0.71:0.49:0.58:0.29:0.57"] = 489, -- Vengeance Landing, New Agamand, Kamagua, Moa'ki, Unu'pe
 				["0.95:0.63:0.84:0.51:0.69:0.42:0.64:0.42:0.48:0.44"] = 344, -- Vengeance Landing, Camp Oneqwah, Light's Breach, Ebon Watch, Kor'koron Vanguard
 				["0.95:0.63:0.84:0.51:0.69:0.42:0.64:0.42:0.62:0.36:0.73:0.25"] = 366, -- Vengeance Landing, Camp Oneqwah, Light's Breach, Ebon Watch, K3, Camp Tunka'lo
+				["0.95:0.63:0.84:0.59:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38:0.52:0.34:0.28:0.28"] = 543, -- Vengeance Landing, Camp Winterhoof, Conquest Hold, Light's Breach, Ebon Watch, Dalaran, Crusaders' Pinnacle, Death's Rise
 
 				----------------------------------------------------------------------
 				-- Horde: Icecrown
@@ -4196,6 +4205,7 @@
 				["0.64:0.19:0.60:0.25:0.62:0.36:0.64:0.42:0.69:0.42:0.84:0.51"] = 323, -- Ulduar, Point d'impact de Grom'arsh, K3, Guet d'Ébène, La Brèche de Lumière, Camp Oneqwah
 				["0.64:0.19:0.60:0.25:0.62:0.36:0.64:0.42:0.69:0.42:0.70:0.55:0.84:0.59:0.95:0.63"] = 450, -- Ulduar, Grom'arsh Crash-Site, K3, Ebon Watch, Light's Breach, Conquest Hold, Camp Winterhoof, Vengeance Landing
 				["0.64:0.19:0.57:0.21:0.38:0.21:0.31:0.43:0.29:0.54:0.17:0.53"] = 452, -- Ulduar, Bouldercrag's Refuge, The Shadow Vault, Warsong Camp, Taunka'le Village, Amber Ledge
+				["0.64:0.19:0.60:0.25:0.62:0.36:0.52:0.38:0.49:0.58"] = 351, -- Ulduar, Grom'arsh Crash-Site, K3, Dalaran, Moa'ki
 
 				----------------------------------------------------------------------
 				-- Horde: Wintergrasp
