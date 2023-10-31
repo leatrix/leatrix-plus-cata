@@ -3776,6 +3776,7 @@
 				["0.38:0.21:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46"] = 366, -- The Shadow Vault, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade
 				["0.38:0.21:0.52:0.38:0.54:0.52:0.60:0.52:0.76:0.67:0.88:0.60"] = 528, -- The Shadow Vault, Dalaran, Wyrmrest Temple, Wintergarde Keep, Westguard Keep, Fort Wildervar
 				["0.38:0.21:0.57:0.33:0.64:0.19:0.72:0.29"] = 375, -- The Shadow Vault, Frosthold, Ulduar, Dun Nifflelem
+				["0.38:0.21:0.52:0.38:0.49:0.58:0.74:0.71:0.76:0.67"] = 531, -- The Shadow Vault, Dalaran, Moa'ki, Kamagua, Westguard Keep
 
 				----------------------------------------------------------------------
 				-- Alliance: Sholazar Basin
