@@ -1,5 +1,5 @@
-3.0.162.alpha.1 - 25th October 2023
-- For 'Enhance tooltip' ('Interface'), the scale slider now applies to LibDBIcon and Dungeon Finder eye icon tooltips.
+3.0.162 - 1st November 2023
+- For 'Enhance tooltip' ('Interface'), the scale slider now applies to LibDBIcon (most addons with a minimap button use this) and Dungeon Finder eye icon tooltips.
 - General code updates.
 - Added flight times.
 
