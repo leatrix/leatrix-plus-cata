@@ -675,6 +675,7 @@
 				["0.53:0.61:0.56:0.53:0.63:0.44:0.64:0.23"] = 435, -- Camp Taurajo, Crossroads, Orgrimmar, Everlook
 				["0.53:0.61:0.55:0.73:0.58:0.70"] = 194, -- Camp Taurajo, Freewind Post, Mudsprocket
 				["0.53:0.61:0.45:0.56:0.63:0.44"] = 322, -- Camp Taurajo, Thunder Bluff, Orgrimmar
+				["0.53:0.61:0.56:0.53:0.46:0.30:0.50:0.35"] = 357, -- Camp Taurajo, Crossroads, Bloodvenom Post, Emerald Sanctuary
 
 				-- Horde: Cenarion Hold (Silithus)
 				["0.42:0.79:0.61:0.80"] = 242, -- Cenarion Hold, Gadgetzan

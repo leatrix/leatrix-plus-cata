@@ -3568,6 +3568,7 @@
 				["0.52:0.34:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46"] = 272, -- Crusaders' Pinnacle, Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade
 				["0.52:0.34:0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54"] = 258, -- Crusaders' Pinnacle, Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
 				["0.52:0.34:0.52:0.38:0.62:0.36:0.57:0.33:0.57:0.21"] = 223, -- Crusaders' Pinnacle, Dalaran, K3, Frosthold, Bouldercrag's Refuge
+				["0.52:0.34:0.49:0.21:0.57:0.21"] = 145, -- Crusaders' Pinnacle, Argent Tournament Grounds, Bouldercrag's Refuge
 
 				-- Alliance: Icecrown: Death's Rise
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38"] = 238, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran

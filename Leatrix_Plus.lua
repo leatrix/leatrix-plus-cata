@@ -10934,6 +10934,9 @@
 				-- Nameplate tooltip
 				if NamePlateTooltip then NamePlateTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"]) end
 
+				-- Game settings panel tooltip
+				if SettingsTooltip then SettingsTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"]) end
+
 				-- QueueStatusFrame (Dungeon Finder)
 				if QueueStatusFrame then QueueStatusFrame:SetScale(LeaPlusLC["LeaPlusTipSize"]) end
 
