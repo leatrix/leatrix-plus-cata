@@ -1,4 +1,4 @@
-3.0.163.alpha.1 - 1st November 2023
+3.0.163 - 8th November 2023
 - For 'Enhance tooltip' ('Interface'), the scale slider now applies to the game settings panel tooltips.
 - Added flight times.
 
