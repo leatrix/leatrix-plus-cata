@@ -3648,6 +3648,7 @@
 				["0.28:0.28:0.49:0.21:0.52:0.38"] = 306, -- Death's Rise, Argent Tournament Grounds, Dalaran
 				["0.28:0.28:0.24:0.40:0.21:0.49:0.29:0.57:0.49:0.58"] = 360, -- Death's Rise, River's Heart, Fizzcrank Airstrip, Unu'pe, Moa'ki
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38:0.59:0.43:0.60:0.52:0.76:0.67"] = 474, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Windrunner's Overlook, Wintergarde Keep, Westguard Keep
+				["0.28:0.28:0.57:0.21:0.64:0.19:0.78:0.38:0.83:0.46"] = 468, -- Death's Rise, Bouldercrag's Refuge, Ulduar, Zim'Torga, Westfall Brigade
 
 				-- Alliance: Icecrown: The Argent Vanguard
 				["0.56:0.36:0.57:0.33"] = 40, -- The Argent Vanguard, Frosthold
@@ -4257,6 +4258,7 @@
 				["0.62:0.36:0.64:0.42:0.60:0.52:0.42:0.53:0.22:0.61"] = 340, -- K3, Schwarze Wacht, Feste Wintergarde, Sternenruh, Valianzfeste
 				["0.62:0.36:0.52:0.38:0.24:0.40:0.28:0.28"] = 357, -- K3, Dalaran, River's Heart, Death's Rise
 				["0.62:0.36:0.57:0.33:0.56:0.36:0.38:0.21"] = 222, -- K3, Frosthold, The Argent Vanguard, The Shadow Vault
+				["0.62:0.36:0.52:0.38:0.49:0.58:0.60:0.52:0.76:0.67"] = 423, -- K3, Dalaran, Moa'ki, Wintergarde Keep, Westguard Keep
 
 				-- Alliance: The Storm Peaks: Ulduar
 				["0.64:0.19:0.57:0.33:0.56:0.36:0.52:0.38"] = 167, -- Ulduar, Frosthold, The Argent Vanguard, Dalaran

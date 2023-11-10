@@ -726,7 +726,7 @@
 				["0.56:0.53:0.45:0.56"] = 107, -- Crossroads, Thunder Bluff
 				["0.56:0.53:0.41:0.47"] = 150, -- Crossroads, Sun Rock Retreat
 				["0.56:0.53:0.55:0.42"] = 162, -- Crossroads, Splintertree Post
-				["0.56:0.53:0.63:0.44"] = 117, -- Crossroads, Orgrimmar
+				["0.56:0.53:0.63:0.44"] = 117, -- Crossroads, Orgrimmar (Kevin Abrams reported 71)
 				["0.56:0.53:0.61:0.55"] = 52, -- Crossroads, Ratchet
 				["0.56:0.53:0.63:0.36"] = 164, -- Crossroads, Valormok
 				["0.56:0.53:0.55:0.42:0.50:0.35"] = 241, -- Crossroads, Splintertree Post, Emerald Sanctuary
@@ -1298,6 +1298,7 @@
 				["0.58:0.27:0.38:0.32:0.44:0.51:0.54:0.57:0.65:0.50:0.68:0.63"] = 424, -- Area 52, Thunderlord Stronghold, Swamprat Post, Falcon Watch, Thrallmar, Spinebreaker Ridge
 				["0.58:0.27:0.38:0.32:0.23:0.50:0.44:0.67"] = 405, -- Area 52, Thunderlord Stronghold, Zabra'jin, Shattrath
 				["0.58:0.27:0.38:0.32:0.23:0.50:0.44:0.67:0.51:0.73"] = 474, -- Area 52, Thunderlord Stronghold, Zabra'jin, Shattrath, Stonebreaker Hold
+				["0.58:0.27:0.49:0.36:0.44:0.51:0.23:0.50:0.29:0.62"] = 324, -- Area 52, Mok'Nathal Village, Swamprat Post, Zabra'jin, Garadar
 
 				-- Horde: Cosmowrench (Netherstorm)
 				["0.72:0.28:0.58:0.27:0.49:0.36:0.44:0.51:0.44:0.67:0.51:0.73:0.66:0.77"] = 420, -- Cosmowrench, Area 52, Mok'Nathal Village, Swamprat Post, Shattrath, Stonebreaker Hold, Shadowmoon Village
@@ -3489,6 +3490,7 @@
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54:0.15:0.57"] = 372, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Warsong Hold
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.59:0.55:0.70:0.55:0.84:0.51"] = 374, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Venomspite, Conquest Hold, Camp Oneqwah
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.62:0.36:0.73:0.25"] = 198, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, K3, Camp Tunka'lo
+				["0.52:0.34:0.56:0.36:0.60:0.25:0.73:0.25:0.78:0.38:0.82:0.31"] = 382, -- Crusaders' Pinnacle, The Argent Vanguard, Grom'arsh Crash-Site, Camp Tunka'lo, Zim'Torga, Gundrak
 
 				-- Horde: Icecrown: Death's Rise
 				["0.28:0.28:0.38:0.21"] = 94, -- Death's Rise, The Shadow Vault
