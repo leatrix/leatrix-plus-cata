@@ -1085,6 +1085,7 @@
 				["0.50:0.76:0.60:0.81:0.61:0.55:0.46:0.40:0.43:0.25:0.55:0.21"] = 845, -- Marshal's Refuge, Gadgetzan, Ratchet, Astranaar, Auberdine, Moonglade
 				["0.50:0.76:0.60:0.81:0.64:0.67:0.43:0.25:0.53:0.26:0.65:0.23"] = 969, -- Marshal's Refuge, Gadgetzan, Theramore, Auberdine, Talonbranch Glade, Everlook
 				["0.50:0.76:0.60:0.81:0.64:0.67:0.61:0.40:0.65:0.23"] = 668, -- Marshal's Refuge, Gadgetzan, Theramore, Talrendis Point, Everlook
+				["0.50:0.76:0.60:0.81:0.64:0.67:0.46:0.40:0.50:0.35:0.53:0.26:0.65:0.23"] = 916, -- Marshal's Refuge, Gadgetzan, Theramore, Astranaar, Emerald Sanctuary, Talonbranch Glade, Everlook
 
 				-- Alliance: Moonglade (Moonglade)
 				["0.55:0.21:0.43:0.25:0.31:0.69"] = 614, -- Moonglade, Auberdine, Feathermoon
@@ -2825,6 +2826,7 @@
 				["0.60:0.52:0.54:0.52:0.52:0.38:0.56:0.36:0.57:0.33"] = 208, -- Wintergarde Keep, Wyrmrest Temple, Dalaran, The Argent Vanguard, Frosthold
 				["0.60:0.52:0.49:0.58:0.29:0.57:0.22:0.61:0.17:0.53"] = 352, -- Wintergarde Keep, Moa'ki, Unu'pe, Valiance Keep, Amber Ledge
 				["0.60:0.52:0.73:0.54:0.88:0.60:0.88:0.72"] = 265, -- Wintergarde Keep, Amberpine Lodge, Fort Wildervar, Valgarde Port
+				["0.60:0.52:0.64:0.42:0.72:0.40:0.78:0.38:0.64:0.19"] = 322, -- Wintergarde Keep, Ebon Watch, The Argent Stand, Zim'Torga, Ulduar
 
 				-- Alliance: Dragonblight: Wyrmrest Temple
 				["0.54:0.52:0.60:0.52"] = 36, -- Wyrmrest Temple, Wintergarde Keep
@@ -4001,6 +4003,7 @@
 				["0.57:0.21:0.57:0.33:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46"] = 343, -- Bergfels' Zuflucht, Eisfestung, Die Argentumvorhut, Dalaran, Schwarze Wacht, Argentumwache, Westfallbrigade
 				["0.57:0.21:0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38"] = 194, -- Bouldercrag's Refuge, Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran
 				["0.57:0.21:0.57:0.33:0.62:0.36:0.52:0.38:0.54:0.52:0.60:0.52:0.73:0.54"] = 428, -- Приют Глыбоскала, Ледяная крепость, К-3, Даларан, Храм Драконьего Покоя, Крепость Стражей Зимы, Приют Янтарной Сосны
+				["0.57:0.21:0.57:0.33:0.62:0.36:0.52:0.38:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 539, -- Bouldercrag's Refuge, Frosthold, K3, Dalaran, River's Heart, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
 
 				-- Alliance: The Storm Peaks: Dun Nifflelem
 				["0.72:0.29:0.64:0.19:0.57:0.21"] = 133, -- Dun Nifflelem, Ulduar, Bouldercrag's Refuge
