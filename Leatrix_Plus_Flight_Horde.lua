@@ -4368,6 +4368,7 @@
 				["0.72:0.40:0.84:0.51:0.70:0.55:0.59:0.55:0.54:0.52:0.45:0.51:0.29:0.54:0.18:0.47"] = 584, -- Le séjour d'Argent, Camp Oneqwah, Bastion de la Conquête, Vexevenin, Temple du Repos du ver, Marteau d'Agmar, Taunka'le, Avant-poste Bor'gorok, Avant-poste Bor'gorok
 				["0.72:0.40:0.84:0.51:0.70:0.55:0.59:0.55:0.49:0.58"] = 364, -- The Argent Stand, Camp Oneqwah, Conquest Hold, Venomspite, Moa'ki
 				["0.72:0.40:0.69:0.42:0.59:0.55:0.49:0.58"] = 227, -- The Argent Stand, Light's Breach, Venomspite, Moa'ki
+				["0.72:0.40:0.78:0.38:0.72:0.29:0.62:0.36"] = 214, -- The Argent Stand, Zim'Torga, Dun Nifflelem, K3
 
 				-- Horde: Zul'Drak: Ebon Watch
 				["0.64:0.42:0.69:0.42"] = 45, -- Ebon Watch, Light's Breach
