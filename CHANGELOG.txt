@@ -1,5 +1,5 @@
-3.0.166.alpha.1 - 22nd November 2023
-- For 'Enhance minimap' ('Interface'), fixed an issue which caused a button to be created for SexyMap.
+3.0.166 - 29th November 2023
+- For 'Enhance minimap' ('Interface'), fixed an issue which caused a button to be created for SexyMap (if installed).
 - Added flight times.
 
 3.0.165 - 22nd November 2023

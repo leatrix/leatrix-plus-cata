@@ -4008,6 +4008,7 @@
 				["0.57:0.21:0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38"] = 194, -- Bouldercrag's Refuge, Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran
 				["0.57:0.21:0.57:0.33:0.62:0.36:0.52:0.38:0.54:0.52:0.60:0.52:0.73:0.54"] = 428, -- Приют Глыбоскала, Ледяная крепость, К-3, Даларан, Храм Драконьего Покоя, Крепость Стражей Зимы, Приют Янтарной Сосны
 				["0.57:0.21:0.57:0.33:0.62:0.36:0.52:0.38:0.24:0.40:0.21:0.49:0.17:0.53:0.12:0.53"] = 539, -- Bouldercrag's Refuge, Frosthold, K3, Dalaran, River's Heart, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
+				["0.57:0.21:0.49:0.21:0.52:0.38:0.62:0.36"] = 241, -- Приют Глыбоскала, Ристалище Серебряного турнира, Даларан, К-3, К-3
 
 				-- Alliance: The Storm Peaks: Dun Nifflelem
 				["0.72:0.29:0.64:0.19:0.57:0.21"] = 133, -- Dun Nifflelem, Ulduar, Bouldercrag's Refuge
@@ -4686,6 +4687,7 @@
 				["0.72:0.40:0.64:0.42:0.52:0.38:0.56:0.36:0.28:0.28"] = 364, -- The Argent Stand, Ebon Watch, Dalaran, The Argent Vanguard, Death's Rise
 				["0.72:0.40:0.69:0.42:0.60:0.52:0.46:0.46:0.41:0.43:0.24:0.40"] = 392, -- The Argent Stand, Light's Breach, Wintergarde Keep, Fordragon Hold, Valiance Landing Camp, River's Heart
 				["0.72:0.40:0.69:0.42:0.60:0.52:0.49:0.58:0.52:0.38"] = 320, -- The Argent Stand, Light's Breach, Wintergarde Keep, Moa'ki, Dalaran
+				["0.72:0.40:0.69:0.42:0.73:0.54:0.76:0.67:0.74:0.71:0.49:0.58:0.29:0.57:0.21:0.49"] = 644, -- The Argent Stand, Light's Breach, Amberpine Lodge, Westguard Keep, Kamagua, Moa'ki, Unu'pe, Fizzcrank Airstrip
 
 				-- Alliance: Zul'Drak: Zim'Torga
 				["0.78:0.38:0.83:0.46"] = 56, -- Zim'Torga, Westfall Brigade
