@@ -2872,6 +2872,7 @@
 				["0.70:0.55:0.59:0.55:0.54:0.52:0.52:0.38:0.62:0.36:0.73:0.25:0.78:0.38:0.72:0.40"] = 519, -- Conquest Hold, Venomspite, Wyrmrest Temple, Dalaran, K3, Camp Tunka'lo, Zim'Torga, The Argent Stand
 				["0.70:0.55:0.74:0.62:0.74:0.71:0.49:0.58"] = 306, -- Bastión de la Conquista, Campamento de los Boticarios, Komawa, Moa'ki
 				["0.70:0.55:0.84:0.51:0.78:0.38"] = 194, -- Conquest Hold, Camp Oneqwah, Zim'Torga
+				["0.70:0.55:0.59:0.55:0.48:0.44"] = 207, -- Conquest Hold, Venomspite, Kor'kron Vanguard
 
 				----------------------------------------------------------------------
 				-- Horde: Howling Fjord
@@ -3826,6 +3827,7 @@
 				["0.24:0.40:0.31:0.43:0.45:0.51:0.59:0.55:0.70:0.55:0.84:0.51"] = 643, -- River's Heart, Warsong Camp, Agmar's Hammer, Venomspite, Conquest Hold, Camp Oneqwah
 				["0.24:0.40:0.18:0.47:0.29:0.54:0.45:0.51:0.59:0.55:0.85:0.73"] = 750, -- River's Heart, Bor'gorok Outpost, Taunka'le Village, Agmar's Hammer, Venomspite, New Agamand
 				["0.24:0.40:0.52:0.38:0.49:0.21:0.57:0.21:0.60:0.25"] = 605, -- River's Heart, Dalaran, Argent Tournament Grounds, Bouldercrag's Refuge, Grom'arsh Crash-Site, Grom'arsh Crash-Site
+				["0.24:0.40:0.52:0.38:0.52:0.34:0.38:0.21"] = 528, -- River's Heart, Dalaran, Crusaders' Pinnacle, The Shadow Vault
 
 				----------------------------------------------------------------------
 				-- Horde: The Storm Peaks

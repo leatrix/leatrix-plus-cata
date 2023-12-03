@@ -3149,6 +3149,7 @@
 				["0.88:0.60:0.73:0.54:0.60:0.52:0.54:0.52:0.52:0.38:0.56:0.36:0.57:0.33"] = 379, -- Fort Wildervar, Amberpine Lodge, Wintergarde Keep, Wyrmrest Temple, Dalaran, The Argent Vanguard, Frosthold
 				["0.88:0.60:0.76:0.67:0.60:0.52:0.59:0.43:0.52:0.38:0.49:0.21"] = 456, -- Fort Wildervar, Westguard Keep, Wintergarde Keep, Windrunner's Overlook, Dalaran, Argent Tournament Grounds
 				["0.88:0.60:0.73:0.54:0.60:0.52:0.54:0.52:0.52:0.38:0.62:0.36"] = 362, -- Fort Wildervar, Amberpine Lodge, Wintergarde Keep, Wyrmrest Temple, Dalaran, K3
+				["0.88:0.60:0.73:0.54:0.69:0.42:0.64:0.42:0.62:0.36:0.72:0.29"] = 341, -- Fort Wildervar, Amberpine Lodge, Light's Breach, Ebon Watch, K3, Dun Nifflelem
 
 				-- Alliance: Howling Fjord: Kamagua
 				["0.74:0.71:0.76:0.67"] = 37, -- Kamagua, Westguard Keep
