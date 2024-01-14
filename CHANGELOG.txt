@@ -1,4 +1,32 @@
-3.0.167.alpha.3 - 29th November 2023
+3.0.173.alpha.8 - 11th January 2024
+- For 'Enhance minimap' ('Interface'), the minimum minimap scale is now 50% (was 100%).
+- For 'Hide chat buttons' ('Chat'), fixed an issue which caused a black border around chat tabs.
+- Updated scroll frame template.
+- Repackage following CurseForge backend issue.
+
+3.0.172 - 10th January 2024
+- Added a new command '/ltp quest wipe' which will clear the quest log.
+- Added flight times.
+
+3.0.171 - 3rd January 2024
+- Updated 'Automate gossip' ('Automation') for soft targeting.
+- For 'Enhance quest log', fixed a situational issue with quest prefix translations.
+- For the minimap button, holding CTRL and SHIFT will now toggle windowed mode.  Holding CTRL and ALT will toggle the Zygor addon (if installed).
+- Fixed an issue with the Zygor addon toggle.
+- Added flight times.
+
+3.0.170 - 27th December 2023
+- Updated 'Automate quests' ('Automation') for soft targeting.
+- Added flight times.
+
+3.0.169 - 20th December 2023
+- Added flight times.
+
+3.0.168 - 11th December 2023
+- For 'Enhance minimap' ('Interface'), fixed an issue which caused some minimap addon buttons to not be placed correctly.
+- Added flight times.
+
+3.0.167 - 6th December 2023
 - For 'Enhance minimap' ('Interface'), fixed an issue with 'Combine addon buttons' and the BtWQuests minimap button (if installed).
 - Added flight times.
 
