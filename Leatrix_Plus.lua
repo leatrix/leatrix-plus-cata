@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.173 (17th January 2024)
+-- 	Leatrix Plus 3.0.174.alpha.1 (17th January 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.173"
+	LeaPlusLC["AddonVer"] = "3.0.174.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -2392,7 +2392,7 @@
 			eb.Text = eb.scroll.EditBox
 			eb.Text:SetWidth(150)
 			eb.Text:SetPoint("TOPLEFT", eb.scroll)
-			eb.Text:SetPoint("BOTTOMRIGHT", eb.scroll)
+			eb.Text:SetPoint("BOTTOMRIGHT", eb.scroll, -12, 0)
 			eb.Text:SetMaxLetters(2000)
 			eb.Text:SetFontObject(GameFontNormalLarge)
 			eb.Text:SetAutoFocus(false)
@@ -3504,7 +3504,7 @@
 			eb.Text:SetWidth(494)
 			eb.Text:SetHeight(230)
 			eb.Text:SetPoint("TOPLEFT", eb.scroll)
-			eb.Text:SetPoint("BOTTOMRIGHT", eb.scroll)
+			eb.Text:SetPoint("BOTTOMRIGHT", eb.scroll, -12, 0)
 			eb.Text:SetMaxLetters(2000)
 			eb.Text:SetFontObject(GameFontNormalLarge)
 			eb.Text:SetAutoFocus(false)
@@ -4139,7 +4139,7 @@
 				eb.Text:SetWidth(494)
 				eb.Text:SetHeight(230)
 				eb.Text:SetPoint("TOPLEFT", eb.scroll)
-				eb.Text:SetPoint("BOTTOMRIGHT", eb.scroll)
+				eb.Text:SetPoint("BOTTOMRIGHT", eb.scroll, -12, 0)
 				eb.Text:SetMaxLetters(1200)
 				eb.Text:SetFontObject(GameFontNormalLarge)
 				eb.Text:SetAutoFocus(false)
