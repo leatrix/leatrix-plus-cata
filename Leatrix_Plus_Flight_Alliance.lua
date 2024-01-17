@@ -2759,6 +2759,7 @@
 				["0.42:0.53:0.60:0.52:0.73:0.54:0.83:0.46:0.78:0.38:0.82:0.31"] = 401, -- Stars' Rest, Wintergarde Keep, Amberpine Lodge, Westfall Brigade, Zim'Torga, Gundrak
 				["0.42:0.53:0.54:0.52:0.64:0.42"] = 195, -- Stars' Rest, Wyrmrest Temple, Ebon Watch
 				["0.42:0.53:0.41:0.43:0.52:0.38:0.62:0.36:0.72:0.29"] = 303, -- Stars' Rest, Valiance Landing Camp, Dalaran, K3, Dun Nifflelem
+				["0.42:0.53:0.41:0.43:0.52:0.38:0.56:0.36:0.57:0.33"] = 218, -- Stars' Rest, Valiance Landing Camp, Dalaran, The Argent Vanguard, Frosthold
 
 				-- Alliance: Dragonblight: Wintergarde Keep
 				["0.60:0.52:0.54:0.52"] = 55, -- Wintergarde Keep, Wyrmrest Temple
