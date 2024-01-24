@@ -1,5 +1,6 @@
-3.0.174.alpha.1 - 17th January 2024
+3.0.174 - 24th January 2024
 - Fixed ScrollFrameTemplate editbox widths.
+- Added flight times.
 
 3.0.173 - 17th January 2024
 - For 'Enhance minimap' ('Interface'), the minimum minimap scale is now 50% (was 100%).

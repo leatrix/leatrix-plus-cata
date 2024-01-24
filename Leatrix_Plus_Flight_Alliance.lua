@@ -211,7 +211,7 @@
 				["0.47:0.59:0.41:0.73:0.39:0.80"] = 275, -- Ironforge, Stormwind, Sentinel Hill
 				["0.47:0.59:0.41:0.73:0.50:0.75"] = 310, -- Ironforge, Stormwind, Lakeshire (was 309, changed to 211 by Dylan, changed back to 310 by Trev B and Steevan BARBOYON so 310 is correct)
 				["0.47:0.59:0.41:0.73:0.55:0.81"] = 373, -- Ironforge, Stormwind, Nethergarde Keep
-				["0.47:0.59:0.41:0.73:0.47:0.79"] = 313, -- Ironforge, Stormwind, Darkshire
+				["0.47:0.59:0.41:0.73:0.47:0.79"] = 313, -- Ironforge, Stormwind, Darkshire (Alex Patrenko reported 230)
 				["0.47:0.59:0.47:0.65:0.41:0.73:0.50:0.75"] = 295, -- Ironforge, Thorium Point, Stormwind, Lakeshire
 				["0.47:0.59:0.41:0.73:0.41:0.93"] = 396, -- Ironforge, Stormwind, Booty Bay
 				["0.47:0.59:0.47:0.65:0.41:0.73:0.55:0.81"] = 359, -- Ironforge, Thorium Point, Stormwind, Nethergarde Keep
@@ -506,7 +506,7 @@
 				["0.58:0.06:0.61:0.35"] = 324, -- Shattered Sun Staging Area, Light's Hope Chapel (Uros Bozovic reported 342)
 				["0.58:0.06:0.61:0.35:0.47:0.59:0.47:0.65:0.41:0.73"] = 849, -- Shattered Sun Staging Area, Light's Hope Chapel, Ironforge, Thorium Point, Stormwind
 				["0.58:0.06:0.61:0.35:0.48:0.39"] = 470, -- Shattered Sun Staging Area, Light's Hope Chapel, Chillwind Camp
-				["0.58:0.06:0.61:0.35:0.47:0.59"] = 690, -- Shattered Sun Staging Area, Light's Hope Chapel, Ironforge
+				["0.58:0.06:0.61:0.35:0.47:0.59"] = 690, -- Shattered Sun Staging Area, Light's Hope Chapel, Ironforge (Matt W. reported 726)
 				["0.58:0.06:0.61:0.35:0.50:0.42"] = 483, -- Shattered Sun Staging Area, Light's Hope Chapel, Aerie Peak
 				["0.58:0.06:0.61:0.35:0.47:0.59:0.47:0.65:0.41:0.73:0.41:0.93"] = 1033, -- Shattered Sun Staging Area, Light's Hope Chapel, Ironforge, Thorium Point, Stormwind, Booty Bay
 				["0.58:0.06:0.61:0.35:0.47:0.59:0.47:0.65:0.52:0.72"] = 822, -- Shattered Sun Staging Area, Light's Hope Chapel, Ironforge, Thorium Point, Morgan's Vigil
@@ -2325,6 +2325,7 @@
 				["0.22:0.61:0.42:0.53:0.46:0.46:0.52:0.38:0.62:0.36:0.57:0.33"] = 374, -- Valiance Keep, Stars' Rest, Fordragon Hold, Dalaran, K3, Frosthold
 				["0.22:0.61:0.42:0.53:0.41:0.43:0.24:0.40"] = 345, -- Valiance Keep, Stars' Rest, Valiance Landing Camp, River's Heart
 				["0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.69:0.42:0.72:0.40:0.78:0.38"] = 431, -- Valianzfeste, Unu'pe, Moa'ki, Feste Wintergarde, Lichtbresche, Argentumwache, Zim'Torga
+				["0.22:0.61:0.42:0.53:0.49:0.58:0.74:0.71:0.88:0.72"] = 476, -- Valiance Keep, Stars' Rest, Moa'ki, Kamagua, Valgarde Port
 
 				----------------------------------------------------------------------
 				-- Alliance: Crystalsong Forest
