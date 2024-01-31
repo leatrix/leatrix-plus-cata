@@ -667,6 +667,7 @@
 				["0.51:0.36:0.48:0.39:0.47:0.59:0.41:0.73"] = 485, -- Thondoril River, Chillwind Camp, Ironforge, Stormwind
 				["0.51:0.36:0.48:0.39:0.47:0.59:0.41:0.73:0.41:0.93"] = 669, -- Thondoril River, Chillwind Camp, Ironforge, Stormwind, Booty Bay
 				["0.51:0.36:0.48:0.39:0.47:0.59:0.41:0.73:0.47:0.79"] = 587, -- Thondroril, Zugwindlager, Eisenschmiede, Sturmwind, Dunkelhain
+				["0.51:0.36:0.48:0.39:0.47:0.59:0.41:0.73:0.39:0.80"] = 548, -- Thondoril River, Chillwind Camp, Ironforge, Stormwind, Sentinel Hill
 
 				-- Alliance: Thorium Point (Searing Gorge)
 				["0.47:0.65:0.41:0.73:0.41:0.93"] = 310, -- Thorium Point, Stormwind, Booty Bay
@@ -1000,6 +1001,7 @@
 				["0.58:0.39:0.50:0.35:0.53:0.26:0.43:0.25:0.64:0.67:0.60:0.81"] = 1002, -- Forest Song, Emerald Sanctuary, Talonbranch Glade, Auberdine, Theramore, Gadgetzan
 				["0.58:0.39:0.46:0.40:0.43:0.25:0.40:0.51"] = 580, -- Forest Song, Astranaar, Auberdine, Nijel's Point
 				["0.58:0.39:0.46:0.40:0.61:0.55:0.64:0.67:0.48:0.70"] = 598, -- Waldeslied, Astranaar, Ratschet, Theramore, Thalanaar
+				["0.58:0.39:0.61:0.40:0.65:0.23:0.55:0.21"] = 318, -- Forest Song, Talrendis Point, Everlook, Moonglade
 
 				-- Alliance: Gadgetzan (Tanaris)
 				["0.60:0.81:0.48:0.70:0.31:0.69"] = 354, -- Gadgetzan, Thalanaar, Feathermoon
@@ -1780,7 +1782,7 @@
 				["0.27:0.74:0.38:0.50:0.27:0.44"] = 189, -- Telaar, Telredor, Orebor Harborage
 				["0.27:0.74:0.38:0.50:0.42:0.37"] = 195, -- Telaar, Telredor, Toshley's Station
 				["0.27:0.74:0.38:0.50:0.32:0.34"] = 217, -- Telaar, Telredor, Sylvanaar
-				["0.27:0.74:0.38:0.50:0.42:0.37:0.42:0.28"] = 248, -- Telaar, Telredor, Toshley's Station, Evergrove
+				["0.27:0.74:0.38:0.50:0.42:0.37:0.42:0.28"] = 248, -- Telaar, Telredor, Toshley's Station, Evergrove (Matt W. reported 264)
 				["0.27:0.74:0.38:0.50:0.42:0.37:0.58:0.27"] = 280, -- Telaar, Telredor, Toshley's Station, Area 52
 				["0.27:0.74:0.38:0.50:0.42:0.37:0.58:0.27:0.72:0.28"] = 344, -- Telaar, Telredor, Toshley's Station, Area 52, Cosmowrench
 				["0.27:0.74:0.38:0.50:0.42:0.37:0.58:0.27:0.63:0.18"] = 327, -- Telaar, Telredor, Toshley's Station, Area 52, The Stormspire
@@ -2569,6 +2571,7 @@
 				["0.52:0.38:0.41:0.43:0.42:0.53:0.21:0.49:0.17:0.53"] = 366, -- Dalaran, Valiance Landing Camp, Stars' Rest, Fizzcrank Airstrip, Amber Ledge
 				["0.52:0.38:0.41:0.43:0.42:0.53:0.22:0.61:0.17:0.53:0.12:0.53"] = 423, -- Dalaran, Valiance Landing Camp, Stars' Rest, Valiance Keep, Amber Ledge, Transitus Shield
 				["0.52:0.38:0.49:0.58:0.60:0.52:0.76:0.67:0.88:0.72"] = 431, -- Dalaran, Moa'ki, Feste Wintergarde, Westwacht, Hafen von Valgarde
+				["0.52:0.38:0.64:0.42:0.72:0.40:0.83:0.46:0.88:0.60:0.88:0.72:0.74:0.71"] = 468, -- Dalaran, Ebon Watch, The Argent Stand, Westfall Brigade, Fort Wildervar, Valgarde Port, Kamagua
 
 				----------------------------------------------------------------------
 				-- Alliance: Dragonblight
@@ -2761,6 +2764,7 @@
 				["0.42:0.53:0.54:0.52:0.64:0.42"] = 195, -- Stars' Rest, Wyrmrest Temple, Ebon Watch
 				["0.42:0.53:0.41:0.43:0.52:0.38:0.62:0.36:0.72:0.29"] = 303, -- Stars' Rest, Valiance Landing Camp, Dalaran, K3, Dun Nifflelem
 				["0.42:0.53:0.41:0.43:0.52:0.38:0.56:0.36:0.57:0.33"] = 218, -- Stars' Rest, Valiance Landing Camp, Dalaran, The Argent Vanguard, Frosthold
+				["0.42:0.53:0.54:0.52:0.64:0.42:0.69:0.42:0.73:0.54"] = 323, -- Stars' Rest, Wyrmrest Temple, Ebon Watch, Light's Breach, Amberpine Lodge
 
 				-- Alliance: Dragonblight: Wintergarde Keep
 				["0.60:0.52:0.54:0.52"] = 55, -- Wintergarde Keep, Wyrmrest Temple
