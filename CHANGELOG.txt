@@ -1,3 +1,6 @@
+3.0.176 - 1st February 2024
+- Updated translations.
+
 3.0.175 - 31st January 2024
 - Added flight times.
 
