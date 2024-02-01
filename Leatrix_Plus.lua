@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.176 (1st February 2024)
+-- 	Leatrix Plus 3.0.177.alpha.1 (1st February 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.176"
+	LeaPlusLC["AddonVer"] = "3.0.177.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -4746,6 +4746,11 @@
 					"SexyMapZoneTextButton", -- SexyMap
 				}
 
+				-- Some buttons have less than 3 regions.  These need to be manually defined below.
+				local LowRegionCountButtons = {
+					"AllTheThings-Minimap", -- AllTheThings
+				}
+
 				-- Function to loop through minimap children to find custom addon buttons
 				local function MakeButtons()
 					local temp = {Minimap:GetChildren()}
@@ -4754,7 +4759,7 @@
 							local btn = temp[i]
 							local name = btn:GetName()
 							local btype = btn:GetObjectType()
-							if name and btype == "Button" and not CustomAddonTable[name] and btn:GetNumRegions() >= 3 and not issecurevariable(name) and btn:IsShown() then
+							if name and btype == "Button" and not CustomAddonTable[name] and (btn:GetNumRegions() >= 3 or tContains(LowRegionCountButtons, name)) and not issecurevariable(name) and btn:IsShown() then
 								if not strfind(strlower(LeaPlusDB["MiniExcludeList"]), strlower("##" .. name)) then
 									if not string.find(name, "LibDBIcon") and not tContains(BypassButtonTable, name) or tContains(customButtonTable, name) then
 										CreateBadButton(name)
