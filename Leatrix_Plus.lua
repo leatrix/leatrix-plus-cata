@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.177.alpha.2 (1st February 2024)
+-- 	Leatrix Plus 3.0.177.alpha.3 (2nd February 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.177.alpha.2"
+	LeaPlusLC["AddonVer"] = "3.0.177.alpha.3"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -4733,7 +4733,46 @@
 					CustomAddonTable[name] = name
 					local icon = LibStub("LibDBIcon-1.0", true)
 					icon:Register("LeaPlusCustomIcon_" .. name, zeroButton, LeaPlusDB["CustomAddonButtons"][name])
-
+					-- Custom buttons
+					if name == "AllTheThings-Minimap" then
+						-- AllTheThings
+						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
+						myButton.icon:SetTexture("Interface\\AddOns\\AllTheThings\\assets\\logo_tiny")
+						myButton:SetScript("OnEnter", function()
+							_G["AllTheThings-Minimap"]:GetScript("OnEnter")(_G["AllTheThings-Minimap"], true)
+						end)
+						myButton:SetScript("OnLeave", function()
+							_G["AllTheThings-Minimap"]:GetScript("OnLeave")()
+						end)
+					elseif name == "AltoholicMinimapButton" then
+						-- Altoholic
+						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
+						myButton.icon:SetTexture("Interface\\Icons\\INV_Drink_13")
+						myButton:SetScript("OnEnter", function()
+							_G["AltoholicMinimapButton"]:GetScript("OnEnter")(_G["AltoholicMinimapButton"], true)
+						end)
+						myButton:SetScript("OnLeave", function()
+							_G["AltoholicMinimapButton"]:GetScript("OnLeave")()
+						end)
+					elseif name == "Lib_GPI_Minimap_LFGBulletinBoard" then
+						-- LFG Bulletin Board
+						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
+						myButton:SetScript("OnEnter", function()
+							_G["Lib_GPI_Minimap_LFGBulletinBoard"]:GetScript("OnEnter")(_G["Lib_GPI_Minimap_LFGBulletinBoard"], true)
+						end)
+						myButton:SetScript("OnLeave", function()
+							_G["Lib_GPI_Minimap_LFGBulletinBoard"]:GetScript("OnLeave")()
+						end)
+					elseif name == "WIM3MinimapButton" then
+						-- WIM
+						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
+						myButton:SetScript("OnEnter", function()
+							_G["WIM3MinimapButton"]:GetScript("OnEnter")(_G["WIM3MinimapButton"], true)
+						end)
+						myButton:SetScript("OnLeave", function()
+							_G["WIM3MinimapButton"]:GetScript("OnLeave")()
+						end)
+					end
 				end
 
 				-- Create LibDBIcon buttons for these addons that have LibDBIcon prefixes
