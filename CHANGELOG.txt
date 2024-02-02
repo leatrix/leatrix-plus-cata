@@ -1,4 +1,4 @@
-3.0.177.alpha.3 - 2nd February 2024
+3.0.177.alpha.4 - 2nd February 2024
 - For 'Enhance minimap' ('Interface'), added support for a few addons that still use custom minimap buttons (AllTheThings, Altoholic, LFG Bulletin Board, WIM).
 
 3.0.176 - 1st February 2024
