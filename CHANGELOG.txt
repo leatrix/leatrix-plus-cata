@@ -1,5 +1,6 @@
-3.0.177.alpha.8 - 3rd February 2024
+3.0.177.alpha.9 - 3rd February 2024
 - The 'Enhance minimap' ('Interface') option now has more support for custom buttons.
+- For 'Automate quests' ('Automation'), quests from Valadar Starsong and Fariel Starsong (Moonglade) will no longer be automated.
 
 3.0.176 - 1st February 2024
 - Updated translations.

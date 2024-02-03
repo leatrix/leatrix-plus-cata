@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.177.alpha.8 (3rd February 2024)
+-- 	Leatrix Plus 3.0.177.alpha.9 (3rd February 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.177.alpha.8"
+	LeaPlusLC["AddonVer"] = "3.0.177.alpha.9"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -1735,6 +1735,8 @@
 						or npcID == "14921" -- Rin'wosho the Trader (Zul'Gurub Isle, Stranglethorn Vale)
 						or npcID == "18166" -- Khadgar (Allegiance to Aldor/Scryer, Shattrath)
 						or npcID == "18253" -- Archmage Leryda (Violet Signet, Karazhan)
+						or npcID == "15864" -- Valadar Starsong (Coin of Ancestry Collector, Moonglade)
+						or npcID == "15909" -- Fariel Starsong (Coin of Ancestry Collector, Moonglade)
 						then
 							return true
 						end
