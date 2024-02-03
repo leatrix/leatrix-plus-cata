@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.177.alpha.5 (2nd February 2024)
+-- 	Leatrix Plus 3.0.177.alpha.6 (3rd February 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.177.alpha.5"
+	LeaPlusLC["AddonVer"] = "3.0.177.alpha.6"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -4732,11 +4732,6 @@
 								end
 							end
 						end,
-						OnTooltipShow = function(tooltip)
-							if not tooltip or not tooltip.AddLine then return end
-							tooltip:AddLine(name)
-							tooltip:AddLine(L["This addon button cannot be displayed properly.|n|nPlease email the addon name to feedback@leatrix.com to resolve this issue."], 1, 1, 1, true)
-						end,
 					})
 					LeaPlusDB["CustomAddonButtons"][name] = LeaPlusDB["CustomAddonButtons"][name] or {}
 					LeaPlusDB["CustomAddonButtons"][name].hide = false
@@ -4748,43 +4743,70 @@
 						-- AllTheThings
 						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
 						myButton.icon:SetTexture("Interface\\AddOns\\AllTheThings\\assets\\logo_tiny")
-						myButton:SetScript("OnEnter", function()
+						myButton:HookScript("OnEnter", function()
 							_G["AllTheThings-Minimap"]:GetScript("OnEnter")(_G["AllTheThings-Minimap"], true)
 							ReanchorTooltip(GameTooltip, myButton)
 						end)
-						myButton:SetScript("OnLeave", function()
+						myButton:HookScript("OnLeave", function()
 							_G["AllTheThings-Minimap"]:GetScript("OnLeave")()
 						end)
 					elseif name == "AltoholicMinimapButton" then
 						-- Altoholic
 						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
 						myButton.icon:SetTexture("Interface\\Icons\\INV_Drink_13")
-						myButton:SetScript("OnEnter", function()
+						myButton:HookScript("OnEnter", function()
 							_G["AltoholicMinimapButton"]:GetScript("OnEnter")(_G["AltoholicMinimapButton"], true)
 							ReanchorTooltip(AltoTooltip, myButton)
 						end)
-						myButton:SetScript("OnLeave", function()
+						myButton:HookScript("OnLeave", function()
 							_G["AltoholicMinimapButton"]:GetScript("OnLeave")()
 						end)
 					elseif name == "Lib_GPI_Minimap_LFGBulletinBoard" then
 						-- LFG Bulletin Board
 						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
-						myButton:SetScript("OnEnter", function()
+						myButton:HookScript("OnEnter", function()
 							_G["Lib_GPI_Minimap_LFGBulletinBoard"]:GetScript("OnEnter")(_G["Lib_GPI_Minimap_LFGBulletinBoard"], true)
 							ReanchorTooltip(GameTooltip, myButton)
 						end)
-						myButton:SetScript("OnLeave", function()
+						myButton:HookScript("OnLeave", function()
 							_G["Lib_GPI_Minimap_LFGBulletinBoard"]:GetScript("OnLeave")()
 						end)
 					elseif name == "WIM3MinimapButton" then
 						-- WIM
 						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
-						myButton:SetScript("OnEnter", function()
+						myButton:HookScript("OnEnter", function()
 							_G["WIM3MinimapButton"]:GetScript("OnEnter")(_G["WIM3MinimapButton"], true)
+							GameTooltip:SetOwner(myButton, "ANCHOR_TOP")
+							GameTooltip:AddLine(name)
+							GameTooltip:Show()
 							ReanchorTooltip(GameTooltip, myButton)
 						end)
-						myButton:SetScript("OnLeave", function()
+						myButton:HookScript("OnLeave", function()
 							_G["WIM3MinimapButton"]:GetScript("OnLeave")()
+							GameTooltip:Hide()
+						end)
+					elseif name == "LibDBIcon10_MethodRaidTools" then
+						-- Method Raid Tools
+						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
+						myButton:HookScript("OnEnter", function()
+							_G["LibDBIcon10_MethodRaidTools"]:GetScript("OnEnter")(_G["LibDBIcon10_MethodRaidTools"], true)
+							ReanchorTooltip(GameTooltip, myButton)
+						end)
+						myButton:HookScript("OnLeave", function()
+							GameTooltip:Hide()
+						end)
+					else
+						-- Unknown custom buttons
+						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
+						myButton:HookScript("OnEnter", function()
+							GameTooltip:SetOwner(myButton, "ANCHOR_TOP")
+							GameTooltip:AddLine(name)
+							GameTooltip:AddLine(L["Leatrix Plus needs to be updated with information about this addon.|n|nPlease email the addon name to feedback@leatrix.com.|n|nWhen your report is received, the addon button will be displayed correctly in the next update to Leatrix Plus."], 1, 1, 1, true)
+							GameTooltip:Show()
+							ReanchorTooltip(GameTooltip, myButton)
+						end)
+						myButton:HookScript("OnLeave", function()
+							GameTooltip:Hide()
 						end)
 					end
 				end
@@ -10992,6 +11014,11 @@
 				if LeaPlusLC.totalRP3 and TRP3_MainTooltip and TRP3_CharacterTooltip then
 					TRP3_MainTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
 					TRP3_CharacterTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
+				end
+
+				-- Altoholic
+				if AltoTooltip then
+					AltoTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
 				end
 
 				-- Leatrix Plus
