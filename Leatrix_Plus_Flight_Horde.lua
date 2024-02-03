@@ -1362,6 +1362,7 @@
 				["0.42:0.28:0.58:0.27:0.49:0.36:0.44:0.51:0.44:0.67:0.29:0.62"] = 381, -- Evergrove, Area 52, Mok'Nathal Village, Swamprat Post, Shattrath, Garadar
 				["0.42:0.28:0.38:0.32:0.23:0.50:0.44:0.67"] = 333, -- Evergrove, Thunderlord Stronghold, Zabra'jin, Shattrath
 				["0.42:0.28:0.58:0.27:0.49:0.36:0.44:0.51:0.44:0.67:0.51:0.73"] = 369, -- Evergrove, Area 52, Mok'Nathal Village, Swamprat Post, Shattrath, Stonebreaker Hold
+				["0.42:0.28:0.58:0.27:0.49:0.36:0.44:0.51:0.54:0.57:0.65:0.50:0.51:0.73"] = 477, -- Evergrove, Area 52, Mok'Nathal Village, Swamprat Post, Falcon Watch, Thrallmar, Stonebreaker Hold
 
 				-- Horde: Falcon Watch (Hellfire Peninsula)
 				["0.54:0.57:0.44:0.67:0.51:0.73:0.66:0.77"] = 204, -- Falcon Watch, Shattrath, Stonebreaker Hold, Shadowmoon Village

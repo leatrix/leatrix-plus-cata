@@ -3327,6 +3327,7 @@
 				["0.88:0.72:0.76:0.67:0.60:0.52:0.59:0.43:0.52:0.38:0.49:0.21"] = 445, -- Port-Valgarde, Donjon de la Garde de l'ouest, Donjon de Garde-hiver, Surplomb de Coursevent, Dalaran, Enceinte du tournoi d'Argent
 				["0.88:0.72:0.76:0.67:0.60:0.52:0.54:0.52:0.52:0.38:0.49:0.21"] = 475, -- Valgarde Port, Westguard Keep, Wintergarde Keep, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
 				["0.88:0.72:0.74:0.71:0.49:0.58:0.60:0.52:0.69:0.42"] = 457, -- Valgarde Port, Kamagua, Moa'ki, Wintergarde Keep, Light's Breach
+				["0.88:0.72:0.88:0.60:0.73:0.54:0.60:0.52"] = 248, -- Valgarde Port, Fort Wildervar, Amberpine Lodge, Wintergarde Keep
 
 				-- Alliance: Howling Fjord: Westguard Keep
 				["0.76:0.67:0.74:0.71"] = 52, -- Westguard Keep, Kamagua
@@ -3670,6 +3671,7 @@
 				["0.28:0.28:0.24:0.40:0.21:0.49:0.29:0.57:0.49:0.58"] = 360, -- Death's Rise, River's Heart, Fizzcrank Airstrip, Unu'pe, Moa'ki
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38:0.59:0.43:0.60:0.52:0.76:0.67"] = 474, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Windrunner's Overlook, Wintergarde Keep, Westguard Keep
 				["0.28:0.28:0.57:0.21:0.64:0.19:0.78:0.38:0.83:0.46"] = 468, -- Death's Rise, Bouldercrag's Refuge, Ulduar, Zim'Torga, Westfall Brigade
+				["0.28:0.28:0.52:0.34:0.49:0.21"] = 271, -- Death's Rise, Crusaders' Pinnacle, Argent Tournament Grounds
 
 				-- Alliance: Icecrown: The Argent Vanguard
 				["0.56:0.36:0.57:0.33"] = 40, -- The Argent Vanguard, Frosthold
