@@ -1,5 +1,5 @@
-3.0.177.alpha.7 - 3rd February 2024
-- For 'Enhance minimap' ('Interface'), added support for a few addons that still use custom minimap buttons (AllTheThings, Altoholic, LFG Bulletin Board, WIM).
+3.0.177.alpha.8 - 3rd February 2024
+- The 'Enhance minimap' ('Interface') option is now able to display custom buttons correctly.  Report any addon buttons that do not display correctly to feedback@leatrix.com and they will be fixed in the next update.
 
 3.0.176 - 1st February 2024
 - Updated translations.
