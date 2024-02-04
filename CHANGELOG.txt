@@ -1,3 +1,7 @@
+3.0.178.alpha.1 - 4th February 2024
+- For 'Enhance minimap' ('Interface'), updated tooltip positioning logic.
+- Added flight times.
+
 3.0.177 - 3rd February 2024
 - The 'Enhance minimap' ('Interface') option is now able to display custom buttons correctly if Leatrix Plus is aware of them.
 - For 'Automate quests' ('Automation'), quests from Valadar Starsong and Fariel Starsong (Moonglade) will no longer be automated.

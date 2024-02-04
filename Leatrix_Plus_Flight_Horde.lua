@@ -3190,6 +3190,7 @@
 				["0.74:0.71:0.49:0.58:0.52:0.38:0.49:0.21"] = 430, -- Kamagua, Moa'ki, Dalaran, Argent Tournament Grounds
 				["0.74:0.71:0.74:0.62:0.84:0.59:0.84:0.51:0.78:0.38:0.73:0.25"] = 351, -- Kamagua, Apothecary Camp, Camp Winterhoof, Camp Oneqwah, Zim'Torga, Camp Tunka'lo
 				["0.74:0.71:0.74:0.62:0.59:0.55:0.45:0.51:0.29:0.54:0.15:0.57"] = 500, -- Kamagua, Apothecary Camp, Venomspite, Agmar's Hammer, Taunka'le Village, Warsong Hold
+				["0.74:0.71:0.49:0.58:0.59:0.55:0.70:0.55"] = 315, -- Kamagua, Moa'ki, Gallgrimm, Burg Siegeswall
 
 				-- Horde: Howling Fjord: New Agamand
 				["0.85:0.73:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38"] = 335, -- New Agamand, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, Dalaran
