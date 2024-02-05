@@ -1,5 +1,5 @@
 3.0.178.alpha.1 - 4th February 2024
-- For 'Enhance minimap' ('Interface'), updated tooltip positioning logic.
+- For 'Enhance minimap' ('Interface'), updated tooltip positioning logic.  Added Wowhead Looter button.
 - Added flight times.
 
 3.0.177 - 3rd February 2024
