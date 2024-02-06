@@ -10339,6 +10339,7 @@
 					_G["ChatFrame" .. i .. "Tab"]:HookScript("OnClick", function()
 						if IsControlKeyDown() then
 							editBox:SetFont(_G["ChatFrame" .. i]:GetFont())
+							editFrame:SetPanExtent(select(2, _G["ChatFrame" .. i]:GetFont()))
 							ShowChatbox(_G["ChatFrame" .. i])
 						end
 					end)
@@ -10352,6 +10353,7 @@
 					_G[cf .. "Tab"]:HookScript("OnClick", function()
 						if IsControlKeyDown() then
 							editBox:SetFont(_G[cf]:GetFont())
+							editFrame:SetPanExtent(select(2, _G["ChatFrame" .. i]:GetFont()))
 							ShowChatbox(_G[cf])
 						end
 					end)

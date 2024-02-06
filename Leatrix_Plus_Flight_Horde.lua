@@ -769,6 +769,7 @@
 				["0.50:0.35:0.55:0.42:0.56:0.53:0.41:0.47"] = 387, -- Sanctuaire d'émeraude, Poste de Bois-brisé, La Croisée, Retraite de Roche-Soleil, Retraite de Roche-Soleil
 				["0.50:0.35:0.55:0.42:0.63:0.44:0.61:0.55:0.61:0.80"] = 518, -- Emerald Sanctuary, Splintertree Post, Orgrimmar, Ratchet, Gadgetzan
 				["0.50:0.35:0.55:0.42:0.56:0.53:0.45:0.56:0.32:0.58"] = 503, -- Smaragdrefugium, Splitterholzposten, Das Wegekreuz, Donnerfels, Schattenflucht
+				["0.50:0.35:0.41:0.37:0.56:0.53:0.63:0.44"] = 466, -- Emerald Sanctuary, Zoram'gar Outpost, Crossroads, Orgrimmar
 
 				-- Horde: Everlook (Winterspring)
 				["0.64:0.23:0.63:0.36:0.56:0.53:0.55:0.73:0.61:0.80"] = 575, -- Everlook, Valormok, Crossroads, Freewind Post, Gadgetzan
