@@ -1,5 +1,6 @@
 3.0.179.alpha.1 - 7th February 2024
 - For 'Enhanced quest log' ('Interface'), fixed an issue with showing quest level suffixes for non-English locales.
+- Added flight times.
 
 3.0.178 - 7th February 2024
 - For 'Enhance minimap' ('Interface'), updated tooltip positioning logic.  Added Wowhead Looter button.

@@ -1602,6 +1602,7 @@
 				["0.51:0.73:0.44:0.67:0.23:0.50:0.38:0.32:0.58:0.27"] = 400, -- Stonebreaker Hold, Shattrath, Zabra'jin, Thunderlord Stronghold, Area 52
 				["0.51:0.73:0.44:0.67:0.44:0.51:0.49:0.36:0.58:0.27:0.42:0.28"] = 342, -- Stonebreaker Hold, Shattrath, Swamprat Post, Mok'Nathal Village, Area 52, Evergrove
 				["0.51:0.73:0.65:0.50:0.54:0.57:0.23:0.50"] = 341, -- Stonebreaker Hold, Thrallmar, Falcon Watch, Zabra'jin
+				["0.51:0.73:0.65:0.50:0.54:0.57:0.44:0.51:0.49:0.36:0.58:0.27:0.42:0.28"] = 466, -- Stonebreaker Hold, Thrallmar, Falcon Watch, Swamprat Post, Mok'Nathal Village, Area 52, Evergrove
 
 				-- Horde: Swamprat Post (Zangarmarsh)
 				["0.44:0.51:0.44:0.67:0.51:0.73:0.66:0.77"] = 220, -- Swamprat Post, Shattrath, Stonebreaker Hold, Shadowmoon Village
@@ -2438,6 +2439,7 @@
 				["0.52:0.38:0.48:0.44:0.59:0.55:0.70:0.55:0.84:0.51:0.72:0.40"] = 422, -- Dalaran, Kor'koron Vanguard, Venomspite, Conquest Hold, Camp Oneqwah, The Argent Stand
 				["0.52:0.38:0.64:0.42:0.59:0.55:0.45:0.51:0.29:0.54:0.29:0.57"] = 452, -- Dalaran, Ebon Watch, Venomspite, Agmar's Hammer, Taunka'le Village, Unu'pe
 				["0.52:0.38:0.49:0.58:0.59:0.55:0.85:0.73"] = 404, -- Dalaran, Moa'ki, Venomspite, New Agamand
+				["0.52:0.38:0.54:0.52:0.59:0.55:0.74:0.62:0.84:0.59:0.84:0.51"] = 385, -- Dalaran, Wyrmrest Temple, Venomspite, Apothecary Camp, Camp Winterhoof, Camp Oneqwah
 
 				----------------------------------------------------------------------
 				-- Horde: Dragonblight
@@ -3116,6 +3118,7 @@
 				["0.84:0.59:0.70:0.55:0.59:0.55:0.64:0.42"] = 262, -- Camp Winterhoof, Conquest Hold, Venomspite, Ebon Watch
 				["0.84:0.59:0.84:0.51:0.72:0.40:0.64:0.42:0.52:0.38:0.49:0.21"] = 390, -- Camp Winterhoof, Camp Oneqwah, The Argent Stand, Ebon Watch, Dalaran, Argent Tournament Grounds
 				["0.84:0.59:0.74:0.62:0.59:0.55:0.49:0.58:0.52:0.38"] = 377, -- Camp Winterhoof, Apothecary Camp, Venomspite, Moa'ki, Dalaran
+				["0.84:0.59:0.70:0.55:0.59:0.55:0.54:0.52:0.45:0.51:0.29:0.54"] = 410, -- Camp Winterhoof, Conquest Hold, Venomspite, Wyrmrest Temple, Agmar's Hammer, Taunka'le Village
 
 				-- Horde: Howling Fjord: Kamagua
 				["0.74:0.71:0.85:0.73"] = 64, -- Kamagua, New Agamand
@@ -3192,6 +3195,7 @@
 				["0.74:0.71:0.74:0.62:0.84:0.59:0.84:0.51:0.78:0.38:0.73:0.25"] = 351, -- Kamagua, Apothecary Camp, Camp Winterhoof, Camp Oneqwah, Zim'Torga, Camp Tunka'lo
 				["0.74:0.71:0.74:0.62:0.59:0.55:0.45:0.51:0.29:0.54:0.15:0.57"] = 500, -- Kamagua, Apothecary Camp, Venomspite, Agmar's Hammer, Taunka'le Village, Warsong Hold
 				["0.74:0.71:0.49:0.58:0.59:0.55:0.70:0.55"] = 315, -- Kamagua, Moa'ki, Gallgrimm, Burg Siegeswall
+				["0.74:0.71:0.74:0.62:0.59:0.55:0.54:0.52:0.45:0.51:0.29:0.54:0.15:0.57"] = 488, -- Kamagua, Apothecary Camp, Venomspite, Wyrmrest Temple, Agmar's Hammer, Taunka'le Village, Warsong Hold
 
 				-- Horde: Howling Fjord: New Agamand
 				["0.85:0.73:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38"] = 335, -- New Agamand, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, Dalaran

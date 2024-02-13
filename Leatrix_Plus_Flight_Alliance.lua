@@ -720,6 +720,7 @@
 				["0.61:0.28:0.61:0.35:0.47:0.59:0.41:0.73"] = 647, -- Zul'Aman, Light's Hope Chapel, Ironforge, Stormwind
 				["0.61:0.28:0.61:0.35:0.62:0.34"] = 175, -- Zul'Aman, Light's Hope Chapel, Acherus: The Ebon Hold
 				["0.61:0.28:0.61:0.35:0.51:0.36"] = 207, -- Zul'Aman, Light's Hope Chapel, Thondoril River
+				["0.61:0.28:0.61:0.35:0.48:0.39:0.44:0.45"] = 330, -- Zul'Aman, Light's Hope Chapel, Chillwind Camp, Southshore
 
 			},
 
@@ -761,6 +762,7 @@
 				["0.46:0.40:0.43:0.25:0.55:0.21"] = 300, -- Astranaar, Auberdine, Moonglade
 				["0.46:0.40:0.64:0.67:0.60:0.81"] = 545, -- Astranaar, Theramore, Gadgetzan
 				["0.46:0.40:0.61:0.55:0.60:0.81:0.48:0.70"] = 611, -- Astranaar, Ratchet, Gadgetzan, Thalanaar
+				["0.46:0.40:0.61:0.55:0.64:0.67:0.40:0.51"] = 628, -- Astranaar, Ratchet, Theramore, Nijel's Point
 
 				-- Alliance: Auberdine (Darkshore)
 				["0.43:0.25:0.31:0.69"] = 473, -- Auberdine, Feathermoon
@@ -3591,6 +3593,7 @@
 				["0.52:0.34:0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54"] = 258, -- Crusaders' Pinnacle, Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge
 				["0.52:0.34:0.52:0.38:0.62:0.36:0.57:0.33:0.57:0.21"] = 223, -- Crusaders' Pinnacle, Dalaran, K3, Frosthold, Bouldercrag's Refuge
 				["0.52:0.34:0.49:0.21:0.57:0.21"] = 145, -- Crusaders' Pinnacle, Argent Tournament Grounds, Bouldercrag's Refuge
+				["0.52:0.34:0.56:0.36:0.52:0.38:0.59:0.43:0.60:0.52:0.73:0.54:0.83:0.46"] = 331, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Windrunner's Overlook, Wintergarde Keep, Amberpine Lodge, Westfall Brigade
 
 				-- Alliance: Icecrown: Death's Rise
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38"] = 238, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran
@@ -4199,6 +4202,7 @@
 				["0.57:0.33:0.62:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.29:0.57"] = 378, -- Frosthold, K3, Dalaran, Fordragon Hold, Stars' Rest, Unu'pe
 				["0.57:0.33:0.62:0.36:0.64:0.42:0.60:0.52:0.73:0.54"] = 224, -- Frosthold, K3, Ebon Watch, Wintergarde Keep, Amberpine Lodge
 				["0.57:0.33:0.62:0.36:0.52:0.38:0.46:0.46:0.42:0.53:0.22:0.61"] = 410, -- Frosthold, K3, Dalaran, Fordragon Hold, Stars' Rest, Valiance Keep
+				["0.57:0.33:0.62:0.36:0.64:0.42:0.60:0.52:0.73:0.54:0.83:0.46"] = 304, -- Frosthold, K3, Ebon Watch, Wintergarde Keep, Amberpine Lodge, Westfall Brigade
 
 				-- Alliance: The Storm Peaks: K3
 				["0.62:0.36:0.57:0.33"] = 43, -- K3, Frosthold
