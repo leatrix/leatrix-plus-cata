@@ -1,4 +1,4 @@
-3.0.179.alpha.1 - 7th February 2024
+3.0.179 - 14th February 2024
 - For 'Enhanced quest log' ('Interface'), fixed an issue with showing quest level suffixes for non-English locales.
 - Added flight times.
 
