@@ -12010,7 +12010,7 @@
 			end
 
 			-- Create scroll bar
-			scrollFrame = CreateFrame("ScrollFrame", "LeaPlusScrollFrame", LeaPlusLC["Page9"], "ScrollFrameTemplate")
+			scrollFrame = CreateFrame("ScrollFrame", nil, LeaPlusLC["Page9"], "ScrollFrameTemplate")
 			scrollFrame:SetPoint("TOPLEFT", 0, -32)
 			scrollFrame:SetPoint("BOTTOMRIGHT", -30, 50)
 			scrollFrame:SetPanExtent(1)
@@ -12148,8 +12148,7 @@
 				-- Traverse music listing and populate ListData
 				if searchText ~= "" then
 					local word1, word2, word3, word4, word5 = strsplit(" ", (strtrim(searchText):gsub("%s+", " ")))
-					RunScript('LeaPlusGlobalHash = {}')
-					local hash = LeaPlusGlobalHash
+					local hash = {}
 					local trackCount = 0
 					for i, e in pairs(ZoneList) do
 						if ZoneList[e] then
@@ -13756,7 +13755,7 @@
 			Side.backFrame:SetBackdropColor(0, 0, 1, 0.5)
 
 			-- Create scroll frame
-			Side.scrollFrame = CreateFrame("ScrollFrame", "LeaPlusGlobal" .. globref .. "ScrollFrame", Side.backFrame, "LeaPlusConfigurationPanelScrollFrameTemplate")
+			Side.scrollFrame = CreateFrame("ScrollFrame", nil, Side.backFrame, "LeaPlusConfigurationPanelScrollFrameTemplate")
 			Side.scrollChild = CreateFrame("Frame", nil, Side.scrollFrame)
 
 			Side.scrollChild:SetSize(1, 1)
