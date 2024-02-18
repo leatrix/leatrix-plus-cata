@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.180.alpha.1 (14th February 2024)
+-- 	Leatrix Plus 3.0.180.alpha.2 (14th February 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.180.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.180.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -2813,7 +2813,7 @@
 					PlayerFrameTexture:SetTexCoord(1, .09375, 0, .78125)
 				elseif chain == 3 then -- Rare Elite
 					PlayerFrameTexture:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
-					PlayerFrameTexture:SetTexCoord(0.25, 0.0234375, 0, 0.1953125)
+					PlayerFrameTexture:SetTexCoord(1, 0.09375, 0, 0.390625)
 				end
 			end
 
@@ -14002,10 +14002,10 @@
 			-- Set skinned button textures
 			if not naked then
 				mbtn:SetNormalTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
-				mbtn:GetNormalTexture():SetTexCoord(0.125, 0.25, 0.4375, 0.5)
+				mbtn:GetNormalTexture():SetTexCoord(0.5, 1, 0.875, 1)
 			end
 			mbtn:SetHighlightTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
-			mbtn:GetHighlightTexture():SetTexCoord(0, 0.125, 0.4375, 0.5)
+			mbtn:GetHighlightTexture():SetTexCoord(0, 0.5, 0.875, 1)
 
 			-- Hide the default textures
 			mbtn:HookScript("OnShow", function() mbtn.Left:Hide(); mbtn.Middle:Hide(); mbtn.Right:Hide() end)
