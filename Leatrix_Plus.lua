@@ -8127,10 +8127,11 @@
 		if LeaPlusLC["EnhanceQuestLog"] == "On" then
 
 			-- Button to toggle quest headers
-			LeaPlusLC:CreateButton("ToggleQuestHeaders", QuestLogFrame, "Collapse", "BOTTOMLEFT", 344, 54, 0, 22, true, "", false)
+			LeaPlusLC:CreateButton("ToggleQuestHeaders", QuestLogFrame, "Expand", "BOTTOMLEFT", 344, 54, 0, 22, true, "", false)
 			LeaPlusCB["ToggleQuestHeaders"]:ClearAllPoints()
 			LeaPlusCB["ToggleQuestHeaders"]:SetPoint("TOPRIGHT", QuestLogFrame, "TOPRIGHT", -360, -44)
 			LeaPlusCB["ToggleQuestHeaders"]:GetFontString():SetWordWrap(false)
+			LeaPlusCB["ToggleQuestHeaders"].collapsed = true
 
 			local function SetHeadersButton()
 				if LeaPlusCB["ToggleQuestHeaders"].collapsed then
