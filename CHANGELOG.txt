@@ -1,6 +1,7 @@
 3.0.180.alpha.2 - 14th February 2024
 - Updated ScrollFrameTemplate for Media.
 - Updated 'Enhance quest log' ('Interface') code.
+- Added flight times.
 
 3.0.179 - 14th February 2024
 - For 'Enhanced quest log' ('Interface'), fixed an issue with showing quest level suffixes for non-English locales.
