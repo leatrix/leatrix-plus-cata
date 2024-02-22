@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.180 (21st February 2024)
+-- 	Leatrix Plus 3.0.181 (22nd February 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.180"
+	LeaPlusLC["AddonVer"] = "3.0.181"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -2813,7 +2813,7 @@
 					PlayerFrameTexture:SetTexCoord(1, .09375, 0, .78125)
 				elseif chain == 3 then -- Rare Elite
 					PlayerFrameTexture:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
-					PlayerFrameTexture:SetTexCoord(1, 0.09375, 0, 0.390625)
+					PlayerFrameTexture:SetTexCoord(0.25, 0.0234375, 0, 0.1953125)
 				end
 			end
 
@@ -7679,14 +7679,14 @@
 				local regions = {_G["ClassTrainerFrame"]:GetRegions()}
 
 				-- Set top left texture
-				regions[2]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus")
+				regions[2]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
 				regions[2]:SetTexCoord(0.25, 0.75, 0, 1)
 				regions[2]:SetSize(512, 512)
 
 				-- Set top right texture
 				regions[3]:ClearAllPoints()
 				regions[3]:SetPoint("TOPLEFT", regions[2], "TOPRIGHT", 0, 0)
-				regions[3]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus")
+				regions[3]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
 				regions[3]:SetTexCoord(0.75, 1, 0, 1)
 				regions[3]:SetSize(256, 512)
 
@@ -8025,14 +8025,14 @@
 				local regions = {_G["TradeSkillFrame"]:GetRegions()}
 
 				-- Set top left texture
-				regions[3]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus")
+				regions[3]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
 				regions[3]:SetTexCoord(0.25, 0.75, 0, 1)
 				regions[3]:SetSize(512, 512)
 
 				-- Set top right texture
 				regions[4]:ClearAllPoints()
 				regions[4]:SetPoint("TOPLEFT", regions[3], "TOPRIGHT", 0, 0)
-				regions[4]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus")
+				regions[4]:SetTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
 				regions[4]:SetTexCoord(0.75, 1, 0, 1)
 				regions[4]:SetSize(256, 512)
 
@@ -14003,10 +14003,10 @@
 			-- Set skinned button textures
 			if not naked then
 				mbtn:SetNormalTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
-				mbtn:GetNormalTexture():SetTexCoord(0.5, 1, 0.875, 1)
+				mbtn:GetNormalTexture():SetTexCoord(0.125, 0.25, 0.4375, 0.5)
 			end
 			mbtn:SetHighlightTexture("Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.blp")
-			mbtn:GetHighlightTexture():SetTexCoord(0, 0.5, 0.875, 1)
+			mbtn:GetHighlightTexture():SetTexCoord(0, 0.125, 0.4375, 0.5)
 
 			-- Hide the default textures
 			mbtn:HookScript("OnShow", function() mbtn.Left:Hide(); mbtn.Middle:Hide(); mbtn.Right:Hide() end)
