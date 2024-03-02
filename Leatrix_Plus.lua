@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.182 (28th February 2024)
+-- 	Leatrix Plus 3.0.183.alpha.1 (28th February 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.182"
+	LeaPlusLC["AddonVer"] = "3.0.183.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -15082,11 +15082,15 @@
 				end
 				return
 			elseif str == "click" then
-				-- Click a button
+				-- Click a button (optional click x number of times)
 				local frame = GetMouseFocus()
 				local ftype = frame:GetObjectType()
 				if frame and ftype and ftype == "Button" then
-					frame:Click()
+					if arg1 and tonumber(arg1) > 1 and tonumber(arg1) < 1000 then
+						for i =1, tonumber(arg1) do C_Timer.After(0.1 * i, function() frame:Click() end) end
+					else
+						frame:Click()
+					end
 				else
 					LeaPlusLC:Print("Hover the pointer over a button.")
 				end
