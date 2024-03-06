@@ -2169,6 +2169,7 @@
 				["0.12:0.53:0.17:0.53:0.22:0.61:0.29:0.57:0.49:0.58:0.74:0.71"] = 316, -- Transitusschild, Bernsteinflöz, Valianzfeste, Unu'pe, Moa'ki, Kamagua
 				["0.12:0.53:0.17:0.53:0.22:0.61:0.42:0.53:0.60:0.52:0.76:0.67"] = 329, -- Bouclier Transitus, Escarpement d'Ambre, Donjon de la Bravoure, Repos des étoiles, Donjon de Garde-hiver, Donjon de la Garde de l'ouest
 				["0.12:0.53:0.17:0.53:0.22:0.61:0.42:0.53:0.41:0.43:0.52:0.38"] = 271, -- Transitus Shield, Amber Ledge, Valiance Keep, Stars' Rest, Valiance Landing Camp, Dalaran
+				["0.12:0.53:0.17:0.53:0.21:0.49:0.24:0.40:0.52:0.38:0.62:0.36:0.57:0.33"] = 282, -- Transitus Shield, Amber Ledge, Fizzcrank Airstrip, River's Heart, Dalaran, K3, Frosthold
 
 				-- Alliance: Borean Tundra: Unu'pe
 				["0.29:0.57:0.22:0.61"] = 60, -- Unu'pe, Valiance Keep
@@ -2330,6 +2331,7 @@
 				["0.22:0.61:0.42:0.53:0.41:0.43:0.24:0.40"] = 345, -- Valiance Keep, Stars' Rest, Valiance Landing Camp, River's Heart
 				["0.22:0.61:0.29:0.57:0.49:0.58:0.60:0.52:0.69:0.42:0.72:0.40:0.78:0.38"] = 431, -- Valianzfeste, Unu'pe, Moa'ki, Feste Wintergarde, Lichtbresche, Argentumwache, Zim'Torga
 				["0.22:0.61:0.42:0.53:0.49:0.58:0.74:0.71:0.88:0.72"] = 476, -- Valiance Keep, Stars' Rest, Moa'ki, Kamagua, Valgarde Port
+				["0.22:0.61:0.42:0.53:0.49:0.58:0.74:0.71:0.76:0.67"] = 432, -- Valiance Keep, Stars' Rest, Moa'ki, Kamagua, Westguard Keep
 
 				----------------------------------------------------------------------
 				-- Alliance: Crystalsong Forest

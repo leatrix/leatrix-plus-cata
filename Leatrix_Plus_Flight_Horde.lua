@@ -3492,6 +3492,7 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.84:0.51"] = 364, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Ebon Watch, The Argent Stand, Camp Oneqwah
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.48:0.44:0.59:0.55:0.70:0.55:0.84:0.59"] = 430, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Kor'koron Vanguard, Venomspite, Conquest Hold, Camp Winterhoof
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52:0.59:0.55:0.85:0.73"] = 481, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple, Venomspite, New Agamand
+				["0.49:0.21:0.52:0.38:0.49:0.58:0.29:0.57:0.15:0.57"] = 504, -- Argentumturnierplatz, Dalaran, Moa'ki, Unu'pe, Kriegshymnenfeste
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple (Gary Stepp reported 89)
@@ -3596,6 +3597,7 @@
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42:0.69:0.42:0.84:0.51"] = 453, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Ebon Watch, Light's Breach, Camp Oneqwah
 				["0.28:0.28:0.24:0.40:0.52:0.38:0.60:0.40"] = 356, -- Death's Rise, River's Heart, Dalaran, Sunreaver's Command
 				["0.28:0.28:0.31:0.43:0.45:0.51:0.59:0.55:0.70:0.55:0.84:0.51"] = 458, -- Death's Rise, Warsong Camp, Agmar's Hammer, Venomspite, Conquest Hold, Camp Oneqwah
+				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42:0.69:0.42:0.70:0.55"] = 422, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Ebon Watch, Light's Breach, Conquest Hold
 
 				-- Horde: Icecrown: The Argent Vanguard
 				["0.56:0.36:0.52:0.38"] = 32, -- The Argent Vanguard, Dalaran
