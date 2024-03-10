@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.183 (6th March 2024)
+-- 	Leatrix Plus 3.0.184.alpha.1 (6th March 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.183"
+	LeaPlusLC["AddonVer"] = "3.0.184.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -4495,6 +4495,16 @@
 							-- Show button frame
 							local x, y, row, col = 0, 0, 0, 0
 							local buttons = LibDBIconStub:GetButtonList()
+							-- Sort the button table (order will be reversed if bFrame is shown on left side)
+							table.sort(buttons, function(a, b)
+								if string.find(a, "LeaPlusCustomIcon_") then
+									a = string.gsub(a, "LeaPlusCustomIcon_", "")
+								end
+								if string.find(b, "LeaPlusCustomIcon_") then
+									b = string.gsub(b, "LeaPlusCustomIcon_", "")
+								end
+								return a < b
+							end)
 							-- Calculate buttons per row
 							local buttonsPerRow
 							local totalButtons = #buttons
