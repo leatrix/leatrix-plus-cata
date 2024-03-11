@@ -4495,7 +4495,7 @@
 							-- Show button frame
 							local x, y, row, col = 0, 0, 0, 0
 							local buttons = LibDBIconStub:GetButtonList()
-							-- Sort the button table (order will be reversed if bFrame is shown on left side)
+							-- Sort the button table
 							table.sort(buttons, function(a, b)
 								if string.find(a, "LeaPlusCustomIcon_") then
 									a = string.gsub(a, "LeaPlusCustomIcon_", "")
@@ -4535,9 +4535,9 @@
 												button:SetPoint("TOPLEFT", bFrame, "TOPLEFT", x, y)
 												col = col + 1; if col >= buttonsPerRow then col = 0; row = row + 1; x = 0; y = y - 30 else x = x + 30 end
 											else
-												-- Minimap is on right side of screen
-												button:SetPoint("TOPRIGHT", bFrame, "TOPRIGHT", x, y)
-												col = col + 1; if col >= buttonsPerRow then col = 0; row = row + 1; x = 0; y = y - 30 else x = x - 30 end
+												-- Minimap is on right side of screen (changed from TOPRIGHT to TOPLEFT and x - 30 to x + 30 to make sorting work)
+												button:SetPoint("TOPLEFT", bFrame, "TOPLEFT", x, y)
+												col = col + 1; if col >= buttonsPerRow then col = 0; row = row + 1; x = 0; y = y - 30 else x = x + 30 end
 											end
 											if totalButtons <= buttonsPerRow then
 												bFrame:SetWidth(totalButtons * 30)
