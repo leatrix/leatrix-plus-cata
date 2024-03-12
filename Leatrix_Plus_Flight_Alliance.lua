@@ -1370,6 +1370,7 @@
 				["0.61:0.40:0.64:0.67:0.48:0.70:0.31:0.69"] = 581, -- Talrendis Point, Theramore, Thalanaar, Feathermoon
 				["0.61:0.40:0.58:0.39:0.50:0.35:0.53:0.26:0.55:0.21"] = 319, -- Talrendis Point, Forest Song, Emerald Sanctuary, Talonbranch Glade, Moonglade
 				["0.61:0.40:0.64:0.67:0.58:0.70"] = 303, -- Talrendis Point, Theramore, Mudsprocket
+				["0.61:0.40:0.43:0.25:0.40:0.51"] = 593, -- Talrendis Point, Auberdine, Nijel's Point
 
 				-- Alliance: Thalanaar
 				["0.48:0.70:0.31:0.69"] = 179, -- Thalanaar, Feathermoon
@@ -3680,6 +3681,7 @@
 				["0.28:0.28:0.52:0.34:0.56:0.36:0.52:0.38:0.59:0.43:0.60:0.52:0.76:0.67"] = 474, -- Death's Rise, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Windrunner's Overlook, Wintergarde Keep, Westguard Keep
 				["0.28:0.28:0.57:0.21:0.64:0.19:0.78:0.38:0.83:0.46"] = 468, -- Death's Rise, Bouldercrag's Refuge, Ulduar, Zim'Torga, Westfall Brigade
 				["0.28:0.28:0.52:0.34:0.49:0.21"] = 271, -- Death's Rise, Crusaders' Pinnacle, Argent Tournament Grounds
+				["0.28:0.28:0.24:0.40:0.52:0.38:0.64:0.42"] = 377, -- Death's Rise, River's Heart, Dalaran, Ebon Watch
 
 				-- Alliance: Icecrown: The Argent Vanguard
 				["0.56:0.36:0.57:0.33"] = 40, -- The Argent Vanguard, Frosthold

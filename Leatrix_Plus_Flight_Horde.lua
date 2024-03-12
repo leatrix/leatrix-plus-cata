@@ -1013,6 +1013,7 @@
 				["0.63:0.44:0.57:0.64:0.53:0.61"] = 276, -- Orgrimmar, Brackenwall, Camp Taurajo
 				["0.63:0.44:0.57:0.64:0.55:0.73"] = 331, -- Orgrimmar, Brackenwall Village, Freewind Post
 				["0.63:0.44:0.61:0.55:0.61:0.80:0.42:0.79"] = 578, -- Orgrimmar, Ratchet, Gadgetzan, Cenarion Hold
+				["0.63:0.44:0.61:0.55:0.57:0.64:0.53:0.61"] = 253, -- Orgrimmar, Ratchet, Brackenwall Village, Camp Taurajo
 
 				-- Horde: Ratchet (The Barrens)
 				["0.61:0.55:0.61:0.80:0.50:0.76:0.42:0.79"] = 443, -- Ratchet, Gadgetzan, Marshal's Refuge, Cenarion Hold
@@ -2891,6 +2892,7 @@
 				["0.70:0.55:0.84:0.51:0.78:0.38"] = 194, -- Conquest Hold, Camp Oneqwah, Zim'Torga
 				["0.70:0.55:0.59:0.55:0.48:0.44"] = 207, -- Conquest Hold, Venomspite, Kor'kron Vanguard
 				["0.70:0.55:0.84:0.51:0.72:0.40"] = 201, -- Conquest Hold, Camp Oneqwah, The Argent Stand
+				["0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38:0.52:0.34:0.38:0.21"] = 334, -- Крепость Завоевателей, Разлом Света, Черная застава, Даларан, Вершина Рыцарей, Мрачный Свод
 
 				----------------------------------------------------------------------
 				-- Horde: Howling Fjord
