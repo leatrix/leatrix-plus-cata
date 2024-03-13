@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.184.alpha.1 (6th March 2024)
+-- 	Leatrix Plus 3.0.184 (13th March 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.184.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.184"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -4503,7 +4503,7 @@
 								if string.find(b, "LeaPlusCustomIcon_") then
 									b = string.gsub(b, "LeaPlusCustomIcon_", "")
 								end
-								return a < b
+								return a:lower() < b:lower()
 							end)
 							-- Calculate buttons per row
 							local buttonsPerRow
