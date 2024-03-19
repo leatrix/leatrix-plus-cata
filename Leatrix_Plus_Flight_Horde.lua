@@ -2239,6 +2239,7 @@
 				["0.60:0.40:0.52:0.38:0.48:0.44:0.45:0.51:0.29:0.54:0.17:0.53"] = 354, -- Sunreaver's Command, Dalaran, Kor'koron Vanguard, Agmar's Hammer, Taunka'le Village, Amber Ledge
 				["0.60:0.40:0.52:0.38:0.52:0.34"] = 84, -- Sunreaver's Command, Dalaran, Crusaders' Pinnacle
 				["0.60:0.40:0.52:0.38:0.48:0.44:0.59:0.55:0.74:0.62"] = 304, -- Sunreaver's Command, Dalaran, Kor'koron Vanguard, Venomspite, Apothecary Camp
+				["0.60:0.40:0.52:0.38:0.56:0.36:0.38:0.21"] = 224, -- Sunreaver's Command, Dalaran, The Argent Vanguard, The Shadow Vault
 
 				----------------------------------------------------------------------
 				-- Horde: Dalaran
@@ -3266,6 +3267,7 @@
 				["0.85:0.73:0.59:0.55:0.54:0.52:0.52:0.38:0.24:0.40"] = 542, -- Neu-Agamand, Gallgrimm, Wyrmruhtempel, Dalaran, Flussnabel
 				["0.85:0.73:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.62:0.36"] = 309, -- New Agamand, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, K3
 				["0.85:0.73:0.59:0.55:0.54:0.52:0.52:0.38:0.60:0.40"] = 388, -- New Agamand, Venomspite, Wyrmrest Temple, Dalaran, Sunreaver's Command
+				["0.85:0.73:0.74:0.62:0.70:0.55:0.69:0.42:0.64:0.42:0.52:0.38:0.24:0.40:0.18:0.40"] = 568, -- New Agamand, Apothecary Camp, Conquest Hold, Light's Breach, Ebon Watch, Dalaran, River's Heart, Nesingwary Base Camp
 
 				-- Horde: Howling Fjord: Vengeance Landing
 				["0.95:0.63:0.85:0.73"] = 88, -- Vengeance Landing, New Agamand

@@ -3079,6 +3079,7 @@
 				["0.83:0.46:0.73:0.54:0.60:0.52:0.64:0.42:0.62:0.36:0.57:0.33:0.57:0.21"] = 364, -- Westfall Brigade, Amberpine Lodge, Wintergarde Keep, Ebon Watch, K3, Frosthold, Bouldercrag's Refuge
 				["0.83:0.46:0.78:0.38:0.64:0.19:0.57:0.21:0.38:0.21"] = 388, -- Westfall Brigade, Zim'Torga, Ulduar, Bouldercrag's Refuge, The Shadow Vault
 				["0.83:0.46:0.73:0.54:0.69:0.42:0.64:0.42:0.54:0.52:0.42:0.53:0.21:0.49"] = 464, -- Westfall Brigade, Amberpine Lodge, Light's Breach, Ebon Watch, Wyrmrest Temple, Stars' Rest, Fizzcrank Airstrip
+				["0.83:0.46:0.72:0.40:0.64:0.42:0.54:0.52:0.42:0.53:0.22:0.61"] = 417, -- Westfall Brigade, The Argent Stand, Ebon Watch, Wyrmrest Temple, Stars' Rest, Valiance Keep
 
 				----------------------------------------------------------------------
 				-- Alliance: Howling Fjord

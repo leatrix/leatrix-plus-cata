@@ -1,4 +1,7 @@
-﻿3.0.184 - 13th March 2024
+﻿3.0.185.alpha.1 - 13th March 2024
+- Added flight times.
+
+3.0.184 - 13th March 2024
 - For 'Enhance minimap' ('Interface'), the 'Combine addon buttons' setting will now sort addon buttons alphabetically.
 - Added flight times.
 
