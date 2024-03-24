@@ -1727,6 +1727,7 @@
 				["0.75:0.50:0.65:0.58:0.52:0.51:0.38:0.50:0.42:0.37"] = 282, -- Shatter Point, Honor Hold, Temple of Telhamat, Telredor, Toshley's Station
 				["0.75:0.50:0.65:0.58:0.52:0.51:0.38:0.50:0.42:0.37:0.42:0.28"] = 334, -- Shatter Point, Honor Hold, Temple of Telhamat, Telredor, Toshley's Station, Evergrove
 				["0.75:0.50:0.65:0.58:0.52:0.51:0.38:0.50:0.32:0.34"] = 303, -- Shatter Point, Honor Hold, Temple of Telhamat, Telredor, Sylvanaar
+				["0.75:0.50:0.65:0.58:0.44:0.67:0.38:0.50"] = 259, -- Shatter Point, Honor Hold, Shattrath, Telredor
 
 				-- Alliance: Shattrath (Terokkar Forest)
 				["0.44:0.67:0.27:0.74"] = 88, -- Shattrath, Telaar
@@ -2228,6 +2229,7 @@
 				["0.29:0.57:0.49:0.58:0.52:0.38:0.56:0.36:0.57:0.33:0.64:0.19"] = 397, -- Unu'pe, Moa'ki, Dalaran, The Argent Vanguard, Frosthold, Ulduar
 				["0.29:0.57:0.42:0.53:0.60:0.52:0.73:0.54"] = 289, -- Unu'pe, Stars' Rest, Wintergarde Keep, Amberpine Lodge
 				["0.29:0.57:0.49:0.58:0.52:0.38:0.64:0.42:0.69:0.42"] = 349, -- Unu'pe, Moa'ki, Dalaran, Ebon Watch, Light's Breach
+				["0.29:0.57:0.49:0.58:0.54:0.52:0.64:0.42:0.69:0.42:0.73:0.54:0.76:0.67:0.88:0.72"] = 550, -- Unu'pe, Moa'ki, Wyrmrest Temple, Ebon Watch, Light's Breach, Amberpine Lodge, Westguard Keep, Valgarde Port
 
 				-- Alliance: Borean Tundra: Valiance Keep
 				["0.22:0.61:0.29:0.57:0.49:0.58:0.74:0.71"] = 365, -- Valiance Keep, Unu'pe, Moa'ki, Kamagua
@@ -3540,6 +3542,7 @@
 				["0.49:0.21:0.52:0.38:0.49:0.58:0.29:0.57:0.22:0.61"] = 476, -- Argent Tournament Grounds, Dalaran, Moa'ki, Unu'pe, Valiance Keep
 				["0.49:0.21:0.52:0.38:0.59:0.43:0.60:0.52:0.69:0.42"] = 338, -- Argent Tournament Grounds, Dalaran, Windrunner's Overlook, Wintergarde Keep, Light's Breach
 				["0.49:0.21:0.52:0.38:0.49:0.58:0.60:0.52:0.73:0.54"] = 441, -- Argent Tournament Grounds, Dalaran, Moa'ki, Wintergarde Keep, Amberpine Lodge
+				["0.49:0.21:0.57:0.21:0.57:0.33:0.62:0.36:0.72:0.29:0.78:0.38:0.83:0.46"] = 422, -- Argent Tournament Grounds, Bouldercrag's Refuge, Frosthold, K3, Dun Nifflelem, Zim'Torga, Westfall Brigade
 
 				-- Alliance: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 174, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple
