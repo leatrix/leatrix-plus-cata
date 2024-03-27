@@ -2074,6 +2074,7 @@
 				["0.29:0.57:0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.56:0.36"] = 253, -- Unu'pe, Taunka'le Village, Agmar's Hammer, Kor'koron Vanguard, Dalaran, The Argent Vanguard
 				["0.29:0.57:0.29:0.54:0.45:0.51:0.59:0.55:0.74:0.62:0.84:0.59:0.95:0.63"] = 428, -- Unu'pe, Taunka'le Village, Agmar's Hammer, Venomspite, Apothecary Camp, Camp Winterhoof, Vengeance Landing
 				["0.29:0.57:0.49:0.58:0.45:0.51:0.48:0.44"] = 242, -- Unu'pe, Moa'ki, Agmar's Hammer, Kor'koron Vanguard
+				["0.29:0.57:0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.49:0.21"] = 344, -- Unu'pe, Taunka'le, Marteau d'Agmar, Avant-garde kor'kronne, Dalaran, Enceinte du tournoi d'Argent
 
 				-- Horde: Borean Tundra: Warsong Hold
 				["0.15:0.57:0.29:0.57:0.49:0.58:0.74:0.71"] = 394, -- Warsong Hold, Unu'pe, Moa'ki, Kamagua
@@ -3501,6 +3502,7 @@
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52:0.59:0.55:0.85:0.73"] = 481, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple, Venomspite, New Agamand
 				["0.49:0.21:0.52:0.38:0.49:0.58:0.29:0.57:0.15:0.57"] = 504, -- Argentumturnierplatz, Dalaran, Moa'ki, Unu'pe, Kriegshymnenfeste
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38:0.73:0.25"] = 393, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Ebon Watch, The Argent Stand, Zim'Torga, Camp Tunka'lo
+				["0.49:0.21:0.52:0.38:0.54:0.52:0.59:0.55:0.74:0.62"] = 396, -- Argent Tournament Grounds, Dalaran, Wyrmrest Temple, Venomspite, Apothecary Camp
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple (Gary Stepp reported 89)
