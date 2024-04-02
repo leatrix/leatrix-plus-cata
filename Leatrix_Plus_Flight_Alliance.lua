@@ -794,6 +794,7 @@
 				["0.43:0.25:0.64:0.67:0.60:0.81:0.42:0.79"] = 793, -- Auberdine, Theramore, Gadgetzan, Cenarion Hold
 				["0.43:0.25:0.46:0.40:0.61:0.55:0.60:0.81:0.50:0.76"] = 706, -- Auberdine, Astranaar, Ratchet, Gadgetzan, Marshal's Refuge
 				["0.43:0.25:0.61:0.40:0.58:0.39:0.50:0.35"] = 432, -- Auberdine, Talrendisspitze, Waldeslied, Smaragdrefugium
+				["0.43:0.25:0.46:0.40:0.61:0.55:0.60:0.81:0.48:0.70"] = 778, -- Auberdine, Astranaar, Ratchet, Gadgetzan, Thalanaar
 
 				-- Alliance: Cenarion Hold (Silithus)
 				["0.42:0.79:0.31:0.69"] = 175, -- Cenarion Hold, Feathermoon
@@ -2230,6 +2231,7 @@
 				["0.29:0.57:0.42:0.53:0.60:0.52:0.73:0.54"] = 289, -- Unu'pe, Stars' Rest, Wintergarde Keep, Amberpine Lodge
 				["0.29:0.57:0.49:0.58:0.52:0.38:0.64:0.42:0.69:0.42"] = 349, -- Unu'pe, Moa'ki, Dalaran, Ebon Watch, Light's Breach
 				["0.29:0.57:0.49:0.58:0.54:0.52:0.64:0.42:0.69:0.42:0.73:0.54:0.76:0.67:0.88:0.72"] = 550, -- Unu'pe, Moa'ki, Wyrmrest Temple, Ebon Watch, Light's Breach, Amberpine Lodge, Westguard Keep, Valgarde Port
+				["0.29:0.57:0.21:0.49:0.24:0.40:0.41:0.43"] = 284, -- Unu'pe, Fizzcrank Airstrip, River's Heart, Valiance Landing Camp
 
 				-- Alliance: Borean Tundra: Valiance Keep
 				["0.22:0.61:0.29:0.57:0.49:0.58:0.74:0.71"] = 365, -- Valiance Keep, Unu'pe, Moa'ki, Kamagua
@@ -2692,6 +2694,7 @@
 				["0.49:0.58:0.52:0.38:0.49:0.21"] = 237, -- Moa'ki, Dalaran, Argent Tournament Grounds
 				["0.49:0.58:0.54:0.52:0.64:0.42:0.72:0.40:0.83:0.46"] = 288, -- Moa'ki, Wyrmrest Temple, Ebon Watch, The Argent Stand, Westfall Brigade
 				["0.49:0.58:0.52:0.38:0.62:0.36:0.57:0.33:0.57:0.21"] = 274, -- Moa'ki, Dalaran, K3, Frosthold, Bouldercrag's Refuge
+				["0.49:0.58:0.29:0.57:0.22:0.61:0.17:0.53"] = 254, -- Moa'ki, Unu'pe, Valiance Keep, Amber Ledge
 
 				-- Alliance: Dragonblight: Stars' Rest
 				["0.42:0.53:0.49:0.58"] = 72, -- Stars' Rest, Moa'ki

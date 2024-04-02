@@ -361,7 +361,7 @@
 				["0.46:0.43:0.55:0.46:0.50:0.66:0.50:0.69"] = 443, -- Tarren Mill, Hammerfall, Kargath, Flame Crest
 				["0.46:0.43:0.55:0.46:0.50:0.66"] = 377, -- Tarren Mill, Hammerfall, Kargath
 				["0.46:0.43:0.55:0.46:0.50:0.66:0.46:0.65"] = 432, -- Tarren Mill, Hammerfall, Kargath, Thorium Point
-				["0.46:0.43:0.55:0.46"] = 118, -- Tarren Mill, Hammerfall
+				["0.46:0.43:0.55:0.46"] = 118, -- Tarren Mill, Hammerfall (f2reddy21@gmail.com reported 43)
 				["0.46:0.43:0.59:0.45"] = 160, -- Tarren Mill, Revantusk Village
 				["0.46:0.43:0.59:0.45:0.61:0.35"] = 299, -- Tarren Mill, Revantusk Village, Light's Hope Chapel
 				["0.46:0.43:0.59:0.45:0.61:0.35:0.58:0.25"] = 415, -- Tarren Mill, Revantusk Village, Light's Hope Chapel, Tranquillien
@@ -2075,6 +2075,7 @@
 				["0.29:0.57:0.29:0.54:0.45:0.51:0.59:0.55:0.74:0.62:0.84:0.59:0.95:0.63"] = 428, -- Unu'pe, Taunka'le Village, Agmar's Hammer, Venomspite, Apothecary Camp, Camp Winterhoof, Vengeance Landing
 				["0.29:0.57:0.49:0.58:0.45:0.51:0.48:0.44"] = 242, -- Unu'pe, Moa'ki, Agmar's Hammer, Kor'koron Vanguard
 				["0.29:0.57:0.29:0.54:0.45:0.51:0.48:0.44:0.52:0.38:0.49:0.21"] = 344, -- Unu'pe, Taunka'le, Marteau d'Agmar, Avant-garde kor'kronne, Dalaran, Enceinte du tournoi d'Argent
+				["0.29:0.57:0.29:0.54:0.45:0.51:0.59:0.55:0.70:0.55:0.84:0.59:0.95:0.63"] = 413, -- Unu'pe, Taunka'le Village, Agmar's Hammer, Venomspite, Conquest Hold, Camp Winterhoof, Vengeance Landing
 
 				-- Horde: Borean Tundra: Warsong Hold
 				["0.15:0.57:0.29:0.57:0.49:0.58:0.74:0.71"] = 394, -- Warsong Hold, Unu'pe, Moa'ki, Kamagua
@@ -4479,6 +4480,7 @@
 				["0.64:0.42:0.52:0.38:0.52:0.34:0.28:0.28"] = 261, -- Ebon Watch, Dalaran, Crusaders' Pinnacle, Death's Rise
 				["0.64:0.42:0.52:0.38:0.56:0.36:0.60:0.25"] = 190, -- Ebon Watch, Dalaran, The Argent Vanguard, Grom'arsh Crash-Site, Grom'arsh Crash-Site
 				["0.64:0.42:0.62:0.36:0.60:0.25:0.57:0.21"] = 153, -- Ebon Watch, K3, Grom'arsh Crash-Site, Bouldercrag's Refuge
+				["0.64:0.42:0.52:0.38:0.56:0.36:0.38:0.21"] = 235, -- Ebon Watch, Dalaran, The Argent Vanguard, The Shadow Vault
 
 				-- Horde: Zul'Drak: Gundrak
 				["0.82:0.31:0.78:0.38"] = 56, -- Gundrak, Zim'Torga
