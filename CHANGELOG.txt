@@ -1,4 +1,4 @@
-﻿3.0.187.alpha.1 - 3rd April 2024
+﻿3.0.187 - 3rd April 2024
 - Added flight times.
 - Leatrix Plus for Cataclysm Classic will be available when I get access to Cataclysm Classic beta.
 
