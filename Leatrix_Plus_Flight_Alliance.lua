@@ -827,6 +827,7 @@
 				["0.42:0.79:0.60:0.81:0.61:0.55:0.46:0.40:0.50:0.35:0.53:0.26:0.65:0.23"] = 926, -- Cenarion Hold, Gadgetzan, Ratchet, Astranaar, Emerald Sanctuary, Talonbranch Glade, Everlook
 				["0.42:0.79:0.31:0.69:0.43:0.25:0.53:0.26:0.65:0.23"] = 920, -- Cenarion Hold, Feathermoon, Auberdine, Talonbranch Glade, Everlook
 				["0.42:0.79:0.60:0.81:0.61:0.55:0.46:0.40:0.43:0.25:0.53:0.26"] = 968, -- Cenarion Hold, Gadgetzan, Ratchet, Astranaar, Auberdine, Talonbranch Glade
+				["0.42:0.79:0.60:0.81:0.64:0.67:0.46:0.40:0.50:0.35:0.53:0.26:0.65:0.23"] = 1001, -- 세나리온 요새 (실리더스), 가젯잔 (타나리스), 테라모어 섬 (먼지진흙 습지대), 아스트라나르 (잿빛 골짜기), 에메랄드 성소 (악령의 숲), 갈퀴가지 숲 (악령의 숲), 눈망루 마을 (여명의 설원), 눈망루 마을 (여명의 설원)
 
 				-- Alliance: Emerald Sanctuary (Felwood)
 				["0.50:0.35:0.46:0.40:0.39:0.40:0.40:0.51:0.31:0.69"] = 592, -- Emerald Sanctuary, Astranaar, Stonetalon Peak, Nijel's Point, Feathermoon
@@ -4794,6 +4795,7 @@
 				["0.78:0.38:0.72:0.40:0.64:0.42:0.60:0.52:0.76:0.67:0.74:0.71"] = 336, -- Zim'Torga, The Argent Stand, Ebon Watch, Wintergarde Keep, Westguard Keep, Kamagua
 				["0.78:0.38:0.83:0.46:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38"] = 305, -- Zim'Torga, Westfall Brigade, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran
 				["0.78:0.38:0.72:0.29:0.62:0.36:0.57:0.33:0.57:0.21:0.49:0.21"] = 341, -- Zim'Torga, Dun Nifflelem, K3, Frosthold, Bouldercrag's Refuge, Argent Tournament Grounds
+				["0.78:0.38:0.72:0.40:0.69:0.42:0.60:0.52:0.42:0.53:0.21:0.49:0.17:0.53:0.12:0.53"] = 472, -- Zim'Torga, The Argent Stand, Light's Breach, Wintergarde Keep, Stars' Rest, Fizzcrank Airstrip, Amber Ledge, Transitus Shield
 
 			},
 
