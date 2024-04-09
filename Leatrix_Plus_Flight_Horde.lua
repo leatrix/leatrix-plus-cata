@@ -3504,6 +3504,7 @@
 				["0.49:0.21:0.52:0.38:0.49:0.58:0.29:0.57:0.15:0.57"] = 504, -- Argentumturnierplatz, Dalaran, Moa'ki, Unu'pe, Kriegshymnenfeste
 				["0.49:0.21:0.52:0.34:0.56:0.36:0.52:0.38:0.64:0.42:0.72:0.40:0.78:0.38:0.73:0.25"] = 393, -- Argent Tournament Grounds, Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Ebon Watch, The Argent Stand, Zim'Torga, Camp Tunka'lo
 				["0.49:0.21:0.52:0.38:0.54:0.52:0.59:0.55:0.74:0.62"] = 396, -- Argent Tournament Grounds, Dalaran, Wyrmrest Temple, Venomspite, Apothecary Camp
+				["0.49:0.21:0.52:0.38:0.49:0.58:0.74:0.71"] = 470, -- Argentumturnierplatz, Dalaran, Moa'ki, Kamagua
 
 				-- Horde: Icecrown: Crusaders' Pinnacle
 				["0.52:0.34:0.56:0.36:0.52:0.38:0.54:0.52"] = 175, -- Crusaders' Pinnacle, The Argent Vanguard, Dalaran, Wyrmrest Temple (Gary Stepp reported 89)
