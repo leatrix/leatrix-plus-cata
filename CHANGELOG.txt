@@ -1,10 +1,10 @@
-﻿3.0.188.alpha.1 - 3rd April 2004
+﻿3.0.188 - 10th April 2004
 - The addon will no longer show 'Wrong version installed' when run on Cataclysm Classic.
 - Added flight times.
+- Leatrix addons for Cataclysm Classic will be available April 2024.
 
 3.0.187 - 3rd April 2024
 - Added flight times.
-- Leatrix Plus for Cataclysm Classic will be available when I get access to Cataclysm Classic beta.
 
 3.0.186 - 27th March 2024
 - Added flight times.
