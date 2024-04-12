@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.188 (10th April 2024)
+-- 	Leatrix Plus 3.0.189.alpha.1 (10th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.188"
+	LeaPlusLC["AddonVer"] = "3.0.189.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -630,6 +630,7 @@
 		-- System
 		or	(LeaPlusLC["ViewPortEnable"]		~= LeaPlusDB["ViewPortEnable"])			-- Enable viewport
 		or	(LeaPlusLC["NoRestedEmotes"]		~= LeaPlusDB["NoRestedEmotes"])			-- Silence rested emotes
+		or	(LeaPlusLC["KeepAudioSynced"]		~= LeaPlusDB["KeepAudioSynced"])		-- Keep audio synced
 		or	(LeaPlusLC["NoBagAutomation"]		~= LeaPlusDB["NoBagAutomation"])		-- Disable bag automation
 		or	(LeaPlusLC["CharAddonList"]			~= LeaPlusDB["CharAddonList"])			-- Show character addons
 		or	(LeaPlusLC["FasterLooting"]			~= LeaPlusDB["FasterLooting"])			-- Faster auto loot
@@ -3463,6 +3464,22 @@
 ----------------------------------------------------------------------
 
 	function LeaPlusLC:Player()
+
+		----------------------------------------------------------------------
+		-- Keep audio synced
+		----------------------------------------------------------------------
+
+		if LeaPlusLC["KeepAudioSynced"] == "On" then
+
+			SetCVar("Sound_OutputDriverIndex", "0")
+			local event = CreateFrame("FRAME")
+			event:RegisterEvent("VOICE_CHAT_OUTPUT_DEVICES_UPDATED")
+			event:SetScript("OnEvent", function()
+				SetCVar("Sound_OutputDriverIndex", "0")
+				Sound_GameSystem_RestartSoundSystem()
+			end)
+
+		end
 
 		----------------------------------------------------------------------
 		-- Mute custom sounds (no reload required)
@@ -13077,6 +13094,7 @@
 				LeaPlusLC:LoadVarNum("ViewPortAlpha", 0, 0, 0.9)			-- Border alpha
 
 				LeaPlusLC:LoadVarChk("NoRestedEmotes", "Off")				-- Silence rested emotes
+				LeaPlusLC:LoadVarChk("KeepAudioSynced", "Off")				-- Keep audio synced
 				LeaPlusLC:LoadVarChk("MuteGameSounds", "Off")				-- Mute game sounds
 				LeaPlusLC:LoadVarChk("MuteCustomSounds", "Off")				-- Mute custom sounds
 				LeaPlusLC:LoadVarStr("MuteCustomList", "")					-- Mute custom sounds list
@@ -13488,6 +13506,7 @@
 			LeaPlusDB["ViewPortAlpha"]			= LeaPlusLC["ViewPortAlpha"]
 
 			LeaPlusDB["NoRestedEmotes"]			= LeaPlusLC["NoRestedEmotes"]
+			LeaPlusDB["KeepAudioSynced"]		= LeaPlusLC["KeepAudioSynced"]
 			LeaPlusDB["MuteGameSounds"]			= LeaPlusLC["MuteGameSounds"]
 			LeaPlusDB["MuteCustomSounds"]		= LeaPlusLC["MuteCustomSounds"]
 			LeaPlusDB["MuteCustomList"]			= LeaPlusLC["MuteCustomList"]
@@ -15655,6 +15674,7 @@
 				LeaPlusDB["MaxCameraZoom"] = "On"				-- Max camera zoom
 				LeaPlusDB["ViewPortEnable"] = "On"				-- Enable viewport
 				LeaPlusDB["NoRestedEmotes"] = "On"				-- Silence rested emotes
+				LeaPlusDB["KeepAudioSynced"] = "On"				-- Keep audio synced
 				LeaPlusDB["MuteGameSounds"] = "On"				-- Mute game sounds
 				LeaPlusDB["MuteCustomSounds"] = "On"			-- Mute custom sounds
 				LeaPlusDB["MuteCustomList"] = ""				-- Mute custom sounds list
@@ -16046,8 +16066,9 @@
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MaxCameraZoom"				, 	"Max camera zoom"				, 	146, -152, 	false,	"If checked, you will be able to zoom out to a greater distance.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ViewPortEnable"			,	"Enable viewport"				,	146, -172, 	true,	"If checked, you will be able to create a viewport.  A viewport adds adjustable black borders around the game world.|n|nThe borders are placed on top of the game world but under the UI so you can place UI elements over them.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "NoRestedEmotes"			, 	"Silence rested emotes"			,	146, -192, 	true,	"If checked, emote sounds will be silenced while your character is resting or at the Grim Guzzler.|n|nEmote sounds will be enabled at all other times.")
-	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteGameSounds"			, 	"Mute game sounds"				,	146, -212, 	false,	"If checked, you will be able to mute a selection of game sounds.")
-	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteCustomSounds"			, 	"Mute custom sounds"			,	146, -232, 	false,	"If checked, you will be able to mute your own choice of sounds.")
+	LeaPlusLC:MakeCB(LeaPlusLC[pg], "KeepAudioSynced"			, 	"Keep audio synced"				,	146, -212, 	true,	"If checked, when you change the audio output device in your operating system, the game audio output device will change automatically.|n|nFor this to work, the game audio output device will be set to system default.")
+	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteGameSounds"			, 	"Mute game sounds"				,	146, -232, 	false,	"If checked, you will be able to mute a selection of game sounds.")
+	LeaPlusLC:MakeCB(LeaPlusLC[pg], "MuteCustomSounds"			, 	"Mute custom sounds"			,	146, -252, 	false,	"If checked, you will be able to mute your own choice of sounds.")
 
 	LeaPlusLC:MakeTx(LeaPlusLC[pg], "Game Options"				, 	340, -72);
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "NoBagAutomation"			, 	"Disable bag automation"		, 	340, -92, 	true,	"If checked, your bags will not be opened or closed automatically when you interact with a merchant or bank.")

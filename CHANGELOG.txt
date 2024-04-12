@@ -1,7 +1,11 @@
-﻿3.0.188 - 10th April 2004
-- The addon will no longer show 'Wrong version installed' when run on Cataclysm Classic.
+﻿3.0.189.alpha.1 - 10th April 2004
+- Added a new setting called 'Keep audio synced' ('System').  If checked, when you change the audio output device in your operating system, the game audio output device will change automatically.|n|nFor this to work, the game audio output device will be set to system default.
 - Added flight times.
 - Leatrix addons for Cataclysm Classic will be available April 2024.
+
+3.0.188 - 10th April 2004
+- The addon will no longer show 'Wrong version installed' when run on Cataclysm Classic.
+- Added flight times.
 
 3.0.187 - 3rd April 2024
 - Added flight times.

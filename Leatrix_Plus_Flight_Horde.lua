@@ -1691,6 +1691,7 @@
 				["0.65:0.50:0.54:0.57:0.23:0.50:0.38:0.32:0.58:0.27"] = 424, -- Thrallmar, Falcon Watch, Zabra'jin, Thunderlord Stronghold, Area 52
 				["0.65:0.50:0.44:0.67:0.44:0.51:0.49:0.36:0.58:0.27"] = 326, -- Thrallmar, Shattrath, Swamprat Post, Mok'Nathal Village, Area 52
 				["0.65:0.50:0.44:0.67:0.29:0.62"] = 202, -- Thrallmar, Shattrath, Garadar
+				["0.65:0.50:0.44:0.67:0.44:0.51"] = 200, -- Thrallmar, Shattrath, Swamprat Post
 
 				-- Horde: Thunderlord Stronghold (Blade's Edge Mountains)
 				["0.38:0.32:0.44:0.51:0.44:0.67:0.51:0.73:0.66:0.77"] = 335, -- Thunderlord Stronghold, Swamprat Post, Shattrath, Stonebreaker Hold, Shadowmoon Village
