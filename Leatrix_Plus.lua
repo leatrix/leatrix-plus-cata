@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.189.alpha.1 (10th April 2024)
+-- 	Leatrix Plus 3.0.189.alpha.2 (16th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.189.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.189.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -35,7 +35,7 @@
 			end)
 			return
 		end
-		if gametocversion and gametocversion == 30403 then -- 3.4.3
+		if gametocversion and gametocversion == 40400 then -- 4.4.0
 			LeaPlusLC.NewPatch = true
 		end
 	end
@@ -7305,11 +7305,22 @@
 			----------------------------------------------------------------------
 
 			-- Hide model rotation controls
-			CharacterModelFrameRotateLeftButton:HookScript("OnShow", CharacterModelFrameRotateLeftButton.Hide)
-			CharacterModelFrameRotateRightButton:HookScript("OnShow", CharacterModelFrameRotateRightButton.Hide)
-			DressUpModelFrameRotateLeftButton:HookScript("OnShow", DressUpModelFrameRotateLeftButton.Hide)
-			DressUpModelFrameRotateRightButton:HookScript("OnShow", DressUpModelFrameRotateRightButton.Hide)
-			SideDressUpModelControlFrame:HookScript("OnShow", SideDressUpModelControlFrame.Hide)
+			if LeaPlusLC.NewPatch then
+				-- Hide character frame controls
+				CharacterModelScene.ControlFrame:HookScript("OnShow", function()
+					CharacterModelScene.ControlFrame:Hide()
+				end)
+				-- Hide controls for dressing room
+				DressUpModelFrameRotateLeftButton:HookScript("OnShow", DressUpModelFrameRotateLeftButton.Hide)
+				DressUpModelFrameRotateRightButton:HookScript("OnShow", DressUpModelFrameRotateRightButton.Hide)
+				SideDressUpModelControlFrame:HookScript("OnShow", SideDressUpModelControlFrame.Hide)
+			else
+				CharacterModelFrameRotateLeftButton:HookScript("OnShow", CharacterModelFrameRotateLeftButton.Hide)
+				CharacterModelFrameRotateRightButton:HookScript("OnShow", CharacterModelFrameRotateRightButton.Hide)
+				DressUpModelFrameRotateLeftButton:HookScript("OnShow", DressUpModelFrameRotateLeftButton.Hide)
+				DressUpModelFrameRotateRightButton:HookScript("OnShow", DressUpModelFrameRotateRightButton.Hide)
+				SideDressUpModelControlFrame:HookScript("OnShow", SideDressUpModelControlFrame.Hide)
+			end
 
 			----------------------------------------------------------------------
 			-- Hide dressup stats button
