@@ -7326,118 +7326,129 @@
 			-- Hide dressup stats button
 			----------------------------------------------------------------------
 
-			local function ToggleStats(startup)
+			if LeaPlusLC.NewPatch then
+			else
 
-				-- ElvUI_WrathArmory: Make character model full size
-				if LeaPlusLC.ElvUI then
-					local E = LeaPlusLC.ElvUI:GetModule("ElvUI_WrathArmory", true)
-					if E then
+				local function ToggleStats(startup)
+
+					-- ElvUI_WrathArmory: Make character model full size
+					if LeaPlusLC.ElvUI then
+						local E = LeaPlusLC.ElvUI:GetModule("ElvUI_WrathArmory", true)
+						if E then
+							CharacterModelFrame:ClearAllPoints()
+							CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
+							CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 134)
+							return
+						end
+					end
+
+					-- Toggle dressup stats
+					if LeaPlusLC["HideDressupStats"] == "On" then
+						CharacterResistanceFrame:Hide()
+						if CSC_HideStatsPanel then
+							-- CharacterStatsWRATH is installed
+							RunScript('CSC_HideStatsPanel()')
+							if startup then
+								C_Timer.After(0.1, function()
+									CharacterModelFrame:ClearAllPoints()
+									CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
+									CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 134)
+								end)
+							end
+						else
+							-- CharacterStatsWRATH is not installed
+							CharacterAttributesFrame:Hide()
+						end
 						CharacterModelFrame:ClearAllPoints()
 						CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
 						CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 134)
-						return
+						if LeaPlusLC["ShowVanityControls"] == "On" then
+							LeaPlusCB["ShowHelm"]:Hide()
+							LeaPlusCB["ShowCloak"]:Hide()
+						end
+
+					else
+
+						CharacterResistanceFrame:Show()
+						if CSC_ShowStatsPanel then
+							-- CharacterStatsWRATH is installed
+							RunScript('CSC_ShowStatsPanel()')
+							if startup then
+								C_Timer.After(0.1, function()
+									CharacterModelFrame:ClearAllPoints()
+									CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
+									CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 243)
+								end)
+							end
+						else
+							-- CharacterStatsWRATH is not installed
+							CharacterAttributesFrame:Show()
+						end
+						CharacterModelFrame:ClearAllPoints()
+						CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
+						CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 243)
+						if LeaPlusLC["ShowVanityControls"] == "On" then
+							LeaPlusCB["ShowHelm"]:Show()
+							LeaPlusCB["ShowCloak"]:Show()
+						end
 					end
+
 				end
 
-				-- Toggle dressup stats
-				if LeaPlusLC["HideDressupStats"] == "On" then
-					CharacterResistanceFrame:Hide()
-					if CSC_HideStatsPanel then
-						-- CharacterStatsWRATH is installed
-						RunScript('CSC_HideStatsPanel()')
-						if startup then
-							C_Timer.After(0.1, function()
-								CharacterModelFrame:ClearAllPoints()
-								CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-								CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 134)
-							end)
-						end
-					else
-						-- CharacterStatsWRATH is not installed
-						CharacterAttributesFrame:Hide()
+				-- Toggle stats with middle mouse button
+				CharacterModelFrame:HookScript("OnMouseDown", function(self, btn)
+					if btn == "MiddleButton" then
+						if LeaPlusLC["HideDressupStats"] == "On" then LeaPlusLC["HideDressupStats"] = "Off" else LeaPlusLC["HideDressupStats"] = "On" end
+						ToggleStats()
 					end
-					CharacterModelFrame:ClearAllPoints()
-					CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-					CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 134)
-					if LeaPlusLC["ShowVanityControls"] == "On" then
-						LeaPlusCB["ShowHelm"]:Hide()
-						LeaPlusCB["ShowCloak"]:Hide()
-					end
+				end)
+				ToggleStats(true)
 
-				else
-
-					CharacterResistanceFrame:Show()
-					if CSC_ShowStatsPanel then
-						-- CharacterStatsWRATH is installed
-						RunScript('CSC_ShowStatsPanel()')
-						if startup then
-							C_Timer.After(0.1, function()
-								CharacterModelFrame:ClearAllPoints()
-								CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-								CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 243)
-							end)
-						end
-					else
-						-- CharacterStatsWRATH is not installed
-						CharacterAttributesFrame:Show()
-					end
-					CharacterModelFrame:ClearAllPoints()
-					CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-					CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 243)
-					if LeaPlusLC["ShowVanityControls"] == "On" then
-						LeaPlusCB["ShowHelm"]:Show()
-						LeaPlusCB["ShowCloak"]:Show()
-					end
-				end
-
-			end
-
-			-- Toggle stats with middle mouse button
-			CharacterModelFrame:HookScript("OnMouseDown", function(self, btn)
-				if btn == "MiddleButton" then
+				-- Create toggle stats button
+				local toggleButton = CreateFrame("Button", nil, PaperDollFrame)
+				toggleButton:SetSize(36, 36)
+				toggleButton:SetPoint("TOPLEFT", PaperDollFrame, "TOPLEFT", 64, -45)
+				toggleButton:SetNormalTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
+				toggleButton:SetHighlightTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
+				toggleButton:SetPushedTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
+				toggleButton:SetScript("OnEnter", function()
+					GameTooltip:SetOwner(toggleButton, "ANCHOR_NONE")
+					GameTooltip:SetPoint("BOTTOMLEFT", toggleButton, "BOTTOMRIGHT", 0, 0)
+					GameTooltip:SetText(L["Toggle character stats"], nil, nil, nil, nil, true)
+					GameTooltip:Show()
+				end)
+				toggleButton:SetScript("OnLeave", GameTooltip_Hide)
+				toggleButton:SetScript("OnClick", function()
 					if LeaPlusLC["HideDressupStats"] == "On" then LeaPlusLC["HideDressupStats"] = "Off" else LeaPlusLC["HideDressupStats"] = "On" end
 					ToggleStats()
-				end
-			end)
-			ToggleStats(true)
+				end)
 
-			-- Create toggle stats button
-			local toggleButton = CreateFrame("Button", nil, PaperDollFrame)
-			toggleButton:SetSize(36, 36)
-			toggleButton:SetPoint("TOPLEFT", PaperDollFrame, "TOPLEFT", 64, -45)
-			toggleButton:SetNormalTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
-			toggleButton:SetHighlightTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
-			toggleButton:SetPushedTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
-			toggleButton:SetScript("OnEnter", function()
-				GameTooltip:SetOwner(toggleButton, "ANCHOR_NONE")
-				GameTooltip:SetPoint("BOTTOMLEFT", toggleButton, "BOTTOMRIGHT", 0, 0)
-				GameTooltip:SetText(L["Toggle character stats"], nil, nil, nil, nil, true)
-				GameTooltip:Show()
-			end)
-			toggleButton:SetScript("OnLeave", GameTooltip_Hide)
-			toggleButton:SetScript("OnClick", function()
-				if LeaPlusLC["HideDressupStats"] == "On" then LeaPlusLC["HideDressupStats"] = "Off" else LeaPlusLC["HideDressupStats"] = "On" end
-				ToggleStats()
-			end)
+			end
 
 			----------------------------------------------------------------------
 			-- Enable zooming and panning
 			----------------------------------------------------------------------
 
 			-- Enable zooming for character frame and dressup frame
-			CharacterModelFrame:HookScript("OnMouseWheel", Model_OnMouseWheel)
+			if LeaPlusLC.NewPatch then
+			else
+				CharacterModelFrame:HookScript("OnMouseWheel", Model_OnMouseWheel)
+			end
 			DressUpModelFrame:HookScript("OnMouseWheel", Model_OnMouseWheel)
 
 			-- Enable panning for character frame
-			CharacterModelFrame:HookScript("OnMouseDown", function(self, btn)
-				if btn == "RightButton" then
-					Model_StartPanning(self)
-				end
-			end)
+			if LeaPlusLC.NewPatch then
+			else
+				CharacterModelFrame:HookScript("OnMouseDown", function(self, btn)
+					if btn == "RightButton" then
+						Model_StartPanning(self)
+					end
+				end)
 
-			CharacterModelFrame:HookScript("OnMouseUp", function(self, btn)
-				Model_StopPanning(self)
-			end)
+				CharacterModelFrame:HookScript("OnMouseUp", function(self, btn)
+					Model_StopPanning(self)
+				end)
+			end
 
 			-- Enable panning for dressup frame
 			DressUpModelFrame:HookScript("OnMouseDown", function(self, btn)
