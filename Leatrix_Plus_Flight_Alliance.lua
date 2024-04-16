@@ -3426,6 +3426,7 @@
 				["0.76:0.67:0.73:0.54:0.69:0.42:0.64:0.42:0.52:0.38:0.52:0.34:0.28:0.28"] = 441, -- Westguard Keep, Amberpine Lodge, Light's Breach, Ebon Watch, Dalaran, Crusaders' Pinnacle, Death's Rise
 				["0.76:0.67:0.60:0.52:0.54:0.52:0.52:0.38:0.49:0.21"] = 406, -- Westguard Keep, Wintergarde Keep, Wyrmrest Temple, Dalaran, Argent Tournament Grounds
 				["0.76:0.67:0.60:0.52:0.59:0.43:0.52:0.38:0.52:0.34"] = 290, -- Westguard Keep, Wintergarde Keep, Windrunner's Overlook, Dalaran, Crusaders' Pinnacle
+				["0.76:0.67:0.73:0.54:0.83:0.46:0.72:0.40:0.64:0.42:0.52:0.38"] = 360, -- Westguard Keep, Amberpine Lodge, Westfall Brigade, The Argent Stand, Ebon Watch, Dalaran
 
 				----------------------------------------------------------------------
 				-- Alliance: Icecrown
