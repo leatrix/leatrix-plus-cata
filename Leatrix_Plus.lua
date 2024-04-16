@@ -3208,6 +3208,12 @@
 			cButton:SetHighlightTexture("Interface\\Buttons\\UI-Common-MouseHilight")
 			cButton:SetSize(32, 32)
 
+			-- For Cataclysm Classic, there is an expand button
+			if LeaPlusLC.NewPatch then
+				cButton:Hide()
+				cButton = CharacterFrameExpandButton
+			end
+
 			-- Create durability tables
 			local Slots = {"HeadSlot", "ShoulderSlot", "ChestSlot", "WristSlot", "HandsSlot", "WaistSlot", "LegsSlot", "FeetSlot", "MainHandSlot", "SecondaryHandSlot", "RangedSlot"}
 			local SlotsFriendly = {INVTYPE_HEAD, INVTYPE_SHOULDER, INVTYPE_CHEST, INVTYPE_WRIST, INVTYPE_HAND, INVTYPE_WAIST, INVTYPE_LEGS, INVTYPE_FEET, INVTYPE_WEAPONMAINHAND, INVTYPE_WEAPONOFFHAND, INVTYPE_RANGED}
@@ -6006,6 +6012,9 @@
 							local timeTaken = timeEnd - timeStart
 							debugString = gsub(debugString, "TimeTakenPlaceHolder", string.format("%0.0f", timeTaken))
 							local flightMsg = L["Flight details"] .. " (" .. L["WRATH"].. "): " .. nodeName .. " (" .. currentNode .. ") " .. L["to"] .. " " .. barName .. " (" .. destination .. ") (" .. faction .. ") " .. L["took"] .. " " .. string.format("%0.0f", timeTaken) .. " " .. L["seconds"] .. " (" .. numHops .. " " .. L["hop"] ..").|n|n" .. debugString .. "|n|n"
+							if LeaPlusLC.NewPatch then
+								flightMsg = L["Flight details"] .. " (" .. L["CATA"].. "): " .. nodeName .. " (" .. currentNode .. ") " .. L["to"] .. " " .. barName .. " (" .. destination .. ") (" .. faction .. ") " .. L["took"] .. " " .. string.format("%0.0f", timeTaken) .. " " .. L["seconds"] .. " (" .. numHops .. " " .. L["hop"] ..").|n|n" .. debugString .. "|n|n"
+							end
 							if destination and data[faction] and data[faction][continent] and data[faction][continent][routeString] then
 								local savedDuration = data[faction][continent][routeString]
 								if savedDuration then
@@ -11808,7 +11817,7 @@
 			maintitle:ClearAllPoints()
 			maintitle:SetPoint("TOP", 0, -72)
 
-			local expTitle = LeaPlusLC:MakeTx(interPanel, "Wrath of the Lich King Classic", 0, 0)
+			local expTitle = LeaPlusLC:MakeTx(interPanel, "Wrath Classic & Cataclysm Classic", 0, 0)
 			expTitle:SetFont(expTitle:GetFont(), 32)
 			expTitle:ClearAllPoints()
 			expTitle:SetPoint("TOP", 0, -152)
