@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.189 (16th April 2024)
+-- 	Leatrix Plus 3.0.190.alpha.1 (16th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.189"
+	LeaPlusLC["AddonVer"] = "3.0.190.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -5809,7 +5809,7 @@
 		-- Show flight times
 		----------------------------------------------------------------------
 
-		if LeaPlusLC["ShowFlightTimes"] == "On" then
+		if LeaPlusLC["ShowFlightTimes"] == "On" and not LeaLockList["ShowFlightTimes"] then
 
 			-- Load flight data
 			Leatrix_Plus["FlightData"] = {}
@@ -13241,6 +13241,10 @@
 						Lock("NoChatFade", reason) --  Disable chat fade
 						Lock("ClassColorsInChat", reason) -- Use class colors in chat
 						Lock("RecentChatWindow", reason) -- Recent chat window
+					end
+
+					if LeaPlusLC.NewPatch then
+						Lock("ShowFlightTimes", L["Not available in Cataclysm Classic"]) -- Show flight times
 					end
 
 					-- Disable items that conflict with ElvUI
