@@ -204,6 +204,15 @@
 		"cinematics/wow_intro_lk.mp3#198",
 		"cinematics/wow_wrathgate.mp3#265",
 		"cinematics/wow_fotlk.mp3#231",
+		-- Cataclysm
+		"|cffffd800", "|cffffd800" .. L["Cataclysm"],
+		"cinematics/wow3x_intro.mp3#144", -- interface/cinematics/wow3x_intro.mp3
+		"cinematics/worgen.mp3#101", -- interface/cinematics/worgen.mp3
+		"cinematics/goblin.mp3#104", -- interface/cinematics/goblin.mp3
+		"cinematics/dsi_act1.mp3#29", -- interface/cinematics/dsi_act1.mp3
+		"cinematics/dsi_act2.mp3#21", -- interface/cinematics/dsi_act2.mp3
+		"cinematics/dsi_act3.mp3#27", -- interface/cinematics/dsi_act3.mp3
+		"cinematics/dsi_act4.mp3#94", -- interface/cinematics/dsi_act4.mp3
 	})
 
 	Zn(L["Various"], L["Various"], L["Credits"], {	"|cffffd800" .. L["Various"] .. ": " .. L["Credits"], prefol,
@@ -252,6 +261,15 @@
 		L["Wrath of the Lich King"] .. " |r(18)",
 		L["Battle of Angrathar the Wrathgate"] .. " |r(14)",
 		L["Fall of the Lich King"] .. " |r(16)",
+	})
+
+	Zn(L["Movies"], L["Movies"], L["Cataclysm"]									, {	"|cffffd800" .. L["Movies"] .. ": " .. L["Cataclysm"], prefol,
+		L["Cataclysm"] .. " |r(23)",
+		L["Last Stand"] .. " |r(21)",
+		L["Leaving Kezan"] .. " |r(22)",
+		-- L["The Dragon Soul"] .. " |r(73)",
+		-- L["Spine of Deathwing"] .. " |r(74)", L["Madness of Deathwing"] .. " |r(75)",
+		-- L["Fall of Deathwing"] .. " |r(76)",
 	})
 
 	----------------------------------------------------------------------
