@@ -6302,9 +6302,10 @@
 				LeaPlusCB["DressupFasterZoom"].f:SetFormattedText("%.0f%%", LeaPlusLC["DressupFasterZoom"] * 100)
 			end)
 
-			-- Hide zoom slider control if not Cataclysm Classic
+			-- Hide options if not Cataclysm Classic
 			if not LeaPlusLC.NewPatch then
 				LeaPlusCB["DressupFasterZoom"]:Hide()
+				LeaPlusCB["DressupWiderPreview"]:Hide()
 			end
 
 			-- Set zoom speed when character frame model is zoomed
@@ -6702,108 +6703,98 @@
 			-- Wardrobe and inspect system
 			----------------------------------------------------------------------
 
-			-- Wardrobe (used by transmogrifier NPC) and mount journal
-			local function DoBlizzardCollectionsFunc()
-				-- Hide positioning controls for mount journal
-				MountJournal.MountDisplay.ModelScene.RotateLeftButton:Hide()
-				MountJournal.MountDisplay.ModelScene.RotateRightButton:Hide()
-				-- Hide positioning controls for pet journal
-				PetJournalPetCard.modelScene.RotateLeftButton:Hide()
-				PetJournalPetCard.modelScene.RotateRightButton:Hide()
-				-- Hide positioning controls for wardrobe
-				WardrobeTransmogFrameControlFrame:HookScript("OnShow", WardrobeTransmogFrameControlFrame.Hide)
-				-- Set zoom speed for mount journal
-				MountJournal.MountDisplay.ModelScene:SetScript("OnMouseWheel", function(self, delta)
-					for i = 1, LeaPlusLC["DressupFasterZoom"] do
-						if MountJournal.MountDisplay.ModelScene.activeCamera then
-							MountJournal.MountDisplay.ModelScene.activeCamera:OnMouseWheel(delta)
+			if LeaPlusLC.NewPatch then
+
+				-- Wardrobe (used by transmogrifier NPC) and mount journal
+				local function DoBlizzardCollectionsFunc()
+					-- Hide positioning controls for mount journal
+					MountJournal.MountDisplay.ModelScene.RotateLeftButton:Hide()
+					MountJournal.MountDisplay.ModelScene.RotateRightButton:Hide()
+					-- Hide positioning controls for pet journal
+					PetJournalPetCard.modelScene.RotateLeftButton:Hide()
+					PetJournalPetCard.modelScene.RotateRightButton:Hide()
+					-- Hide positioning controls for wardrobe
+					WardrobeTransmogFrameControlFrame:HookScript("OnShow", WardrobeTransmogFrameControlFrame.Hide)
+					-- Set zoom speed for mount journal
+					MountJournal.MountDisplay.ModelScene:SetScript("OnMouseWheel", function(self, delta)
+						for i = 1, LeaPlusLC["DressupFasterZoom"] do
+							if MountJournal.MountDisplay.ModelScene.activeCamera then
+								MountJournal.MountDisplay.ModelScene.activeCamera:OnMouseWheel(delta)
+							end
 						end
-					end
-				end)
-				-- Set zoom speed for pet journal
-				PetJournalPetCard.modelScene:SetScript("OnMouseWheel", function(self, delta)
-					for i = 1, LeaPlusLC["DressupFasterZoom"] do
-						if PetJournalPetCard.modelScene.activeCamera then
-							PetJournalPetCard.modelScene.activeCamera:OnMouseWheel(delta)
+					end)
+					-- Set zoom speed for pet journal
+					PetJournalPetCard.modelScene:SetScript("OnMouseWheel", function(self, delta)
+						for i = 1, LeaPlusLC["DressupFasterZoom"] do
+							if PetJournalPetCard.modelScene.activeCamera then
+								PetJournalPetCard.modelScene.activeCamera:OnMouseWheel(delta)
+							end
 						end
+					end)
+					-- Wider transmogrifier character preview
+					if LeaPlusLC["DressupWiderPreview"] == "On" then
+
+						local width = 1200 -- Default is 965
+						WardrobeFrame:SetWidth(width)
+						WardrobeTransmogFrame:SetWidth(width - 665)
+						WardrobeTransmogFrame.Inset.BG:SetWidth(width - 671)
+						WardrobeTransmogFrame.Model:SetWidth(width - 671)
+
+						-- Left slots column
+						WardrobeTransmogFrame.HeadButton:ClearAllPoints()
+						WardrobeTransmogFrame.HeadButton:SetPoint("TOPLEFT", 15, -40)
+
+						-- Right slots column
+						WardrobeTransmogFrame.HandsButton:ClearAllPoints()
+						WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -15, -60)
+
+						-- Weapons
+						WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
+						WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
+						WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
+						WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
+
+					else
+
+						-- Wider character preview is disabled so move the right column up
+						WardrobeTransmogFrame.HandsButton:ClearAllPoints()
+						WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -6, -60)
+
+						-- Show weapons in the right column
+						WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
+						WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
+						WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
+						WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
+
 					end
-				end)
-				-- Wider transmogrifier character preview
-				if LeaPlusLC["DressupWiderPreview"] == "On" then
 
-					local width = 1200 -- Default is 965
-					WardrobeFrame:SetWidth(width)
-					WardrobeTransmogFrame:SetWidth(width - 665)
-					WardrobeTransmogFrame.Inset.BG:SetWidth(width - 671)
-					WardrobeTransmogFrame.Model:SetWidth(width - 671)
-
-					-- Left slots column
-					WardrobeTransmogFrame.HeadButton:ClearAllPoints()
-					WardrobeTransmogFrame.HeadButton:SetPoint("TOPLEFT", 15, -40)
-
-					-- Right slots column
-					WardrobeTransmogFrame.HandsButton:ClearAllPoints()
-					WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -15, -60)
-
-					-- Weapons
-					WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
-					WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
-					--WardrobeTransmogFrame.SecondaryHandEnchantButton:ClearAllPoints()
-					--WardrobeTransmogFrame.SecondaryHandEnchantButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "BOTTOM", 0, -15)
-
-					WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
-					WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
-					--WardrobeTransmogFrame.MainHandEnchantButton:ClearAllPoints()
-					--WardrobeTransmogFrame.MainHandEnchantButton:SetPoint("BOTTOM", WardrobeTransmogFrame.MainHandButton, "BOTTOM", 0, -15)
-
-					-- Checkbox for transmog each shoulder separately
-					WardrobeTransmogFrame.ToggleSecondaryAppearanceCheckbox:ClearAllPoints()
-					WardrobeTransmogFrame.ToggleSecondaryAppearanceCheckbox:SetPoint("BOTTOMLEFT", WardrobeTransmogFrame, "BOTTOMLEFT", 583, 15)
-
-				else
-
-					-- Wider character preview is disabled so move the right column up
-					WardrobeTransmogFrame.HandsButton:ClearAllPoints()
-					WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -6, -60)
-
-					-- Show weapons in the right column
-					WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
-					WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
-					--WardrobeTransmogFrame.SecondaryHandEnchantButton:ClearAllPoints()
-					--WardrobeTransmogFrame.SecondaryHandEnchantButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "BOTTOM", 0, -15)
-
-					WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
-					WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
-					--WardrobeTransmogFrame.MainHandEnchantButton:ClearAllPoints()
-					--WardrobeTransmogFrame.MainHandEnchantButton:SetPoint("BOTTOM", WardrobeTransmogFrame.MainHandButton, "BOTTOM", 0, -15)
+					-- Increase zoom out distance
+					if LeaPlusLC["DressupMoreZoomOut"] == "On" then
+						hooksecurefunc(WardrobeTransmogFrame.ModelScene, "TransitionToModelSceneID", function(self)
+							local activeCamera = self:GetActiveCamera()
+							if activeCamera then
+								local currentZoom = activeCamera:GetZoomDistance()
+								activeCamera:SetMaxZoomDistance(5)
+								activeCamera:SetZoomDistance(currentZoom)
+							end
+						end)
+					end
 
 				end
 
-				-- Increase zoom out distance
-				if LeaPlusLC["DressupMoreZoomOut"] == "On" then
-					hooksecurefunc(WardrobeTransmogFrame.ModelScene, "TransitionToModelSceneID", function(self)
-						local activeCamera = self:GetActiveCamera()
-						if activeCamera then
-							local currentZoom = activeCamera:GetZoomDistance()
-							activeCamera:SetMaxZoomDistance(5)
-							activeCamera:SetZoomDistance(currentZoom)
+				if C_AddOns.IsAddOnLoaded("Blizzard_Collections") then
+					DoBlizzardCollectionsFunc()
+				else
+					local waitFrame = CreateFrame("FRAME")
+					waitFrame:RegisterEvent("ADDON_LOADED")
+					waitFrame:SetScript("OnEvent", function(self, event, arg1)
+						if arg1 == "Blizzard_Collections" then
+							DoBlizzardCollectionsFunc()
+							waitFrame:UnregisterAllEvents()
 						end
 					end)
 				end
 
-			end
-
-			if C_AddOns.IsAddOnLoaded("Blizzard_Collections") then
-				DoBlizzardCollectionsFunc()
-			else
-				local waitFrame = CreateFrame("FRAME")
-				waitFrame:RegisterEvent("ADDON_LOADED")
-				waitFrame:SetScript("OnEvent", function(self, event, arg1)
-					if arg1 == "Blizzard_Collections" then
-						DoBlizzardCollectionsFunc()
-						waitFrame:UnregisterAllEvents()
-					end
-				end)
 			end
 
 			----------------------------------------------------------------------
