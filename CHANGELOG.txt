@@ -1,6 +1,7 @@
 ﻿3.0.191.alpha.2 - 19th April 2004
 - In preparation for Cataclysm Classic, the 'Show flight times' option ('Interface') has been removed.  There are a lot more flight points in Cataclysm Classic and you will be flying on your own mounts a lot of the time.
-- Cataclysm Classic Beta: For 'Enhance dressup', added new options to make the transmogify window wider and to show a transmogrify model animation slider.  The zoom speed now affects the mount journal and the pet journal in addition to the character frame model.
+- Cataclysm Classic Beta: For 'Enhance dressup' ('Interface'), added new options to make the transmogify window wider and to show a transmogrify model animation slider.  The zoom speed now affects the mount journal and the pet journal in addition to the character frame model.
+- Cataclysm Classic Beta: For 'Show ready timer' ('Interface'), the timer will now show for the dungeon ready frame as well as the PvP encounter ready frame.
 
 3.0.190 - 19th April 2004
 - Cataclysm Classic Beta: Fixed 'Hide chat tabs' ('Chat') Lua error with latest build.

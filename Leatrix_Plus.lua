@@ -5749,6 +5749,72 @@
 
 		if LeaPlusLC["ShowReadyTimer"] == "On" then
 
+			if LeaPlusLC.NewPatch then
+
+				-- Dungeons and Raids
+				do
+
+					-- Declare variables
+					local duration, barTime = 40, -1
+					local t = duration
+
+					-- Create status bar below dungeon ready popup
+					local bar = CreateFrame("StatusBar", nil, LFGDungeonReadyPopup)
+					bar:SetPoint("TOPLEFT", LFGDungeonReadyPopup, "BOTTOMLEFT", 0, -5)
+					bar:SetPoint("TOPRIGHT", LFGDungeonReadyPopup, "BOTTOMRIGHT", 0, -5)
+					bar:SetHeight(5)
+					bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
+					bar:SetStatusBarColor(1.0, 0.85, 0.0)
+					bar:SetMinMaxValues(0, duration)
+
+					-- Create status bar text
+					local text = bar:CreateFontString(nil, "ARTWORK")
+					text:SetFontObject("GameFontNormalLarge")
+					text:SetTextColor(1.0, 0.85, 0.0)
+					text:SetPoint("TOP", 0, -10)
+
+					-- Update bar as timer counts down
+					bar:SetScript("OnUpdate", function(self, elapsed)
+						t = t - elapsed
+						if barTime >= 1 or barTime == -1 then
+							self:SetValue(t)
+							text:SetText(SecondsToTime(floor(t + 0.5)))
+							barTime = 0
+						end
+						barTime = barTime + elapsed
+					end)
+
+					-- Show frame when dungeon ready frame shows
+					local frame = CreateFrame("FRAME")
+					frame:RegisterEvent("LFG_PROPOSAL_SHOW")
+					frame:RegisterEvent("LFG_PROPOSAL_FAILED")
+					frame:RegisterEvent("LFG_PROPOSAL_SUCCEEDED")
+					frame:SetScript("OnEvent", function(self, event)
+						if event == "LFG_PROPOSAL_SHOW" then
+							t = duration
+							barTime = -1
+							bar:Show()
+							-- Hide existing timer bars (such as BigWigs)
+							local children = {LFGDungeonReadyPopup:GetChildren()}
+							if children then
+								for i, child in ipairs(children) do
+									if child ~= bar then
+										local objType = child:GetObjectType()
+										if objType and objType == "StatusBar" then
+											child:Hide()
+										end
+									end
+								end
+							end
+						else
+							bar:Hide()
+						end
+					end)
+
+				end
+
+			end
+
 			-- Player vs Player
 			do
 
@@ -15511,7 +15577,7 @@
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowBagSearchBox"			, 	"Show bag search box"			, 	340, -192, 	true,	"If checked, a bag search box will be shown in the backpack frame and the bank frame.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowRaidToggle"			, 	"Show raid button"				,	340, -212, 	true,	"If checked, the button to toggle the raid container frame will be shown just above the raid management frame (left side of the screen) instead of in the raid management frame itself.|n|nThis allows you to toggle the raid container frame without needing to open the raid management frame.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowPlayerChain"			, 	"Show player chain"				,	340, -232, 	true,	"If checked, you will be able to show a rare, elite or rare elite chain around the player frame.")
-	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowReadyTimer"			, 	"Show ready timer"				,	340, -252, 	true,	"If checked, a timer will be shown under the PvP encounter ready frame so that you know how long you have left to click the enter button.")
+	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowReadyTimer"			, 	"Show ready timer"				,	340, -252, 	true,	"If checked, a timer will be shown under the dungeon ready frame and the PvP encounter ready frame so that you know how long you have left to click the enter button.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowWowheadLinks"			, 	"Show Wowhead links"			, 	340, -272, 	true,	"If checked, Wowhead links will be shown in the world map frame and the achievements frame.")
 
 	LeaPlusLC:CfgBtn("ModMinimapBtn", LeaPlusCB["MinimapModder"])
