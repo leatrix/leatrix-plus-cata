@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.190.alpha.1 (16th April 2024)
+-- 	Leatrix Plus 3.0.190 (19th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.190.alpha.1"
+	LeaPlusLC["AddonVer"] = "3.0.190"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -6020,15 +6020,15 @@
 								if savedDuration then
 									if timeTaken > (savedDuration + timeBuffer) or timeTaken < (savedDuration - timeBuffer) then
 										local editMsg = introMsg .. flightMsg .. L["This flight's actual time of"] .. " " .. string.format("%0.0f", timeTaken) .. " " .. L["seconds does not match the saved flight time of"] .. " " .. savedDuration .. " " .. L["seconds"] .. "."
-										editBox:SetText(editMsg); if LeaPlusLC["FlightBarContribute"] == "On" then editFrame:Show() end
+										editBox:SetText(editMsg); if LeaPlusLC["FlightBarContribute"] == "NotUsedInCata" then editFrame:Show() end
 									end
 								else
 									local editMsg = introMsg .. flightMsg .. L["This flight does not have a saved duration in the database."]
-									editBox:SetText(editMsg); if LeaPlusLC["FlightBarContribute"] == "On" then editFrame:Show() end
+									editBox:SetText(editMsg); if LeaPlusLC["FlightBarContribute"] == "NotUsedInCata" then editFrame:Show() end
 								end
 							else
 								local editMsg = introMsg .. flightMsg .. L["This flight does not exist in the database."]
-								editBox:SetText(editMsg); if LeaPlusLC["FlightBarContribute"] == "On" then editFrame:Show() end
+								editBox:SetText(editMsg); if LeaPlusLC["FlightBarContribute"] == "NotUsedInCata" then editFrame:Show() end
 							end
 							flightFrame:UnregisterEvent("PLAYER_CONTROL_GAINED")
 
@@ -10165,11 +10165,19 @@
 			local function HideButtons(chtfrm)
 				_G[chtfrm .. "ButtonFrameUpButton"]:SetParent(tframe)
 				_G[chtfrm .. "ButtonFrameDownButton"]:SetParent(tframe)
-				_G[chtfrm .. "ButtonFrameMinimizeButton"]:SetParent(tframe)
-				_G[chtfrm .. "ButtonFrameUpButton"]:Hide();
-				_G[chtfrm .. "ButtonFrameDownButton"]:Hide();
-				_G[chtfrm .. "ButtonFrameMinimizeButton"]:Hide();
+				if not LeaPlusLC.NewPatch then
+					_G[chtfrm .. "ButtonFrameMinimizeButton"]:SetParent(tframe)
+				end
+				_G[chtfrm .. "ButtonFrameUpButton"]:Hide()
+				_G[chtfrm .. "ButtonFrameDownButton"]:Hide()
+				if not LeaPlusLC.NewPatch then
+					_G[chtfrm .. "ButtonFrameMinimizeButton"]:Hide()
+				end
 				_G[chtfrm .. "ButtonFrame"]:SetSize(0.1,0.1)
+			end
+
+			if LeaPlusLC.NewPatch and FriendsMicroButton then
+				FriendsMicroButton:Hide()
 			end
 
 			-- Function to highlight chat tabs and click to scroll to bottom

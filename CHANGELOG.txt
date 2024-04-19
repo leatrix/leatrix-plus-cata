@@ -1,5 +1,6 @@
-﻿3.0.190.alpha.1 - 16th April 2004
-- Cataclysm Classic: The 'Show flight times' option ('Interface') is not available in Cataclysm Classic.
+﻿3.0.190 - 16th April 2004
+- Cataclysm Classic: Fixed 'Hide chat tabs' ('Chat') Lua error with latest build.
+- Cataclysm Classic: The 'Show flight times' option ('Interface') is not available in Cataclysm Classic.  You will no longer be prompted to submit flight times.  There are a lot more flight points in Cataclysm and you will be flying on your own mounts a lot of the time.
 
 3.0.189 - 16th April 2004
 - Updated for Cataclysm Classic Beta.
