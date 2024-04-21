@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.191 (19th April 2024)
+-- 	Leatrix Plus 3.0.192.alpha.1 (19th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.191"
+	LeaPlusLC["AddonVer"] = "3.0.192.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -677,6 +677,32 @@
 			LpEvt:RegisterEvent("DUEL_REQUESTED");
 		else
 			LpEvt:UnregisterEvent("DUEL_REQUESTED");
+		end
+
+		----------------------------------------------------------------------
+		--	Automatically accept Dungeon Finder queue requests
+		----------------------------------------------------------------------
+
+		if LeaPlusLC.NewPatch then
+
+			if LeaPlusLC["AutoConfirmRole"] == "On" then
+				LFDRoleCheckPopupAcceptButton:SetScript("OnShow", function()
+					local leader, leaderGUID  = "", ""
+					for i = 1, GetNumSubgroupMembers() do
+						if UnitIsGroupLeader("party" .. i) then
+							leader = UnitName("party" .. i)
+							leaderGUID = UnitGUID("party" .. i)
+							break
+						end
+					end
+					if LeaPlusLC:FriendCheck(leader, leaderGUID) then
+						LFDRoleCheckPopupAcceptButton:Click()
+					end
+				end)
+			else
+				LFDRoleCheckPopupAcceptButton:SetScript("OnShow", nil)
+			end
+
 		end
 
 		----------------------------------------------------------------------
@@ -12531,6 +12557,7 @@
 				LeaPlusLC:LoadVarChk("NoSharedQuests", "Off")				-- Block shared quests
 
 				LeaPlusLC:LoadVarChk("AcceptPartyFriends", "Off")			-- Party from friends
+				LeaPlusLC:LoadVarChk("AutoConfirmRole", "Off")				-- Queue from friends
 				LeaPlusLC:LoadVarChk("InviteFromWhisper", "Off")			-- Invite from whispers
 				LeaPlusLC:LoadVarChk("InviteFriendsOnly", "Off")			-- Restrict invites to friends
 				LeaPlusLC["InvKey"]	= LeaPlusDB["InvKey"] or "inv"			-- Invite from whisper keyword
@@ -12764,6 +12791,10 @@
 						end
 					end
 
+					if not LeaPlusLC.NewPatch then
+						Lock("AutoConfirmRole", "This is for Cataclysm Classic") -- Hide the combat log
+					end
+
 					-- Disable items that conflict with Glass
 					if LeaPlusLC.Glass then
 						local reason = L["Cannot be used with Glass"]
@@ -12930,6 +12961,7 @@
 			LeaPlusDB["NoSharedQuests"]			= LeaPlusLC["NoSharedQuests"]
 
 			LeaPlusDB["AcceptPartyFriends"]		= LeaPlusLC["AcceptPartyFriends"]
+			LeaPlusDB["AutoConfirmRole"]		= LeaPlusLC["AutoConfirmRole"]
 			LeaPlusDB["InviteFromWhisper"]		= LeaPlusLC["InviteFromWhisper"]
 			LeaPlusDB["InviteFriendsOnly"]		= LeaPlusLC["InviteFriendsOnly"]
 			LeaPlusDB["InvKey"]					= LeaPlusLC["InvKey"]
@@ -15081,6 +15113,7 @@
 				LeaPlusDB["NoSharedQuests"] = "Off"				-- Block shared quests
 
 				LeaPlusDB["AcceptPartyFriends"] = "On"			-- Party from friends
+				LeaPlusDB["AutoConfirmRole"] = "On"				-- Queue from friends
 				LeaPlusDB["InviteFromWhisper"] = "On"			-- Invite from whispers
 				LeaPlusDB["InviteFriendsOnly"] = "On"			-- Restrict invites to friends
 				LeaPlusDB["FriendlyGuild"] = "On"				-- Friendly guild
@@ -15493,7 +15526,8 @@
 
 	LeaPlusLC:MakeTx(LeaPlusLC[pg], "Groups"					, 	340, -72);
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "AcceptPartyFriends"		, 	"Party from friends"			, 	340, -92, 	false,	"If checked, party invitations from friends will be automatically accepted unless you are queued for a battleground.")
-	LeaPlusLC:MakeCB(LeaPlusLC[pg], "InviteFromWhisper"			,   "Invite from whispers"			,	340, -112,	false,	L["If checked, a group invite will be sent to anyone who whispers you with a set keyword as long as you are ungrouped, group leader or raid assistant and not queued for a battleground.|n|nFriends who message the keyword using Battle.net will not be sent a group invite if they are appearing offline.  They need to either change their online status or use character whispers."] .. "|n|n" .. L["Keyword"] .. ": |cffffffff" .. "dummy" .. "|r")
+	LeaPlusLC:MakeCB(LeaPlusLC[pg], "AutoConfirmRole"			, 	"Queue from friends"			,	340, -112, 	false,	"If checked, requests initiated by your party leader to join the Dungeon Finder queue will be automatically accepted if the party leader is a friend.|n|nThis option requires that you have selected a role for your character in the Dungeon Finder window.")
+	LeaPlusLC:MakeCB(LeaPlusLC[pg], "InviteFromWhisper"			,   "Invite from whispers"			,	340, -132,	false,	L["If checked, a group invite will be sent to anyone who whispers you with a set keyword as long as you are ungrouped, group leader or raid assistant and not queued for a battleground.|n|nFriends who message the keyword using Battle.net will not be sent a group invite if they are appearing offline.  They need to either change their online status or use character whispers."] .. "|n|n" .. L["Keyword"] .. ": |cffffffff" .. "dummy" .. "|r")
 
 	LeaPlusLC:MakeFT(LeaPlusLC[pg], "For all of the social options above, you can treat guild members as friends too.", 146, 380)
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "FriendlyGuild"				, 	"Guild"							, 	146, -282, 	false,	"If checked, members of your guild will be treated as friends for all of the options on this page.")
