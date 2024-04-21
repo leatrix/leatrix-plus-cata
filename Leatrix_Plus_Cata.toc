@@ -18,6 +18,6 @@
 
 Leatrix_Plus_Library.lua
 Leatrix_Plus_Locale.lua
-Leatrix_Plus_Media.lua
+Leatrix_Plus_Media_Cata.lua
 Leatrix_Plus.xml
 Leatrix_Plus.lua
