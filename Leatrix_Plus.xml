@@ -83,13 +83,6 @@
 			</EditBox>
 		</ScrollChild>
 	</ScrollFrame>
-	<ScrollFrame name="LeaPlusShowFlightTimesScrollFrameTemplate" inherits="ScrollFrameTemplate" virtual="true">
-		<KeyValues>
-			<KeyValue key="scrollBarX" value="-31" type="number"/>
-			<KeyValue key="scrollBarTopY" value="0" type="number"/>
-			<KeyValue key="scrollBarBottomY" value="-1" type="number"/>
-		</KeyValues>
-	</ScrollFrame>
 	<ScrollFrame name="LeaPlusConfigurationPanelScrollFrameTemplate" inherits="ScrollFrameTemplate" virtual="true">
 		<KeyValues>
 			<KeyValue key="scrollBarX" value="12" type="number"/>
