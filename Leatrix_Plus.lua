@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 3.0.192.alpha.2 (19th April 2024)
+-- 	Leatrix Plus 4.0.00 (23rd April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "3.0.192.alpha.2"
+	LeaPlusLC["AddonVer"] = "4.0.00"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -28,8 +28,8 @@
 	-- Check Wow version is valid
 	do
 		local gameversion, gamebuild, gamedate, gametocversion = GetBuildInfo()
-		if gametocversion and gametocversion < 30000 or gametocversion > 49999 then
-			-- Game client is not Wow Classic
+		if gametocversion and gametocversion < 40000 or gametocversion > 49999 then
+			-- Game client is not Cataclysm Classic
 			C_Timer.After(2, function()
 				print(L["LEATRIX PLUS: WRONG VERSION INSTALLED!"])
 			end)
@@ -683,26 +683,22 @@
 		--	Automatically accept Dungeon Finder queue requests
 		----------------------------------------------------------------------
 
-		if LeaPlusLC.NewPatch then
-
-			if LeaPlusLC["AutoConfirmRole"] == "On" then
-				LFDRoleCheckPopupAcceptButton:SetScript("OnShow", function()
-					local leader, leaderGUID  = "", ""
-					for i = 1, GetNumSubgroupMembers() do
-						if UnitIsGroupLeader("party" .. i) then
-							leader = UnitName("party" .. i)
-							leaderGUID = UnitGUID("party" .. i)
-							break
-						end
+		if LeaPlusLC["AutoConfirmRole"] == "On" then
+			LFDRoleCheckPopupAcceptButton:SetScript("OnShow", function()
+				local leader, leaderGUID  = "", ""
+				for i = 1, GetNumSubgroupMembers() do
+					if UnitIsGroupLeader("party" .. i) then
+						leader = UnitName("party" .. i)
+						leaderGUID = UnitGUID("party" .. i)
+						break
 					end
-					if LeaPlusLC:FriendCheck(leader, leaderGUID) then
-						LFDRoleCheckPopupAcceptButton:Click()
-					end
-				end)
-			else
-				LFDRoleCheckPopupAcceptButton:SetScript("OnShow", nil)
-			end
-
+				end
+				if LeaPlusLC:FriendCheck(leader, leaderGUID) then
+					LFDRoleCheckPopupAcceptButton:Click()
+				end
+			end)
+		else
+			LFDRoleCheckPopupAcceptButton:SetScript("OnShow", nil)
 		end
 
 		----------------------------------------------------------------------
@@ -3233,11 +3229,9 @@
 			cButton:SetHighlightTexture("Interface\\Buttons\\UI-Common-MouseHilight")
 			cButton:SetSize(32, 32)
 
-			-- For Cataclysm Classic, there is an expand button
-			if LeaPlusLC.NewPatch then
-				cButton:Hide()
-				cButton = CharacterFrameExpandButton
-			end
+			-- Hide expand button
+			cButton:Hide()
+			cButton = CharacterFrameExpandButton
 
 			-- Create durability tables
 			local Slots = {"HeadSlot", "ShoulderSlot", "ChestSlot", "WristSlot", "HandsSlot", "WaistSlot", "LegsSlot", "FeetSlot", "MainHandSlot", "SecondaryHandSlot", "RangedSlot"}
@@ -5775,69 +5769,65 @@
 
 		if LeaPlusLC["ShowReadyTimer"] == "On" then
 
-			if LeaPlusLC.NewPatch then
+			-- Dungeons and Raids
+			do
 
-				-- Dungeons and Raids
-				do
+				-- Declare variables
+				local duration, barTime = 40, -1
+				local t = duration
 
-					-- Declare variables
-					local duration, barTime = 40, -1
-					local t = duration
+				-- Create status bar below dungeon ready popup
+				local bar = CreateFrame("StatusBar", nil, LFGDungeonReadyPopup)
+				bar:SetPoint("TOPLEFT", LFGDungeonReadyPopup, "BOTTOMLEFT", 0, -5)
+				bar:SetPoint("TOPRIGHT", LFGDungeonReadyPopup, "BOTTOMRIGHT", 0, -5)
+				bar:SetHeight(5)
+				bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
+				bar:SetStatusBarColor(1.0, 0.85, 0.0)
+				bar:SetMinMaxValues(0, duration)
 
-					-- Create status bar below dungeon ready popup
-					local bar = CreateFrame("StatusBar", nil, LFGDungeonReadyPopup)
-					bar:SetPoint("TOPLEFT", LFGDungeonReadyPopup, "BOTTOMLEFT", 0, -5)
-					bar:SetPoint("TOPRIGHT", LFGDungeonReadyPopup, "BOTTOMRIGHT", 0, -5)
-					bar:SetHeight(5)
-					bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
-					bar:SetStatusBarColor(1.0, 0.85, 0.0)
-					bar:SetMinMaxValues(0, duration)
+				-- Create status bar text
+				local text = bar:CreateFontString(nil, "ARTWORK")
+				text:SetFontObject("GameFontNormalLarge")
+				text:SetTextColor(1.0, 0.85, 0.0)
+				text:SetPoint("TOP", 0, -10)
 
-					-- Create status bar text
-					local text = bar:CreateFontString(nil, "ARTWORK")
-					text:SetFontObject("GameFontNormalLarge")
-					text:SetTextColor(1.0, 0.85, 0.0)
-					text:SetPoint("TOP", 0, -10)
+				-- Update bar as timer counts down
+				bar:SetScript("OnUpdate", function(self, elapsed)
+					t = t - elapsed
+					if barTime >= 1 or barTime == -1 then
+						self:SetValue(t)
+						text:SetText(SecondsToTime(floor(t + 0.5)))
+						barTime = 0
+					end
+					barTime = barTime + elapsed
+				end)
 
-					-- Update bar as timer counts down
-					bar:SetScript("OnUpdate", function(self, elapsed)
-						t = t - elapsed
-						if barTime >= 1 or barTime == -1 then
-							self:SetValue(t)
-							text:SetText(SecondsToTime(floor(t + 0.5)))
-							barTime = 0
-						end
-						barTime = barTime + elapsed
-					end)
-
-					-- Show frame when dungeon ready frame shows
-					local frame = CreateFrame("FRAME")
-					frame:RegisterEvent("LFG_PROPOSAL_SHOW")
-					frame:RegisterEvent("LFG_PROPOSAL_FAILED")
-					frame:RegisterEvent("LFG_PROPOSAL_SUCCEEDED")
-					frame:SetScript("OnEvent", function(self, event)
-						if event == "LFG_PROPOSAL_SHOW" then
-							t = duration
-							barTime = -1
-							bar:Show()
-							-- Hide existing timer bars (such as BigWigs)
-							local children = {LFGDungeonReadyPopup:GetChildren()}
-							if children then
-								for i, child in ipairs(children) do
-									if child ~= bar then
-										local objType = child:GetObjectType()
-										if objType and objType == "StatusBar" then
-											child:Hide()
-										end
+				-- Show frame when dungeon ready frame shows
+				local frame = CreateFrame("FRAME")
+				frame:RegisterEvent("LFG_PROPOSAL_SHOW")
+				frame:RegisterEvent("LFG_PROPOSAL_FAILED")
+				frame:RegisterEvent("LFG_PROPOSAL_SUCCEEDED")
+				frame:SetScript("OnEvent", function(self, event)
+					if event == "LFG_PROPOSAL_SHOW" then
+						t = duration
+						barTime = -1
+						bar:Show()
+						-- Hide existing timer bars (such as BigWigs)
+						local children = {LFGDungeonReadyPopup:GetChildren()}
+						if children then
+							for i, child in ipairs(children) do
+								if child ~= bar then
+									local objType = child:GetObjectType()
+									if objType and objType == "StatusBar" then
+										child:Hide()
 									end
 								end
 							end
-						else
-							bar:Hide()
 						end
-					end)
-
-				end
+					else
+						bar:Hide()
+					end
+				end)
 
 			end
 
@@ -6246,14 +6236,8 @@
 				if LeaPlusLC["VanityAltLayout"] == "On" then
 					-- Alternative layout
 					LeaPlusCB["ShowHelm"].f:SetText(L["H"])
-
-					if LeaPlusLC.NewPatch then
-						LeaPlusCB["ShowHelm"]:ClearAllPoints()
-						LeaPlusCB["ShowHelm"]:SetPoint("TOPLEFT", 264, -348)
-					else
-						LeaPlusCB["ShowHelm"]:ClearAllPoints()
-						LeaPlusCB["ShowHelm"]:SetPoint("TOPLEFT", 275, -224)
-					end
+					LeaPlusCB["ShowHelm"]:ClearAllPoints()
+					LeaPlusCB["ShowHelm"]:SetPoint("TOPLEFT", 264, -348)
 					LeaPlusCB["ShowHelm"]:SetHitRectInsets(-LeaPlusCB["ShowHelm"].f:GetStringWidth() + 4, 3, 0, 0)
 					LeaPlusCB["ShowHelm"].f:ClearAllPoints()
 					LeaPlusCB["ShowHelm"].f:SetPoint("RIGHT", LeaPlusCB["ShowHelm"], "LEFT", 4, 0)
@@ -6266,28 +6250,15 @@
 					LeaPlusCB["ShowCloak"]:SetHitRectInsets(-LeaPlusCB["ShowCloak"].f:GetStringWidth() + 4, 3, 0, 0)
 				else
 					-- Default layout
-					if LeaPlusLC.NewPatch then
-						LeaPlusCB["ShowHelm"].f:SetText(L["H"])
-						LeaPlusCB["ShowHelm"]:ClearAllPoints()
-						LeaPlusCB["ShowHelm"]:SetPoint("TOPLEFT", 52, -366)
-					else
-						LeaPlusCB["ShowHelm"].f:SetText(L["Helm"])
-						LeaPlusCB["ShowHelm"]:ClearAllPoints()
-						LeaPlusCB["ShowHelm"]:SetPoint("TOPLEFT", 65, -246)
-					end
+					LeaPlusCB["ShowHelm"].f:SetText(L["H"])
+					LeaPlusCB["ShowHelm"]:ClearAllPoints()
+					LeaPlusCB["ShowHelm"]:SetPoint("TOPLEFT", 52, -366)
 					LeaPlusCB["ShowHelm"]:SetHitRectInsets(3, -LeaPlusCB["ShowHelm"].f:GetStringWidth(), 0, 0)
 					LeaPlusCB["ShowHelm"].f:ClearAllPoints()
 					LeaPlusCB["ShowHelm"].f:SetPoint("LEFT", LeaPlusCB["ShowHelm"], "RIGHT", 0, 0)
-
-					if LeaPlusLC.NewPatch then
-						LeaPlusCB["ShowCloak"].f:SetText(L["C"])
-						LeaPlusCB["ShowCloak"]:ClearAllPoints()
-						LeaPlusCB["ShowCloak"]:SetPoint("LEFT", LeaPlusCB["ShowHelm"].f, "RIGHT", 10, 0)
-					else
-						LeaPlusCB["ShowCloak"].f:SetText(L["Cloak"])
-						LeaPlusCB["ShowCloak"]:ClearAllPoints()
-						LeaPlusCB["ShowCloak"]:SetPoint("TOPLEFT", 275, -246)
-					end
+					LeaPlusCB["ShowCloak"].f:SetText(L["C"])
+					LeaPlusCB["ShowCloak"]:ClearAllPoints()
+					LeaPlusCB["ShowCloak"]:SetPoint("LEFT", LeaPlusCB["ShowHelm"].f, "RIGHT", 10, 0)
 					LeaPlusCB["ShowCloak"]:SetHitRectInsets(-LeaPlusCB["ShowCloak"].f:GetStringWidth(), 3, 0, 0)
 					LeaPlusCB["ShowCloak"].f:ClearAllPoints()
 					LeaPlusCB["ShowCloak"].f:SetPoint("RIGHT", LeaPlusCB["ShowCloak"], "LEFT", 0, 0)
@@ -6395,22 +6366,14 @@
 				LeaPlusCB["DressupFasterZoom"].f:SetFormattedText("%.0f%%", LeaPlusLC["DressupFasterZoom"] * 100)
 			end)
 
-			-- Hide options if not Cataclysm Classic
-			if not LeaPlusLC.NewPatch then
-				LeaPlusCB["DressupFasterZoom"]:Hide()
-				LeaPlusCB["DressupWiderPreview"]:Hide()
-			end
-
 			-- Set zoom speed when character frame model is zoomed
-			if LeaPlusLC.NewPatch then
-				CharacterModelScene:SetScript("OnMouseWheel", function(self, delta)
-					for i = 1, LeaPlusLC["DressupFasterZoom"] do
-						if CharacterModelScene.activeCamera then
-							CharacterModelScene.activeCamera:OnMouseWheel(delta)
-						end
+			CharacterModelScene:SetScript("OnMouseWheel", function(self, delta)
+				for i = 1, LeaPlusLC["DressupFasterZoom"] do
+					if CharacterModelScene.activeCamera then
+						CharacterModelScene.activeCamera:OnMouseWheel(delta)
 					end
-				end)
-			end
+				end
+			end)
 
 			-- Help button hidden
 			DressupPanel.h:Hide()
@@ -6774,301 +6737,167 @@
 			-- Controls
 			----------------------------------------------------------------------
 
-			-- Hide model rotation controls
-			if LeaPlusLC.NewPatch then
-				-- Hide character frame controls
-				CharacterModelScene.ControlFrame:HookScript("OnShow", function()
-					CharacterModelScene.ControlFrame:Hide()
-				end)
-				-- Hide controls for dressing room
-				DressUpModelFrameRotateLeftButton:HookScript("OnShow", DressUpModelFrameRotateLeftButton.Hide)
-				DressUpModelFrameRotateRightButton:HookScript("OnShow", DressUpModelFrameRotateRightButton.Hide)
-				SideDressUpModelControlFrame:HookScript("OnShow", SideDressUpModelControlFrame.Hide)
-			else
-				CharacterModelFrameRotateLeftButton:HookScript("OnShow", CharacterModelFrameRotateLeftButton.Hide)
-				CharacterModelFrameRotateRightButton:HookScript("OnShow", CharacterModelFrameRotateRightButton.Hide)
-				DressUpModelFrameRotateLeftButton:HookScript("OnShow", DressUpModelFrameRotateLeftButton.Hide)
-				DressUpModelFrameRotateRightButton:HookScript("OnShow", DressUpModelFrameRotateRightButton.Hide)
-				SideDressUpModelControlFrame:HookScript("OnShow", SideDressUpModelControlFrame.Hide)
-			end
+			-- Hide character frame controls
+			CharacterModelScene.ControlFrame:HookScript("OnShow", function()
+				CharacterModelScene.ControlFrame:Hide()
+			end)
+			-- Hide controls for dressing room
+			DressUpModelFrameRotateLeftButton:HookScript("OnShow", DressUpModelFrameRotateLeftButton.Hide)
+			DressUpModelFrameRotateRightButton:HookScript("OnShow", DressUpModelFrameRotateRightButton.Hide)
+			SideDressUpModelControlFrame:HookScript("OnShow", SideDressUpModelControlFrame.Hide)
 
 			----------------------------------------------------------------------
 			-- Wardrobe and inspect system
 			----------------------------------------------------------------------
 
-			if LeaPlusLC.NewPatch then
-
-				-- Wardrobe (used by transmogrifier NPC) and mount journal
-				local function DoBlizzardCollectionsFunc()
-					-- Hide positioning controls for mount journal
-					MountJournal.MountDisplay.ModelScene.RotateLeftButton:Hide()
-					MountJournal.MountDisplay.ModelScene.RotateRightButton:Hide()
-					-- Hide positioning controls for pet journal
-					PetJournalPetCard.modelScene.RotateLeftButton:Hide()
-					PetJournalPetCard.modelScene.RotateRightButton:Hide()
-					-- Hide positioning controls for wardrobe
-					WardrobeTransmogFrameControlFrame:HookScript("OnShow", WardrobeTransmogFrameControlFrame.Hide)
-					-- Set zoom speed for mount journal
-					MountJournal.MountDisplay.ModelScene:SetScript("OnMouseWheel", function(self, delta)
-						for i = 1, LeaPlusLC["DressupFasterZoom"] do
-							if MountJournal.MountDisplay.ModelScene.activeCamera then
-								MountJournal.MountDisplay.ModelScene.activeCamera:OnMouseWheel(delta)
-							end
+			-- Wardrobe (used by transmogrifier NPC) and mount journal
+			local function DoBlizzardCollectionsFunc()
+				-- Hide positioning controls for mount journal
+				MountJournal.MountDisplay.ModelScene.RotateLeftButton:Hide()
+				MountJournal.MountDisplay.ModelScene.RotateRightButton:Hide()
+				-- Hide positioning controls for pet journal
+				PetJournalPetCard.modelScene.RotateLeftButton:Hide()
+				PetJournalPetCard.modelScene.RotateRightButton:Hide()
+				-- Hide positioning controls for wardrobe
+				WardrobeTransmogFrameControlFrame:HookScript("OnShow", WardrobeTransmogFrameControlFrame.Hide)
+				-- Set zoom speed for mount journal
+				MountJournal.MountDisplay.ModelScene:SetScript("OnMouseWheel", function(self, delta)
+					for i = 1, LeaPlusLC["DressupFasterZoom"] do
+						if MountJournal.MountDisplay.ModelScene.activeCamera then
+							MountJournal.MountDisplay.ModelScene.activeCamera:OnMouseWheel(delta)
 						end
-					end)
-					-- Set zoom speed for pet journal
-					PetJournalPetCard.modelScene:SetScript("OnMouseWheel", function(self, delta)
-						for i = 1, LeaPlusLC["DressupFasterZoom"] do
-							if PetJournalPetCard.modelScene.activeCamera then
-								PetJournalPetCard.modelScene.activeCamera:OnMouseWheel(delta)
-							end
-						end
-					end)
-					-- Wider transmogrifier character preview
-					if LeaPlusLC["DressupWiderPreview"] == "On" then
-
-						local width = 1200 -- Default is 965
-						WardrobeFrame:SetWidth(width)
-						WardrobeTransmogFrame:SetWidth(width - 665)
-						WardrobeTransmogFrame.Inset.BG:SetWidth(width - 671)
-						WardrobeTransmogFrame.Model:SetWidth(width - 671)
-
-						-- Left slots column
-						WardrobeTransmogFrame.HeadButton:ClearAllPoints()
-						WardrobeTransmogFrame.HeadButton:SetPoint("TOPLEFT", 15, -40)
-
-						-- Right slots column
-						WardrobeTransmogFrame.HandsButton:ClearAllPoints()
-						WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -15, -60)
-
-						-- Weapons
-						WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
-						WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
-						WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
-						WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
-
-					else
-
-						-- Wider character preview is disabled so move the right column up
-						WardrobeTransmogFrame.HandsButton:ClearAllPoints()
-						WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -6, -60)
-
-						-- Show weapons in the right column
-						WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
-						WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
-						WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
-						WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
-
 					end
-
-					----------------------------------------------------------------------
-					-- Transmogrify animation slider
-					----------------------------------------------------------------------
-
-					do
-
-						local transmogAnimTable = {0, 4, 5, 143, 119, 26, 25, 27, 28, 108, 120, 51, 124, 52, 125, 126, 62, 63, 41, 42, 43, 44, 132, 38, 14, 115, 193, 48, 110, 109, 134, 197, 0}
-						local transmogLastSetting
-
-						LeaPlusLC["TransmogAnim"] = 0 -- Defined here since the setting is not saved
-						LeaPlusLC:MakeSL(WardrobeTransmogFrame, "TransmogAnim", "", 1, #transmogAnimTable - 1, 1, 356, -92, "%.0f")
-						LeaPlusCB["TransmogAnim"]:ClearAllPoints()
-						LeaPlusCB["TransmogAnim"]:SetPoint("BOTTOM", 0, 6)
-						if LeaPlusLC["DressupWiderPreview"] == "On" then
-							LeaPlusCB["TransmogAnim"]:SetWidth(240)
-						else
-							LeaPlusCB["TransmogAnim"]:SetWidth(216)
+				end)
+				-- Set zoom speed for pet journal
+				PetJournalPetCard.modelScene:SetScript("OnMouseWheel", function(self, delta)
+					for i = 1, LeaPlusLC["DressupFasterZoom"] do
+						if PetJournalPetCard.modelScene.activeCamera then
+							PetJournalPetCard.modelScene.activeCamera:OnMouseWheel(delta)
 						end
-						LeaPlusCB["TransmogAnim"]:SetFrameLevel(5)
-						LeaPlusCB["TransmogAnim"]:HookScript("OnValueChanged", function(self, setting)
-							local playerActor = WardrobeTransmogFrame.Model
-							setting = math.floor(setting + 0.5)
-							if playerActor and setting ~= lastSetting then
-								lastSetting = setting
-								playerActor:SetAnimation(transmogAnimTable[setting], 0, 1, 1)
-							end
-						end)
-
-						-- Function to show animation control
-						local function SetAnimationSlider()
-							if LeaPlusLC["DressupTransmogAnim"] == "On" then
-								LeaPlusCB["TransmogAnim"]:Show()
-							else
-								LeaPlusCB["TransmogAnim"]:Hide()
-							end
-							LeaPlusCB["TransmogAnim"]:SetValue(1)
-						end
-
-						-- Set animation control with option, startup, preset and reset
-						LeaPlusCB["DressupTransmogAnim"]:HookScript("OnClick", SetAnimationSlider)
-						SetAnimationSlider()
-						LeaPlusCB["EnhanceDressupBtn"]:HookScript("OnClick", function()
-							if IsShiftKeyDown() and IsControlKeyDown() then
-								LeaPlusLC["DressupTransmogAnim"] = "On"
-								SetAnimationSlider()
-							end
-						end)
-						DressupPanel.r:HookScript("OnClick", function()
-							LeaPlusLC["DressupTransmogAnim"] = "Off"
-							SetAnimationSlider()
-							DressupPanel:Hide(); DressupPanel:Show()
-						end)
-
-						-- Reset animation when slider is shown
-						LeaPlusCB["TransmogAnim"]:HookScript("OnShow", SetAnimationSlider)
-
-						-- Skin slider for ElvUI
-						if LeaPlusLC.ElvUI then
-							_G.LeaPlusGlobalTransmogAnim = LeaPlusCB["TransmogAnim"]
-							LeaPlusLC.ElvUI:GetModule("Skins"):HandleSliderFrame(_G.LeaPlusGlobalTransmogAnim, false)
-						end
-
 					end
+				end)
+				-- Wider transmogrifier character preview
+				if LeaPlusLC["DressupWiderPreview"] == "On" then
+
+					local width = 1200 -- Default is 965
+					WardrobeFrame:SetWidth(width)
+					WardrobeTransmogFrame:SetWidth(width - 665)
+					WardrobeTransmogFrame.Inset.BG:SetWidth(width - 671)
+					WardrobeTransmogFrame.Model:SetWidth(width - 671)
+
+					-- Left slots column
+					WardrobeTransmogFrame.HeadButton:ClearAllPoints()
+					WardrobeTransmogFrame.HeadButton:SetPoint("TOPLEFT", 15, -40)
+
+					-- Right slots column
+					WardrobeTransmogFrame.HandsButton:ClearAllPoints()
+					WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -15, -60)
+
+					-- Weapons
+					WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
+					WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
+					WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
+					WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
+
+				else
+
+					-- Wider character preview is disabled so move the right column up
+					WardrobeTransmogFrame.HandsButton:ClearAllPoints()
+					WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -6, -60)
+
+					-- Show weapons in the right column
+					WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
+					WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
+					WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
+					WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
 
 				end
 
-				if C_AddOns.IsAddOnLoaded("Blizzard_Collections") then
-					DoBlizzardCollectionsFunc()
-				else
-					local waitFrame = CreateFrame("FRAME")
-					waitFrame:RegisterEvent("ADDON_LOADED")
-					waitFrame:SetScript("OnEvent", function(self, event, arg1)
-						if arg1 == "Blizzard_Collections" then
-							DoBlizzardCollectionsFunc()
-							waitFrame:UnregisterAllEvents()
+				----------------------------------------------------------------------
+				-- Transmogrify animation slider
+				----------------------------------------------------------------------
+
+				do
+
+					local transmogAnimTable = {0, 4, 5, 143, 119, 26, 25, 27, 28, 108, 120, 51, 124, 52, 125, 126, 62, 63, 41, 42, 43, 44, 132, 38, 14, 115, 193, 48, 110, 109, 134, 197, 0}
+					local transmogLastSetting
+
+					LeaPlusLC["TransmogAnim"] = 0 -- Defined here since the setting is not saved
+					LeaPlusLC:MakeSL(WardrobeTransmogFrame, "TransmogAnim", "", 1, #transmogAnimTable - 1, 1, 356, -92, "%.0f")
+					LeaPlusCB["TransmogAnim"]:ClearAllPoints()
+					LeaPlusCB["TransmogAnim"]:SetPoint("BOTTOM", 0, 6)
+					if LeaPlusLC["DressupWiderPreview"] == "On" then
+						LeaPlusCB["TransmogAnim"]:SetWidth(240)
+					else
+						LeaPlusCB["TransmogAnim"]:SetWidth(216)
+					end
+					LeaPlusCB["TransmogAnim"]:SetFrameLevel(5)
+					LeaPlusCB["TransmogAnim"]:HookScript("OnValueChanged", function(self, setting)
+						local playerActor = WardrobeTransmogFrame.Model
+						setting = math.floor(setting + 0.5)
+						if playerActor and setting ~= lastSetting then
+							lastSetting = setting
+							playerActor:SetAnimation(transmogAnimTable[setting], 0, 1, 1)
 						end
 					end)
+
+					-- Function to show animation control
+					local function SetAnimationSlider()
+						if LeaPlusLC["DressupTransmogAnim"] == "On" then
+							LeaPlusCB["TransmogAnim"]:Show()
+						else
+							LeaPlusCB["TransmogAnim"]:Hide()
+						end
+						LeaPlusCB["TransmogAnim"]:SetValue(1)
+					end
+
+					-- Set animation control with option, startup, preset and reset
+					LeaPlusCB["DressupTransmogAnim"]:HookScript("OnClick", SetAnimationSlider)
+					SetAnimationSlider()
+					LeaPlusCB["EnhanceDressupBtn"]:HookScript("OnClick", function()
+						if IsShiftKeyDown() and IsControlKeyDown() then
+							LeaPlusLC["DressupTransmogAnim"] = "On"
+							SetAnimationSlider()
+						end
+					end)
+					DressupPanel.r:HookScript("OnClick", function()
+						LeaPlusLC["DressupTransmogAnim"] = "Off"
+						SetAnimationSlider()
+						DressupPanel:Hide(); DressupPanel:Show()
+					end)
+
+					-- Reset animation when slider is shown
+					LeaPlusCB["TransmogAnim"]:HookScript("OnShow", SetAnimationSlider)
+
+					-- Skin slider for ElvUI
+					if LeaPlusLC.ElvUI then
+						_G.LeaPlusGlobalTransmogAnim = LeaPlusCB["TransmogAnim"]
+						LeaPlusLC.ElvUI:GetModule("Skins"):HandleSliderFrame(_G.LeaPlusGlobalTransmogAnim, false)
+					end
+
 				end
 
 			end
 
-			----------------------------------------------------------------------
-			-- Hide dressup stats button
-			----------------------------------------------------------------------
-
-			if LeaPlusLC.NewPatch then
+			if C_AddOns.IsAddOnLoaded("Blizzard_Collections") then
+				DoBlizzardCollectionsFunc()
 			else
-
-				local function ToggleStats(startup)
-
-					-- ElvUI_WrathArmory: Make character model full size
-					if LeaPlusLC.ElvUI then
-						local E = LeaPlusLC.ElvUI:GetModule("ElvUI_WrathArmory", true)
-						if E then
-							CharacterModelFrame:ClearAllPoints()
-							CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-							CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 134)
-							return
-						end
-					end
-
-					-- Toggle dressup stats
-					if LeaPlusLC["HideDressupStats"] == "On" then
-						CharacterResistanceFrame:Hide()
-						if CSC_HideStatsPanel then
-							-- CharacterStatsWRATH is installed
-							RunScript('CSC_HideStatsPanel()')
-							if startup then
-								C_Timer.After(0.1, function()
-									CharacterModelFrame:ClearAllPoints()
-									CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-									CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 134)
-								end)
-							end
-						else
-							-- CharacterStatsWRATH is not installed
-							CharacterAttributesFrame:Hide()
-						end
-						CharacterModelFrame:ClearAllPoints()
-						CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-						CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 134)
-						if LeaPlusLC["ShowVanityControls"] == "On" then
-							LeaPlusCB["ShowHelm"]:Hide()
-							LeaPlusCB["ShowCloak"]:Hide()
-						end
-
-					else
-
-						CharacterResistanceFrame:Show()
-						if CSC_ShowStatsPanel then
-							-- CharacterStatsWRATH is installed
-							RunScript('CSC_ShowStatsPanel()')
-							if startup then
-								C_Timer.After(0.1, function()
-									CharacterModelFrame:ClearAllPoints()
-									CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-									CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 243)
-								end)
-							end
-						else
-							-- CharacterStatsWRATH is not installed
-							CharacterAttributesFrame:Show()
-						end
-						CharacterModelFrame:ClearAllPoints()
-						CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, 66, -76)
-						CharacterModelFrame:SetPoint("BOTTOMRIGHT", PaperDollFrame, -86, 243)
-						if LeaPlusLC["ShowVanityControls"] == "On" then
-							LeaPlusCB["ShowHelm"]:Show()
-							LeaPlusCB["ShowCloak"]:Show()
-						end
-					end
-
-				end
-
-				-- Toggle stats with middle mouse button
-				CharacterModelFrame:HookScript("OnMouseDown", function(self, btn)
-					if btn == "MiddleButton" then
-						if LeaPlusLC["HideDressupStats"] == "On" then LeaPlusLC["HideDressupStats"] = "Off" else LeaPlusLC["HideDressupStats"] = "On" end
-						ToggleStats()
+				local waitFrame = CreateFrame("FRAME")
+				waitFrame:RegisterEvent("ADDON_LOADED")
+				waitFrame:SetScript("OnEvent", function(self, event, arg1)
+					if arg1 == "Blizzard_Collections" then
+						DoBlizzardCollectionsFunc()
+						waitFrame:UnregisterAllEvents()
 					end
 				end)
-				ToggleStats(true)
-
-				-- Create toggle stats button
-				local toggleButton = CreateFrame("Button", nil, PaperDollFrame)
-				toggleButton:SetSize(36, 36)
-				toggleButton:SetPoint("TOPLEFT", PaperDollFrame, "TOPLEFT", 64, -45)
-				toggleButton:SetNormalTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
-				toggleButton:SetHighlightTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
-				toggleButton:SetPushedTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-RotationRight-Big-Up")
-				toggleButton:SetScript("OnEnter", function()
-					GameTooltip:SetOwner(toggleButton, "ANCHOR_NONE")
-					GameTooltip:SetPoint("BOTTOMLEFT", toggleButton, "BOTTOMRIGHT", 0, 0)
-					GameTooltip:SetText(L["Toggle character stats"], nil, nil, nil, nil, true)
-					GameTooltip:Show()
-				end)
-				toggleButton:SetScript("OnLeave", GameTooltip_Hide)
-				toggleButton:SetScript("OnClick", function()
-					if LeaPlusLC["HideDressupStats"] == "On" then LeaPlusLC["HideDressupStats"] = "Off" else LeaPlusLC["HideDressupStats"] = "On" end
-					ToggleStats()
-				end)
-
 			end
 
 			----------------------------------------------------------------------
 			-- Enable zooming and panning
 			----------------------------------------------------------------------
 
-			-- Enable zooming for character frame and dressup frame
-			if LeaPlusLC.NewPatch then
-			else
-				CharacterModelFrame:HookScript("OnMouseWheel", Model_OnMouseWheel)
-			end
+			-- Enable zooming for dressup frame
 			DressUpModelFrame:HookScript("OnMouseWheel", Model_OnMouseWheel)
-
-			-- Enable panning for character frame
-			if LeaPlusLC.NewPatch then
-			else
-				CharacterModelFrame:HookScript("OnMouseDown", function(self, btn)
-					if btn == "RightButton" then
-						Model_StartPanning(self)
-					end
-				end)
-
-				CharacterModelFrame:HookScript("OnMouseUp", function(self, btn)
-					Model_StopPanning(self)
-				end)
-			end
 
 			-- Enable panning for dressup frame
 			DressUpModelFrame:HookScript("OnMouseDown", function(self, btn)
@@ -8678,11 +8507,7 @@
 
 			-- Create slider control
 			LeaPlusLC["LeaPlusMaxVol"] = tonumber(GetCVar("Sound_MasterVolume"))
-			if LeaPlusLC.NewPatch then
-				LeaPlusLC:MakeSL(CharacterModelScene, "LeaPlusMaxVol", "",	0, 1, 0.05, -42, -328, "%.2f")
-			else
-				LeaPlusLC:MakeSL(CharacterModelFrame, "LeaPlusMaxVol", "",	0, 1, 0.05, -42, -328, "%.2f")
-			end
+			LeaPlusLC:MakeSL(CharacterModelScene, "LeaPlusMaxVol", "",	0, 1, 0.05, -42, -328, "%.2f")
 			LeaPlusCB["LeaPlusMaxVol"]:SetWidth(64)
 			LeaPlusCB["LeaPlusMaxVol"].f:ClearAllPoints()
 			LeaPlusCB["LeaPlusMaxVol"].f:SetPoint("LEFT", LeaPlusCB["LeaPlusMaxVol"], "RIGHT", 6, 0)
@@ -9730,20 +9555,12 @@
 			local function HideButtons(chtfrm)
 				_G[chtfrm .. "ButtonFrameUpButton"]:SetParent(tframe)
 				_G[chtfrm .. "ButtonFrameDownButton"]:SetParent(tframe)
-				if not LeaPlusLC.NewPatch then
-					_G[chtfrm .. "ButtonFrameMinimizeButton"]:SetParent(tframe)
-				end
 				_G[chtfrm .. "ButtonFrameUpButton"]:Hide()
 				_G[chtfrm .. "ButtonFrameDownButton"]:Hide()
-				if not LeaPlusLC.NewPatch then
-					_G[chtfrm .. "ButtonFrameMinimizeButton"]:Hide()
-				end
 				_G[chtfrm .. "ButtonFrame"]:SetSize(0.1,0.1)
 			end
 
-			if LeaPlusLC.NewPatch and FriendsMicroButton then
-				FriendsMicroButton:Hide()
-			end
+			FriendsMicroButton:Hide()
 
 			-- Function to highlight chat tabs and click to scroll to bottom
 			local function HighlightTabs(chtfrm)
@@ -11390,7 +11207,7 @@
 			maintitle:ClearAllPoints()
 			maintitle:SetPoint("TOP", 0, -72)
 
-			local expTitle = LeaPlusLC:MakeTx(interPanel, "Wrath Classic & Cataclysm Classic", 0, 0)
+			local expTitle = LeaPlusLC:MakeTx(interPanel, "Cataclysm Classic", 0, 0)
 			expTitle:SetFont(expTitle:GetFont(), 32)
 			expTitle:ClearAllPoints()
 			expTitle:SetPoint("TOP", 0, -152)
@@ -12791,10 +12608,6 @@
 						end
 					end
 
-					if not LeaPlusLC.NewPatch then
-						Lock("AutoConfirmRole", "This is for Cataclysm Classic") -- Hide the combat log
-					end
-
 					-- Disable items that conflict with Glass
 					if LeaPlusLC.Glass then
 						local reason = L["Cannot be used with Glass"]
@@ -13855,7 +13668,7 @@
 		PageF.v:SetPoint('TOPLEFT', PageF.mt, 'BOTTOMLEFT', 0, -8);
 		PageF.v:SetPoint('RIGHT', PageF, -32, 0)
 		PageF.v:SetJustifyH('LEFT'); PageF.v:SetJustifyV('TOP');
-		PageF.v:SetNonSpaceWrap(true); PageF.v:SetText(L["WC"] .. " " .. LeaPlusLC["AddonVer"])
+		PageF.v:SetNonSpaceWrap(true); PageF.v:SetText(L["CC"] .. " " .. LeaPlusLC["AddonVer"])
 
 		-- Add reload UI Button
 		local reloadb = LeaPlusLC:CreateButton("ReloadUIButton", PageF, "Reload", "BOTTOMRIGHT", -16, 10, 0, 25, true, "Your UI needs to be reloaded for some of the changes to take effect.|n|nYou don't have to click the reload button immediately but you do need to click it when you are done making changes and you want the changes to take effect.")
