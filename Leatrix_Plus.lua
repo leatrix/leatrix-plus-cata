@@ -9879,16 +9879,16 @@
 			end
 
 			-- Create class tables if they don't exist
-			local classList = {"WARRIOR", "PALADIN", "HUNTER", "SHAMAN", "ROGUE", "DRUID", "MAGE", "WARLOCK", "PRIEST", "DEATHKNIGHT"}
-			for index = 1, #classList do
-				if LeaPlusDB["Cooldowns"][classList[index]] == nil then
-					LeaPlusDB["Cooldowns"][classList[index]] = {}
+			for index = 1, GetNumClasses() do
+				local classDisplayName, classTag, classID = GetClassInfo(index)
+				if LeaPlusDB["Cooldowns"][classTag] == nil then
+					LeaPlusDB["Cooldowns"][classTag] = {}
 				end
 			end
 
-			-- Get current class
+			-- Get current class and spec
 			local PlayerClass = select(2, UnitClass("player"))
-			local activeSpec = 1 -- Fixed to 1 for Classic
+			local activeSpec = GetActiveTalentGroup() or 1
 
 			-- Create local tables to store cooldown frames and editboxes
 			local icon = {} -- Used to store cooldown frames
@@ -10131,7 +10131,7 @@
 			LeaPlusCB["CooldownsOnPlayer"]:HookScript("OnClick", SavePanelControls)
 
 			-- Help button tooltip
-			CooldownPanel.h.tiptext = L["Enter the spell IDs for the cooldown icons that you want to see.|n|nIf a cooldown icon normally appears under the pet frame, check the pet checkbox.|n|nCooldown icons are saved to your class."]
+			CooldownPanel.h.tiptext = L["Enter the spell IDs for the cooldown icons that you want to see.|n|nIf a cooldown icon normally appears under the pet frame, check the pet checkbox.|n|nCooldown icons are saved to your class and specialisation."]
 
 			-- Back button handler
 			CooldownPanel.b:SetScript("OnClick", function()
@@ -10183,19 +10183,43 @@
 				end
 			end)
 
-			-- Create class tag banner fontstring
-			local classTagBanner = CooldownPanel:CreateFontString(nil, 'ARTWORK', 'GameFontNormal')
-			local myClassName = UnitClass("player")
-			classTagBanner:SetPoint("TOPLEFT", 384, -72)
-			classTagBanner:SetText(myClassName)
+			-- Create spec tag banner fontstring
+			local specTagSpecID = GetActiveTalentGroup()
+			local specTagBanner = CooldownPanel:CreateFontString(nil, 'ARTWORK', 'GameFontNormal')
+			specTagBanner:SetPoint("TOPLEFT", 384, -72)
+			if specTagSpecID == 1 then specTagBanner:SetText(L["Primary Talents"]) else specTagBanner:SetText(L["Secondary Talents"]) end
+
+            -- Set controls when spec changes
+            local swapFrame = CreateFrame("FRAME")
+            swapFrame:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
+            swapFrame:SetScript("OnEvent", function()
+				-- Store new spec
+				activeSpec = GetActiveTalentGroup()
+				-- Update controls for new spec
+				for i = 1, iCount do
+					SpellEB[i]:SetText(LeaPlusDB["Cooldowns"][PlayerClass]["S" .. activeSpec .. "R" .. i .. "Idn"] or "")
+					LeaPlusCB["Spell" .. i .. "Pet"]:SetChecked(LeaPlusDB["Cooldowns"][PlayerClass]["S" .. activeSpec .. "R" .. i .. "Pet"] or false)
+				end
+				-- Update spec tag banner with new spec
+				if activeSpec == 1 then specTagBanner:SetText(L["Primary Talents"]) else specTagBanner:SetText(L["Secondary Talents"]) end
+				-- Refresh configuration panel
+				if CooldownPanel:IsShown() then
+					CooldownPanel:Hide(); CooldownPanel:Show()
+				end
+				-- Save settings
+				SavePanelControls()
+            end)
 
 			-- Function to show spell ID in tooltips
 			local function CooldownIDFunc(unit, target, index, auratype)
 				if LeaPlusLC["ShowCooldownID"] == "On" and auratype ~= "HARMFUL" then
-					local spellid = select(10, UnitAura(target, index))
-					if spellid then
-						GameTooltip:AddLine(L["Spell ID"] .. ": " .. spellid)
-						GameTooltip:Show()
+					local AuraData = C_UnitAuras.GetAuraDataByIndex(target, index)
+					if AuraData then
+						local spellid = AuraData.spellId
+						if spellid then
+							GameTooltip:AddLine(L["Spell ID"] .. ": " .. spellid)
+							GameTooltip:Show()
+						end
 					end
 				end
 			end

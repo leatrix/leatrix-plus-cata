@@ -1,4 +1,5 @@
 ﻿4.0.01.alpha.1 - 24th April 2004
+- The 'Show cooldowns' option ('Interface') now supports dual spec.  Cooldown icons are saved to your class and specialisation (mirroring retail).
 - Updated deprecated functions.
 
 4.0.00 - 24th April 2004
