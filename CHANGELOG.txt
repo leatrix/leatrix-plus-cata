@@ -1,4 +1,7 @@
-﻿4.0.00 - 24th April 2004
+﻿4.0.01.alpha.1 - 24th April 2004
+- Updated deprecated functions.
+
+4.0.00 - 24th April 2004
 - Welcome to Cataclysm Classic.
 - Added a new option called 'Queue from friends' ('Social').  If checked, requests initiated by your party leader to join the Dungeon Finder queue will be automatically accepted if the party leader is a friend.
 - For 'Enhance dressup' ('Interface'), added new options to make the transmogrify window wider and to show a transmogrify model animation slider.  The zoom speed now affects the mount journal and the pet journal in addition to the character frame model.

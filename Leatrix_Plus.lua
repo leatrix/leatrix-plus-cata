@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.00 (24th April 2024)
+-- 	Leatrix Plus 4.0.01.alpha.1 (24th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.00"
+	LeaPlusLC["AddonVer"] = "4.0.01.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -41,11 +41,11 @@
 	end
 
 	-- Check for addons
-	if IsAddOnLoaded("ElvUI") then LeaPlusLC.ElvUI = unpack(ElvUI) end
-	if IsAddOnLoaded("Glass") then LeaPlusLC.Glass = true end
-	if IsAddOnLoaded("CharacterStatsWRATH") then LeaPlusLC.CharacterStatsWRATH = true end
-	if IsAddOnLoaded("totalRP3") then LeaPlusLC.totalRP3 = true end
-	if IsAddOnLoaded("TitanClassic") then LeaPlusLC.TitanClassic = true end
+	if C_AddOns.IsAddOnLoaded("ElvUI") then LeaPlusLC.ElvUI = unpack(ElvUI) end
+	if C_AddOns.IsAddOnLoaded("Glass") then LeaPlusLC.Glass = true end
+	if C_AddOns.IsAddOnLoaded("CharacterStatsWRATH") then LeaPlusLC.CharacterStatsWRATH = true end
+	if C_AddOns.IsAddOnLoaded("totalRP3") then LeaPlusLC.totalRP3 = true end
+	if C_AddOns.IsAddOnLoaded("TitanClassic") then LeaPlusLC.TitanClassic = true end
 
 ----------------------------------------------------------------------
 --	L00: Leatrix Plus
@@ -340,16 +340,16 @@
 
 	-- Toggle Zygor addon
 	function LeaPlusLC:ZygorToggle()
-		if select(2, GetAddOnInfo("ZygorGuidesViewerClassicTBC")) then
-			if not IsAddOnLoaded("ZygorGuidesViewerClassicTBC") then
+		if select(2, C_AddOns.GetAddOnInfo("ZygorGuidesViewerClassicTBC")) then
+			if not C_AddOns.IsAddOnLoaded("ZygorGuidesViewerClassicTBC") then
 				if LeaPlusLC:PlayerInCombat() then
 					return
 				else
-					EnableAddOn("ZygorGuidesViewerClassicTBC")
+					C_AddOns.EnableAddOn("ZygorGuidesViewerClassicTBC")
 					ReloadUI();
 				end
 			else
-				DisableAddOn("ZygorGuidesViewerClassicTBC")
+				C_AddOns.DisableAddOn("ZygorGuidesViewerClassicTBC")
 				ReloadUI();
 			end
 		else
@@ -1407,7 +1407,7 @@
 			end
 
 			-- Run function when achievement UI is loaded
-			if IsAddOnLoaded("Blizzard_AchievementUI") then
+			if C_AddOns.IsAddOnLoaded("Blizzard_AchievementUI") then
 				DoWowheadAchievementFunc()
 			else
 				local waitAchievementsFrame = CreateFrame("FRAME")
@@ -1924,7 +1924,7 @@
 						if progItem.objectType == "item" then
 							local name, texture, numItems = GetQuestItemInfo("required", i)
 							if name then
-								local itemID = GetItemInfoInstant(name)
+								local itemID = C_Item.GetItemInfoInstant(name)
 								if itemID then
 									if itemID == 9999999999 then -- Reserved for future use
 										return true
@@ -1953,141 +1953,141 @@
 					-- Battlemasters
 					elseif title == L["Concerted Efforts"] or title == L["For Great Honor"] then
 						-- Requires 3 Alterac Valley Mark of Honor, 3 Arathi Basin Mark of Honor, 3 Warsong Gulch Mark of Honor (must be before other Mark of Honor quests)
-						if GetItemCount(20560) >= 3 and GetItemCount(20559) >= 3 and GetItemCount(20558) >= 3 then return true end
+						if C_Item.GetItemCount(20560) >= 3 and C_Item.GetItemCount(20559) >= 3 and C_Item.GetItemCount(20558) >= 3 then return true end
 					elseif title == L["Remember Alterac Valley!"] or title == L["Invaders of Alterac Valley"] then
 						-- Requires 3 Alterac Valley Mark of Honor
-						if GetItemCount(20560) >= 3 then return true end
+						if C_Item.GetItemCount(20560) >= 3 then return true end
 					elseif title == L["Claiming Arathi Basin"] or title == L["Conquering Arathi Basin"] then
 						-- Requires 3 Arathi Basin Mark of Honor
-						if GetItemCount(20559) >= 3 then return true end
+						if C_Item.GetItemCount(20559) >= 3 then return true end
 					elseif title == L["Fight for Warsong Gulch"] or title == L["Battle of Warsong Gulch"] then
 						-- Requires 3 Warsong Gulch Mark of Honor
-						if GetItemCount(20558) >= 3 then return true end
+						if C_Item.GetItemCount(20558) >= 3 then return true end
 
 					-- Cloth quartermasters
 					elseif title == L["A Donation of Wool"] then
 						-- Requires 60 Wool Cloth
-						if GetItemCount(2592) >= 60 then return true end
+						if C_Item.GetItemCount(2592) >= 60 then return true end
 					elseif title == L["A Donation of Silk"] then
 						-- Requires 60 Silk Cloth
-						if GetItemCount(4306) >= 60 then return true end
+						if C_Item.GetItemCount(4306) >= 60 then return true end
 					elseif title == L["A Donation of Mageweave"] then
 						-- Requires 60 Mageweave
-						if GetItemCount(4338) >= 60 then return true end
+						if C_Item.GetItemCount(4338) >= 60 then return true end
 					elseif title == L["A Donation of Runecloth"] then
 						-- Requires 60 Runecloth
-						if GetItemCount(14047) >= 60 then return true end
+						if C_Item.GetItemCount(14047) >= 60 then return true end
 					elseif title == L["Additional Runecloth"] then
 						-- Requires 20 Runecloth
-						if GetItemCount(14047) >= 20 then return true end
+						if C_Item.GetItemCount(14047) >= 20 then return true end
 					elseif title == L["Gurubashi, Vilebranch, and Witherbark Coins"] then
 						-- Requires 1 Gurubashi Coin, 1 Vilebranch Coin, 1 Witherbark Coin
-						if GetItemCount(19701) >= 1 and GetItemCount(19702) >= 1 and GetItemCount(19703) >= 1 then return true end
+						if C_Item.GetItemCount(19701) >= 1 and C_Item.GetItemCount(19702) >= 1 and C_Item.GetItemCount(19703) >= 1 then return true end
 					elseif title == L["Sandfury, Skullsplitter, and Bloodscalp Coins"] then
 						-- Requires 1 Sandfury Coin, 1 Skullsplitter Coin, 1 Bloodscalp Coin
-						if GetItemCount(19704) >= 1 and GetItemCount(19705) >= 1 and GetItemCount(19706) >= 1 then return true end
+						if C_Item.GetItemCount(19704) >= 1 and C_Item.GetItemCount(19705) >= 1 and C_Item.GetItemCount(19706) >= 1 then return true end
 					elseif title == L["Zulian, Razzashi, and Hakkari Coins"] then
 						-- Requires 1 Zulian Coin, 1 Razzashi Coin, 1 Hakkari Coin
-						if GetItemCount(19698) >= 1 and GetItemCount(19699) >= 1 and GetItemCount(19700) >= 1 then return true end
+						if C_Item.GetItemCount(19698) >= 1 and C_Item.GetItemCount(19699) >= 1 and C_Item.GetItemCount(19700) >= 1 then return true end
 					elseif title == L["Frostsaber E'ko"] then
 						-- Requires 3 Frostsaber E'ko
-						if GetItemCount(12430) >= 3 then return true end
+						if C_Item.GetItemCount(12430) >= 3 then return true end
 					elseif title == L["Winterfall E'ko"] then
 						-- Requires 3 Winterfall E'ko
-						if GetItemCount(12431) >= 3 then return true end
+						if C_Item.GetItemCount(12431) >= 3 then return true end
 					elseif title == L["Shardtooth E'ko"] then
 						-- Requires 3 Shardtooth E'ko
-						if GetItemCount(12432) >= 3 then return true end
+						if C_Item.GetItemCount(12432) >= 3 then return true end
 					elseif title == L["Wildkin E'ko"] then
 						-- Requires 3 Wildkin E'ko
-						if GetItemCount(12433) >= 3 then return true end
+						if C_Item.GetItemCount(12433) >= 3 then return true end
 					elseif title == L["Chillwind E'ko"] then
 						-- Requires 3 Chillwind E'ko
-						if GetItemCount(12434) >= 3 then return true end
+						if C_Item.GetItemCount(12434) >= 3 then return true end
 					elseif title == L["Ice Thistle E'ko"] then
 						-- Requires 3 Ice Thistle E'ko
-						if GetItemCount(12435) >= 3 then return true end
+						if C_Item.GetItemCount(12435) >= 3 then return true end
 					elseif title == L["Frostmaul E'ko"] then
 						-- Requires 3 Ice Thistle E'ko
-						if GetItemCount(12436) >= 3 then return true end
+						if C_Item.GetItemCount(12436) >= 3 then return true end
 					elseif title == L["Marks of Kil'jaeden"] or title == L["More Marks of Kil'jaeden"] then
 						-- Requires 10 More Marks of Kil'jaeden
-						if GetItemCount(29425) >= 10 then return true end
+						if C_Item.GetItemCount(29425) >= 10 then return true end
 					elseif title == L["Single Mark of Sargeras"] then
 						-- Requires 1 Marks of Sargeras (if more than 10, leave for More Marks of Sargeras)
-						if GetItemCount(30809) >= 1 and GetItemCount(30809) < 10 then return true end
+						if C_Item.GetItemCount(30809) >= 1 and C_Item.GetItemCount(30809) < 10 then return true end
 					elseif title == L["More Marks of Sargeras"] then
 						-- Requires 10 Marks of Sargeras
-						if GetItemCount(30809) >= 10 then return true end
+						if C_Item.GetItemCount(30809) >= 10 then return true end
 					elseif title == L["Firewing Signets"] or title == L["More Firewing Signets"] then
 						-- Requires 10 Firewing Signets
-						if GetItemCount(29426) >= 10 then return true end
+						if C_Item.GetItemCount(29426) >= 10 then return true end
 					elseif title == L["Single Sunfury Signet"] then
 						-- Requires 1 Sunfury Signet (if more than 10, leave for More Sunfury Signets)
-						if GetItemCount(30810) >= 1 and GetItemCount(30810) < 10 then return true end
+						if C_Item.GetItemCount(30810) >= 1 and C_Item.GetItemCount(30810) < 10 then return true end
 					elseif title == L["More Sunfury Signets"] then
 						-- Requires 10 Sunfury Signets
-						if GetItemCount(30810) >= 10 then return true end
+						if C_Item.GetItemCount(30810) >= 10 then return true end
 
 					-- Darkmoon Faire (Rinling)
 					elseif title == L["Copper Modulator"] then
-						if GetItemCount(4363) >= 5 then return true end
+						if C_Item.GetItemCount(4363) >= 5 then return true end
 					elseif title == L["Whirring Bronze Gizmo"] then
-						if GetItemCount(4375) >= 7 then return true end
+						if C_Item.GetItemCount(4375) >= 7 then return true end
 					elseif title == L["Green Fireworks"] then
-						if GetItemCount(9313) >= 36 then return true end
+						if C_Item.GetItemCount(9313) >= 36 then return true end
 					elseif title == L["Mechanical Repair Kits"] then
-						if GetItemCount(11590) >= 6 then return true end
+						if C_Item.GetItemCount(11590) >= 6 then return true end
 					elseif title == L["Thorium Widget"] then
-						if GetItemCount(15994) >= 6 then return true end
+						if C_Item.GetItemCount(15994) >= 6 then return true end
 					elseif title == L["More Thorium Widgets"] then
-						if GetItemCount(15994) >= 6 then return true end
+						if C_Item.GetItemCount(15994) >= 6 then return true end
 
 					-- Darkmoon Faire (Yebb Neblegear)
 					elseif title == L["Small Furry Paws"] then
-						if GetItemCount(5134) >= 5 then return true end
+						if C_Item.GetItemCount(5134) >= 5 then return true end
 					elseif title == L["Evil Bat Eyes"] then
-						if GetItemCount(11404) >= 10 then return true end
+						if C_Item.GetItemCount(11404) >= 10 then return true end
 					elseif title == L["Glowing Scorpid Blood"] then
-						if GetItemCount(19933) >= 10 then return true end
+						if C_Item.GetItemCount(19933) >= 10 then return true end
 					elseif title == L["More Bat Eyes"] then
-						if GetItemCount(11404) >= 10 then return true end
+						if C_Item.GetItemCount(11404) >= 10 then return true end
 					elseif title == L["More Glowing Scorpid Blood"] then
-						if GetItemCount(19933) >= 10 then return true end
+						if C_Item.GetItemCount(19933) >= 10 then return true end
 					elseif title == L["Soft Bushy Tails"] then
-						if GetItemCount(4582) >= 5 then return true end
+						if C_Item.GetItemCount(4582) >= 5 then return true end
 					elseif title == L["Torn Bear Pelts"] then
-						if GetItemCount(11407) >= 5 then return true end
+						if C_Item.GetItemCount(11407) >= 5 then return true end
 					elseif title == L["Vibrant Plumes"] then
-						if GetItemCount(5117) >= 5 then return true end
+						if C_Item.GetItemCount(5117) >= 5 then return true end
 
 					-- Darkmoon Faire (Chronos)
 					elseif title == L["Armor Kits"] then
-						if GetItemCount(15564) >= 8 then return true end
+						if C_Item.GetItemCount(15564) >= 8 then return true end
 					elseif title == L["Carnival Boots"] then
-						if GetItemCount(2309) >= 3 then return true end
+						if C_Item.GetItemCount(2309) >= 3 then return true end
 					elseif title == L["Carnival Jerkins"] then
-						if GetItemCount(2314) >= 3 then return true end
+						if C_Item.GetItemCount(2314) >= 3 then return true end
 					elseif title == L["Crocolisk Boy and the Bearded Murloc"] then
-						if GetItemCount(8185) >= 1 then return true end
+						if C_Item.GetItemCount(8185) >= 1 then return true end
 					elseif title == L["More Armor Kits"] then
-						if GetItemCount(15564) >= 8 then return true end
+						if C_Item.GetItemCount(15564) >= 8 then return true end
 					elseif title == L["The World's Largest Gnome!"] then
-						if GetItemCount(5739) >= 3 then return true end
+						if C_Item.GetItemCount(5739) >= 3 then return true end
 
 					-- Darkmoon Faire (Kerri Hicks)
 					elseif title == L["Big Black Mace"] then
-						if GetItemCount(7945) >= 1 then return true end
+						if C_Item.GetItemCount(7945) >= 1 then return true end
 					elseif title == L["Coarse Weightstone"] then
-						if GetItemCount(3240) >= 10 then return true end
+						if C_Item.GetItemCount(3240) >= 10 then return true end
 					elseif title == L["Green Iron Bracers"] then
-						if GetItemCount(3835) >= 3 then return true end
+						if C_Item.GetItemCount(3835) >= 3 then return true end
 					elseif title == L["Heavy Grinding Stone"] then
-						if GetItemCount(3486) >= 7 then return true end
+						if C_Item.GetItemCount(3486) >= 7 then return true end
 					elseif title == L["More Dense Grinding Stones"] then
-						if GetItemCount(12644) >= 8 then return true end
+						if C_Item.GetItemCount(12644) >= 8 then return true end
 					elseif title == L["Rituals of Strength"] then
-						if GetItemCount(12644) >= 8 then return true end
+						if C_Item.GetItemCount(12644) >= 8 then return true end
 
 					else return true
 					end
@@ -2483,7 +2483,7 @@
 						if tipList[i] then
 							tipList[i] = tonumber(tipList[i])
 							if tipList[i] and tipList[i] > 0 and tipList[i] < 999999999 then
-								local void, tLink, Rarity, void, void, void, void, void, void, void, ItemPrice = GetItemInfo(tipList[i])
+								local void, tLink, Rarity, void, void, void, void, void, void, void, ItemPrice = C_Item.GetItemInfo(tipList[i])
 								if tLink and tLink ~= "" then
 									local linkCol = string.sub(tLink, 1, 10)
 									if linkCol then
@@ -2595,7 +2595,7 @@
 					for BagSlot = 1, C_Container.GetContainerNumSlots(BagID) do
 						CurrentItemLink = C_Container.GetContainerItemLink(BagID, BagSlot)
 						if CurrentItemLink then
-							void, void, Rarity, void, void, void, void, void, void, void, ItemPrice = GetItemInfo(CurrentItemLink)
+							void, void, Rarity, void, void, void, void, void, void, void, ItemPrice = C_Item.GetItemInfo(CurrentItemLink)
 							-- Don't sell whitelisted items
 							local itemID = GetItemInfoFromHyperlink(CurrentItemLink)
 							if itemID and whiteList[itemID] then
@@ -2636,7 +2636,7 @@
 				if SoldCount == 0 or SellJunkTicker and SellJunkTicker._remainingIterations == 1 then
 					StopSelling()
 					if totalPrice > 0 and LeaPlusLC["AutoSellShowSummary"] == "On" then
-						LeaPlusLC:Print(L["Sold junk for"] .. " " .. GetCoinText(totalPrice) .. ".")
+						LeaPlusLC:Print(L["Sold junk for"] .. " " .. C_CurrencyInfo.GetCoinText(totalPrice) .. ".")
 					end
 				end
 
@@ -2717,7 +2717,7 @@
 						end
 						-- Show cost summary
 						if LeaPlusLC["AutoRepairShowSummary"] == "On" then
-							LeaPlusLC:Print(L["Repaired for"] .. " " .. GetCoinText(RepairCost) .. ".")
+							LeaPlusLC:Print(L["Repaired for"] .. " " .. C_CurrencyInfo.GetCoinText(RepairCost) .. ".")
 						end
 					end
 				end
@@ -4253,10 +4253,10 @@
 				-- Function to make tooltip string with list of addons
 				local function MakeAddonString()
 					local msg = ""
-					local numAddons = GetNumAddOns()
+					local numAddons = C_AddOns.GetNumAddOns()
 					for i = 1, numAddons do
-						if IsAddOnLoaded(i) then
-							local name = GetAddOnInfo(i)
+						if C_AddOns.IsAddOnLoaded(i) then
+							local name = C_AddOns.GetAddOnInfo(i)
 							if name and _G["LibDBIcon10_" .. name] then -- Only list LibDBIcon buttons
 								msg = msg .. name .. ", "
 							end
@@ -5091,7 +5091,7 @@
 
 			-- Function to style and position the clock
 			local function SetMiniClock(firstRun)
-				if IsAddOnLoaded("Blizzard_TimeManager") then
+				if C_AddOns.IsAddOnLoaded("Blizzard_TimeManager") then
 					if LeaPlusLC["SquareMinimap"] == "On" and firstRun == true then
 						local regions = {TimeManagerClockButton:GetRegions()}
 						regions[1]:Hide()
@@ -5109,7 +5109,7 @@
 			end
 
 			-- Run function when Blizzard addon is loaded
-			if IsAddOnLoaded("Blizzard_TimeManager") then
+			if C_AddOns.IsAddOnLoaded("Blizzard_TimeManager") then
 				SetMiniClock(true)
 			else
 				local waitFrame = CreateFrame("FRAME")
@@ -6961,7 +6961,7 @@
 
 			end
 
-			if IsAddOnLoaded("Blizzard_InspectUI") then
+			if C_AddOns.IsAddOnLoaded("Blizzard_InspectUI") then
 				DoInspectSystemFunc()
 			else
 				local waitFrame = CreateFrame("FRAME")
@@ -7257,9 +7257,9 @@
 						GameTooltip:SetOwner(self, "ANCHOR_TOP", 0, 4)
 						GameTooltip:ClearLines()
 						if count > 1 then
-							GameTooltip:AddLine(L["Train"] .. " " .. count .. " " .. L["skills for"] .. " " .. GetCoinTextureString(cost))
+							GameTooltip:AddLine(L["Train"] .. " " .. count .. " " .. L["skills for"] .. " " .. C_CurrencyInfo.GetCoinTextureString(cost))
 						else
-							GameTooltip:AddLine(L["Train"] .. " " .. count .. " " .. L["skill for"] .. " " .. GetCoinTextureString(cost))
+							GameTooltip:AddLine(L["Train"] .. " " .. count .. " " .. L["skill for"] .. " " .. C_CurrencyInfo.GetCoinTextureString(cost))
 						end
 						GameTooltip:Show()
 					end
@@ -7337,7 +7337,7 @@
 			end
 
 			-- Run function when Trainer UI has loaded
-			if IsAddOnLoaded("Blizzard_TrainerUI") then
+			if C_AddOns.IsAddOnLoaded("Blizzard_TrainerUI") then
 				TrainerFunc()
 			else
 				local waitFrame = CreateFrame("FRAME")
@@ -7603,7 +7603,7 @@
 			end
 
 			-- Run function when TradeSkill UI has loaded
-			if IsAddOnLoaded("Blizzard_TradeSkillUI") then
+			if C_AddOns.IsAddOnLoaded("Blizzard_TradeSkillUI") then
 				TradeSkillFunc("TradeSkill")
 			else
 				local waitFrame = CreateFrame("FRAME")
@@ -7813,7 +7813,7 @@
 			end
 
 			-- Run search event function when Blizzard addon is loaded
-			if IsAddOnLoaded("Blizzard_GuildBankUI") then
+			if C_AddOns.IsAddOnLoaded("Blizzard_GuildBankUI") then
 				SetGuildBankFunc()
 			else
 				local waitFrame = CreateFrame("FRAME")
@@ -7869,7 +7869,7 @@
 				-- Get item
 				local itemName, itemlink = tooltipObject:GetItem()
 				if not itemlink then return end
-				local void, void, void, void, void, void, void, void, void, void, sellPrice, classID = GetItemInfo(itemlink)
+				local void, void, void, void, void, void, void, void, void, void, sellPrice, classID = C_Item.GetItemInfo(itemlink)
 				if sellPrice and sellPrice > 0 then
 					local count = container and type(container.count) == "number" and container.count or 1
 					if sellPrice and count > 0 then
@@ -8474,7 +8474,7 @@
 			end
 
 			-- Run function when Blizzard addon is loaded
-			if IsAddOnLoaded("Blizzard_AuctionUI") then
+			if C_AddOns.IsAddOnLoaded("Blizzard_AuctionUI") then
 				AuctionFunc()
 			else
 				local waitFrame = CreateFrame("FRAME")
@@ -12713,7 +12713,7 @@
 
 						end
 
-						EnableAddOn("Leatrix_Plus")
+						C_AddOns.EnableAddOn("Leatrix_Plus")
 					end
 
 				end
