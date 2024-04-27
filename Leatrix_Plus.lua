@@ -1312,17 +1312,17 @@
 
 			-- Get localised Wowhead URL
 			local wowheadLoc
-			if 	   GameLocale == "deDE" then wowheadLoc = "wowhead.com/wotlk/de"
-			elseif GameLocale == "esMX" then wowheadLoc = "wowhead.com/wotlk/es"
-			elseif GameLocale == "esES" then wowheadLoc = "wowhead.com/wotlk/es"
-			elseif GameLocale == "frFR" then wowheadLoc = "wowhead.com/wotlk/fr"
-			elseif GameLocale == "itIT" then wowheadLoc = "wowhead.com/wotlk/it"
-			elseif GameLocale == "ptBR" then wowheadLoc = "wowhead.com/wotlk/pt"
-			elseif GameLocale == "ruRU" then wowheadLoc = "wowhead.com/wotlk/ru"
-			elseif GameLocale == "koKR" then wowheadLoc = "wowhead.com/wotlk/ko"
-			elseif GameLocale == "zhCN" then wowheadLoc = "wowhead.com/wotlk/cn"
-			elseif GameLocale == "zhTW" then wowheadLoc = "wowhead.com/wotlk/cn"
-			else							 wowheadLoc = "wowhead.com/wotlk"
+			if 	   GameLocale == "deDE" then wowheadLoc = "wowhead.com/cata/de"
+			elseif GameLocale == "esMX" then wowheadLoc = "wowhead.com/cata/es"
+			elseif GameLocale == "esES" then wowheadLoc = "wowhead.com/cata/es"
+			elseif GameLocale == "frFR" then wowheadLoc = "wowhead.com/cata/fr"
+			elseif GameLocale == "itIT" then wowheadLoc = "wowhead.com/cata/it"
+			elseif GameLocale == "ptBR" then wowheadLoc = "wowhead.com/cata/pt"
+			elseif GameLocale == "ruRU" then wowheadLoc = "wowhead.com/cata/ru"
+			elseif GameLocale == "koKR" then wowheadLoc = "wowhead.com/cata/ko"
+			elseif GameLocale == "zhCN" then wowheadLoc = "wowhead.com/cata/cn"
+			elseif GameLocale == "zhTW" then wowheadLoc = "wowhead.com/cata/cn"
+			else							 wowheadLoc = "wowhead.com/cata"
 			end
 
 			----------------------------------------------------------------------
@@ -13858,17 +13858,17 @@
 				-- Show web link
 				if not LeaPlusLC.WowheadLock then
 					-- Set Wowhead link prefix
-						if GameLocale == "deDE" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/de"
-					elseif GameLocale == "esMX" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/es"
-					elseif GameLocale == "esES" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/es"
-					elseif GameLocale == "frFR" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/fr"
-					elseif GameLocale == "itIT" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/it"
-					elseif GameLocale == "ptBR" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/pt"
-					elseif GameLocale == "ruRU" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/ru"
-					elseif GameLocale == "koKR" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/ko"
-					elseif GameLocale == "zhCN" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/cn"
-					elseif GameLocale == "zhTW" then LeaPlusLC.WowheadLock = "wowhead.com/wotlk/cn"
-					else							 LeaPlusLC.WowheadLock = "wowhead.com/wotlk"
+						if GameLocale == "deDE" then LeaPlusLC.WowheadLock = "wowhead.com/cata/de"
+					elseif GameLocale == "esMX" then LeaPlusLC.WowheadLock = "wowhead.com/cata/es"
+					elseif GameLocale == "esES" then LeaPlusLC.WowheadLock = "wowhead.com/cata/es"
+					elseif GameLocale == "frFR" then LeaPlusLC.WowheadLock = "wowhead.com/cata/fr"
+					elseif GameLocale == "itIT" then LeaPlusLC.WowheadLock = "wowhead.com/cata/it"
+					elseif GameLocale == "ptBR" then LeaPlusLC.WowheadLock = "wowhead.com/cata/pt"
+					elseif GameLocale == "ruRU" then LeaPlusLC.WowheadLock = "wowhead.com/cata/ru"
+					elseif GameLocale == "koKR" then LeaPlusLC.WowheadLock = "wowhead.com/cata/ko"
+					elseif GameLocale == "zhCN" then LeaPlusLC.WowheadLock = "wowhead.com/cata/cn"
+					elseif GameLocale == "zhTW" then LeaPlusLC.WowheadLock = "wowhead.com/cata/cn"
+					else							 LeaPlusLC.WowheadLock = "wowhead.com/cata"
 					end
 				end
 				-- Store frame under mouse
