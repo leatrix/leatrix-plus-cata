@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.01.alpha.1 (24th April 2024)
+-- 	Leatrix Plus 4.0.01 (27th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.01.alpha.1"
+	LeaPlusLC["AddonVer"] = "4.0.01"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -8167,7 +8167,7 @@
 						return
 					end
 
-					-- Control key does nothing (no minimap target tracking in Wrath)
+					-- Control key does nothing (no minimap target tracking in Cataclysm)
 					if IsControlKeyDown() and not IsShiftKeyDown() and not IsAltKeyDown() then
 						return
 					end
@@ -14119,7 +14119,7 @@
 				return
 			elseif str == "con" then
 				-- Show the developer console
-				C_Console.SetFontHeight(28)
+				DeveloperConsole:SetFontHeight(28)
 				DeveloperConsole:Toggle(true)
 				return
 			elseif str == "movie" then
