@@ -14156,7 +14156,7 @@
 				return
 			elseif str == "skit" then
 				-- Play a test sound kit
-				PlaySound("1020", "Master", false, true)
+				PlaySound(1020, "Master", false, true)
 				return
 			elseif str == "marker" then
 				-- Prevent showing raid target markers on self
