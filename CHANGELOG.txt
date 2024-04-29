@@ -1,5 +1,6 @@
 ﻿4.0.02.alpha.1 - 29th April 2024
 - For 'Enhance dressup' ('Interface'), added ranged button layout.
+- For 'Automate gossip' ('Automation'), added Stormwind and Orgrimmar auctioneers to skip gossip automatically.
 
 4.0.01 - 27th April 2004
 - The 'Show cooldowns' option ('Interface') now supports dual spec.  Cooldown icons are saved to your class and specialisation (mirroring retail).
