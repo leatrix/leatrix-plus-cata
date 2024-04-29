@@ -1,4 +1,7 @@
-﻿4.0.01 - 27th April 2004
+﻿4.0.02.alpha.1 - 29th April 2024
+- For 'Enhance dressup' ('Interface'), added ranged button layout.
+
+4.0.01 - 27th April 2004
 - The 'Show cooldowns' option ('Interface') now supports dual spec.  Cooldown icons are saved to your class and specialisation (mirroring retail).
 - The 'Show Wowhead links' option ('Interface') now shows Cataclysm links.
 - The 'Mute game sounds' > 'Login' option now mutes the Cataclysm login screen music.

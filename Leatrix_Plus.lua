@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.01 (27th April 2024)
+-- 	Leatrix Plus 4.0.02.alpha.1 (27th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.01"
+	LeaPlusLC["AddonVer"] = "4.0.02.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -6785,25 +6785,29 @@
 
 					-- Right slots column
 					WardrobeTransmogFrame.HandsButton:ClearAllPoints()
-					WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -15, -60)
+					WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -15, -40)
 
 					-- Weapons
-					WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
-					WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
 					WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
-					WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
+					WardrobeTransmogFrame.MainHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -10)
+					WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
+					WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.MainHandButton, "BOTTOM", 0, -10)
+					WardrobeTransmogFrame.RangedButton:ClearAllPoints()
+					WardrobeTransmogFrame.RangedButton:SetPoint("TOP", WardrobeTransmogFrame.SecondaryHandButton, "BOTTOM", 0, -10)
 
 				else
 
 					-- Wider character preview is disabled so move the right column up
 					WardrobeTransmogFrame.HandsButton:ClearAllPoints()
-					WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -6, -60)
+					WardrobeTransmogFrame.HandsButton:SetPoint("TOPRIGHT", -6, -40)
 
 					-- Show weapons in the right column
-					WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
-					WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -96)
 					WardrobeTransmogFrame.MainHandButton:ClearAllPoints()
-					WardrobeTransmogFrame.MainHandButton:SetPoint("BOTTOM", WardrobeTransmogFrame.SecondaryHandButton, "TOP", 0, 30)
+					WardrobeTransmogFrame.MainHandButton:SetPoint("TOP", WardrobeTransmogFrame.FeetButton, "BOTTOM", 0, -10)
+					WardrobeTransmogFrame.SecondaryHandButton:ClearAllPoints()
+					WardrobeTransmogFrame.SecondaryHandButton:SetPoint("TOP", WardrobeTransmogFrame.MainHandButton, "BOTTOM", 0, -10)
+					WardrobeTransmogFrame.RangedButton:ClearAllPoints()
+					WardrobeTransmogFrame.RangedButton:SetPoint("TOP", WardrobeTransmogFrame.SecondaryHandButton, "BOTTOM", 0, -10)
 
 				end
 
