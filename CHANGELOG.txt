@@ -1,4 +1,4 @@
-﻿4.0.02.alpha.1 - 29th April 2024
+﻿4.0.02 - 29th April 2024
 - For 'Enhance dressup' ('Interface'), added ranged button layout.
 - For 'Automate gossip' ('Automation'), added Stormwind and Orgrimmar auctioneers to skip gossip automatically.
 
