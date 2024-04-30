@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.02 (29th April 2024)
+-- 	Leatrix Plus 4.0.03.alpha.1 (30th April 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.02"
+	LeaPlusLC["AddonVer"] = "4.0.03.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -7829,12 +7829,12 @@
 			end
 
 			-- Create bag item search box
-			local BagItemSearchBox = CreateFrame("EditBox", "BagItemSearchBox", ContainerFrame1, "BagSearchBoxTemplate")
+			local BagItemSearchBox = CreateFrame("EditBox", nil, ContainerFrame1, "BagSearchBoxTemplate")
 			BagItemSearchBox:SetSize(110, 18)
 			BagItemSearchBox:SetMaxLetters(15)
 
 			-- Create bank item search box
-			local BankItemSearchBox = CreateFrame("EditBox", "BankItemSearchBox", BankFrame, "BagSearchBoxTemplate")
+			local BankItemSearchBox = CreateFrame("EditBox", nil, BankFrame, "BagSearchBoxTemplate")
 			BankItemSearchBox:SetSize(120, 14)
 			BankItemSearchBox:SetMaxLetters(15)
 			BankItemSearchBox:SetPoint("TOPRIGHT", -60, -40)
