@@ -54,7 +54,16 @@
 	-- Initialise variables
 	LeaPlusLC["ShowErrorsFlag"] = 1
 	LeaPlusLC["NumberOfPages"] = 9
-	LeaPlusLC["RaidColors"] = RAID_CLASS_COLORS
+
+	-- Class colors
+	do
+		local void, playerClass = UnitClass("player")
+		if CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[playerClass] then
+			LeaPlusLC["RaidColors"] = CUSTOM_CLASS_COLORS
+		else
+			LeaPlusLC["RaidColors"] = RAID_CLASS_COLORS
+		end
+	end
 
 	-- Create event frame
 	local LpEvt = CreateFrame("FRAME")

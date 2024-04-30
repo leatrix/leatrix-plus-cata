@@ -1,4 +1,5 @@
 ﻿4.0.03.alpha.1 - 30th April 2024
+- Added custom class color support for 'Enhance tooltip' ('Interface') and 'Class colored frames' ('Frames').
 - Update to bag item and bank item search box code.
 
 4.0.02 - 29th April 2024
