@@ -1,5 +1,6 @@
 ﻿4.0.03.alpha.1 - 30th April 2024
 - Added custom class color support for 'Enhance tooltip' ('Interface') and 'Class colored frames' ('Frames').
+- For 'Mute game sounds', 'Trains' now applies to Goblin and Worgen races too.
 - Updated NPC skip list for 'Automate gossip' ('Automation').
 - Update to bag item and bank item search box code.
 

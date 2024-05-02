@@ -820,12 +820,14 @@
 					--[[Draenei]]	"sound#539516", "sound#539730",
 					--[[Dwarf]]		"sound#539802", "sound#539881",
 					--[[Gnome]]		"sound#540271", "sound#540275",
+					--[[Goblin]]	"sound#541769", "sound#542017",
 					--[[Human]]		"sound#540535", "sound#540734",
 					--[[Night Elf]]	"sound#540870", "sound#540947",
 					--[[Orc]]		"sound#541157", "sound#541239",
 					--[[Tauren]]	"sound#542818", "sound#542896",
 					--[[Troll]] 	"sound#543085", "sound#543093",
 					--[[Undead]]	"sound#542526", "sound#542600",
+					--[[Worgen]]	"sound#542035", "sound#542206", "sound#541463", "sound#541601",
 
 				},
 
