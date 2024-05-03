@@ -3,6 +3,7 @@
 - For 'Mute game sounds', 'Trains' now applies to Goblin and Worgen races too.
 - Updated NPC skip list for 'Automate gossip' ('Automation').
 - Update to bag item and bank item search box code.
+- Added ability to toggle the main panel by clicking the slash command logo in the interface options panel.
 
 4.0.02 - 29th April 2024
 - For 'Enhance dressup' ('Interface'), added ranged button layout.
