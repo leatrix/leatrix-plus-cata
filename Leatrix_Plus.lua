@@ -3502,7 +3502,7 @@
 
 		if LeaPlusLC["EnhanceFlightMap"] == "On" then
 
-			-- Hide TaxiFrame textures
+			-- Hide flight map textures
 			local regions = {TaxiFrame:GetRegions()}
 			regions[2]:Hide()
 			regions[3]:Hide()
@@ -3511,6 +3511,7 @@
 			TaxiPortrait:Hide()
 			TaxiMerchant:Hide()
 
+			-- Create flight map border
 			local border = TaxiFrame:CreateTexture(nil, "BACKGROUND")
 			border:SetTexture("Interface\\ChatFrame\\ChatFrameBackground")
 			border:SetPoint("TOPLEFT", 18, -73)
@@ -3519,10 +3520,10 @@
 
 			TaxiFrame:SetHitRectInsets(18, 45, 73, 83)
 
-			-- Set taxi frame strata
+			-- Set flight map strata
 			TaxiFrame:SetFrameStrata("FULLSCREEN_DIALOG")
 
-			-- Position taxi frame when shown
+			-- Position flight map when shown
 			hooksecurefunc(TaxiFrame, "SetPoint", function(self, ...)
 				local a, void, r, x, y = TaxiFrame:GetPoint()
 				x = tonumber(string.format("%.2f", x))
@@ -3575,8 +3576,8 @@
 			LeaPlusCB["LeaPlusTaxiMapScale"]:HookScript("OnValueChanged", SetFlightMapScale)
 			SetFlightMapScale()
 
-			-- Help button hidden
-			TaxiPanel.h:Hide()
+			-- Help button tooltip
+			TaxiPanel.h.tiptext = L["This panel will close automatically if you enter combat."]
 
 			-- Back button handler
 			TaxiPanel.b:SetScript("OnClick", function()
@@ -3604,17 +3605,28 @@
 
 			-- Show configuration panal when options panel button is clicked
 			LeaPlusCB["EnhanceFlightMapBtn"]:SetScript("OnClick", function()
-				if IsShiftKeyDown() and IsControlKeyDown() then
-					-- Preset profile
-					LeaPlusLC["LeaPlusTaxiMapScale"] = 1.9
-					LeaPlusLC["FlightMapA"] = "TOPLEFT"
-					LeaPlusLC["FlightMapR"] = "TOPLEFT"
-					LeaPlusLC["FlightMapX"] = 0
-					LeaPlusLC["FlightMapY"] = 61
-					SetFlightMapScale()
+				if LeaPlusLC:PlayerInCombat() then
+					return
 				else
-					TaxiPanel:Show()
-					LeaPlusLC:HideFrames()
+					if IsShiftKeyDown() and IsControlKeyDown() then
+						-- Preset profile
+						LeaPlusLC["LeaPlusTaxiMapScale"] = 1.9
+						LeaPlusLC["FlightMapA"] = "TOPLEFT"
+						LeaPlusLC["FlightMapR"] = "TOPLEFT"
+						LeaPlusLC["FlightMapX"] = 0
+						LeaPlusLC["FlightMapY"] = 61
+						SetFlightMapScale()
+					else
+						TaxiPanel:Show()
+						LeaPlusLC:HideFrames()
+					end
+				end
+			end)
+
+			-- Hide the configuration panel if combat starts
+			TaxiPanel:SetScript("OnUpdate", function()
+				if UnitAffectingCombat("player") then
+					TaxiPanel:Hide()
 				end
 			end)
 

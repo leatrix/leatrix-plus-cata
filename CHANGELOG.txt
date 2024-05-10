@@ -1,5 +1,5 @@
 ﻿4.0.06.alpha.1 - 8th May 2024
-- Added a new option 'Enhance flight map' ('Interface').  If enabled, the flight map will be bigger.
+- Added a new option 'Enhance flight map' ('Interface').  If enabled, the flight map will be bigger.  You can adjust the size in the configuration panel.  Hold down shift and drag the flight map to move it.
 
 4.0.05 - 8th May 2024
 - Added custom class color support for 'Enhance tooltip' ('Interface') and 'Class colored frames' ('Frames').
