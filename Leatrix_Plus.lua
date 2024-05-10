@@ -8066,8 +8066,15 @@
 				cancelFormBtn:SetAttribute("type", "macro")
 				cancelFormBtn:SetAttribute("macrotext", "/cancelform")
 				cancelFormBtn:ClearAllPoints()
-				cancelFormBtn:SetSize(24, 24)
-				cancelFormBtn:SetPoint("TOPRIGHT", TaxiFrame, "TOPRIGHT", -46, -46)
+				if LeaPlusLC["EnhanceFlightMap"] == "On" then
+					-- Enhance flight map is on so position the button top-left
+					cancelFormBtn:SetPoint("TOPLEFT", TaxiRouteMap, "TOPLEFT", 2, -2)
+					cancelFormBtn:SetSize(12, 12)
+				else
+					-- Enhance flight map is off so position the button top-right
+					cancelFormBtn:SetPoint("TOPRIGHT", TaxiFrame, "TOPRIGHT", -46, -46)
+					cancelFormBtn:SetSize(24, 24)
+				end
 				cancelFormBtn:SetNormalTexture("Interface\\ICONS\\Achievement_Character_Nightelf_Female")
 				cancelFormBtn:SetPushedTexture("Interface\\ICONS\\Achievement_Character_Nightelf_Female")
 				cancelFormBtn:SetHighlightTexture("Interface\\ICONS\\Achievement_Character_Nightelf_Female")
@@ -8077,6 +8084,9 @@
 				cancelFormBtn.f:SetHeight(32)
 				cancelFormBtn.f:SetPoint('RIGHT', cancelFormBtn, 'LEFT', -10, 0)
 				cancelFormBtn.f:SetText(L["Click to unshift"])
+				if LeaPlusLC["EnhanceFlightMap"] == "On" then
+					cancelFormBtn.f:Hide()
+				end
 
 				-- Toggle button when form changes
 				cancelFormBtn:SetScript("OnEvent", function()
