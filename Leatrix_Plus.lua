@@ -3520,8 +3520,7 @@
 
 			TaxiFrame:SetHitRectInsets(18, 45, 73, 83)
 
-			-- Set taxi frame scale and strata
-			TaxiFrame:SetScale(1.9)
+			-- Set taxi frame strata
 			TaxiFrame:SetFrameStrata("FULLSCREEN_DIALOG")
 
 			-- Position taxi frame when shown
@@ -3551,6 +3550,55 @@
 			TaxiCloseButton:SetPoint("TOPRIGHT", TaxiRouteMap, "TOPRIGHT", 0, 0)
 
 			--UIPanelWindows["TaxiFrame"].width = 0
+
+			-- Create configuration panel
+			local TaxiPanel = LeaPlusLC:CreatePanel("Enhance flight map", "TaxiPanel")
+
+			LeaPlusLC:MakeTx(TaxiPanel, "Scale", 16, -72)
+			LeaPlusLC:MakeSL(TaxiPanel, "LeaPlusTaxiMapScale", "Drag to set the size of the flight map.", 1, 3, 0.05, 16, -92, "%.0f")
+
+			-- Function to set flight map scale
+			local function SetFlightMapScale()
+				TaxiFrame:SetScale(LeaPlusLC["LeaPlusTaxiMapScale"])
+				LeaPlusCB["LeaPlusTaxiMapScale"].f:SetFormattedText("%.0f%%", LeaPlusLC["LeaPlusTaxiMapScale"] * 100)
+			end
+
+			-- Set flight map scale when slider changes and on startup
+			LeaPlusCB["LeaPlusTaxiMapScale"]:HookScript("OnValueChanged", SetFlightMapScale)
+			SetFlightMapScale()
+
+			-- Help button hidden
+			TaxiPanel.h:Hide()
+
+			-- Back button handler
+			TaxiPanel.b:SetScript("OnClick", function()
+				TaxiPanel:Hide(); LeaPlusLC["PageF"]:Show(); LeaPlusLC["Page5"]:Show()
+				return
+			end)
+
+			-- Reset button handler
+			TaxiPanel.r:SetScript("OnClick", function()
+
+				-- Reset slider
+				LeaPlusLC["LeaPlusTaxiMapScale"] = 1.9
+				SetFlightMapScale()
+
+				-- Refresh side panel
+				TaxiPanel:Hide(); TaxiPanel:Show()
+
+			end)
+
+			-- Show configuration panal when options panel button is clicked
+			LeaPlusCB["EnhanceFlightMapBtn"]:SetScript("OnClick", function()
+				if IsShiftKeyDown() and IsControlKeyDown() then
+					-- Preset profile
+					LeaPlusLC["LeaPlusTaxiMapScale"] = 1.9
+					SetFlightMapScale()
+				else
+					TaxiPanel:Show()
+					LeaPlusLC:HideFrames()
+				end
+			end)
 
 		end
 
@@ -12582,6 +12630,7 @@
 				LeaPlusLC:LoadVarChk("EnhanceTrainers", "Off")				-- Enhance trainers
 				LeaPlusLC:LoadVarChk("ShowTrainAllBtn", "On")				-- Enhance trainers train all button
 				LeaPlusLC:LoadVarChk("EnhanceFlightMap", "Off")				-- Enhance flight map
+				LeaPlusLC:LoadVarNum("LeaPlusTaxiMapScale", 1.9, 1, 3)		-- Enhance flight map scale
 
 				LeaPlusLC:LoadVarChk("ShowVolume", "Off")					-- Show volume slider
 				LeaPlusLC:LoadVarChk("AhExtras", "Off")						-- Show auction controls
@@ -12985,6 +13034,7 @@
 			LeaPlusDB["EnhanceTrainers"]		= LeaPlusLC["EnhanceTrainers"]
 			LeaPlusDB["ShowTrainAllBtn"]		= LeaPlusLC["ShowTrainAllBtn"]
 			LeaPlusDB["EnhanceFlightMap"]		= LeaPlusLC["EnhanceFlightMap"]
+			LeaPlusDB["LeaPlusTaxiMapScale"]	= LeaPlusLC["LeaPlusTaxiMapScale"]
 
 			LeaPlusDB["ShowVolume"] 			= LeaPlusLC["ShowVolume"]
 			LeaPlusDB["AhExtras"]				= LeaPlusLC["AhExtras"]
@@ -15121,6 +15171,7 @@
 				LeaPlusDB["EnhanceTrainers"] = "On"				-- Enhance trainers
 				LeaPlusDB["ShowTrainAllBtn"] = "On"				-- Show train all button
 				LeaPlusDB["EnhanceFlightMap"] = "On"			-- Enhance flight map
+				LeaPlusDB["LeaPlusTaxiMapScale"] = 1.9			-- Enhance flight map scale
 
 				LeaPlusDB["ShowVolume"] = "On"					-- Show volume slider
 				LeaPlusDB["AhExtras"] = "On"					-- Show auction controls
