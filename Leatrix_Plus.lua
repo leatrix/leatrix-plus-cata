@@ -3511,7 +3511,6 @@
 			TaxiPortrait:Hide()
 			TaxiMerchant:Hide()
 
-			-- Create TaxiFrame border
 			local border = TaxiFrame:CreateTexture(nil, "BACKGROUND")
 			border:SetTexture("Interface\\ChatFrame\\ChatFrameBackground")
 			border:SetPoint("TOPLEFT", 18, -73)
@@ -3524,11 +3523,15 @@
 			TaxiFrame:SetFrameStrata("FULLSCREEN_DIALOG")
 
 			-- Position taxi frame when shown
-			hooksecurefunc(TaxiFrame, "SetPoint", function()
-				local void, void, void, void, y = TaxiFrame:GetPoint()
-				if y ~= 61 then
+			hooksecurefunc(TaxiFrame, "SetPoint", function(self, ...)
+				local a, void, r, x, y = TaxiFrame:GetPoint()
+				x = tonumber(string.format("%.2f", x))
+				y = tonumber(string.format("%.2f", y))
+				local xb = tonumber(string.format("%.2f", LeaPlusLC["FlightMapX"]))
+				local yb = tonumber(string.format("%.2f", LeaPlusLC["FlightMapY"]))
+				if a ~= LeaPlusLC["FlightMapA"] or r ~= LeaPlusLC["FlightMapR"] or x ~= xb or y ~= yb then
 					TaxiFrame:ClearAllPoints()
-					TaxiFrame:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 0, 61)
+					TaxiFrame:SetPoint(LeaPlusLC["FlightMapA"], UIParent, LeaPlusLC["FlightMapR"], LeaPlusLC["FlightMapX"], LeaPlusLC["FlightMapY"])
 				end
 			end)
 
@@ -3557,6 +3560,11 @@
 			LeaPlusLC:MakeTx(TaxiPanel, "Scale", 16, -72)
 			LeaPlusLC:MakeSL(TaxiPanel, "LeaPlusTaxiMapScale", "Drag to set the size of the flight map.", 1, 3, 0.05, 16, -92, "%.0f")
 
+			LeaPlusLC:MakeTx(TaxiPanel, "Position", 16, -132)
+			TaxiPanel.txt = LeaPlusLC:MakeWD(TaxiPanel, "Hold SHIFT and drag the flight map to move it.", 16, -152, 500)
+			TaxiPanel.txt:SetWordWrap(true)
+			TaxiPanel.txt:SetWidth(520)
+
 			-- Function to set flight map scale
 			local function SetFlightMapScale()
 				TaxiFrame:SetScale(LeaPlusLC["LeaPlusTaxiMapScale"])
@@ -3582,6 +3590,12 @@
 				-- Reset slider
 				LeaPlusLC["LeaPlusTaxiMapScale"] = 1.9
 				SetFlightMapScale()
+				LeaPlusLC["FlightMapA"] = "TOPLEFT"
+				LeaPlusLC["FlightMapR"] = "TOPLEFT"
+				LeaPlusLC["FlightMapX"] = 0
+				LeaPlusLC["FlightMapY"] = 61
+				TaxiFrame:ClearAllPoints()
+				TaxiFrame:SetPoint(LeaPlusLC["FlightMapA"], UIParent, LeaPlusLC["FlightMapR"], LeaPlusLC["FlightMapX"], LeaPlusLC["FlightMapY"])
 
 				-- Refresh side panel
 				TaxiPanel:Hide(); TaxiPanel:Show()
@@ -3593,12 +3607,41 @@
 				if IsShiftKeyDown() and IsControlKeyDown() then
 					-- Preset profile
 					LeaPlusLC["LeaPlusTaxiMapScale"] = 1.9
+					LeaPlusLC["FlightMapA"] = "TOPLEFT"
+					LeaPlusLC["FlightMapR"] = "TOPLEFT"
+					LeaPlusLC["FlightMapX"] = 0
+					LeaPlusLC["FlightMapY"] = 61
 					SetFlightMapScale()
 				else
 					TaxiPanel:Show()
 					LeaPlusLC:HideFrames()
 				end
 			end)
+
+			-- Move the flight map
+			TaxiFrame:SetMovable(true)
+			TaxiFrame:RegisterForDrag("LeftButton")
+			TaxiFrame:SetScript("OnDragStart", function()
+				if IsShiftKeyDown() then
+					TaxiFrame:StartMoving()
+				end
+			end)
+			TaxiFrame:SetScript("OnDragStop", function()
+				TaxiFrame:StopMovingOrSizing()
+				TaxiFrame:SetUserPlaced(false)
+				LeaPlusLC["FlightMapA"], void, LeaPlusLC["FlightMapR"], LeaPlusLC["FlightMapX"], LeaPlusLC["FlightMapY"] = TaxiFrame:GetPoint()
+			end)
+
+			-- ElvUI fixes
+			if LeaPlusLC.ElvUI then
+				if TaxiFrame.backdrop then
+					border:ClearAllPoints()
+					border:SetPoint("TOPLEFT", 20, -68)
+					border:SetPoint("BOTTOMRIGHT", -42, 86)
+					TaxiFrame:SetHitRectInsets(20, 42, 68, 86)
+					TaxiFrame.backdrop:SetAlpha(0)
+				end
+			end
 
 		end
 
@@ -12631,7 +12674,10 @@
 				LeaPlusLC:LoadVarChk("ShowTrainAllBtn", "On")				-- Enhance trainers train all button
 				LeaPlusLC:LoadVarChk("EnhanceFlightMap", "Off")				-- Enhance flight map
 				LeaPlusLC:LoadVarNum("LeaPlusTaxiMapScale", 1.9, 1, 3)		-- Enhance flight map scale
-
+				LeaPlusLC:LoadVarAnc("FlightMapA", "TOPLEFT")				-- Enhance flight map anchor
+				LeaPlusLC:LoadVarAnc("FlightMapR", "TOPLEFT")				-- Enhance flight map relative
+				LeaPlusLC:LoadVarNum("FlightMapX", 0, -5000, 5000)			-- Enhance flight map X
+				LeaPlusLC:LoadVarNum("FlightMapY", 61, -5000, 5000)			-- Enhance flight map Y
 				LeaPlusLC:LoadVarChk("ShowVolume", "Off")					-- Show volume slider
 				LeaPlusLC:LoadVarChk("AhExtras", "Off")						-- Show auction controls
 				LeaPlusLC:LoadVarChk("AhBuyoutOnly", "Off")					-- Auction buyout only
@@ -13035,6 +13081,10 @@
 			LeaPlusDB["ShowTrainAllBtn"]		= LeaPlusLC["ShowTrainAllBtn"]
 			LeaPlusDB["EnhanceFlightMap"]		= LeaPlusLC["EnhanceFlightMap"]
 			LeaPlusDB["LeaPlusTaxiMapScale"]	= LeaPlusLC["LeaPlusTaxiMapScale"]
+			LeaPlusDB["FlightMapA"]				= LeaPlusLC["FlightMapA"]
+			LeaPlusDB["FlightMapR"]				= LeaPlusLC["FlightMapR"]
+			LeaPlusDB["FlightMapX"]				= LeaPlusLC["FlightMapX"]
+			LeaPlusDB["FlightMapY"]				= LeaPlusLC["FlightMapY"]
 
 			LeaPlusDB["ShowVolume"] 			= LeaPlusLC["ShowVolume"]
 			LeaPlusDB["AhExtras"]				= LeaPlusLC["AhExtras"]
@@ -15172,6 +15222,10 @@
 				LeaPlusDB["ShowTrainAllBtn"] = "On"				-- Show train all button
 				LeaPlusDB["EnhanceFlightMap"] = "On"			-- Enhance flight map
 				LeaPlusDB["LeaPlusTaxiMapScale"] = 1.9			-- Enhance flight map scale
+				LeaPlusDB["FlightMapA"] = "TOPLEFT"				-- Enhance flight map anchor
+				LeaPlusDB["FlightMapR"] = "TOPLEFT"				-- Enhance flight map relative
+				LeaPlusDB["FlightMapX"] = 0						-- Enhance flight map X
+				LeaPlusDB["FlightMapX"] = 61					-- Enhance flight map Y
 
 				LeaPlusDB["ShowVolume"] = "On"					-- Show volume slider
 				LeaPlusDB["AhExtras"] = "On"					-- Show auction controls
