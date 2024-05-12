@@ -3513,15 +3513,16 @@
 
 			-- Create flight map border
 			local border = TaxiFrame:CreateTexture(nil, "BACKGROUND")
-			border:SetTexture("Interface\\ChatFrame\\ChatFrameBackground")
+			border:SetTexture("Interface\\DialogFrame\\UI-DialogBox-Background-Dark")
 			border:SetPoint("TOPLEFT", 18, -73)
 			border:SetPoint("BOTTOMRIGHT", -45, 83)
 			border:SetVertexColor(0, 0, 0, 1)
 
-			TaxiFrame:SetHitRectInsets(18, 45, 73, 83)
-
-			-- Set flight map strata
+			-- Set flight map properties
 			TaxiFrame:SetFrameStrata("FULLSCREEN_DIALOG")
+			TaxiFrame:SetHitRectInsets(18, 45, 73, 83)
+			TaxiFrame:SetClampedToScreen(true)
+			TaxiFrame:SetClampRectInsets(200, -200, -300, 300)
 
 			-- Position flight map when shown
 			hooksecurefunc(TaxiFrame, "SetPoint", function(self, ...)
@@ -3541,9 +3542,9 @@
 				for i = 1, NUM_TAXI_BUTTONS do
 					local button = _G["TaxiButton"..i]
 					if button and button:IsVisible() then
-						_G["TaxiButton" .. i]:SetSize(10, 10)
-						if button:GetHighlightTexture() then button:GetHighlightTexture():SetSize(20, 20) end
-						if button:GetPushedTexture() then button:GetPushedTexture():SetSize(20, 20) end
+						_G["TaxiButton" .. i]:SetSize(LeaPlusLC["LeaPlusTaxiIconSize"], LeaPlusLC["LeaPlusTaxiIconSize"])
+						if button:GetHighlightTexture() then button:GetHighlightTexture():SetSize(LeaPlusLC["LeaPlusTaxiIconSize"] * 2, LeaPlusLC["LeaPlusTaxiIconSize"] * 2) end
+						if button:GetPushedTexture() then button:GetPushedTexture():SetSize(LeaPlusLC["LeaPlusTaxiIconSize"] * 2, LeaPlusLC["LeaPlusTaxiIconSize"] * 2) end
 				   end
 				end
 			end)
@@ -3558,13 +3559,16 @@
 			-- Create configuration panel
 			local TaxiPanel = LeaPlusLC:CreatePanel("Enhance flight map", "TaxiPanel")
 
-			LeaPlusLC:MakeTx(TaxiPanel, "Scale", 16, -72)
-			LeaPlusLC:MakeSL(TaxiPanel, "LeaPlusTaxiMapScale", "Drag to set the size of the flight map.", 1, 3, 0.05, 16, -92, "%.0f")
+			LeaPlusLC:MakeTx(TaxiPanel, "Map scale", 356, -72)
+			LeaPlusLC:MakeSL(TaxiPanel, "LeaPlusTaxiMapScale", "Drag to set the scale of the flight map.", 1, 3, 0.05, 356, -92, "%.0f")
 
-			LeaPlusLC:MakeTx(TaxiPanel, "Position", 16, -132)
-			TaxiPanel.txt = LeaPlusLC:MakeWD(TaxiPanel, "Hold SHIFT and drag the flight map to move it.", 16, -152, 500)
+			LeaPlusLC:MakeTx(TaxiPanel, "Icon size", 356, -132)
+			LeaPlusLC:MakeSL(TaxiPanel, "LeaPlusTaxiIconSize", "Drag to set the size of the icons.", 5, 30, 1, 356, -152, "%.0f")
+
+			LeaPlusLC:MakeTx(TaxiPanel, "Position", 16, -72)
+			TaxiPanel.txt = LeaPlusLC:MakeWD(TaxiPanel, "Hold ALT and drag the flight map to move it.", 16, -92, 500)
 			TaxiPanel.txt:SetWordWrap(true)
-			TaxiPanel.txt:SetWidth(520)
+			TaxiPanel.txt:SetWidth(300)
 
 			-- Function to set flight map scale
 			local function SetFlightMapScale()
@@ -3572,8 +3576,22 @@
 				LeaPlusCB["LeaPlusTaxiMapScale"].f:SetFormattedText("%.0f%%", LeaPlusLC["LeaPlusTaxiMapScale"] * 100)
 			end
 
+			-- Function to set icon size (used for reset and when slider changes)
+			local function SetFlightMapIconSize()
+				for i = 1, NUM_TAXI_BUTTONS do
+					local button = _G["TaxiButton"..i]
+					if button and button:IsVisible() then
+						_G["TaxiButton" .. i]:SetSize(LeaPlusLC["LeaPlusTaxiIconSize"], LeaPlusLC["LeaPlusTaxiIconSize"])
+						if button:GetHighlightTexture() then button:GetHighlightTexture():SetSize(LeaPlusLC["LeaPlusTaxiIconSize"] * 2, LeaPlusLC["LeaPlusTaxiIconSize"] * 2) end
+						if button:GetPushedTexture() then button:GetPushedTexture():SetSize(LeaPlusLC["LeaPlusTaxiIconSize"] * 2, LeaPlusLC["LeaPlusTaxiIconSize"] * 2) end
+				   end
+				end
+				LeaPlusCB["LeaPlusTaxiIconSize"].f:SetFormattedText("%.0f%%", LeaPlusLC["LeaPlusTaxiIconSize"] * 10)
+			end
+
 			-- Set flight map scale when slider changes and on startup
 			LeaPlusCB["LeaPlusTaxiMapScale"]:HookScript("OnValueChanged", SetFlightMapScale)
+			LeaPlusCB["LeaPlusTaxiIconSize"]:HookScript("OnValueChanged", SetFlightMapIconSize)
 			SetFlightMapScale()
 
 			-- Help button tooltip
@@ -3590,6 +3608,7 @@
 
 				-- Reset slider
 				LeaPlusLC["LeaPlusTaxiMapScale"] = 1.9
+				LeaPlusLC["LeaPlusTaxiIconSize"] = 10
 				SetFlightMapScale()
 				LeaPlusLC["FlightMapA"] = "TOPLEFT"
 				LeaPlusLC["FlightMapR"] = "TOPLEFT"
@@ -3611,11 +3630,13 @@
 					if IsShiftKeyDown() and IsControlKeyDown() then
 						-- Preset profile
 						LeaPlusLC["LeaPlusTaxiMapScale"] = 1.9
+						LeaPlusLC["LeaPlusTaxiIconSize"] = 10
 						LeaPlusLC["FlightMapA"] = "TOPLEFT"
 						LeaPlusLC["FlightMapR"] = "TOPLEFT"
 						LeaPlusLC["FlightMapX"] = 0
 						LeaPlusLC["FlightMapY"] = 61
 						SetFlightMapScale()
+						SetFlightMapIconSize()
 					else
 						TaxiPanel:Show()
 						LeaPlusLC:HideFrames()
@@ -3634,7 +3655,7 @@
 			TaxiFrame:SetMovable(true)
 			TaxiFrame:RegisterForDrag("LeftButton")
 			TaxiFrame:SetScript("OnDragStart", function()
-				if IsShiftKeyDown() then
+				if IsAltKeyDown() then
 					TaxiFrame:StartMoving()
 				end
 			end)
@@ -3648,9 +3669,9 @@
 			if LeaPlusLC.ElvUI then
 				if TaxiFrame.backdrop then
 					border:ClearAllPoints()
-					border:SetPoint("TOPLEFT", 20, -68)
-					border:SetPoint("BOTTOMRIGHT", -42, 86)
-					TaxiFrame:SetHitRectInsets(20, 42, 68, 86)
+					border:SetPoint("TOPLEFT", 22, -70)
+					border:SetPoint("BOTTOMRIGHT", -44, 88)
+					TaxiFrame:SetHitRectInsets(22, 44, 70, 88)
 					TaxiFrame.backdrop:SetAlpha(0)
 				end
 			end
@@ -12686,6 +12707,7 @@
 				LeaPlusLC:LoadVarChk("ShowTrainAllBtn", "On")				-- Enhance trainers train all button
 				LeaPlusLC:LoadVarChk("EnhanceFlightMap", "Off")				-- Enhance flight map
 				LeaPlusLC:LoadVarNum("LeaPlusTaxiMapScale", 1.9, 1, 3)		-- Enhance flight map scale
+				LeaPlusLC:LoadVarNum("LeaPlusTaxiIconSize", 10, 5, 30)		-- Enhance flight icon size
 				LeaPlusLC:LoadVarAnc("FlightMapA", "TOPLEFT")				-- Enhance flight map anchor
 				LeaPlusLC:LoadVarAnc("FlightMapR", "TOPLEFT")				-- Enhance flight map relative
 				LeaPlusLC:LoadVarNum("FlightMapX", 0, -5000, 5000)			-- Enhance flight map X
@@ -13093,6 +13115,7 @@
 			LeaPlusDB["ShowTrainAllBtn"]		= LeaPlusLC["ShowTrainAllBtn"]
 			LeaPlusDB["EnhanceFlightMap"]		= LeaPlusLC["EnhanceFlightMap"]
 			LeaPlusDB["LeaPlusTaxiMapScale"]	= LeaPlusLC["LeaPlusTaxiMapScale"]
+			LeaPlusDB["LeaPlusTaxiIconSize"]	= LeaPlusLC["LeaPlusTaxiIconSize"]
 			LeaPlusDB["FlightMapA"]				= LeaPlusLC["FlightMapA"]
 			LeaPlusDB["FlightMapR"]				= LeaPlusLC["FlightMapR"]
 			LeaPlusDB["FlightMapX"]				= LeaPlusLC["FlightMapX"]
@@ -15234,6 +15257,7 @@
 				LeaPlusDB["ShowTrainAllBtn"] = "On"				-- Show train all button
 				LeaPlusDB["EnhanceFlightMap"] = "On"			-- Enhance flight map
 				LeaPlusDB["LeaPlusTaxiMapScale"] = 1.9			-- Enhance flight map scale
+				LeaPlusDB["LeaPlusTaxiIconSize"] = 10			-- Enhance flight icon size
 				LeaPlusDB["FlightMapA"] = "TOPLEFT"				-- Enhance flight map anchor
 				LeaPlusDB["FlightMapR"] = "TOPLEFT"				-- Enhance flight map relative
 				LeaPlusDB["FlightMapX"] = 0						-- Enhance flight map X
