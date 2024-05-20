@@ -1,4 +1,7 @@
-﻿4.0.06 - 15th May 2024
+﻿4.0.07.alpha.1 - 15th May 2024
+- For 'Enhance minimap', added support for Narcissus custom minimap button.
+
+4.0.06 - 15th May 2024
 - Added a new option called 'Enhance flight map' ('Interface').  If enabled, you can customise the flight map (such as map scale, map position and icon size).  You can adjust the settings in the configuration panel.  Hold down ALT and drag the flight map to move it.
 - Updated NPC skip list for 'Automate gossip' ('Automation').
 
