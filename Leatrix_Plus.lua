@@ -757,53 +757,6 @@
 	function LeaPlusLC:Isolated()
 
 		----------------------------------------------------------------------
-		-- Easy item destroy
-		----------------------------------------------------------------------
-
-		if LeaPlusLC["EasyItemDestroy"] == "On" then
-
-			-- Get the type "DELETE" into the field to confirm text
-			local TypeDeleteLine = gsub(DELETE_GOOD_ITEM, "[\r\n]", "@")
-			local void, TypeDeleteLine = strsplit("@", TypeDeleteLine, 2)
-
-			-- Add hyperlinks to regular item destroy
-			RunScript('StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkEnter = function(self, link, text, region, boundsLeft, boundsBottom, boundsWidth, boundsHeight) GameTooltip:SetOwner(self, "ANCHOR_PRESERVE") GameTooltip:ClearAllPoints() local cursorClearance = 30 GameTooltip:SetPoint("TOPLEFT", region, "BOTTOMLEFT", boundsLeft, boundsBottom - cursorClearance) GameTooltip:SetHyperlink(link) end')
-			RunScript('StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkLeave = function(self) GameTooltip:Hide() end')
-			RunScript('StaticPopupDialogs["DELETE_ITEM"].OnHyperlinkEnter = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkEnter')
-			RunScript('StaticPopupDialogs["DELETE_ITEM"].OnHyperlinkLeave = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkLeave')
-			RunScript('StaticPopupDialogs["DELETE_QUEST_ITEM"].OnHyperlinkEnter = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkEnter')
-			RunScript('StaticPopupDialogs["DELETE_QUEST_ITEM"].OnHyperlinkLeave = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkLeave')
-			RunScript('StaticPopupDialogs["DELETE_GOOD_QUEST_ITEM"].OnHyperlinkEnter = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkEnter')
-			RunScript('StaticPopupDialogs["DELETE_GOOD_QUEST_ITEM"].OnHyperlinkLeave = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkLeave')
-
-			-- Hide editbox and set item link
-			local easyDelFrame = CreateFrame("FRAME")
-			easyDelFrame:RegisterEvent("DELETE_ITEM_CONFIRM")
-			easyDelFrame:SetScript("OnEvent", function()
-				if StaticPopup1EditBox:IsShown() then
-					-- Item requires player to type delete so hide editbox and show link
-					StaticPopup1:SetHeight(StaticPopup1:GetHeight() - 10)
-					StaticPopup1EditBox:Hide()
-					StaticPopup1Button1:Enable()
-					local link = select(3, GetCursorInfo())
-					if link then
-						StaticPopup1Text:SetText(gsub(StaticPopup1Text:GetText(), gsub(TypeDeleteLine, "@", ""), "") .. "|n" .. link)
-					end
-				else
-					-- Item does not require player to type delete so just show item link
-					StaticPopup1:SetHeight(StaticPopup1:GetHeight() + 40)
-					StaticPopup1EditBox:Hide()
-					StaticPopup1Button1:Enable()
-					local link = select(3, GetCursorInfo())
-					if link then
-						StaticPopup1Text:SetText(gsub(StaticPopup1Text:GetText(), gsub(TypeDeleteLine, "@", ""), "") .. "|n|n" .. link)
-					end
-				end
-			end)
-
-		end
-
-		----------------------------------------------------------------------
 		-- Mute game sounds (no reload required) (MuteGameSounds)
 		----------------------------------------------------------------------
 
@@ -1241,34 +1194,6 @@
 					if MovieFrame:IsShown() and MovieFrame.CloseDialog and MovieFrame.CloseDialog.ConfirmButton then
 						MovieFrame.CloseDialog.ConfirmButton:Click()
 					end
-				end
-			end)
-
-		end
-
-		----------------------------------------------------------------------
-		-- Unclamp chat frame
-		----------------------------------------------------------------------
-
-		if LeaPlusLC["UnclampChat"] == "On" and not LeaLockList["UnclampChat"] then
-
-			-- Process normal and existing chat frames on startup
-			for i = 1, 50 do
-				if _G["ChatFrame" .. i] then
-					_G["ChatFrame" .. i]:SetClampRectInsets(0, 0, 0, 0);
-				end
-			end
-
-			-- Process new chat frames and combat log
-			hooksecurefunc("FloatingChatFrame_UpdateBackgroundAnchors", function(self)
-				self:SetClampRectInsets(0, 0, 0, 0);
-			end)
-
-			-- Process temporary chat frames
-			hooksecurefunc("FCF_OpenTemporaryWindow", function()
-				local cf = FCF_GetCurrentChatFrame():GetName() or nil
-				if cf then
-					_G[cf]:SetClampRectInsets(0, 0, 0, 0);
 				end
 			end)
 
@@ -3508,6 +3433,83 @@
 ----------------------------------------------------------------------
 
 	function LeaPlusLC:Player()
+
+		----------------------------------------------------------------------
+		-- Easy item destroy
+		----------------------------------------------------------------------
+
+		if LeaPlusLC["EasyItemDestroy"] == "On" then
+
+			-- Get the type "DELETE" into the field to confirm text
+			local TypeDeleteLine = gsub(DELETE_GOOD_ITEM, "[\r\n]", "@")
+			local void, TypeDeleteLine = strsplit("@", TypeDeleteLine, 2)
+
+			-- Add hyperlinks to regular item destroy
+			RunScript('StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkEnter = function(self, link, text, region, boundsLeft, boundsBottom, boundsWidth, boundsHeight) GameTooltip:SetOwner(self, "ANCHOR_PRESERVE") GameTooltip:ClearAllPoints() local cursorClearance = 30 GameTooltip:SetPoint("TOPLEFT", region, "BOTTOMLEFT", boundsLeft, boundsBottom - cursorClearance) GameTooltip:SetHyperlink(link) end')
+			RunScript('StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkLeave = function(self) GameTooltip:Hide() end')
+			RunScript('StaticPopupDialogs["DELETE_ITEM"].OnHyperlinkEnter = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkEnter')
+			RunScript('StaticPopupDialogs["DELETE_ITEM"].OnHyperlinkLeave = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkLeave')
+			RunScript('StaticPopupDialogs["DELETE_QUEST_ITEM"].OnHyperlinkEnter = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkEnter')
+			RunScript('StaticPopupDialogs["DELETE_QUEST_ITEM"].OnHyperlinkLeave = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkLeave')
+			RunScript('StaticPopupDialogs["DELETE_GOOD_QUEST_ITEM"].OnHyperlinkEnter = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkEnter')
+			RunScript('StaticPopupDialogs["DELETE_GOOD_QUEST_ITEM"].OnHyperlinkLeave = StaticPopupDialogs["DELETE_GOOD_ITEM"].OnHyperlinkLeave')
+
+			-- Hide editbox and set item link
+			local easyDelFrame = CreateFrame("FRAME")
+			easyDelFrame:RegisterEvent("DELETE_ITEM_CONFIRM")
+			easyDelFrame:SetScript("OnEvent", function()
+				if StaticPopup1EditBox:IsShown() then
+					-- Item requires player to type delete so hide editbox and show link
+					StaticPopup1:SetHeight(StaticPopup1:GetHeight() - 10)
+					StaticPopup1EditBox:Hide()
+					StaticPopup1Button1:Enable()
+					local link = select(3, GetCursorInfo())
+					if link then
+						StaticPopup1Text:SetText(gsub(StaticPopup1Text:GetText(), gsub(TypeDeleteLine, "@", ""), "") .. "|n" .. link)
+					end
+				else
+					-- Item does not require player to type delete so just show item link
+					StaticPopup1:SetHeight(StaticPopup1:GetHeight() + 40)
+					StaticPopup1EditBox:Hide()
+					StaticPopup1Button1:Enable()
+					local link = select(3, GetCursorInfo())
+					if link then
+						StaticPopup1Text:SetText(gsub(StaticPopup1Text:GetText(), gsub(TypeDeleteLine, "@", ""), "") .. "|n|n" .. link)
+					end
+				end
+			end)
+
+		end
+
+		----------------------------------------------------------------------
+		-- Unclamp chat frame
+		----------------------------------------------------------------------
+
+		if LeaPlusLC["UnclampChat"] == "On" and not LeaLockList["UnclampChat"] then
+
+			-- Process normal and existing chat frames on startup
+			for i = 1, 50 do
+				if _G["ChatFrame" .. i] then
+					_G["ChatFrame" .. i]:SetClampedToScreen(false)
+					_G["ChatFrame" .. i]:SetClampRectInsets(0, 0, 0, 0)
+				end
+			end
+
+			-- Process new chat frames and combat log
+			hooksecurefunc("FloatingChatFrame_UpdateBackgroundAnchors", function(self)
+				self:SetClampRectInsets(0, 0, 0, 0)
+			end)
+
+			-- Process temporary chat frames
+			hooksecurefunc("FCF_OpenTemporaryWindow", function()
+				local cf = FCF_GetCurrentChatFrame():GetName() or nil
+				if cf then
+					_G[cf]:SetClampRectInsets(0, 0, 0, 0)
+				end
+			end)
+
+		end
+
 
 		----------------------------------------------------------------------
 		-- Enhance flight map
