@@ -2,7 +2,7 @@
 -- 	Leatrix Plus 4.0.10.alpha.1 (29th May 2024)
 ----------------------------------------------------------------------
 
---	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
+--	01:Functns, 02:Locks, 03:Restart, 20:Live, 40:Player
 --	50:RunOnce, 60:Evnts, 62:Profile, 70:Lgot, 80:Commands, 90:Panel
 
 ----------------------------------------------------------------------
@@ -751,10 +751,422 @@
 	end
 
 ----------------------------------------------------------------------
---	L30: Isolated
+--	L40: Player
 ----------------------------------------------------------------------
 
-	function LeaPlusLC:Isolated()
+	function LeaPlusLC:Player()
+
+		----------------------------------------------------------------------
+		-- Mute game sounds (no reload required) (MuteGameSounds)
+		----------------------------------------------------------------------
+
+		do
+
+			-- Create soundtable
+			local muteTable = {
+
+				["MuteFizzle"] = {			"sound/spells/fizzle/fizzlefirea.ogg#569773", "sound/spells/fizzle/FizzleFrostA.ogg#569775", "sound/spells/fizzle/FizzleHolyA.ogg#569772", "sound/spells/fizzle/FizzleNatureA.ogg#569774", "sound/spells/fizzle/FizzleShadowA.ogg#569776",},
+				["MuteInterface"] = {		"sound/interface/iUiInterfaceButtonA.ogg#567481", "sound/interface/uChatScrollButton.ogg#567407", "sound/interface/uEscapeScreenClose.ogg#567464", "sound/interface/uEscapeScreenOpen.ogg#567490",},
+
+				-- Trains
+				["MuteTrains"] = {
+
+					--[[Blood Elf]]	"sound#539219", "sound#539203",
+					--[[Draenei]]	"sound#539516", "sound#539730",
+					--[[Dwarf]]		"sound#539802", "sound#539881",
+					--[[Gnome]]		"sound#540271", "sound#540275",
+					--[[Goblin]]	"sound#541769", "sound#542017",
+					--[[Human]]		"sound#540535", "sound#540734",
+					--[[Night Elf]]	"sound#540870", "sound#540947",
+					--[[Orc]]		"sound#541157", "sound#541239",
+					--[[Tauren]]	"sound#542818", "sound#542896",
+					--[[Troll]] 	"sound#543085", "sound#543093",
+					--[[Undead]]	"sound#542526", "sound#542600",
+					--[[Worgen]]	"sound#542035", "sound#542206", "sound#541463", "sound#541601",
+
+				},
+
+				-- Chimes (sound/doodad/)
+				["MuteChimes"] = {
+					"belltollalliance.ogg#566564",
+					"belltollhorde.ogg#565853",
+					"belltollnightelf.ogg#566558",
+					"belltolltribal.ogg#566027",
+					"kharazahnbelltoll.ogg#566254",
+					"dwarfhorn.ogg#566064",
+				},
+
+				-- Vaults
+				["MuteVaults"] = {
+
+					-- Mechanical guild vault idle sound (such as those found in Booty Bay and Winterspring)
+					"sound/doodad/guildvault_goblin_01stand.ogg#566289",
+
+				},
+
+				-- Ready check (sound/interface/)
+				["MuteReady"] = {
+					"levelup2.ogg#567478",
+				},
+
+				-- Login (sound/interface/)
+				["MuteLogin"] = {
+
+					-- This is handled with the PLAYER_LOGOUT event
+
+				},
+
+				-- Bikes
+				["MuteBikes"] = {
+
+					-- Mekgineer's Chopper/Mechano Hog/Chauffeured (sound/vehicles/motorcyclevehicle, sound/vehicles)
+					"motorcyclevehicleattackthrown.ogg#569858", "motorcyclevehiclejumpend1.ogg#569863", "motorcyclevehiclejumpend2.ogg#569857", "motorcyclevehiclejumpend3.ogg#569855", "motorcyclevehiclejumpstart1.ogg#569856", "motorcyclevehiclejumpstart2.ogg#569862", "motorcyclevehiclejumpstart3.ogg#569860", "motorcyclevehicleloadthrown.ogg#569861", "motorcyclevehiclestand.ogg#569859", "motorcyclevehiclewalkrun.ogg#569854", "vehicle_ground_gearshift_1.ogg#598748", "vehicle_ground_gearshift_2.ogg#598736", "vehicle_ground_gearshift_3.ogg#569852", "vehicle_ground_gearshift_4.ogg#598745", "vehicle_ground_gearshift_5.ogg#569845",
+
+				},
+
+				-- Events
+				["MuteEvents"] = {
+
+					-- Headless Horseman (sound/creature/headlesshorseman/)
+					"horseman_beckon_01.ogg#551670",
+					"horseman_bodydefeat_01.ogg#551706",
+					"horseman_bomb_01.ogg#551705",
+					"horseman_conflag_01.ogg#551686",
+					"horseman_death_01.ogg#551695",
+					"horseman_failing_01.ogg#551684",
+					"horseman_failing_02.ogg#551700",
+					"horseman_fire_01.ogg#551673",
+					"horseman_laugh_01.ogg#551703",
+					"horseman_laugh_02.ogg#551682",
+					"horseman_out_01.ogg#551680",
+					"horseman_request_01.ogg#551687",
+					"horseman_return_01.ogg#551698",
+					"horseman_slay_01.ogg#551676",
+					"horseman_special_01.ogg#551696",
+
+				},
+
+				-- Gyrocopters
+				["MuteGyrocopters"] = {
+
+					-- Mimiron's Head (sound/creature/mimironheadmount/)
+					"mimironheadmount_jumpend.ogg#595097",
+					"mimironheadmount_jumpstart.ogg#595103",
+					"mimironheadmount_run.ogg#555364",
+					"mimironheadmount_walk.ogg#595100",
+
+					-- sound/creature/gyrocopter/
+					"gyrocopterfly.ogg#551390",
+					"gyrocopterflyidle.ogg#551398",
+					"gyrocopterflyup.ogg#551389",
+					"gyrocoptergearshift1.ogg#551384",
+					"gyrocoptergearshift2.ogg#551391",
+					"gyrocoptergearshift3.ogg#551387",
+					"gyrocopterjumpend.ogg#551396",
+					"gyrocopterjumpstart.ogg#551399",
+					"gyrocopterrun.ogg#551386",
+					"gyrocoptershuffleleftorright1.ogg#551385",
+					"gyrocoptershuffleleftorright2.ogg#551382",
+					"gyrocoptershuffleleftorright3.ogg#551392",
+					"gyrocopterstallinair.ogg#551395",
+					"gyrocopterstallinairlong.ogg#551394",
+					"gyrocopterstallongroundlong.ogg#551393",
+					"gyrocopterstand.ogg#551383",
+					"gyrocopterstandvar1_a.ogg#551388",
+					"gyrocopterstandvar1_b.ogg#551397",
+					"gyrocopterstandvar1_bnew.ogg#551400",
+					"gyrocopterwalk.ogg#551401",
+
+					-- Gear shift sounds (sound/vehicles/)
+					"vehicle_airplane_gearshift_1.ogg#569846",
+					"vehicle_airplane_gearshift_2.ogg#598739",
+					"vehicle_airplane_gearshift_3.ogg#569851",
+					"vehicle_airplane_gearshift_4.ogg#598742",
+					"vehicle_airplane_gearshift_5.ogg#598733",
+					"vehicle_airplane_gearshift_6.ogg#569850",
+
+					-- sound/spells/
+					"summongyrocopter.ogg#568252",
+
+				},
+
+				-- Yawns (sound/creature/tiger/)
+				["MuteYawns"] = {
+
+					"mtigerstand2a.ogg#562388",
+
+				},
+
+				-- Screech (sound/spells/)
+				["MuteScreech"] = {
+
+					"screech.ogg#569429",
+
+				},
+
+				-- A'dal
+				["MuteAdal"] = {
+
+					-- sound/creature/naaru/
+					"naruuloopgood.ogg#601649",
+
+					-- sound/doodad/
+					"ancient_d_lights.ogg#567134",
+
+				},
+
+				-- Ripper (Arcanite ripper guitar sound)
+				["MuteRipper"] = {
+
+					-- sound/events/
+					"archaniteripper.ogg#567384",
+
+				},
+
+				-- Rhonin
+				["MuteRhonin"] = {
+
+					-- sound/creature/rhonin/ur_rhonin_event
+					"01.ogg#559130", "02.ogg#559131", "03.ogg#559126", "04.ogg#559128", "05.ogg#559133", "06.ogg#559129", "07.ogg#559132", "08.ogg#559127",
+
+				},
+
+				-- Travelers (gnimo sounds are handled in SetupMute() as they are shared with striders)
+				["MuteTravelers"] = {
+
+					-- Traveler's Tundra Mammoth (sound/creature/npcdraeneimalestandard, sound/creature/goblinmalezanynpc, sound/creature/trollfemalelaidbacknpc, sound/creature/trollfemalelaidbacknpc)
+					"npcdraeneimalestandardvendor01.ogg#557341", "npcdraeneimalestandardvendor02.ogg#557335", "npcdraeneimalestandardvendor03.ogg#557328", "npcdraeneimalestandardvendor04.ogg#557331", "npcdraeneimalestandardvendor05.ogg#557325", "npcdraeneimalestandardvendor06.ogg#557324",
+					"npcdraeneimalestandardfarewell01.ogg#557342", "npcdraeneimalestandardfarewell02.ogg#557326", "npcdraeneimalestandardfarewell03.ogg#557322", "npcdraeneimalestandardfarewell05.ogg#557332", "npcdraeneimalestandardfarewell06.ogg#557338", "npcdraeneimalestandardfarewell08.ogg#557334",
+					"goblinmalezanynpcvendor01.ogg#550818", "goblinmalezanynpcvendor02.ogg#550817", "goblinmalezanynpcgreeting01.ogg#550805", "goblinmalezanynpcgreeting02.ogg#550813", "goblinmalezanynpcgreeting03.ogg#550819", "goblinmalezanynpcgreeting04.ogg#550806", "goblinmalezanynpcgreeting05.ogg#550820", "goblinmalezanynpcgreeting06.ogg#550809",
+					"goblinmalezanynpcfarewell01.ogg#550807", "goblinmalezanynpcfarewell03.ogg#550808", "goblinmalezanynpcfarewell04.ogg#550812",
+					"trollfemalelaidbacknpcvendor01.ogg#562812","trollfemalelaidbacknpcvendor02.ogg#562802", "trollfemalelaidbacknpcgreeting01.ogg#562815","trollfemalelaidbacknpcgreeting02.ogg#562814", "trollfemalelaidbacknpcgreeting03.ogg#562816", "trollfemalelaidbacknpcgreeting04.ogg#562807", "trollfemalelaidbacknpcgreeting05.ogg#562804", "trollfemalelaidbacknpcgreeting06.ogg#562803",
+					"trollfemalelaidbacknpcfarewell01.ogg#562809", "trollfemalelaidbacknpcfarewell02.ogg#562808", "trollfemalelaidbacknpcfarewell03.ogg#562813", "trollfemalelaidbacknpcfarewell04.ogg#562817", "trollfemalelaidbacknpcfarewell05.ogg#562806",
+
+				},
+
+				-- Striders (footsteps are in another setting) (wound sounds are handled in SetupMute() as they are shared with travelers)
+				["MuteStriders"] = {
+
+					-- sound/creature/mechastrider/
+					"mechastrideraggro.ogg#555127",
+					"mechastriderattacka.ogg#555125",
+					"smechastriderattackb.ogg#555123",
+					"mechastriderattackc.ogg#555132",
+					"mechastriderloop.ogg#555124",
+					"mechastriderwoundcrit.ogg#555131",
+
+				},
+
+				-- Mechanical mount footsteps
+				["MuteMechSteps"] = {
+
+					-- sound/creature/gnomespidertank/
+					"gnomespidertankfootstepa.ogg#550507",
+					"gnomespidertankfootstepb.ogg#550514",
+					"gnomespidertankfootstepc.ogg#550501",
+					"gnomespidertankfootstepd.ogg#550500",
+					"gnomespidertankwoundd.ogg#550511",
+					"gnomespidertankwounde.ogg#550504",
+					"gnomespidertankwoundf.ogg#550498",
+
+				},
+
+				-- Netherdrakes
+				["MuteNetherdrakes"] = {
+
+					-- sound/creature/netherdrake/
+					"hugewingflap1.ogg#556477",
+					"hugewingflap2.ogg#556479",
+					"hugewingflap3.ogg#556476",
+					"netherdrakea.ogg#556475",
+					"netherdrakeb.ogg#556478",
+
+				},
+
+				-- Brooms
+				["MuteBrooms"] = {
+
+					-- sound/creature/broomstickmount/
+					"broomstickmountland.ogg#545651",
+					"broomstickmounttakeoff.ogg#545652",
+
+					-- sound/spells/
+					"summonbroomstick1.ogg#567986",
+					"summonbroomstick3.ogg#569547",
+					"summonbroomstick2.ogg#568335",
+
+				},
+
+			}
+
+			-- Give table file level scope (its used during logout and for wipe and admin commands)
+			LeaPlusLC["muteTable"] = muteTable
+
+			-- Load saved settings or set default values
+			for k, v in pairs(muteTable) do
+				if LeaPlusDB[k] and type(LeaPlusDB[k]) == "string" and LeaPlusDB[k] == "On" or LeaPlusDB[k] == "Off" then
+					LeaPlusLC[k] = LeaPlusDB[k]
+				else
+					LeaPlusLC[k] = "Off"
+					LeaPlusDB[k] = "Off"
+				end
+			end
+
+			-- Create configuration panel
+			local SoundPanel = LeaPlusLC:CreatePanel("Mute game sounds", "SoundPanel")
+
+			-- Add checkboxes
+			LeaPlusLC:MakeTx(SoundPanel, "General", 16, -72)
+			LeaPlusLC:MakeCB(SoundPanel, "MuteChimes", "Chimes", 16, -92, false, "If checked, clock hourly chimes will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteEvents", "Events", 16, -112, false, "If checked, holiday event sounds will be muted.|n|nThis applies to Headless Horseman.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteFizzle", "Fizzle", 16, -132, false, "If checked, the spell fizzle sounds will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteInterface", "Interface", 16, -152, false, "If checked, the interface button sound, the chat frame tab click sound and the game menu toggle sound will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteLogin", "Login", 16, -172, false, "If checked, the login screen music will be muted when you logout of the game.|n|nNote that the login screen music will not be muted when you initially launch the game.|n|nIt will only be muted when you logout of the game.  This includes manually logging out as well as being forcefully logged out by the game server for reasons such as being away for an extended period of time.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteReady", "Ready", 16, -192, false, "If checked, the ready check sound will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteTrains", "Trains", 16, -212, false, "If checked, train sounds will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteVaults", "Vaults", 16, -232, false, "If checked, the mechanical guild vault idle sound will be muted.")
+
+			LeaPlusLC:MakeTx(SoundPanel, "Mounts", 150, -72)
+			LeaPlusLC:MakeCB(SoundPanel, "MuteBikes", "Bikes", 150, -92, false, "If checked, bike mount sounds will be muted.|n|nThis applies to Mekgineer's Chopper and Mechano-hog.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteBrooms", "Brooms", 150, -112, false, "If checked, broom mounts will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteGyrocopters", "Gyrocopters", 150, -132, false, "If checked, gyrocopters will be muted.|n|nThis applies to the engineering flying machine mounts.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteMechSteps", "Mechsteps", 150, -152, false, "If checked, footsteps for mechanical mounts will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteStriders", "Mechstriders", 150, -172, false, "If checked, mechanostriders will be quieter.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteNetherdrakes", "Netherdrakes", 150, -192, false, "If checked, netherdrakes will be quieter.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteTravelers", "Travelers", 150, -212, false, "If checked, traveling merchant greetings and farewells will be muted.|n|nThis applies to Traveler's Tundra Mammoth.")
+
+			LeaPlusLC:MakeTx(SoundPanel, "Pets", 284, -72)
+			LeaPlusLC:MakeCB(SoundPanel, "MuteScreech", "Screech", 284, -92, false, "If checked, Screech will be muted.|n|nThis is a spell used by some flying pets.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteYawns", "Yawns", 284, -112, false, "If checked, yawns from hunter pet cats will be muted.")
+
+			LeaPlusLC:MakeTx(SoundPanel, "Misc", 418, -72)
+			LeaPlusLC:MakeCB(SoundPanel, "MuteAdal", "A'dal", 418, -92, false, "If checked, A'dal in Shattrath City will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteRipper", "Ripper", 418, -112, false, "If checked, the Arcanite Ripper guitar sound will be muted.")
+			LeaPlusLC:MakeCB(SoundPanel, "MuteRhonin", "Rhonin", 418, -132, false, "If checked, Rhonin will be muted.")
+
+			-- Set click width for sounds checkboxes
+			for k, v in pairs(muteTable) do
+				LeaPlusCB[k].f:SetWidth(90)
+				if LeaPlusCB[k].f:GetStringWidth() > 90 then
+					LeaPlusCB[k]:SetHitRectInsets(0, -80, 0, 0)
+				else
+					LeaPlusCB[k]:SetHitRectInsets(0, -LeaPlusCB[k].f:GetStringWidth() + 4, 0, 0)
+				end
+			end
+
+			-- Function to mute and unmute sounds
+			local function SetupMute()
+				for k, v in pairs(muteTable) do
+					if LeaPlusLC["MuteGameSounds"] == "On" and LeaPlusLC[k] == "On" then
+						for i, e in pairs(v) do
+							local file, soundID = e:match("([^,]+)%#([^,]+)")
+							MuteSoundFile(soundID)
+						end
+					else
+						for i, e in pairs(v) do
+							local file, soundID = e:match("([^,]+)%#([^,]+)")
+							UnmuteSoundFile(soundID)
+						end
+					end
+				end
+				-- Handle special cases where sounds overlap
+				if LeaPlusLC["MuteGameSounds"] == "On" and (LeaPlusLC["MuteTravelers"] == "On" or LeaPlusLC["MuteStriders"] == "On") then
+					-- Mute travelers and mute striders share same sounds
+					MuteSoundFile(555128) -- mechastriderwounda
+					MuteSoundFile(555129) -- mechastriderwoundb
+					MuteSoundFile(555130) -- mechastriderwoundc
+				else
+					-- Mute travelers and mute striders share same sounds
+					UnmuteSoundFile(555128) -- mechastriderwounda
+					UnmuteSoundFile(555129) -- mechastriderwoundb
+					UnmuteSoundFile(555130) -- mechastriderwoundc
+				end
+			end
+
+			-- Setup mute on startup if option is enabled
+			if LeaPlusLC["MuteGameSounds"] == "On" then SetupMute() end
+
+			-- Setup mute when options are clicked
+			for k, v in pairs(muteTable) do
+				LeaPlusCB[k]:HookScript("OnClick", SetupMute)
+			end
+			LeaPlusCB["MuteGameSounds"]:HookScript("OnClick", SetupMute)
+
+			-- Help button hidden
+			SoundPanel.h:Hide()
+
+			-- Back button handler
+			SoundPanel.b:SetScript("OnClick", function()
+				SoundPanel:Hide(); LeaPlusLC["PageF"]:Show(); LeaPlusLC["Page7"]:Show()
+				return
+			end)
+
+			-- Reset button handler
+			SoundPanel.r:SetScript("OnClick", function()
+
+				-- Reset checkboxes
+				for k, v in pairs(muteTable) do
+					LeaPlusLC[k] = "Off"
+				end
+				SetupMute()
+
+				-- Refresh panel
+				SoundPanel:Hide(); SoundPanel:Show()
+
+			end)
+
+			-- Show panal when options panel button is clicked
+			LeaPlusCB["MuteGameSoundsBtn"]:SetScript("OnClick", function()
+				if IsShiftKeyDown() and IsControlKeyDown() then
+					-- Preset profile
+					for k, v in pairs(muteTable) do
+						LeaPlusLC[k] = "On"
+					end
+					LeaPlusLC["MuteReady"] = "Off"
+					SetupMute()
+				else
+					SoundPanel:Show()
+					LeaPlusLC:HideFrames()
+				end
+			end)
+
+			----------------------------------------------------------------------
+			-- Login setting
+			----------------------------------------------------------------------
+
+			-- Create soundtable for PLAYER_LOGOUT (these sounds are only muted or unmuted when logging out
+			local muteLogoutTable = {
+
+				-- Game music (sound/music/cataclysm/mus_shattering_uu01.mp3)
+				"441737",
+
+			}
+
+			-- Handle sounds that get muted or unmuted when logging out
+			local logoutEvent = CreateFrame("FRAME")
+			logoutEvent:RegisterEvent("PLAYER_LOGOUT")
+
+			-- Mute or unmute sounds when logging out
+			logoutEvent:SetScript("OnEvent", function()
+				if LeaPlusLC["MuteGameSounds"] == "On" and LeaPlusLC["MuteLogin"] == "On" then
+					-- Mute logout table sounds on logout
+					for void, soundID in pairs(muteLogoutTable) do
+						MuteSoundFile(soundID)
+					end
+				else
+					-- Unmute logout table sounds on logout
+					for void, soundID in pairs(muteLogoutTable) do
+						UnmuteSoundFile(soundID)
+					end
+				end
+			end)
+
+			-- Unmute sounds when logging in
+			for void, soundID in pairs(muteLogoutTable) do
+				UnmuteSoundFile(soundID)
+			end
+
+		end
 
 		----------------------------------------------------------------------
 		-- Faster movie skip
@@ -941,7 +1353,7 @@
 			end
 
 			----------------------------------------------------------------------
-			-- World map frame
+			-- Quest log frame
 			----------------------------------------------------------------------
 
 			-- Create editbox
@@ -2337,7 +2749,17 @@
 				end)
 			end
 
+			-- Setup chat frame 2 tab now
+			if ChatFrame2Tab then
+				ChatFrame2Tab:EnableMouse(false)
+				ChatFrame2Tab:SetText(" ") -- Needs to be something for chat settings to function
+				ChatFrame2Tab:SetScale(0.01)
+				ChatFrame2Tab:SetWidth(0.01)
+				ChatFrame2Tab:SetHeight(0.01)
+			end
+
 		end
+
 
 		----------------------------------------------------------------------
 		--	Show player chain
@@ -2382,29 +2804,29 @@
 
 			-- Back button handler
 			ChainPanel.b:SetScript("OnClick", function()
-				LeaPlusCB["ListFramePlayerChainMenu"]:Hide(); -- Hide the dropdown list
-				ChainPanel:Hide();
-				LeaPlusLC["PageF"]:Show();
-				LeaPlusLC["Page5"]:Show();
+				LeaPlusCB["ListFramePlayerChainMenu"]:Hide() -- Hide the dropdown list
+				ChainPanel:Hide()
+				LeaPlusLC["PageF"]:Show()
+				LeaPlusLC["Page5"]:Show()
 				return
 			end)
 
 			-- Reset button handler
 			ChainPanel.r:SetScript("OnClick", function()
-				LeaPlusCB["ListFramePlayerChainMenu"]:Hide(); -- Hide the dropdown list
+				LeaPlusCB["ListFramePlayerChainMenu"]:Hide() -- Hide the dropdown list
 				LeaPlusLC["PlayerChainMenu"] = 2
-				ChainPanel:Hide(); ChainPanel:Show();
+				ChainPanel:Hide(); ChainPanel:Show()
 				SetChainStyle()
 			end)
 
 			-- Show the panel when the configuration button is clicked
 			LeaPlusCB["ModPlayerChain"]:SetScript("OnClick", function()
 				if IsShiftKeyDown() and IsControlKeyDown() then
-					LeaPlusLC["PlayerChainMenu"] = 3;
-					SetChainStyle();
+					LeaPlusLC["PlayerChainMenu"] = 3
+					SetChainStyle()
 				else
-					LeaPlusLC:HideFrames();
-					ChainPanel:Show();
+					LeaPlusLC:HideFrames()
+					ChainPanel:Show()
 				end
 			end)
 
@@ -2912,8 +3334,8 @@
 		----------------------------------------------------------------------
 
 		if LeaPlusLC["NoGryphons"] == "On" and not LeaLockList["NoGryphons"] then
-			MainMenuBarLeftEndCap:Hide();
-			MainMenuBarRightEndCap:Hide();
+			MainMenuBarLeftEndCap:Hide()
+			MainMenuBarRightEndCap:Hide()
 		end
 
 		----------------------------------------------------------------------
@@ -2964,7 +3386,7 @@
 			-- Process normal and existing chat frames
 			for i = 1, 50 do
 				if _G["ChatFrame" .. i] and _G["ChatFrame" .. i]:GetMaxLines() ~= 4096 then
-					_G["ChatFrame" .. i]:SetMaxLines(4096);
+					_G["ChatFrame" .. i]:SetMaxLines(4096)
 				end
 			end
 			-- Process temporary chat frames
@@ -2972,7 +3394,7 @@
 				local cf = FCF_GetCurrentChatFrame():GetName() or nil
 				if cf then
 					if (_G[cf]:GetMaxLines() ~= 4096) then
-						_G[cf]:SetMaxLines(4096);
+						_G[cf]:SetMaxLines(4096)
 					end
 				end
 			end)
@@ -3008,429 +3430,6 @@
 					return OrigErrHandler(self, event, id, err, ...)
 				end
 			end)
-
-		end
-
-		-- Release memory
-		LeaPlusLC.Isolated = nil
-
-	end
-
-----------------------------------------------------------------------
---	L40: Player
-----------------------------------------------------------------------
-
-	function LeaPlusLC:Player()
-
-		----------------------------------------------------------------------
-		-- Mute game sounds (no reload required) (MuteGameSounds)
-		----------------------------------------------------------------------
-
-		do
-
-			-- Create soundtable
-			local muteTable = {
-
-				["MuteFizzle"] = {			"sound/spells/fizzle/fizzlefirea.ogg#569773", "sound/spells/fizzle/FizzleFrostA.ogg#569775", "sound/spells/fizzle/FizzleHolyA.ogg#569772", "sound/spells/fizzle/FizzleNatureA.ogg#569774", "sound/spells/fizzle/FizzleShadowA.ogg#569776",},
-				["MuteInterface"] = {		"sound/interface/iUiInterfaceButtonA.ogg#567481", "sound/interface/uChatScrollButton.ogg#567407", "sound/interface/uEscapeScreenClose.ogg#567464", "sound/interface/uEscapeScreenOpen.ogg#567490",},
-
-				-- Trains
-				["MuteTrains"] = {
-
-					--[[Blood Elf]]	"sound#539219", "sound#539203",
-					--[[Draenei]]	"sound#539516", "sound#539730",
-					--[[Dwarf]]		"sound#539802", "sound#539881",
-					--[[Gnome]]		"sound#540271", "sound#540275",
-					--[[Goblin]]	"sound#541769", "sound#542017",
-					--[[Human]]		"sound#540535", "sound#540734",
-					--[[Night Elf]]	"sound#540870", "sound#540947",
-					--[[Orc]]		"sound#541157", "sound#541239",
-					--[[Tauren]]	"sound#542818", "sound#542896",
-					--[[Troll]] 	"sound#543085", "sound#543093",
-					--[[Undead]]	"sound#542526", "sound#542600",
-					--[[Worgen]]	"sound#542035", "sound#542206", "sound#541463", "sound#541601",
-
-				},
-
-				-- Chimes (sound/doodad/)
-				["MuteChimes"] = {
-					"belltollalliance.ogg#566564",
-					"belltollhorde.ogg#565853",
-					"belltollnightelf.ogg#566558",
-					"belltolltribal.ogg#566027",
-					"kharazahnbelltoll.ogg#566254",
-					"dwarfhorn.ogg#566064",
-				},
-
-				-- Vaults
-				["MuteVaults"] = {
-
-					-- Mechanical guild vault idle sound (such as those found in Booty Bay and Winterspring)
-					"sound/doodad/guildvault_goblin_01stand.ogg#566289",
-
-				},
-
-				-- Ready check (sound/interface/)
-				["MuteReady"] = {
-					"levelup2.ogg#567478",
-				},
-
-				-- Login (sound/interface/)
-				["MuteLogin"] = {
-
-					-- This is handled with the PLAYER_LOGOUT event
-
-				},
-
-				-- Bikes
-				["MuteBikes"] = {
-
-					-- Mekgineer's Chopper/Mechano Hog/Chauffeured (sound/vehicles/motorcyclevehicle, sound/vehicles)
-					"motorcyclevehicleattackthrown.ogg#569858", "motorcyclevehiclejumpend1.ogg#569863", "motorcyclevehiclejumpend2.ogg#569857", "motorcyclevehiclejumpend3.ogg#569855", "motorcyclevehiclejumpstart1.ogg#569856", "motorcyclevehiclejumpstart2.ogg#569862", "motorcyclevehiclejumpstart3.ogg#569860", "motorcyclevehicleloadthrown.ogg#569861", "motorcyclevehiclestand.ogg#569859", "motorcyclevehiclewalkrun.ogg#569854", "vehicle_ground_gearshift_1.ogg#598748", "vehicle_ground_gearshift_2.ogg#598736", "vehicle_ground_gearshift_3.ogg#569852", "vehicle_ground_gearshift_4.ogg#598745", "vehicle_ground_gearshift_5.ogg#569845",
-
-				},
-
-				-- Events
-				["MuteEvents"] = {
-
-					-- Headless Horseman (sound/creature/headlesshorseman/)
-					"horseman_beckon_01.ogg#551670",
-					"horseman_bodydefeat_01.ogg#551706",
-					"horseman_bomb_01.ogg#551705",
-					"horseman_conflag_01.ogg#551686",
-					"horseman_death_01.ogg#551695",
-					"horseman_failing_01.ogg#551684",
-					"horseman_failing_02.ogg#551700",
-					"horseman_fire_01.ogg#551673",
-					"horseman_laugh_01.ogg#551703",
-					"horseman_laugh_02.ogg#551682",
-					"horseman_out_01.ogg#551680",
-					"horseman_request_01.ogg#551687",
-					"horseman_return_01.ogg#551698",
-					"horseman_slay_01.ogg#551676",
-					"horseman_special_01.ogg#551696",
-
-				},
-
-				-- Gyrocopters
-				["MuteGyrocopters"] = {
-
-					-- Mimiron's Head (sound/creature/mimironheadmount/)
-					"mimironheadmount_jumpend.ogg#595097",
-					"mimironheadmount_jumpstart.ogg#595103",
-					"mimironheadmount_run.ogg#555364",
-					"mimironheadmount_walk.ogg#595100",
-
-					-- sound/creature/gyrocopter/
-					"gyrocopterfly.ogg#551390",
-					"gyrocopterflyidle.ogg#551398",
-					"gyrocopterflyup.ogg#551389",
-					"gyrocoptergearshift1.ogg#551384",
-					"gyrocoptergearshift2.ogg#551391",
-					"gyrocoptergearshift3.ogg#551387",
-					"gyrocopterjumpend.ogg#551396",
-					"gyrocopterjumpstart.ogg#551399",
-					"gyrocopterrun.ogg#551386",
-					"gyrocoptershuffleleftorright1.ogg#551385",
-					"gyrocoptershuffleleftorright2.ogg#551382",
-					"gyrocoptershuffleleftorright3.ogg#551392",
-					"gyrocopterstallinair.ogg#551395",
-					"gyrocopterstallinairlong.ogg#551394",
-					"gyrocopterstallongroundlong.ogg#551393",
-					"gyrocopterstand.ogg#551383",
-					"gyrocopterstandvar1_a.ogg#551388",
-					"gyrocopterstandvar1_b.ogg#551397",
-					"gyrocopterstandvar1_bnew.ogg#551400",
-					"gyrocopterwalk.ogg#551401",
-
-					-- Gear shift sounds (sound/vehicles/)
-					"vehicle_airplane_gearshift_1.ogg#569846",
-					"vehicle_airplane_gearshift_2.ogg#598739",
-					"vehicle_airplane_gearshift_3.ogg#569851",
-					"vehicle_airplane_gearshift_4.ogg#598742",
-					"vehicle_airplane_gearshift_5.ogg#598733",
-					"vehicle_airplane_gearshift_6.ogg#569850",
-
-					-- sound/spells/
-					"summongyrocopter.ogg#568252",
-
-				},
-
-				-- Yawns (sound/creature/tiger/)
-				["MuteYawns"] = {
-
-					"mtigerstand2a.ogg#562388",
-
-				},
-
-				-- Screech (sound/spells/)
-				["MuteScreech"] = {
-
-					"screech.ogg#569429",
-
-				},
-
-				-- A'dal
-				["MuteAdal"] = {
-
-					-- sound/creature/naaru/
-					"naruuloopgood.ogg#601649",
-
-					-- sound/doodad/
-					"ancient_d_lights.ogg#567134",
-
-				},
-
-				-- Ripper (Arcanite ripper guitar sound)
-				["MuteRipper"] = {
-
-					-- sound/events/
-					"archaniteripper.ogg#567384",
-
-				},
-
-				-- Rhonin
-				["MuteRhonin"] = {
-
-					-- sound/creature/rhonin/ur_rhonin_event
-					"01.ogg#559130", "02.ogg#559131", "03.ogg#559126", "04.ogg#559128", "05.ogg#559133", "06.ogg#559129", "07.ogg#559132", "08.ogg#559127",
-
-				},
-
-				-- Travelers (gnimo sounds are handled in SetupMute() as they are shared with striders)
-				["MuteTravelers"] = {
-
-					-- Traveler's Tundra Mammoth (sound/creature/npcdraeneimalestandard, sound/creature/goblinmalezanynpc, sound/creature/trollfemalelaidbacknpc, sound/creature/trollfemalelaidbacknpc)
-					"npcdraeneimalestandardvendor01.ogg#557341", "npcdraeneimalestandardvendor02.ogg#557335", "npcdraeneimalestandardvendor03.ogg#557328", "npcdraeneimalestandardvendor04.ogg#557331", "npcdraeneimalestandardvendor05.ogg#557325", "npcdraeneimalestandardvendor06.ogg#557324",
-					"npcdraeneimalestandardfarewell01.ogg#557342", "npcdraeneimalestandardfarewell02.ogg#557326", "npcdraeneimalestandardfarewell03.ogg#557322", "npcdraeneimalestandardfarewell05.ogg#557332", "npcdraeneimalestandardfarewell06.ogg#557338", "npcdraeneimalestandardfarewell08.ogg#557334",
-					"goblinmalezanynpcvendor01.ogg#550818", "goblinmalezanynpcvendor02.ogg#550817", "goblinmalezanynpcgreeting01.ogg#550805", "goblinmalezanynpcgreeting02.ogg#550813", "goblinmalezanynpcgreeting03.ogg#550819", "goblinmalezanynpcgreeting04.ogg#550806", "goblinmalezanynpcgreeting05.ogg#550820", "goblinmalezanynpcgreeting06.ogg#550809",
-					"goblinmalezanynpcfarewell01.ogg#550807", "goblinmalezanynpcfarewell03.ogg#550808", "goblinmalezanynpcfarewell04.ogg#550812",
-					"trollfemalelaidbacknpcvendor01.ogg#562812","trollfemalelaidbacknpcvendor02.ogg#562802", "trollfemalelaidbacknpcgreeting01.ogg#562815","trollfemalelaidbacknpcgreeting02.ogg#562814", "trollfemalelaidbacknpcgreeting03.ogg#562816", "trollfemalelaidbacknpcgreeting04.ogg#562807", "trollfemalelaidbacknpcgreeting05.ogg#562804", "trollfemalelaidbacknpcgreeting06.ogg#562803",
-					"trollfemalelaidbacknpcfarewell01.ogg#562809", "trollfemalelaidbacknpcfarewell02.ogg#562808", "trollfemalelaidbacknpcfarewell03.ogg#562813", "trollfemalelaidbacknpcfarewell04.ogg#562817", "trollfemalelaidbacknpcfarewell05.ogg#562806",
-
-				},
-
-				-- Striders (footsteps are in another setting) (wound sounds are handled in SetupMute() as they are shared with travelers)
-				["MuteStriders"] = {
-
-					-- sound/creature/mechastrider/
-					"mechastrideraggro.ogg#555127",
-					"mechastriderattacka.ogg#555125",
-					"smechastriderattackb.ogg#555123",
-					"mechastriderattackc.ogg#555132",
-					"mechastriderloop.ogg#555124",
-					"mechastriderwoundcrit.ogg#555131",
-
-				},
-
-				-- Mechanical mount footsteps
-				["MuteMechSteps"] = {
-
-					-- sound/creature/gnomespidertank/
-					"gnomespidertankfootstepa.ogg#550507",
-					"gnomespidertankfootstepb.ogg#550514",
-					"gnomespidertankfootstepc.ogg#550501",
-					"gnomespidertankfootstepd.ogg#550500",
-					"gnomespidertankwoundd.ogg#550511",
-					"gnomespidertankwounde.ogg#550504",
-					"gnomespidertankwoundf.ogg#550498",
-
-				},
-
-				-- Netherdrakes
-				["MuteNetherdrakes"] = {
-
-					-- sound/creature/netherdrake/
-					"hugewingflap1.ogg#556477",
-					"hugewingflap2.ogg#556479",
-					"hugewingflap3.ogg#556476",
-					"netherdrakea.ogg#556475",
-					"netherdrakeb.ogg#556478",
-
-				},
-
-				-- Brooms
-				["MuteBrooms"] = {
-
-					-- sound/creature/broomstickmount/
-					"broomstickmountland.ogg#545651",
-					"broomstickmounttakeoff.ogg#545652",
-
-					-- sound/spells/
-					"summonbroomstick1.ogg#567986",
-					"summonbroomstick3.ogg#569547",
-					"summonbroomstick2.ogg#568335",
-
-				},
-
-			}
-
-			-- Give table file level scope (its used during logout and for wipe and admin commands)
-			LeaPlusLC["muteTable"] = muteTable
-
-			-- Load saved settings or set default values
-			for k, v in pairs(muteTable) do
-				if LeaPlusDB[k] and type(LeaPlusDB[k]) == "string" and LeaPlusDB[k] == "On" or LeaPlusDB[k] == "Off" then
-					LeaPlusLC[k] = LeaPlusDB[k]
-				else
-					LeaPlusLC[k] = "Off"
-					LeaPlusDB[k] = "Off"
-				end
-			end
-
-			-- Create configuration panel
-			local SoundPanel = LeaPlusLC:CreatePanel("Mute game sounds", "SoundPanel")
-
-			-- Add checkboxes
-			LeaPlusLC:MakeTx(SoundPanel, "General", 16, -72)
-			LeaPlusLC:MakeCB(SoundPanel, "MuteChimes", "Chimes", 16, -92, false, "If checked, clock hourly chimes will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteEvents", "Events", 16, -112, false, "If checked, holiday event sounds will be muted.|n|nThis applies to Headless Horseman.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteFizzle", "Fizzle", 16, -132, false, "If checked, the spell fizzle sounds will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteInterface", "Interface", 16, -152, false, "If checked, the interface button sound, the chat frame tab click sound and the game menu toggle sound will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteLogin", "Login", 16, -172, false, "If checked, the login screen music will be muted when you logout of the game.|n|nNote that the login screen music will not be muted when you initially launch the game.|n|nIt will only be muted when you logout of the game.  This includes manually logging out as well as being forcefully logged out by the game server for reasons such as being away for an extended period of time.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteReady", "Ready", 16, -192, false, "If checked, the ready check sound will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteTrains", "Trains", 16, -212, false, "If checked, train sounds will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteVaults", "Vaults", 16, -232, false, "If checked, the mechanical guild vault idle sound will be muted.")
-
-			LeaPlusLC:MakeTx(SoundPanel, "Mounts", 150, -72)
-			LeaPlusLC:MakeCB(SoundPanel, "MuteBikes", "Bikes", 150, -92, false, "If checked, bike mount sounds will be muted.|n|nThis applies to Mekgineer's Chopper and Mechano-hog.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteBrooms", "Brooms", 150, -112, false, "If checked, broom mounts will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteGyrocopters", "Gyrocopters", 150, -132, false, "If checked, gyrocopters will be muted.|n|nThis applies to the engineering flying machine mounts.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteMechSteps", "Mechsteps", 150, -152, false, "If checked, footsteps for mechanical mounts will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteStriders", "Mechstriders", 150, -172, false, "If checked, mechanostriders will be quieter.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteNetherdrakes", "Netherdrakes", 150, -192, false, "If checked, netherdrakes will be quieter.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteTravelers", "Travelers", 150, -212, false, "If checked, traveling merchant greetings and farewells will be muted.|n|nThis applies to Traveler's Tundra Mammoth.")
-
-			LeaPlusLC:MakeTx(SoundPanel, "Pets", 284, -72)
-			LeaPlusLC:MakeCB(SoundPanel, "MuteScreech", "Screech", 284, -92, false, "If checked, Screech will be muted.|n|nThis is a spell used by some flying pets.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteYawns", "Yawns", 284, -112, false, "If checked, yawns from hunter pet cats will be muted.")
-
-			LeaPlusLC:MakeTx(SoundPanel, "Misc", 418, -72)
-			LeaPlusLC:MakeCB(SoundPanel, "MuteAdal", "A'dal", 418, -92, false, "If checked, A'dal in Shattrath City will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteRipper", "Ripper", 418, -112, false, "If checked, the Arcanite Ripper guitar sound will be muted.")
-			LeaPlusLC:MakeCB(SoundPanel, "MuteRhonin", "Rhonin", 418, -132, false, "If checked, Rhonin will be muted.")
-
-			-- Set click width for sounds checkboxes
-			for k, v in pairs(muteTable) do
-				LeaPlusCB[k].f:SetWidth(90)
-				if LeaPlusCB[k].f:GetStringWidth() > 90 then
-					LeaPlusCB[k]:SetHitRectInsets(0, -80, 0, 0)
-				else
-					LeaPlusCB[k]:SetHitRectInsets(0, -LeaPlusCB[k].f:GetStringWidth() + 4, 0, 0)
-				end
-			end
-
-			-- Function to mute and unmute sounds
-			local function SetupMute()
-				for k, v in pairs(muteTable) do
-					if LeaPlusLC["MuteGameSounds"] == "On" and LeaPlusLC[k] == "On" then
-						for i, e in pairs(v) do
-							local file, soundID = e:match("([^,]+)%#([^,]+)")
-							MuteSoundFile(soundID)
-						end
-					else
-						for i, e in pairs(v) do
-							local file, soundID = e:match("([^,]+)%#([^,]+)")
-							UnmuteSoundFile(soundID)
-						end
-					end
-				end
-				-- Handle special cases where sounds overlap
-				if LeaPlusLC["MuteGameSounds"] == "On" and (LeaPlusLC["MuteTravelers"] == "On" or LeaPlusLC["MuteStriders"] == "On") then
-					-- Mute travelers and mute striders share same sounds
-					MuteSoundFile(555128) -- mechastriderwounda
-					MuteSoundFile(555129) -- mechastriderwoundb
-					MuteSoundFile(555130) -- mechastriderwoundc
-				else
-					-- Mute travelers and mute striders share same sounds
-					UnmuteSoundFile(555128) -- mechastriderwounda
-					UnmuteSoundFile(555129) -- mechastriderwoundb
-					UnmuteSoundFile(555130) -- mechastriderwoundc
-				end
-			end
-
-			-- Setup mute on startup if option is enabled
-			if LeaPlusLC["MuteGameSounds"] == "On" then SetupMute() end
-
-			-- Setup mute when options are clicked
-			for k, v in pairs(muteTable) do
-				LeaPlusCB[k]:HookScript("OnClick", SetupMute)
-			end
-			LeaPlusCB["MuteGameSounds"]:HookScript("OnClick", SetupMute)
-
-			-- Help button hidden
-			SoundPanel.h:Hide()
-
-			-- Back button handler
-			SoundPanel.b:SetScript("OnClick", function()
-				SoundPanel:Hide(); LeaPlusLC["PageF"]:Show(); LeaPlusLC["Page7"]:Show()
-				return
-			end)
-
-			-- Reset button handler
-			SoundPanel.r:SetScript("OnClick", function()
-
-				-- Reset checkboxes
-				for k, v in pairs(muteTable) do
-					LeaPlusLC[k] = "Off"
-				end
-				SetupMute()
-
-				-- Refresh panel
-				SoundPanel:Hide(); SoundPanel:Show()
-
-			end)
-
-			-- Show panal when options panel button is clicked
-			LeaPlusCB["MuteGameSoundsBtn"]:SetScript("OnClick", function()
-				if IsShiftKeyDown() and IsControlKeyDown() then
-					-- Preset profile
-					for k, v in pairs(muteTable) do
-						LeaPlusLC[k] = "On"
-					end
-					LeaPlusLC["MuteReady"] = "Off"
-					SetupMute()
-				else
-					SoundPanel:Show()
-					LeaPlusLC:HideFrames()
-				end
-			end)
-
-			----------------------------------------------------------------------
-			-- Login setting
-			----------------------------------------------------------------------
-
-			-- Create soundtable for PLAYER_LOGOUT (these sounds are only muted or unmuted when logging out
-			local muteLogoutTable = {
-
-				-- Game music (sound/music/cataclysm/mus_shattering_uu01.mp3)
-				"441737",
-
-			}
-
-			-- Handle sounds that get muted or unmuted when logging out
-			local logoutEvent = CreateFrame("FRAME")
-			logoutEvent:RegisterEvent("PLAYER_LOGOUT")
-
-			-- Mute or unmute sounds when logging out
-			logoutEvent:SetScript("OnEvent", function()
-				if LeaPlusLC["MuteGameSounds"] == "On" and LeaPlusLC["MuteLogin"] == "On" then
-					-- Mute logout table sounds on logout
-					for void, soundID in pairs(muteLogoutTable) do
-						MuteSoundFile(soundID)
-					end
-				else
-					-- Unmute logout table sounds on logout
-					for void, soundID in pairs(muteLogoutTable) do
-						UnmuteSoundFile(soundID)
-					end
-				end
-			end)
-
-			-- Unmute sounds when logging in
-			for void, soundID in pairs(muteLogoutTable) do
-				UnmuteSoundFile(soundID)
-			end
 
 		end
 
@@ -12992,7 +12991,6 @@
 
 				-- Run other startup items
 				LeaPlusLC:Live()
-				LeaPlusLC:Isolated()
 				LeaPlusLC:RunOnce()
 				LeaPlusLC:SetDim()
 
@@ -15748,7 +15746,7 @@
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowRaidToggle"			, 	"Show raid button"				,	340, -212, 	true,	"If checked, the button to toggle the raid container frame will be shown just above the raid management frame (left side of the screen) instead of in the raid management frame itself.|n|nThis allows you to toggle the raid container frame without needing to open the raid management frame.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowPlayerChain"			, 	"Show player chain"				,	340, -232, 	true,	"If checked, you will be able to show a rare, elite or rare elite chain around the player frame.")
 	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowReadyTimer"			, 	"Show ready timer"				,	340, -252, 	true,	"If checked, a timer will be shown under the dungeon ready frame and the PvP encounter ready frame so that you know how long you have left to click the enter button.")
-	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowWowheadLinks"			, 	"Show Wowhead links"			, 	340, -272, 	true,	"If checked, Wowhead links will be shown in the world map frame and the achievements frame.")
+	LeaPlusLC:MakeCB(LeaPlusLC[pg], "ShowWowheadLinks"			, 	"Show Wowhead links"			, 	340, -272, 	true,	"If checked, Wowhead links will be shown in the quest log frame and the achievements frame.")
 
 	LeaPlusLC:CfgBtn("ModMinimapBtn", LeaPlusCB["MinimapModder"])
 	LeaPlusLC:CfgBtn("MoveTooltipButton", LeaPlusCB["TipModEnable"])
