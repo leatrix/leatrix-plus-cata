@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.09 (29th May 2024)
+-- 	Leatrix Plus 4.0.10.alpha.1 (29th May 2024)
 ----------------------------------------------------------------------
 
 --	01:Functns, 02:Locks, 03:Restart, 20:Live, 30:Isolated, 40:Player
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.09"
+	LeaPlusLC["AddonVer"] = "4.0.10.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -4164,7 +4164,7 @@
 									local chtfrm = _G["ChatFrame" .. i]
 									local NumMsg = chtfrm:GetNumMessages()
 									local StartMsg = 1
-									if NumMsg > 128 then StartMsg = NumMsg - 127 end
+									if NumMsg > 256 then StartMsg = NumMsg - 255 end
 									for iMsg = StartMsg, NumMsg do
 										local chatMessage, r, g, b, chatTypeID = chtfrm:GetMessageInfo(iMsg)
 										if chatMessage then
@@ -10014,7 +10014,7 @@
 				editBox:SetText("")
 				local NumMsg = chtfrm:GetNumMessages()
 				local StartMsg = 1
-				if NumMsg > 128 then StartMsg = NumMsg - 127 end
+				if NumMsg > 256 then StartMsg = NumMsg - 255 end
 				local totalMsgCount = 0
 				for iMsg = StartMsg, NumMsg do
 					local chatMessage, r, g, b, chatTypeID = chtfrm:GetMessageInfo(iMsg)
@@ -15175,6 +15175,42 @@
 					end
 				else
 					LeaPlusLC:Print("Gossip frame not open.")
+				end
+				return
+			elseif str == "svars" then
+				-- Print saved variables
+				LeaPlusLC:Print(L["Saved Variables"] .. "|n")
+				LeaPlusLC:Print(L["The following list shows option label, setting name and currently saved value.  Enable |cffffffffIncrease chat history|r (chat) and |cffffffffRecent chat window|r (chat) to make it easier."] .. "|n")
+				LeaPlusLC:Print(L["Modifying saved variables must start with |cffffffff/ltp nosave|r to prevent your changes from being reverted during reload or logout."] .. "|n")
+				LeaPlusLC:Print(L['Syntax is |cffffffff/run LeaPlusDB[' .. '"' .. 'setting name' .. '"' .. '] = ' .. '"' .. 'value' .. '" |r(case sensitive).'])
+				LeaPlusLC:Print(L["When done, |cffffffff/reload|r to save your changes."] .. "|n")
+				-- Checkboxes
+				LeaPlusLC:Print(L["Checkboxes"] .. "|n")
+				LeaPlusLC:Print(L["Checkboxes can be set to On or Off."] .. "|n")
+				for key, value in pairs(LeaPlusDB) do
+					if LeaPlusCB[key] and LeaPlusCB[key].f then
+						if not _G["LeaPlusGlobalSlider" .. key] then
+							LeaPlusLC:Print(string.gsub(LeaPlusCB[key].f:GetText(), "%*$", "") .. ": |cffffffff" .. key .. "|r |cff1eff0c(" .. value .. ")|r")
+						end
+					end
+				end
+				-- Sliders
+				LeaPlusLC:Print("|n" .. L["Sliders"] .. "|n")
+				LeaPlusLC:Print(L["Sliders can be set to a numeric value which must be in the range supported by the slider."] .. "|n")
+				for key, value in pairs(LeaPlusDB) do
+					if LeaPlusCB[key] and LeaPlusCB[key].f then
+						if _G["LeaPlusGlobalSlider" .. key] then
+							LeaPlusLC:Print("Slider: " .. "|cffffffff" .. key .. "|r |cff1eff0c(" .. value .. ")|r" .. " (" .. string.gsub(LeaPlusCB[key].f:GetText(), "%*$", "") .. ")" )
+						end
+					end
+				end
+				-- Dropdowns
+				LeaPlusLC:Print("|n" .. L["Dropdowns"] .. "|n")
+				LeaPlusLC:Print(L["Sliders can be set to a numeric value which must be in the range supported by the dropdown."] .. "|n")
+				for key, value in pairs(LeaPlusDB) do
+					if key and LeaPlusCB["ListFrame" .. key] then
+						LeaPlusLC:Print("Dropdown: " .. "|cffffffff" .. key .. "|r |cff1eff0c(" .. value .. ")|r")
+					end
 				end
 				return
 			elseif str == "admin" then
