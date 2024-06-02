@@ -2,7 +2,7 @@
 -- 	Leatrix Plus 4.0.10.alpha.1 (29th May 2024)
 ----------------------------------------------------------------------
 
---	01:Functions  02:Locks    03:Restart  40:Player
+--	01:Functions  02:Locks    03:Restart  40:Player   45:Rest
 --  60:Events     62:Profile  70:Logout   80:Commands 90:Panel
 
 ----------------------------------------------------------------------
@@ -69,7 +69,6 @@
 	local LpEvt = CreateFrame("FRAME")
 	LpEvt:RegisterEvent("ADDON_LOADED")
 	LpEvt:RegisterEvent("PLAYER_LOGIN")
-	LpEvt:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 	-- Set bindings translations
 	_G.BINDING_NAME_LEATRIX_PLUS_GLOBAL_TOGGLE = L["Toggle panel"]
@@ -11785,7 +11784,35 @@
 		end
 
 		----------------------------------------------------------------------
-		-- Frame alignment grid
+		--	Max camera zoom (no reload required)
+		----------------------------------------------------------------------
+
+		do
+
+			-- Create event frame
+			local frame = CreateFrame("FRAME")
+
+			-- Function to set camera zoom
+			local function SetZoom()
+				if LeaPlusLC["MaxCameraZoom"] == "On" then
+					SetCVar("cameraDistanceMaxZoomFactor", 4.0)
+					frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+				else
+					SetCVar("cameraDistanceMaxZoomFactor", 1.9)
+					frame:UnregisterEvent("PLAYER_ENTERING_WORLD")
+				end
+			end
+
+			frame:SetScript("OnEvent", SetZoom)
+
+			-- Set camera zoom when option is clicked and on startup (if enabled)
+			LeaPlusCB["MaxCameraZoom"]:HookScript("OnClick", SetZoom)
+			if LeaPlusLC["MaxCameraZoom"] == "On" then SetZoom() end
+
+		end
+
+		----------------------------------------------------------------------
+		-- L45: Frame alignment grid
 		----------------------------------------------------------------------
 
 		do
@@ -12615,35 +12642,6 @@
 	end
 
 ----------------------------------------------------------------------
---	L45: World
-----------------------------------------------------------------------
-
-	function LeaPlusLC:World()
-
-		----------------------------------------------------------------------
-		--	Max camera zoom (no reload required)
-		----------------------------------------------------------------------
-
-		do
-
-			-- Function to set camera zoom
-			local function SetZoom()
-				if LeaPlusLC["MaxCameraZoom"] == "On" then
-					SetCVar("cameraDistanceMaxZoomFactor", 4.0)
-				else
-					SetCVar("cameraDistanceMaxZoomFactor", 1.9)
-				end
-			end
-
-			-- Set camera zoom when option is clicked and on startup (if enabled)
-			LeaPlusCB["MaxCameraZoom"]:HookScript("OnClick", SetZoom)
-			if LeaPlusLC["MaxCameraZoom"] == "On" then SetZoom() end
-
-		end
-
-	end
-
-----------------------------------------------------------------------
 -- 	L60: Default events
 ----------------------------------------------------------------------
 
@@ -13052,12 +13050,6 @@
 		if event == "PLAYER_LOGIN" then
 			LeaPlusLC:Player()
 			collectgarbage()
-			return
-		end
-
-		if event == "PLAYER_ENTERING_WORLD" then
-			LeaPlusLC:World()
-			LpEvt:UnregisterEvent("PLAYER_ENTERING_WORLD")
 			return
 		end
 
