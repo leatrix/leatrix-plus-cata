@@ -6454,6 +6454,7 @@
 			LeaPlusLC:MakeCB(ChatFilterPanel, "BlockSpellLinks", "Block spell links during combat", 16, -92, false, "If checked, messages containing spell links will be blocked while you are in combat.|n|nThis is useful for blocking spell interrupt spam.|n|nThis applies to the say, party, raid, emote and yell channels.")
 			LeaPlusLC:MakeCB(ChatFilterPanel, "BlockDrunkenSpam", "Block drunken spam", 16, -112, false, "If checked, drunken messages will be blocked unless they apply to your character.|n|nThis applies to the system channel.")
 			LeaPlusLC:MakeCB(ChatFilterPanel, "BlockDuelSpam", "Block duel spam", 16, -132, false, "If checked, duel victory and retreat messages will be blocked unless your character took part in the duel.|n|nThis applies to the system channel.")
+			LeaPlusLC:MakeCB(ChatFilterPanel, "BlockGuildAnnounce", "Block guild announcements", 16, -152, false, "If checked, guild announcements will be blocked.|n|nThis applies to the guild channel.")
 
 			-- Lock block drunken spam option for zhTW
 			if GameLocale == "zhTW" then
@@ -6476,7 +6477,7 @@
 			local charRealm = GetNormalizedRealmName()
 			local nameRealm = charName .. "%%-" .. charRealm
 
-			-- Chat filter
+			-- Chat filter to block specific messages sent to specific channels
 			local function ChatFilterFunc(self, event, msg)
 				-- Block duel spam
 				if LeaPlusLC["BlockDuelSpam"] == "On" then
@@ -6512,6 +6513,11 @@
 				end
 			end
 
+			-- Chat filter to block all messages sent to specific channels
+			local function ChatFilterBlockAllFunc()
+				return true
+			end
+
 			-- Enable or disable chat filter settings
 			local function SetChatFilter()
 				if LeaPlusLC["BlockSpellLinks"] == "On" then
@@ -6536,12 +6542,20 @@
 				else
 					ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SYSTEM", ChatFilterFunc)
 				end
+				if LeaPlusLC["BlockGuildAnnounce"] == "On" then
+					ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD_ACHIEVEMENT", ChatFilterBlockAllFunc)
+					ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD_ITEM_LOOTED", ChatFilterBlockAllFunc)
+				else
+					ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD_ACHIEVEMENT", ChatFilterBlockAllFunc)
+					ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD_ITEM_LOOTED", ChatFilterBlockAllFunc)
+				end
 			end
 
 			-- Set chat filter when settings are clicked and on startup
 			LeaPlusCB["BlockSpellLinks"]:HookScript("OnClick", SetChatFilter)
 			LeaPlusCB["BlockDrunkenSpam"]:HookScript("OnClick", SetChatFilter)
 			LeaPlusCB["BlockDuelSpam"]:HookScript("OnClick", SetChatFilter)
+			LeaPlusCB["BlockGuildAnnounce"]:HookScript("OnClick", SetChatFilter)
 			SetChatFilter()
 
 			-- Reset button handler
@@ -6551,6 +6565,7 @@
 				LeaPlusLC["BlockSpellLinks"] = "Off"
 				LeaPlusLC["BlockDrunkenSpam"] = "Off"
 				LeaPlusLC["BlockDuelSpam"] = "Off"
+				LeaPlusLC["BlockGuildAnnounce"] = "Off"
 				SetChatFilter()
 
 				-- Refresh configuration panel
@@ -6565,6 +6580,7 @@
 					LeaPlusLC["BlockSpellLinks"] = "On"
 					LeaPlusLC["BlockDrunkenSpam"] = "On"
 					LeaPlusLC["BlockDuelSpam"] = "On"
+					LeaPlusLC["BlockGuildAnnounce"] = "On"
 					SetChatFilter()
 				else
 					ChatFilterPanel:Show()
@@ -12716,6 +12732,7 @@
 				LeaPlusLC:LoadVarChk("BlockSpellLinks", "Off")				-- Block spell links
 				LeaPlusLC:LoadVarChk("BlockDrunkenSpam", "Off")				-- Block drunken spam
 				LeaPlusLC:LoadVarChk("BlockDuelSpam", "Off")				-- Block duel spam
+				LeaPlusLC:LoadVarChk("BlockGuildAnnounce", "Off")			-- Block guild announcements
 				LeaPlusLC:LoadVarChk("RestoreChatMessages", "Off")			-- Restore chat messages
 
 				-- Text
@@ -13113,6 +13130,7 @@
 			LeaPlusDB["BlockSpellLinks"]		= LeaPlusLC["BlockSpellLinks"]
 			LeaPlusDB["BlockDrunkenSpam"]		= LeaPlusLC["BlockDrunkenSpam"]
 			LeaPlusDB["BlockDuelSpam"]			= LeaPlusLC["BlockDuelSpam"]
+			LeaPlusDB["BlockGuildAnnounce"]		= LeaPlusLC["BlockGuildAnnounce"]
 			LeaPlusDB["RestoreChatMessages"]	= LeaPlusLC["RestoreChatMessages"]
 
 			-- Text
@@ -15306,6 +15324,7 @@
 				LeaPlusDB["BlockSpellLinks"] = "On"				-- Block spell links
 				LeaPlusDB["BlockDrunkenSpam"] = "On"			-- Block drunken spam
 				LeaPlusDB["BlockDuelSpam"] = "On"				-- Block duel spam
+				LeaPlusDB["BlockGuildAnnounce"] = "On"			-- Block guild announcements
 				LeaPlusDB["RestoreChatMessages"] = "On"			-- Restore chat messages
 
 				-- Text
