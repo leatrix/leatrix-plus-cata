@@ -2,8 +2,8 @@
 -- 	Leatrix Plus 4.0.10.alpha.1 (29th May 2024)
 ----------------------------------------------------------------------
 
---	01:Functns, 02:Locks, 03:Restart, 20:Live, 40:Player
---	50:RunOnce, 60:Evnts, 62:Profile, 70:Lgot, 80:Commands, 90:Panel
+--	01:Functions  02:Locks    03:Restart  40:Player   50:RunOnce
+--  60:Events     62:Profile  70:Logout   80:Commands 90:Panel
 
 ----------------------------------------------------------------------
 -- 	Leatrix Plus
@@ -733,7 +733,7 @@
 		end
 
 		----------------------------------------------------------------------
-		--	Invite from whispers
+		--	Invite from whispers (no reload required)
 		----------------------------------------------------------------------
 
 		do
@@ -782,6 +782,93 @@
 			-- Set event on startup if enabled and when option is clicked
 			if LeaPlusLC["InviteFromWhisper"] == "On" then SetEvent() end
 			LeaPlusCB["InviteFromWhisper"]:HookScript("OnClick", SetEvent)
+
+			-- Create configuration panel
+			local InvPanel = LeaPlusLC:CreatePanel("Invite from whispers", "InvPanel")
+
+			-- Add editbox
+			LeaPlusLC:MakeTx(InvPanel, "Settings", 16, -72)
+			LeaPlusLC:MakeCB(InvPanel, "InviteFriendsOnly", "Restrict to friends", 16, -92, false, "If checked, group invites will only be sent to friends.|n|nIf unchecked, group invites will be sent to everyone.")
+
+			LeaPlusLC:MakeTx(InvPanel, "Keyword", 356, -72)
+			local KeyBox = LeaPlusLC:CreateEditBox("KeyBox", InvPanel, 140, 10, "TOPLEFT", 356, -92, "KeyBox", "KeyBox")
+
+			-- Function to show the keyword in the option tooltip
+			local function SetKeywordTip()
+				LeaPlusCB["InviteFromWhisper"].tiptext = gsub(LeaPlusCB["InviteFromWhisper"].tiptext, "(|cffffffff)[^|]*(|r)",  "%1" .. LeaPlusLC["InvKey"] .. "%2")
+			end
+
+			-- Function to save the keyword
+			local function SetInvKey()
+				local keytext = KeyBox:GetText()
+				if keytext and keytext ~= "" then
+					LeaPlusLC["InvKey"] = strtrim(KeyBox:GetText())
+				else
+					LeaPlusLC["InvKey"] = "inv"
+				end
+				-- Show the keyword in the option tooltip
+				SetKeywordTip()
+			end
+
+			-- Show the keyword in the option tooltip on startup
+			SetKeywordTip()
+
+			-- Save the keyword when it changes
+			KeyBox:SetScript("OnTextChanged", SetInvKey)
+
+			-- Refresh editbox with trimmed keyword when edit focus is lost (removes additional spaces)
+			KeyBox:SetScript("OnEditFocusLost", function()
+				KeyBox:SetText(LeaPlusLC["InvKey"])
+			end)
+
+			-- Help button hidden
+			InvPanel.h:Hide()
+
+			-- Back button handler
+			InvPanel.b:SetScript("OnClick", function()
+				-- Save the keyword
+				SetInvKey()
+				-- Show the options panel
+				InvPanel:Hide(); LeaPlusLC["PageF"]:Show(); LeaPlusLC["Page2"]:Show()
+				return
+			end)
+
+			-- Add reset button
+			InvPanel.r:SetScript("OnClick", function()
+				-- Settings
+				LeaPlusLC["InviteFriendsOnly"] = "Off"
+				-- Reset the keyword to default
+				LeaPlusLC["InvKey"] = "inv"
+				-- Set the editbox to default
+				KeyBox:SetText("inv")
+				-- Save the keyword
+				SetInvKey()
+				-- Refresh panel
+				InvPanel:Hide(); InvPanel:Show()
+			end)
+
+			-- Ensure keyword is a string on startup
+			LeaPlusLC["InvKey"] = tostring(LeaPlusLC["InvKey"]) or "inv"
+
+			-- Set editbox value when shown
+			KeyBox:HookScript("OnShow", function()
+				KeyBox:SetText(LeaPlusLC["InvKey"])
+			end)
+
+			-- Configuration button handler
+			LeaPlusCB["InvWhisperBtn"]:SetScript("OnClick", function()
+				if IsShiftKeyDown() and IsControlKeyDown() then
+					-- Preset profile
+					LeaPlusLC["InviteFriendsOnly"] = "On"
+					LeaPlusLC["InvKey"] = "inv"
+					KeyBox:SetText(LeaPlusLC["InvKey"])
+					SetInvKey()
+				else
+					-- Show panel
+					InvPanel:Show()
+					LeaPlusLC:HideFrames()
+				end
+			end)
 
 		end
 
@@ -2943,23 +3030,8 @@
 
 		if LeaPlusLC["NoCombatLogTab"] == "On" and not LeaLockList["NoCombatLogTab"] then
 
-			-- Ensure combat log is docked
-			if ChatFrame2.isDocked then
-				-- Set combat log attributes when chat windows are updated
-				LpEvt:RegisterEvent("UPDATE_CHAT_WINDOWS")
-				-- Set combat log tab placement when tabs are assigned by the client
-				hooksecurefunc("FCF_SetTabPosition", function()
-					ChatFrame2Tab:SetPoint("BOTTOMLEFT", ChatFrame1Tab, "BOTTOMRIGHT", 0, 0)
-				end)
-			else
-				-- If combat log is undocked, do nothing but show warning
-				C_Timer.After(1, function()
-					LeaPlusLC:Print("Combat log cannot be hidden while undocked.")
-				end)
-			end
-
-			-- Setup chat frame 2 tab now
-			if ChatFrame2Tab then
+			-- Function to setup the combat log tab
+			local function SetupCombatLogTab()
 				ChatFrame2Tab:EnableMouse(false)
 				ChatFrame2Tab:SetText(" ") -- Needs to be something for chat settings to function
 				ChatFrame2Tab:SetScale(0.01)
@@ -2967,8 +3039,26 @@
 				ChatFrame2Tab:SetHeight(0.01)
 			end
 
-		end
+			local frame = CreateFrame("FRAME")
+			frame:SetScript("OnEvent", SetupCombatLogTab)
 
+			-- Ensure combat log is docked
+			if ChatFrame2.isDocked then
+				-- Set combat log attributes when chat windows are updated
+				frame:RegisterEvent("UPDATE_CHAT_WINDOWS")
+				-- Set combat log tab placement when tabs are assigned by the client
+				hooksecurefunc("FCF_SetTabPosition", function()
+					ChatFrame2Tab:SetPoint("BOTTOMLEFT", ChatFrame1Tab, "BOTTOMRIGHT", 0, 0)
+				end)
+				SetupCombatLogTab()
+			else
+				-- If combat log is undocked, do nothing but show warning
+				C_Timer.After(1, function()
+					LeaPlusLC:Print("Combat log cannot be hidden while undocked.")
+				end)
+			end
+
+		end
 
 		----------------------------------------------------------------------
 		--	Show player chain
@@ -12551,97 +12641,6 @@
 		ControlEvent()
 
 		----------------------------------------------------------------------
-		-- Invite from whisper (configuration panel)
-		----------------------------------------------------------------------
-
-		-- Create configuration panel
-		local InvPanel = LeaPlusLC:CreatePanel("Invite from whispers", "InvPanel")
-
-		-- Add editbox
-		LeaPlusLC:MakeTx(InvPanel, "Settings", 16, -72)
-		LeaPlusLC:MakeCB(InvPanel, "InviteFriendsOnly", "Restrict to friends", 16, -92, false, "If checked, group invites will only be sent to friends.|n|nIf unchecked, group invites will be sent to everyone.")
-
-		LeaPlusLC:MakeTx(InvPanel, "Keyword", 356, -72)
-		local KeyBox = LeaPlusLC:CreateEditBox("KeyBox", InvPanel, 140, 10, "TOPLEFT", 356, -92, "KeyBox", "KeyBox")
-
-		-- Function to show the keyword in the option tooltip
-		local function SetKeywordTip()
-			LeaPlusCB["InviteFromWhisper"].tiptext = gsub(LeaPlusCB["InviteFromWhisper"].tiptext, "(|cffffffff)[^|]*(|r)",  "%1" .. LeaPlusLC["InvKey"] .. "%2")
-		end
-
-		-- Function to save the keyword
-		local function SetInvKey()
-			local keytext = KeyBox:GetText()
-			if keytext and keytext ~= "" then
-				LeaPlusLC["InvKey"] = strtrim(KeyBox:GetText())
-			else
-				LeaPlusLC["InvKey"] = "inv"
-			end
-			-- Show the keyword in the option tooltip
-			SetKeywordTip()
-		end
-
-		-- Show the keyword in the option tooltip on startup
-		SetKeywordTip()
-
-		-- Save the keyword when it changes
-		KeyBox:SetScript("OnTextChanged", SetInvKey)
-
-		-- Refresh editbox with trimmed keyword when edit focus is lost (removes additional spaces)
-		KeyBox:SetScript("OnEditFocusLost", function()
-			KeyBox:SetText(LeaPlusLC["InvKey"])
-		end)
-
-		-- Help button hidden
-		InvPanel.h:Hide()
-
-		-- Back button handler
-		InvPanel.b:SetScript("OnClick", function()
-			-- Save the keyword
-			SetInvKey()
-			-- Show the options panel
-			InvPanel:Hide(); LeaPlusLC["PageF"]:Show(); LeaPlusLC["Page2"]:Show()
-			return
-		end)
-
-		-- Add reset button
-		InvPanel.r:SetScript("OnClick", function()
-			-- Settings
-			LeaPlusLC["InviteFriendsOnly"] = "Off"
-			-- Reset the keyword to default
-			LeaPlusLC["InvKey"] = "inv"
-			-- Set the editbox to default
-			KeyBox:SetText("inv")
-			-- Save the keyword
-			SetInvKey()
-			-- Refresh panel
-			InvPanel:Hide(); InvPanel:Show()
-		end)
-
-		-- Ensure keyword is a string on startup
-		LeaPlusLC["InvKey"] = tostring(LeaPlusLC["InvKey"]) or "inv"
-
-		-- Set editbox value when shown
-		KeyBox:HookScript("OnShow", function()
-			KeyBox:SetText(LeaPlusLC["InvKey"])
-		end)
-
-		-- Configuration button handler
-		LeaPlusCB["InvWhisperBtn"]:SetScript("OnClick", function()
-			if IsShiftKeyDown() and IsControlKeyDown() then
-				-- Preset profile
-				LeaPlusLC["InviteFriendsOnly"] = "On"
-				LeaPlusLC["InvKey"] = "inv"
-				KeyBox:SetText(LeaPlusLC["InvKey"])
-				SetInvKey()
-			else
-				-- Show panel
-				InvPanel:Show()
-				LeaPlusLC:HideFrames()
-			end
-		end)
-
-		----------------------------------------------------------------------
 		-- Final code for RunOnce
 		----------------------------------------------------------------------
 
@@ -12658,18 +12657,6 @@
 ----------------------------------------------------------------------
 
 	local function eventHandler(self, event, arg1, arg2, ...)
-
-		----------------------------------------------------------------------
-		-- Hide the combat log
-		----------------------------------------------------------------------
-
-		if event == "UPDATE_CHAT_WINDOWS" then
-			ChatFrame2Tab:EnableMouse(false)
-			ChatFrame2Tab:SetText(" ") -- Needs to be something for chat settings to function
-			ChatFrame2Tab:SetScale(0.01)
-			ChatFrame2Tab:SetWidth(0.01)
-			ChatFrame2Tab:SetHeight(0.01)
-		end
 
 		----------------------------------------------------------------------
 		-- L62: Profile events
