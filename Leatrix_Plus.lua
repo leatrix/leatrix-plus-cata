@@ -2,7 +2,7 @@
 -- 	Leatrix Plus 4.0.10.alpha.1 (29th May 2024)
 ----------------------------------------------------------------------
 
---	01:Functions  02:Locks    03:Restart  40:Player   50:RunOnce
+--	01:Functions  02:Locks    03:Restart  40:Player
 --  60:Events     62:Profile  70:Logout   80:Commands 90:Panel
 
 ----------------------------------------------------------------------
@@ -667,6 +667,47 @@
 ----------------------------------------------------------------------
 
 	function LeaPlusLC:Player()
+
+		----------------------------------------------------------------------
+		-- Block friend requests
+		----------------------------------------------------------------------
+
+		do
+
+			-- Function to decline friend requests
+			local function DeclineReqs()
+				if LeaPlusLC["NoFriendRequests"] == "On" then
+					for i = BNGetNumFriendInvites(), 1, -1 do
+						local id, player = BNGetFriendInviteInfo(i)
+						if id and player then
+							BNDeclineFriendInvite(id)
+							C_Timer.After(0.1, function()
+								LeaPlusLC:Print(L["A friend request from"] .. " " .. player .. " " .. L["was automatically declined."])
+							end)
+						end
+					end
+				end
+			end
+
+			-- Event frame for incoming friend requests
+			local DecEvt = CreateFrame("FRAME")
+			DecEvt:SetScript("OnEvent", DeclineReqs)
+
+			-- Function to register or unregister the event
+			local function ControlEvent()
+				if LeaPlusLC["NoFriendRequests"] == "On" then
+					DecEvt:RegisterEvent("BN_FRIEND_INVITE_ADDED")
+					DeclineReqs()
+				else
+					DecEvt:UnregisterEvent("BN_FRIEND_INVITE_ADDED")
+				end
+			end
+
+			-- Set event status when option is clicked and on startup
+			LeaPlusCB["NoFriendRequests"]:HookScript("OnClick", ControlEvent)
+			ControlEvent()
+
+		end
 
 		----------------------------------------------------------------------
 		--	Block duels (no reload required)
@@ -11744,114 +11785,6 @@
 		end
 
 		----------------------------------------------------------------------
-		-- Create panel in game options panel
-		----------------------------------------------------------------------
-
-		do
-
-			local interPanel = CreateFrame("FRAME")
-			interPanel.name = "Leatrix Plus"
-
-			local maintitle = LeaPlusLC:MakeTx(interPanel, "Leatrix Plus", 0, 0)
-			maintitle:SetFont(maintitle:GetFont(), 72)
-			maintitle:ClearAllPoints()
-			maintitle:SetPoint("TOP", 0, -72)
-
-			local expTitle = LeaPlusLC:MakeTx(interPanel, "Cataclysm Classic", 0, 0)
-			expTitle:SetFont(expTitle:GetFont(), 32)
-			expTitle:ClearAllPoints()
-			expTitle:SetPoint("TOP", 0, -152)
-
-			local subTitle = LeaPlusLC:MakeTx(interPanel, "www.leatrix.com", 0, 0)
-			subTitle:SetFont(subTitle:GetFont(), 20)
-			subTitle:ClearAllPoints()
-			subTitle:SetPoint("BOTTOM", 0, 72)
-
-			local slashButton = CreateFrame("Button", nil, interPanel)
-			slashButton:SetPoint("BOTTOM", subTitle, "TOP", 0, 40)
-			slashButton:SetScript("OnClick", function() SlashCmdList["Leatrix_Plus"]("") end)
-
-			local slashTitle = LeaPlusLC:MakeTx(slashButton, "/ltp", 0, 0)
-			slashTitle:SetFont(slashTitle:GetFont(), 72)
-			slashTitle:ClearAllPoints()
-			slashTitle:SetAllPoints()
-
-			slashButton:SetSize(slashTitle:GetSize())
-			slashButton:SetScript("OnEnter", function()
-				slashTitle.r,  slashTitle.g, slashTitle.b = slashTitle:GetTextColor()
-				slashTitle:SetTextColor(1, 1, 0)
-			end)
-
-			slashButton:SetScript("OnLeave", function()
-				slashTitle:SetTextColor(slashTitle.r, slashTitle.g, slashTitle.b)
-			end)
-
-			local pTex = interPanel:CreateTexture(nil, "BACKGROUND")
-			pTex:SetAllPoints()
-			pTex:SetTexture("Interface\\GLUES\\Models\\UI_MainMenu\\swordgradient2")
-			pTex:SetAlpha(0.2)
-			pTex:SetTexCoord(0, 1, 1, 0)
-
-			InterfaceOptions_AddCategory(interPanel)
-
-		end
-
-		----------------------------------------------------------------------
-		-- Final code for Player
-		----------------------------------------------------------------------
-
-		-- Show first run message
-		if not LeaPlusDB["FirstRunMessageSeen"] then
-			C_Timer.After(1, function()
-				LeaPlusLC:Print(L["Enter"] .. " |cff00ff00" .. "/ltp" .. "|r " .. L["or click the minimap button to open Leatrix Plus."])
-				LeaPlusDB["FirstRunMessageSeen"] = true
-			end)
-		end
-
-		-- Register logout event to save settings
-		LpEvt:RegisterEvent("PLAYER_LOGOUT")
-
-		-- Release memory
-		LeaPlusLC.Player = nil
-
-	end
-
-----------------------------------------------------------------------
---	L45: World
-----------------------------------------------------------------------
-
-	function LeaPlusLC:World()
-
-		----------------------------------------------------------------------
-		--	Max camera zoom (no reload required)
-		----------------------------------------------------------------------
-
-		do
-
-			-- Function to set camera zoom
-			local function SetZoom()
-				if LeaPlusLC["MaxCameraZoom"] == "On" then
-					SetCVar("cameraDistanceMaxZoomFactor", 4.0)
-				else
-					SetCVar("cameraDistanceMaxZoomFactor", 1.9)
-				end
-			end
-
-			-- Set camera zoom when option is clicked and on startup (if enabled)
-			LeaPlusCB["MaxCameraZoom"]:HookScript("OnClick", SetZoom)
-			if LeaPlusLC["MaxCameraZoom"] == "On" then SetZoom() end
-
-		end
-
-	end
-
-----------------------------------------------------------------------
--- 	L50: RunOnce
-----------------------------------------------------------------------
-
-	function LeaPlusLC:RunOnce()
-
-		----------------------------------------------------------------------
 		-- Frame alignment grid
 		----------------------------------------------------------------------
 
@@ -12546,109 +12479,167 @@
 		LeaPlusLC.MediaFunc = nil
 
 		----------------------------------------------------------------------
-		-- Panel alpha
+		-- Panel alpha (no reload required)
 		----------------------------------------------------------------------
 
-		-- Function to set panel alpha
-		local function SetPlusAlpha()
-			-- Set panel alpha
-			LeaPlusLC["PageF"].t:SetAlpha(1 - LeaPlusLC["PlusPanelAlpha"])
-			-- Show formatted value
-			LeaPlusCB["PlusPanelAlpha"].f:SetFormattedText("%.0f%%", LeaPlusLC["PlusPanelAlpha"] * 100)
-		end
+		do
 
-		-- Set alpha on startup
-		SetPlusAlpha()
-
-		-- Set alpha after changing slider
-		LeaPlusCB["PlusPanelAlpha"]:HookScript("OnValueChanged", SetPlusAlpha)
-
-		----------------------------------------------------------------------
-		-- Panel scale
-		----------------------------------------------------------------------
-
-		-- Function to set panel scale
-		local function SetPlusScale()
-			-- Reset panel position
-			LeaPlusLC["MainPanelA"], LeaPlusLC["MainPanelR"], LeaPlusLC["MainPanelX"], LeaPlusLC["MainPanelY"] = "CENTER", "CENTER", 0, 0
-			if LeaPlusLC["PageF"]:IsShown() then
-				LeaPlusLC["PageF"]:Hide()
-				LeaPlusLC["PageF"]:Show()
+			-- Function to set panel alpha
+			local function SetPlusAlpha()
+				-- Set panel alpha
+				LeaPlusLC["PageF"].t:SetAlpha(1 - LeaPlusLC["PlusPanelAlpha"])
+				-- Show formatted value
+				LeaPlusCB["PlusPanelAlpha"].f:SetFormattedText("%.0f%%", LeaPlusLC["PlusPanelAlpha"] * 100)
 			end
-			-- Set panel scale
-			LeaPlusLC["PageF"]:SetScale(LeaPlusLC["PlusPanelScale"])
-			-- Update music player highlight bar scale
-			LeaPlusLC:UpdateList()
+
+			-- Set alpha on startup
+			SetPlusAlpha()
+
+			-- Set alpha after changing slider
+			LeaPlusCB["PlusPanelAlpha"]:HookScript("OnValueChanged", SetPlusAlpha)
+
 		end
 
-		-- Set scale on startup
-		LeaPlusLC["PageF"]:SetScale(LeaPlusLC["PlusPanelScale"])
+		----------------------------------------------------------------------
+		-- Panel scale (no reload required)
+		----------------------------------------------------------------------
 
-		-- Set scale and reset panel position after changing slider
-		LeaPlusCB["PlusPanelScale"]:HookScript("OnMouseUp", SetPlusScale)
-		LeaPlusCB["PlusPanelScale"]:HookScript("OnMouseWheel", SetPlusScale)
+		do
 
-		-- Show formatted slider value
-		LeaPlusCB["PlusPanelScale"]:HookScript("OnValueChanged", function()
-			LeaPlusCB["PlusPanelScale"].f:SetFormattedText("%.0f%%", LeaPlusLC["PlusPanelScale"] * 100)
-		end)
+			-- Function to set panel scale
+			local function SetPlusScale()
+				-- Reset panel position
+				LeaPlusLC["MainPanelA"], LeaPlusLC["MainPanelR"], LeaPlusLC["MainPanelX"], LeaPlusLC["MainPanelY"] = "CENTER", "CENTER", 0, 0
+				if LeaPlusLC["PageF"]:IsShown() then
+					LeaPlusLC["PageF"]:Hide()
+					LeaPlusLC["PageF"]:Show()
+				end
+				-- Set panel scale
+				LeaPlusLC["PageF"]:SetScale(LeaPlusLC["PlusPanelScale"])
+				-- Update music player highlight bar scale
+				LeaPlusLC:UpdateList()
+			end
+
+			-- Set scale on startup
+			LeaPlusLC["PageF"]:SetScale(LeaPlusLC["PlusPanelScale"])
+
+			-- Set scale and reset panel position after changing slider
+			LeaPlusCB["PlusPanelScale"]:HookScript("OnMouseUp", SetPlusScale)
+			LeaPlusCB["PlusPanelScale"]:HookScript("OnMouseWheel", SetPlusScale)
+
+			-- Show formatted slider value
+			LeaPlusCB["PlusPanelScale"]:HookScript("OnValueChanged", function()
+				LeaPlusCB["PlusPanelScale"].f:SetFormattedText("%.0f%%", LeaPlusLC["PlusPanelScale"] * 100)
+			end)
+
+		end
 
 		----------------------------------------------------------------------
-		-- Options panel
+		-- Create panel in game options panel
 		----------------------------------------------------------------------
+
+		do
+
+			local interPanel = CreateFrame("FRAME")
+			interPanel.name = "Leatrix Plus"
+
+			local maintitle = LeaPlusLC:MakeTx(interPanel, "Leatrix Plus", 0, 0)
+			maintitle:SetFont(maintitle:GetFont(), 72)
+			maintitle:ClearAllPoints()
+			maintitle:SetPoint("TOP", 0, -72)
+
+			local expTitle = LeaPlusLC:MakeTx(interPanel, "Cataclysm Classic", 0, 0)
+			expTitle:SetFont(expTitle:GetFont(), 32)
+			expTitle:ClearAllPoints()
+			expTitle:SetPoint("TOP", 0, -152)
+
+			local subTitle = LeaPlusLC:MakeTx(interPanel, "www.leatrix.com", 0, 0)
+			subTitle:SetFont(subTitle:GetFont(), 20)
+			subTitle:ClearAllPoints()
+			subTitle:SetPoint("BOTTOM", 0, 72)
+
+			local slashButton = CreateFrame("Button", nil, interPanel)
+			slashButton:SetPoint("BOTTOM", subTitle, "TOP", 0, 40)
+			slashButton:SetScript("OnClick", function() SlashCmdList["Leatrix_Plus"]("") end)
+
+			local slashTitle = LeaPlusLC:MakeTx(slashButton, "/ltp", 0, 0)
+			slashTitle:SetFont(slashTitle:GetFont(), 72)
+			slashTitle:ClearAllPoints()
+			slashTitle:SetAllPoints()
+
+			slashButton:SetSize(slashTitle:GetSize())
+			slashButton:SetScript("OnEnter", function()
+				slashTitle.r,  slashTitle.g, slashTitle.b = slashTitle:GetTextColor()
+				slashTitle:SetTextColor(1, 1, 0)
+			end)
+
+			slashButton:SetScript("OnLeave", function()
+				slashTitle:SetTextColor(slashTitle.r, slashTitle.g, slashTitle.b)
+			end)
+
+			local pTex = interPanel:CreateTexture(nil, "BACKGROUND")
+			pTex:SetAllPoints()
+			pTex:SetTexture("Interface\\GLUES\\Models\\UI_MainMenu\\swordgradient2")
+			pTex:SetAlpha(0.2)
+			pTex:SetTexCoord(0, 1, 1, 0)
+
+			InterfaceOptions_AddCategory(interPanel)
+
+		end
+
+		----------------------------------------------------------------------
+		-- Final code for Player
+		----------------------------------------------------------------------
+
+		-- Show first run message
+		if not LeaPlusDB["FirstRunMessageSeen"] then
+			C_Timer.After(1, function()
+				LeaPlusLC:Print(L["Enter"] .. " |cff00ff00" .. "/ltp" .. "|r " .. L["or click the minimap button to open Leatrix Plus."])
+				LeaPlusDB["FirstRunMessageSeen"] = true
+			end)
+		end
+
+		-- Register logout event to save settings
+		LpEvt:RegisterEvent("PLAYER_LOGOUT")
 
 		-- Hide Leatrix Plus if game options panel is shown
-		InterfaceOptionsFrame:HookScript("OnShow", LeaPlusLC.HideFrames);
-		VideoOptionsFrame:HookScript("OnShow", LeaPlusLC.HideFrames);
-
-		----------------------------------------------------------------------
-		-- Block friend requests
-		----------------------------------------------------------------------
-
-		-- Function to decline friend requests
-		local function DeclineReqs()
-			if LeaPlusLC["NoFriendRequests"] == "On" then
-				for i = BNGetNumFriendInvites(), 1, -1 do
-					local id, player = BNGetFriendInviteInfo(i)
-					if id and player then
-						BNDeclineFriendInvite(id)
-						C_Timer.After(0.1, function()
-							LeaPlusLC:Print(L["A friend request from"] .. " " .. player .. " " .. L["was automatically declined."])
-						end)
-					end
-				end
-			end
-		end
-
-		-- Event frame for incoming friend requests
-		local DecEvt = CreateFrame("FRAME")
-		DecEvt:SetScript("OnEvent", DeclineReqs)
-
-		-- Function to register or unregister the event
-		local function ControlEvent()
-			if LeaPlusLC["NoFriendRequests"] == "On" then
-				DecEvt:RegisterEvent("BN_FRIEND_INVITE_ADDED")
-				DeclineReqs()
-			else
-				DecEvt:UnregisterEvent("BN_FRIEND_INVITE_ADDED")
-			end
-		end
-
-		-- Set event status when option is enabled
-		LeaPlusCB["NoFriendRequests"]:HookScript("OnClick", ControlEvent)
-
-		-- Set event status on startup
-		ControlEvent()
-
-		----------------------------------------------------------------------
-		-- Final code for RunOnce
-		----------------------------------------------------------------------
+		InterfaceOptionsFrame:HookScript("OnShow", LeaPlusLC.HideFrames)
+		VideoOptionsFrame:HookScript("OnShow", LeaPlusLC.HideFrames)
 
 		-- Update addon memory usage (speeds up initial value)
-		UpdateAddOnMemoryUsage();
+		UpdateAddOnMemoryUsage()
 
 		-- Release memory
-		LeaPlusLC.RunOnce = nil
+		LeaPlusLC.Player = nil
+
+	end
+
+----------------------------------------------------------------------
+--	L45: World
+----------------------------------------------------------------------
+
+	function LeaPlusLC:World()
+
+		----------------------------------------------------------------------
+		--	Max camera zoom (no reload required)
+		----------------------------------------------------------------------
+
+		do
+
+			-- Function to set camera zoom
+			local function SetZoom()
+				if LeaPlusLC["MaxCameraZoom"] == "On" then
+					SetCVar("cameraDistanceMaxZoomFactor", 4.0)
+				else
+					SetCVar("cameraDistanceMaxZoomFactor", 1.9)
+				end
+			end
+
+			-- Set camera zoom when option is clicked and on startup (if enabled)
+			LeaPlusCB["MaxCameraZoom"]:HookScript("OnClick", SetZoom)
+			if LeaPlusLC["MaxCameraZoom"] == "On" then SetZoom() end
+
+		end
 
 	end
 
@@ -13052,7 +13043,6 @@
 				end
 
 				-- Run other startup items
-				LeaPlusLC:RunOnce()
 				LeaPlusLC:SetDim()
 
 			end
