@@ -1,4 +1,7 @@
-﻿4.0.10 - 5th June 2024
+﻿4.0.11.alpha.1 - 5th June 2024
+- For 'Mute game sounds' ('System'), you can now mute the Singing Sunflower pet.
+
+4.0.10 - 5th June 2024
 - For 'Recent chat window', ('Chat'), increased the number of recent chat messages shown from 128 to 256.
 - For 'Restore chat messages' ('Chat'), increased the number of restored chat messages from 128 to 256.
 - For 'Filter chat messages' ('Chat'), added a setting to block guild announcements (such as guild member achievements).
