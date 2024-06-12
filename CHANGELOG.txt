@@ -1,4 +1,7 @@
-﻿4.0.11 - 12th June 2024
+﻿4.0.12.alpha.1 - 12th June 2024
+- For 'Enhance professions' and 'Enhance trainers', adjusted frame layout slightly.
+
+4.0.11 - 12th June 2024
 - For 'Mute game sounds' ('System'), you can now mute the Singing Sunflower pet.
 
 4.0.10 - 5th June 2024
