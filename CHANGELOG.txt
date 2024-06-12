@@ -1,4 +1,4 @@
-﻿4.0.11.alpha.1 - 5th June 2024
+﻿4.0.11 - 12th June 2024
 - For 'Mute game sounds' ('System'), you can now mute the Singing Sunflower pet.
 
 4.0.10 - 5th June 2024
