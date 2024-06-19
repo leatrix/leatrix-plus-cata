@@ -1,4 +1,4 @@
-﻿4.0.12.alpha.1 - 12th June 2024
+﻿4.0.12 - 19th June 2024
 - For 'Enhance professions' and 'Enhance trainers', adjusted frame layout slightly.
 
 4.0.11 - 12th June 2024
