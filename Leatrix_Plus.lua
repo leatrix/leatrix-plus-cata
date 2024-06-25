@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.12 (19th June 2024)
+-- 	Leatrix Plus 4.0.13.alpha.1 (19th June 2024)
 ----------------------------------------------------------------------
 
 --	01:Functions  02:Locks    03:Restart  40:Player   45:Rest
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.12"
+	LeaPlusLC["AddonVer"] = "4.0.13.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -8394,7 +8394,7 @@
 
 			-- Function to unregister search event for guild bank since it isn't used
 			local function SetGuildBankFunc()
-				for i = 1, 6 do
+				for i = 1, MAX_GUILDBANK_TABS do
 					_G["GuildBankTab" .. i].Button:UnregisterEvent("INVENTORY_SEARCH_UPDATE")
 				end
 			end

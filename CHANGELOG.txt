@@ -1,4 +1,7 @@
-﻿4.0.12 - 19th June 2024
+﻿4.0.13.alpha.1 - 25th June 2024
+- For 'Show bag search box' ('Interface'), fixed an issue where only the first 6 guild bank tabs would be searched.
+
+4.0.12 - 19th June 2024
 - For 'Enhance professions' and 'Enhance trainers', adjusted frame layout slightly.
 
 4.0.11 - 12th June 2024
