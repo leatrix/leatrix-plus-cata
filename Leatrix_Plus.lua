@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.13 (26th June 2024)
+-- 	Leatrix Plus 4.0.14.alpha.1 (26th June 2024)
 ----------------------------------------------------------------------
 
 --	01:Functions  02:Locks    03:Restart  40:Player   45:Rest
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.13"
+	LeaPlusLC["AddonVer"] = "4.0.14.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -5402,6 +5402,21 @@
 						end)
 						myButton:HookScript("OnLeave", function()
 							_G[name]:GetScript("OnLeave")()
+							GameTooltip:Hide()
+						end)
+					elseif name == "ZygorGuidesViewerMapIcon" then
+						-- Zygor (uses LibDBIcon10_LeaPlusCustomIcon_ZygorGuidesViewerMapIcon)
+						local myButton = LibStub("LibDBIcon-1.0"):GetMinimapButton("LeaPlusCustomIcon_" .. name)
+						myButton.icon:SetTexture("Interface\\AddOns\\ZygorGuidesViewerClassicTBC\\Skins\\minimap-icon.tga")
+						hooksecurefunc(myButton.icon, "UpdateCoord", function()
+							myButton.icon:SetTexCoord(0, 0.5, 0, 0.25)
+						end)
+						myButton.icon:SetTexCoord(0, 0.5, 0, 0.25)
+						myButton:HookScript("OnEnter", function()
+							_G[name]:GetScript("OnEnter")(_G[name], true)
+							ReanchorTooltip(GameTooltip, myButton)
+						end)
+						myButton:HookScript("OnLeave", function()
 							GameTooltip:Hide()
 						end)
 					elseif name == "BtWQuestsMinimapButton"				-- BtWQuests
