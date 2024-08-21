@@ -1,5 +1,5 @@
-﻿4.0.21.alpha.1 - 15th August 2024
-- For 'Enhance minimap' ('Interface'), the 'MoveAny' addon button will now show in the combine addon buttons frame.
+﻿4.0.21 - 21st August 2024
+- For 'Enhance minimap' ('Interface'), the 'MoveAny' addon button will now show inside the combine addon buttons frame.
 
 4.0.14 - 3rd July 2024
 - For 'Enhance minimap' ('Interface'), added a button texture for Zygor.
