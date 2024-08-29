@@ -1,4 +1,7 @@
-﻿4.0.21 - 21st August 2024
+﻿4.0.23.alpha.1 - 29th August 2024
+- For 'Show player chain' ('Interface'), the default game texture will now be used for the rare elite chain.
+
+4.0.21 - 21st August 2024
 - Added a new option 'Block requested invites'.  If enabled, requests to invite a player to your group will be declined unless the player requesting to join is a friend.
 - For 'Enhance minimap' ('Interface'), the 'MoveAny' addon button will now show inside the combine addon buttons frame.
 
