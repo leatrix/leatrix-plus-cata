@@ -1,4 +1,4 @@
-﻿4.0.23.alpha.1 - 29th August 2024
+﻿4.0.23 - 4th September 2024
 - For 'Show player chain' ('Interface'), the default game texture will now be used for the rare elite chain.
 
 4.0.21 - 21st August 2024
