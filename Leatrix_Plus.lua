@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.23 (4th September 2024)
+-- 	Leatrix Plus 4.0.24.alpha.1 (4th September 2024)
 ----------------------------------------------------------------------
 
 --	01:Functions  02:Locks    03:Restart  40:Player   45:Rest
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.23"
+	LeaPlusLC["AddonVer"] = "4.0.24.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -10792,8 +10792,8 @@
 			LeaPlusCB["NoCooldownDuration"]:HookScript("OnClick", SavePanelControls)
 			LeaPlusCB["CooldownsOnPlayer"]:HookScript("OnClick", SavePanelControls)
 
-			-- Help button tooltip
-			CooldownPanel.h.tiptext = L["Enter the spell IDs for the cooldown icons that you want to see.|n|nIf a cooldown icon normally appears under the pet frame, check the pet checkbox.|n|nCooldown icons are saved to your class and specialisation."]
+			-- Help button hidden
+			CooldownPanel.h:Hide()
 
 			-- Back button handler
 			CooldownPanel.b:SetScript("OnClick", function()
@@ -10850,6 +10850,9 @@
 			local specTagBanner = CooldownPanel:CreateFontString(nil, 'ARTWORK', 'GameFontNormal')
 			specTagBanner:SetPoint("TOPLEFT", 384, -72)
 			if specTagSpecID == 1 then specTagBanner:SetText(L["Primary Talents"]) else specTagBanner:SetText(L["Secondary Talents"]) end
+
+			-- Add help button
+			LeaPlusLC:CreateHelpButton("ShowCooldownsHelpButton", CooldownPanel, specTagBanner, "Enter the spell IDs for the cooldown icons that you want to see.|n|nIf a cooldown icon normally appears under the pet frame, check the pet checkbox.|n|nCooldown icons are saved to your class and specialisation.")
 
             -- Set controls when spec changes
             local swapFrame = CreateFrame("FRAME")
