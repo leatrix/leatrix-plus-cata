@@ -13707,7 +13707,7 @@
 	function LeaPlusLC:MakeSL(frame, field, caption, low, high, step, x, y, form)
 
 		-- Create slider control
-		local Slider = CreateFrame("Slider", "LeaPlusGlobalSlider" .. field, frame, "OptionssliderTemplate")
+		local Slider = CreateFrame("Slider", nil, frame, "UISliderTemplate")
 		LeaPlusCB[field] = Slider;
 		Slider:SetMinMaxValues(low, high)
 		Slider:SetValueStep(step)
@@ -13719,10 +13719,6 @@
 		Slider.tiptext = L[caption]
 		Slider:SetScript("OnEnter", LeaPlusLC.TipSee)
 		Slider:SetScript("OnLeave", GameTooltip_Hide)
-
-		-- Remove slider text
-		_G[Slider:GetName().."Low"]:SetText('');
-		_G[Slider:GetName().."High"]:SetText('');
 
 		-- Create slider label
 		Slider.f = Slider:CreateFontString(nil, 'BACKGROUND')
@@ -15332,7 +15328,7 @@
 				LeaPlusLC:Print(L["Checkboxes can be set to On or Off."] .. "|n")
 				for key, value in pairs(LeaPlusDB) do
 					if LeaPlusCB[key] and LeaPlusCB[key].f then
-						if not _G["LeaPlusGlobalSlider" .. key] then
+						if LeaPlusCB[key]:GetObjectType() ~= "Slider" and LeaPlusCB[key]:GetObjectType() ~= "Button" then
 							LeaPlusLC:Print(string.gsub(LeaPlusCB[key].f:GetText(), "%*$", "") .. ": |cffffffff" .. key .. "|r |cff1eff0c(" .. value .. ")|r")
 						end
 					end
@@ -15342,18 +15338,16 @@
 				LeaPlusLC:Print(L["Sliders can be set to a numeric value which must be in the range supported by the slider."] .. "|n")
 				for key, value in pairs(LeaPlusDB) do
 					if LeaPlusCB[key] and LeaPlusCB[key].f then
-						if _G["LeaPlusGlobalSlider" .. key] then
+						if LeaPlusCB[key]:GetObjectType() == "Slider" then
 							LeaPlusLC:Print("Slider: " .. "|cffffffff" .. key .. "|r |cff1eff0c(" .. value .. ")|r" .. " (" .. string.gsub(LeaPlusCB[key].f:GetText(), "%*$", "") .. ")" )
 						end
 					end
 				end
-				-- Dropdowns
+				-- Dropdowns- LeaPlusLC.NewPatch - Update when new dropdown system is added
 				LeaPlusLC:Print("|n" .. L["Dropdowns"] .. "|n")
-				LeaPlusLC:Print(L["Sliders can be set to a numeric value which must be in the range supported by the dropdown."] .. "|n")
-				for key, value in pairs(LeaPlusDB) do
-					if key and LeaPlusCB["ListFrame" .. key] then
-						LeaPlusLC:Print("Dropdown: " .. "|cffffffff" .. key .. "|r |cff1eff0c(" .. value .. ")|r")
-					end
+				LeaPlusLC:Print(L["Dropdowns can be set to a numeric value which must be in the range supported by the dropdown."] .. "|n")
+				for key, value in pairs(LeaDropList) do
+					LeaPlusLC:Print("Dropdown: " .. "|cffffffff" .. value .. "|r |cff1eff0c(" .. LeaPlusDB[value] .. ")|r")
 				end
 				return
 			elseif str == "admin" then
