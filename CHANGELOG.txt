@@ -1,4 +1,4 @@
-﻿4.0.24.alpha.1 - 4th September 2024
+﻿4.0.24 - 11th September 2024
 - Game API updates.
 - PTR (4.4.1): Preliminary updates for game version 4.4.1.
 
