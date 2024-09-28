@@ -10275,6 +10275,9 @@
 				_G[chtfrm .. "ButtonFrameUpButton"]:Hide()
 				_G[chtfrm .. "ButtonFrameDownButton"]:Hide()
 				_G[chtfrm .. "ButtonFrame"]:SetSize(0.1,0.1)
+				if LeaPlusLC.NewPatch then
+					_G[chtfrm .. "MinimizeButton"]:SetParent(tframe)
+				end
 			end
 
 			FriendsMicroButton:Hide()
