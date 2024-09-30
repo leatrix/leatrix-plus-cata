@@ -3209,7 +3209,7 @@
 
 			-- Set style when a drop menu is selected (procs when the list is hidden)
 			if LeaPlusLC.NewPatch then
-				LeaPlusCB["PlayerChainMenu"]:RegisterCallback("OnUpdate", SetChainStyle)
+				LeaPlusCB["PlayerChainMenu"]:RegisterCallback("OnMenuClose", SetChainStyle)
 			else
 				LeaPlusCB["ListFramePlayerChainMenu"]:HookScript("OnHide", SetChainStyle)
 			end
@@ -11155,7 +11155,7 @@
 
 			-- Set controls when anchor dropdown menu is changed and on startup
 			if LeaPlusLC.NewPatch then
-				LeaPlusCB["TooltipAnchorMenu"]:RegisterCallback("OnUpdate", SetAnchorControls)
+				LeaPlusCB["TooltipAnchorMenu"]:RegisterCallback("OnMenuClose", SetAnchorControls)
 			else
 				LeaPlusCB["ListFrameTooltipAnchorMenu"]:HookScript("OnHide", SetAnchorControls)
 			end
