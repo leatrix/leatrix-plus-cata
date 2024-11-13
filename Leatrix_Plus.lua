@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.34.alpha.1 (6th October 2024)
+-- 	Leatrix Plus 4.0.34 (13th October 2024)
 ----------------------------------------------------------------------
 
 --	01:Functions  02:Locks    03:Restart  40:Player   45:Rest
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.34.alpha.1"
+	LeaPlusLC["AddonVer"] = "4.0.34"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -40,12 +40,8 @@
 		end
 	end
 
-	-- Check for addons
+	-- Check for ElvUI
 	if C_AddOns.IsAddOnLoaded("ElvUI") then LeaPlusLC.ElvUI = unpack(ElvUI) end
-	if C_AddOns.IsAddOnLoaded("Glass") then LeaPlusLC.Glass = true end
-	if C_AddOns.IsAddOnLoaded("CharacterStatsWRATH") then LeaPlusLC.CharacterStatsWRATH = true end
-	if C_AddOns.IsAddOnLoaded("totalRP3") then LeaPlusLC.totalRP3 = true end
-	if C_AddOns.IsAddOnLoaded("TitanClassic") then LeaPlusLC.TitanClassic = true end
 
 ----------------------------------------------------------------------
 --	L00: Leatrix Plus
@@ -9920,9 +9916,11 @@
 					UIWidgetTopCenterContainerFrame:SetScale(LeaPlusLC["WidgetScale"])
 				else
 					-- Show Titan Panel screen adjust warning if Titan Panel is installed with screen adjust enabled
-					if LeaPlusLC.TitanClassic and TitanPanelSetVar and TitanPanelGetVar then
-						if not TitanPanelGetVar("ScreenAdjust") then
-							titanFrame:Show()
+					if C_AddOns.IsAddOnLoaded("TitanClassic") then
+						if TitanPanelSetVar and TitanPanelGetVar then
+							if not TitanPanelGetVar("ScreenAdjust") then
+								titanFrame:Show()
+							end
 						end
 					end
 
@@ -11215,7 +11213,7 @@
 				if LibDBIconTooltip then LibDBIconTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"]) end
 
 				-- Total RP 3
-				if LeaPlusLC.totalRP3 and TRP3_MainTooltip and TRP3_CharacterTooltip then
+				if C_AddOns.IsAddOnLoaded("totalRP3") and TRP3_MainTooltip and TRP3_CharacterTooltip then
 					TRP3_MainTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
 					TRP3_CharacterTooltip:SetScale(LeaPlusLC["LeaPlusTipSize"])
 				end
@@ -13098,7 +13096,7 @@
 					end
 
 					-- Disable items that conflict with Glass
-					if LeaPlusLC.Glass then
+					if C_AddOns.IsAddOnLoaded("Glass") then
 						local reason = L["Cannot be used with Glass"]
 						Lock("UseEasyChatResizing", reason) -- Use easy resizing
 						Lock("NoCombatLogTab", reason) -- Hide the combat log
