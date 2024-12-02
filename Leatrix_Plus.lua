@@ -11827,15 +11827,17 @@
 				WorldFrame:SetPoint("BOTTOMRIGHT", 0, LeaPlusLC["ViewPortResizeBottom"])
 			end
 
+			local isFirstEnteringWorld = true
 			local waitFrame = CreateFrame("FRAME")
 			waitFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 			waitFrame:SetScript("OnEvent", function(self, event)
 				if event == "PLAYER_ENTERING_WORLD" then
-					if UnitAffectingCombat("player") then
+					if UnitAffectingCombat("player") and not isFirstEnteringWorld then
 						waitFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 					else
 						SetViewportFunc()
 					end
+					isFirstEnteringWorld = false
 				elseif event == "PLAYER_REGEN_ENABLED" then
 					SetViewportFunc()
 					waitFrame:UnregisterEvent("PLAYER_REGEN_ENABLED")
