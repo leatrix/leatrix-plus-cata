@@ -1,5 +1,5 @@
-﻿4.0.37.alpha.1 - 2nd December 2014
-- Fixed an issue with 'Enable viewport' ('System') which may have caused the resized screen to not be applied at startup or after a loading screen.
+﻿4.0.37.alpha.2 - 2nd December 2014
+- The 'Enable viewport' option ('System') is now 'Show borders' ('Interface') mirroring retail.  The new option does not have a screen resize button.
 
 4.0.34 - 13th November 2024
 - Game API updates.
