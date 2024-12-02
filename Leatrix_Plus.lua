@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------
--- 	Leatrix Plus 4.0.36 (27th October 2024)
+-- 	Leatrix Plus 4.0.37.alpha.1 (2nd December 2024)
 ----------------------------------------------------------------------
 
 --	01:Functions  02:Locks    03:Restart  40:Player   45:Rest
@@ -19,7 +19,7 @@
 	local void
 
 	-- Version
-	LeaPlusLC["AddonVer"] = "4.0.36"
+	LeaPlusLC["AddonVer"] = "4.0.37.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Plus = ...
@@ -11821,9 +11821,26 @@
 			end)
 
 			-- Set viewport on startup
-			RefreshViewport()
-			WorldFrame:SetPoint("TOPLEFT", 0, -LeaPlusLC["ViewPortResizeTop"])
-			WorldFrame:SetPoint("BOTTOMRIGHT", 0, LeaPlusLC["ViewPortResizeBottom"])
+			local function SetViewportFunc()
+				RefreshViewport()
+				WorldFrame:SetPoint("TOPLEFT", 0, -LeaPlusLC["ViewPortResizeTop"])
+				WorldFrame:SetPoint("BOTTOMRIGHT", 0, LeaPlusLC["ViewPortResizeBottom"])
+			end
+
+			local waitFrame = CreateFrame("FRAME")
+			waitFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+			waitFrame:SetScript("OnEvent", function(self, event)
+				if event == "PLAYER_ENTERING_WORLD" then
+					if UnitAffectingCombat("player") then
+						waitFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+					else
+						SetViewportFunc()
+					end
+				elseif event == "PLAYER_REGEN_ENABLED" then
+					SetViewportFunc()
+					waitFrame:UnregisterEvent("PLAYER_REGEN_ENABLED")
+				end
+			end)
 
 			-- Hide the configuration panel if combat starts
 			SideViewport:SetScript("OnUpdate", function()
